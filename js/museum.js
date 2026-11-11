@@ -509,7 +509,7 @@ export function buildMuseum(scene, data, images, renderer) {
   /**
    * Swap a display's flat picture for a real model (a loaded glTF scene). The model is
    * centred, scaled to fit and lit by the studio environment. From then on it turns
-   * slowly in its glass case, or sways in its frame so the depth reads as you walk past.
+   * slowly in its glass case, or floats in its frame, parallel to the canvas.
    * `rotationDeg` ([x, y, z]) corrects models that were not exported play-side-forward.
    */
   function attachModel(d, root, rotationDeg) {
@@ -537,13 +537,14 @@ export function buildMuseum(scene, data, images, renderer) {
       for (const m of Array.isArray(o.material) ? o.material : [o.material]) {
         if (!m.isMeshStandardMaterial) continue;
         m.envMap = scene.environment;   // its own studio light, brighter than the dim room
-        m.envMapIntensity = 1.25;
+        m.envMapIntensity = 0.5;        // higher washes out paint and blooms glossy stickers
       }
     });
 
     d.parts.piece.visible = false;
     if (d.shadowMesh) d.shadowMesh.visible = false;
-    d.model = { holder, spin: d.phase, yaw: 0, pitch: 0 };
+    // `half` is the fitted model's half-size; `gap` is how far its back stays off the canvas
+    d.model = { holder, spin: d.phase, yaw: 0, pitch: 0, half: _size.clone().multiplyScalar(s / 2), gap: 0.2 };
   }
 
   // ---- per-frame life -------------------------------------------------------
@@ -568,11 +569,22 @@ export function buildMuseum(scene, data, images, renderer) {
           m.yaw = THREE.MathUtils.damp(m.yaw, 0, 2.5, dt);
           m.pitch = THREE.MathUtils.damp(m.pitch, 0, 2.5, dt);
         }
-        let base;
-        if (d.kind === 'pedestal') { m.spin += dt * (held ? 0.05 : 0.38); base = m.spin; }
-        else base = Math.sin(t * 0.45 + d.phase) * (held ? 0.08 : 0.3);
-        m.holder.rotation.set(m.pitch, base + m.yaw, 0);
-        m.holder.position.y = p.baseY + Math.sin(t * 0.8 + d.phase) * 0.012;
+        if (d.kind === 'pedestal') {
+          m.spin += dt * (held ? 0.05 : 0.38);
+          m.holder.rotation.set(m.pitch, m.spin + m.yaw, 0);
+          m.holder.position.y = p.baseY + Math.sin(t * 0.8 + d.phase) * 0.012;
+        } else {
+          // Framed pieces stay parallel to the canvas and only float: a slow bob and a
+          // barely-there tilt within the plane. They turn only when the visitor turns them.
+          const tilt = held ? 0 : Math.sin(t * 0.5 + d.phase * 1.3) * 0.007;
+          m.holder.rotation.set(m.pitch, m.yaw, tilt);
+          m.holder.position.y = p.baseY + Math.sin(t * 0.8 + d.phase) * 0.016;
+          // A turned model would swing its ends through the canvas, so it comes forward by
+          // exactly its own reach toward the wall (the rotated half-size along the normal).
+          m.holder.updateMatrix();
+          const e = m.holder.matrix.elements;
+          m.holder.position.z = m.gap + Math.abs(e[2]) * m.half.x + Math.abs(e[6]) * m.half.y + Math.abs(e[10]) * m.half.z;
+        }
       }
       if (d.billboard) {
         // turn the piece to face the visitor (yaw only)

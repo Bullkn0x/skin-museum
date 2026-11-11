@@ -177,7 +177,7 @@
       "display": "hero",
       "note": "Final Boss AK (Titan Holo Kato 14 Lineup)",
       "ingame": null,
-      "model": null,
+      "model": "assets/models/47544527361.glb",
       "modelRotation": null
     },
     {

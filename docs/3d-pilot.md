@@ -70,3 +70,64 @@ Add a "Findings" section to the end of this file before committing:
 - How close it is to the in-game look. Put a reference screenshot at `work/reference.png` and say where the model differs.
 - Time spent, final file size, and which steps could be scripted for the remaining items.
 - A recommendation: carry on to all 22, do the hero pieces only, or fall back to in-game pictures.
+
+## Findings
+
+Windows PC, 11 November 2026. Result: `assets/models/47544527361.glb`, 4.7 MB. It loads in exhibit 21 facing the right way with no `modelRotation`, and no console errors.
+
+**Not yet checked against the game.** There is no in-game inspect screenshot at `work/reference.png`: the session could not run the game and capture one. The only reference used is Steam's own render of the finish (`work/reference_steam_render.png`, no stickers). Everything below about "matches" means matches that render, or matches the game's data. An inspect screenshot of the real item is the one thing still needed to call this verified.
+
+### What worked
+
+- **Tools.** CS2 and Blender 5.3 (Steam install) were present. Source 2 Viewer was only the GUI build, which cannot export from the command line, so the official CLI build (20.1) was downloaded into `work/tools/`.
+- **Mesh.** `weapon_rif_ak47.vmdl` holds two meshes, `body_hd` and `body_legacy`. Paint kit 180 (`cu_fireserpent_ak47_bravo`) has `use_legacy_model 1`, so `body_legacy` was exported: 12,889 vertices, magazine included, two UV sets.
+- **Finish and wear.** Not approximated in Blender. The game's own compositing shader (`csgo_customweapon`) was pulled out of the shader archive, decompiled, and its custom-paint path ported line for line to numpy. Texture bindings, parameter values and colour spaces come from the shader's metadata, not guesses. At float 0.0752 about 2% of the painted area wears through, on exposed edges.
+- **Stickers.** The four slots are stored in the legacy AK material (and repeated in the model's sticker markup). Each decal is cut from the gun's own triangles in the second UV set, the way `csgo_weapon` projects stickers, and sits 0.2 mm off the surface. Meshes are named `sticker_0` to `sticker_3`. Sticker colours go through the shader's albedo fitting.
+- **StatTrak counter.** Not in the brief, but the item has one. The module is placed at the model's `stattrak_legacy` attachment and reads `004680`, leading zeros dimmed, using the shader's digit logic.
+
+### What was faked or left out
+
+- **Titan holo is static.** In game its colour shifts with the viewing angle. Here it is frozen at the angle where the foil is brightest. The holo mask and spectrum textures are carried in the GLB (the sticker material's `extras.holo`) so a view-dependent shader can be added on the web side.
+- **Where the scratches sit is unverified.** The game offsets and rotates the wear texture by pattern seed in client code that cannot be read from the files. The old CS:GO draw order was used for seed 545. If CS2 differs, the 2% of wear is in different spots from the real item.
+- **Sticker mask is per triangle,** not per pixel as in game. Edges of the allowed area follow mesh edges.
+- **Charm is not included.** Semi-Precious changes colour with its pattern (8311) through a hue shift that was not recovered; a wrong-coloured charm seemed worse than none.
+- **Small shading differences.** Valve darkens diffuse light on metals more steeply than glTF does, and gives stickers a faint raised edge. Neither is reproduced.
+
+### How close it is
+
+Against Steam's render: paint placement, the wood left bare, the unpainted metal and the colours all agree. Against the game itself: unknown until there is a screenshot.
+
+In the museum the model first looked pale, with the stickers hard to read. That was the model light level, not the model: `attachModel` lit models at `envMapIntensity` 1.25 and bloom blew out the glossy stickers (roughness 0.1, the game's value). At 0.5 the same file shows saturated colour and readable stickers (`work/screens/lighting_compare.png`). The owner approved the change, so `attachModel` now uses 0.5.
+
+### Time, size, scripting
+
+- Under an hour for this first model. Most of that was one-off: the shader decompiler, the compositor and the GLB writer.
+- 4.7 MB: colour 1.0, occlusion/roughness/metal 1.3, normal 0.8 (1024 px), stickers 0.6, geometry and StatTrak about 1.0.
+- Every step is already a script, in `work/pipeline/` (git-ignored, so on this PC only). Blender is used only to render check images. What is still done by hand is writing the two JSON job files per item; a driver that reads `data/skins.json` and the inspect link would remove that.
+- The pipeline scripts are a port of Valve's shader logic. They were kept out of the repository under the "only the `.glb`" rule; whether to publish them is the owner's call.
+
+The compositor covers one of the game's nine paint styles. The collection splits like this:
+
+| Paint style | Exhibits | Status |
+|---|---|---|
+| Custom paint | AWP Dragon Lore, M4A4 Howl, AK-47 Fire Serpent, AK-47 Panthera onca | Same path as this pilot |
+| Anodized multicolour | Glock Dragon Tattoo, M4A1-S Knight, M4A1-S Hot Rod, P250 Steel Disruption, Flip Doppler, Butterfly Doppler, Butterfly Gamma Doppler | New shader path to port |
+| Patina | AK-47 Case Hardened, USP-S Stainless, Gut Rust Coat | New shader path to port |
+| Anodized airbrush | Desert Eagle Hypnotic, Karambit Fade, Butterfly Fade | New shader path to port |
+| Spray | AWP Safari Mesh | New shader path to port |
+| Gloves, pins | 2 gloves, 2 pins | Different kind of item, not attempted |
+
+Matched by finish name, 11 of the 18 guns and knives use the legacy mesh like this one; the other 7 use the newer mesh, whose input textures are packed differently.
+
+### Recommendation
+
+Do the hero pieces next, not all 22 yet.
+
+1. Get one inspect screenshot of the Fire Serpent and compare. That settles whether the approach is right, and whether the seed-driven wear placement matches.
+2. Dragon Lore, Howl and Panthera onca use the same shader path, so they are cheap once a driver script exists.
+3. Hold the Dopplers, Fades and Case Hardened until step 1 confirms the seed handling. On those the seed decides the whole look, so an unverified seed would make a confidently wrong model.
+4. Gloves and pins: keep in-game pictures.
+
+### Museum change made alongside
+
+At the owner's request during the pilot: framed models no longer sway, because the swing pushed the ends of the gun through the canvas. They now stay parallel to the canvas with a slow bob. When a visitor turns one by hand in the inspect view, it moves forward by its own reach so it cannot pass through the canvas.
