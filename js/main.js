@@ -5,6 +5,8 @@ import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
 import { buildMuseum } from './museum.js';
 import { Player } from './player.js';
 import * as ui from './ui.js';
@@ -73,7 +75,11 @@ async function init() {
   let done = 0;
   const images = new Map();
   await Promise.all([fontsReady, ...data.skins.map(async (s) => {
-    const t = await loader.loadAsync(s.image).catch(() => { throw new Error(`could not load ${s.image}`); });
+    // the in-game picture when there is one, otherwise Steam's stock render
+    // (an exhibit with a 3D model keeps the stock cut-out as its stand-in while the model loads)
+    const picture = s.model ? null : s.ingame;
+    const t = await (picture ? loader.loadAsync(picture).catch(() => loader.loadAsync(s.image)) : loader.loadAsync(s.image))
+      .catch(() => { throw new Error(`could not load ${s.image}`); });
     t.colorSpace = THREE.SRGBColorSpace;
     t.anisotropy = maxAniso;
     images.set(s.id, t);
@@ -99,6 +105,21 @@ async function init() {
   state = 'intro';
   ui.setReady();
   renderer.setAnimationLoop(frame);
+
+  // Real 3D models arrive after the doors open; each display shows its picture until then.
+  const modelled = museum.displays.filter((d) => d.skin.model);
+  if (modelled.length) {
+    const gltf = new GLTFLoader();
+    gltf.setMeshoptDecoder(MeshoptDecoder);
+    for (const d of modelled) {
+      gltf.loadAsync(d.skin.model)
+        .then((g) => {
+          museum.attachModel(d, g.scene, d.skin.modelRotation);
+          if (d === inspecting) document.body.classList.add('has-model');
+        })
+        .catch((err) => console.warn(`Could not load the 3D model for ${d.skin.name}`, err));
+    }
+  }
 
   if (params.has('debug')) window.__museum = { museum, player, camera, scene, renderer, inspect, closeInspect, get state() { return state; }, enter };
 }
@@ -195,6 +216,7 @@ function inspect(display) {
   ui.setPrompt(null);
   ui.renderPanel(display, museum.displays.length);
   ui.openPanel(true);
+  document.body.classList.toggle('has-model', !!display.model);
   if (document.pointerLockElement) document.exitPointerLock();
 
   // Where the camera settles: square-on for wall pieces, from the visitor's side for cases.
@@ -219,6 +241,7 @@ function closeInspect() {
   if (state !== 'inspect') return;
   inspecting = null;
   ui.openPanel(false);
+  document.body.classList.remove('has-model');
   player.syncFromCamera();
   state = 'walk';
   player.enabled = true;
@@ -271,13 +294,21 @@ function bindInput() {
   window.addEventListener('blur', () => player.keys.clear());
 
   // mouse look: locked pointer, or drag when lock is unavailable
-  let dragging = false, lastX = 0, lastY = 0, dragId = null;
+  let dragging = false, turning = false, lastX = 0, lastY = 0, dragId = null;
   document.addEventListener('mousemove', (e) => {
+    if (turning) return;   // hold the camera still while a model is being turned
     pointer.x = (e.clientX / window.innerWidth) * 2 - 1;
     pointer.y = (e.clientY / window.innerHeight) * 2 - 1;
     if (state === 'walk' && document.pointerLockElement === canvas) player.look(e.movementX, e.movementY);
   });
   canvas.addEventListener('pointerdown', (e) => {
+    if (state === 'inspect' && inspecting?.model) {
+      // turn the model by hand, like the in-game inspect
+      turning = true; dragId = e.pointerId; lastX = e.clientX; lastY = e.clientY;
+      canvas.setPointerCapture?.(e.pointerId);
+      document.body.classList.add('is-turning');
+      return;
+    }
     if (state !== 'walk') return;
     if (useLock) { lockPointer(); return; }
     if (e.pointerType === 'touch' && e.clientX < window.innerWidth * 0.4 && e.clientY > window.innerHeight * 0.5) return;
@@ -285,12 +316,23 @@ function bindInput() {
     canvas.setPointerCapture?.(e.pointerId);
   });
   canvas.addEventListener('pointermove', (e) => {
+    if (turning && e.pointerId === dragId && inspecting?.model) {
+      const m = inspecting.model;
+      m.yaw += (e.clientX - lastX) * 0.009;
+      m.pitch = THREE.MathUtils.clamp(m.pitch + (e.clientY - lastY) * 0.006, -1.0, 1.0);
+      lastX = e.clientX; lastY = e.clientY;
+      return;
+    }
     if (!dragging || e.pointerId !== dragId || state !== 'walk') return;
     const k = e.pointerType === 'touch' ? 2.2 : 1.6;
     player.look(-(e.clientX - lastX) * k, -(e.clientY - lastY) * k);
     lastX = e.clientX; lastY = e.clientY;
   });
-  const endDrag = (e) => { if (e.pointerId === dragId) { dragging = false; dragId = null; } };
+  const endDrag = (e) => {
+    if (e.pointerId !== dragId) return;
+    dragging = false; turning = false; dragId = null;
+    document.body.classList.remove('is-turning');
+  };
   canvas.addEventListener('pointerup', endDrag);
   canvas.addEventListener('pointercancel', endDrag);
 
@@ -385,7 +427,7 @@ function frame(now) {
     target = null; ui.setPrompt(null);
   }
 
-  museum.update(t, dt, camera, state === 'inspect' ? inspecting : target);
+  museum.update(t, dt, camera, state === 'inspect' ? inspecting : target, state === 'inspect' ? inspecting : null);
   composer.render(dt);
   if (mapVisible && state !== 'intro') ui.drawMinimap(museum.layout, museum.displays, state === 'inspect' ? { pos: camera.position, yaw: player.yaw } : player, state === 'inspect' ? inspecting : target);
 }

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curator's desk</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #08080a; --card: #101013; --ink: #f3ead8; --muted: #9d927f; --gold: #c9a45c; --line: rgba(201, 164, 92, 0.22); --ok: #6fbf8a; }
+    * { box-sizing: border-box; font-variant-numeric: lining-nums; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 400 15px/1.55 Jost, "Helvetica Neue", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    main { max-width: 1040px; margin: 0 auto; padding: 48px 20px 80px; }
+    .kicker { margin: 0; color: var(--gold); font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; }
+    h1 { margin: 6px 0 10px; font: 500 clamp(2.2rem, 5vw, 3.2rem)/1.05 "Cormorant Garamond", Garamond, serif; }
+    .lede { max-width: 62ch; margin: 0 0 26px; color: var(--muted); }
+    ol.steps { margin: 0 0 14px; padding: 20px 24px 20px 44px; border: 1px solid var(--line); background: var(--card); }
+    ol.steps li { margin: 6px 0; }
+    code { padding: 2px 7px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px; background: #000; color: #e9d6aa; font: 0.86em ui-monospace, SFMono-Regular, Menlo, monospace; overflow-wrap: anywhere; }
+    a { color: var(--gold); }
+    .summary { margin: 26px 0 14px; color: var(--muted); font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; }
+    .list { display: grid; gap: 10px; }
+    .item { display: grid; grid-template-columns: 132px 1fr auto; gap: 18px; align-items: center; padding: 12px 18px 12px 12px; border: 1px solid rgba(255, 255, 255, 0.07); border-left: 2px solid var(--accent, var(--gold)); background: var(--card); }
+    .thumb { width: 132px; aspect-ratio: 4 / 3; object-fit: contain; background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.06), transparent 70%); }
+    .thumb.photo { object-fit: cover; }
+    .name { margin: 0; font: 600 1.35rem/1.15 "Cormorant Garamond", Garamond, serif; }
+    .meta { margin: 2px 0 8px; color: var(--muted); font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; }
+    .file { margin: 0; color: var(--muted); font-size: 0.86rem; }
+    .hint { margin: 6px 0 0; color: var(--muted); font-size: 0.82rem; }
+    .pill { display: inline-block; margin-left: 10px; padding: 2px 9px; border: 1px solid rgba(255, 255, 255, 0.16); border-radius: 999px; color: var(--muted); font: 500 0.62rem/1.6 Jost, sans-serif; letter-spacing: 0.14em; text-transform: uppercase; vertical-align: middle; }
+    .pill.ok { border-color: var(--ok); color: var(--ok); }
+    .actions { display: flex; flex-direction: column; gap: 8px; }
+    button { padding: 10px 16px; border: 1px solid var(--line); border-radius: 2px; background: transparent; color: var(--ink); font: 500 0.68rem Jost, sans-serif; letter-spacing: 0.2em; text-transform: uppercase; white-space: nowrap; cursor: pointer; }
+    button:hover:not(:disabled) { border-color: var(--gold); background: rgba(201, 164, 92, 0.12); }
+    button:disabled { opacity: 0.4; cursor: default; }
+    button.done { border-color: var(--ok); color: var(--ok); }
+    @media (max-width: 720px) {
+      .item { grid-template-columns: 96px 1fr; }
+      .thumb { width: 96px; }
+      .actions { grid-column: 1 / -1; flex-direction: row; }
+      .actions button { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="kicker">Curator's desk</p>
+    <h1>In-game pictures</h1>
+    <p class="lede">The museum shows Steam's stock render for an exhibit until you give it a picture of the real item, with your stickers, wear and pattern. A picture with a transparent background floats in its display; a normal screenshot is hung as a framed photograph.</p>
+    <ol class="steps">
+      <li>Get a picture of the item. Either take a screenshot while inspecting it in CS2, or copy its inspect link below and paste it into a screenshot tool such as <a href="https://swap.gg/screenshot" target="_blank" rel="noopener">swap.gg/screenshot</a> or <a href="https://csmarketcap.com/screenshot" target="_blank" rel="noopener">csmarketcap.com/screenshot</a>.</li>
+      <li>Save it in the project's <code>assets/ingame/</code> folder under the file name shown for that exhibit (<code>.png</code>, <code>.jpg</code> or <code>.webp</code> all work).</li>
+      <li>Run <code>node scripts/sync-skins.mjs --images</code>, then reload the museum.</li>
+    </ol>
+    <p class="summary" id="summary">Loading…</p>
+    <div class="list" id="list"></div>
+  </main>
+
+  <script>
+    const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
+
+    async function copy(text, button) {
+      try { await navigator.clipboard.writeText(text); }
+      catch {
+        const t = document.createElement('textarea');
+        t.value = text; document.body.append(t); t.select(); document.execCommand('copy'); t.remove();
+      }
+      const label = button.textContent;
+      button.textContent = 'Copied'; button.classList.add('done');
+      setTimeout(() => { button.textContent = label; button.classList.remove('done'); }, 1400);
+    }
+
+    fetch('data/skins.json').then((r) => r.json()).then((data) => {
+      const list = document.getElementById('list');
+      const have = data.skins.filter((s) => s.ingame).length;
+      document.getElementById('summary').textContent = `${have} of ${data.skins.length} exhibits have an in-game picture`;
+
+      for (const s of data.skins) {
+        const row = el('div', 'item');
+        row.style.setProperty('--accent', s.rarityColor);
+
+        const img = el('img', 'thumb' + (s.ingame ? ' photo' : ''));
+        img.src = s.ingame || s.image; img.alt = ''; img.loading = 'lazy';
+
+        const info = el('div');
+        const name = el('p', 'name', s.name);
+        name.append(el('span', 'pill' + (s.ingame ? ' ok' : ''), s.ingame ? 'In-game picture' : 'Steam render'));
+        const file = el('p', 'file', 'Save as ');
+        file.append(el('code', null, `assets/ingame/${s.id}.png`));
+        info.append(name, el('p', 'meta', [s.exterior, s.rarity, s.nameTag ? `“${s.nameTag}”` : null].filter(Boolean).join('  ·  ')), file);
+        if (!s.inspect) info.append(el('p', 'hint', 'No public inspect link yet (the item is probably trade-protected). In your own Steam inventory, right-click “Inspect in Game…” and copy the link.'));
+
+        const actions = el('div', 'actions');
+        const link = el('button', null, 'Copy inspect link');
+        if (s.inspect) link.addEventListener('click', () => copy(s.inspect, link)); else link.disabled = true;
+        const fname = el('button', null, 'Copy file name');
+        fname.addEventListener('click', () => copy(`${s.id}.png`, fname));
+        actions.append(link, fname);
+
+        row.append(img, info, actions);
+        list.append(row);
+      }
+    }).catch(() => { document.getElementById('summary').textContent = 'Could not load data/skins.json - run the sync script first.'; });
+  </script>
+</body>
+</html>

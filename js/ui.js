@@ -161,8 +161,11 @@ export function renderPanel(display, total) {
 
 export function openPanel(open) {
   const p = $('panel');
+  // never hide a panel that still holds keyboard focus
+  if (!open && p.contains(document.activeElement)) document.activeElement.blur();
   p.classList.toggle('is-open', open);
   p.setAttribute('aria-hidden', String(!open));
+  p.inert = !open;
   document.body.classList.toggle('is-inspecting', open);
 }
 

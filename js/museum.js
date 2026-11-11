@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { Reflector } from 'three/addons/objects/Reflector.js';
 import {
   glowTexture, washTexture, backdropTexture, plaqueTexture,
-  letteringTexture, shadowTexture, floorLightTexture,
+  letteringTexture, shadowTexture, floorLightTexture, isCutout,
 } from './textures.js';
 
 // Hall dimensions, in metres.
@@ -335,11 +335,17 @@ export function buildMuseum(scene, data, images, renderer) {
     d.color = new THREE.Color(d.skin.rarityColor);
     d.phase = d.number * 1.7;
 
-    const plaqueMat = new THREE.MeshBasicMaterial({ map: plaqueTexture(d.skin, d.number) });
+    const plaqueTex = plaqueTexture(d.skin, d.number);
+    const plaqueMat = new THREE.MeshBasicMaterial({ map: plaqueTex });
+    const plaqueRatio = plaqueTex.image.height / plaqueTex.image.width;
     const accentMat = new THREE.MeshBasicMaterial({ color: d.color.clone().multiplyScalar(1.6) });
     const glowMat = additive(tex.glow, d.color, 0.3);
     const img = image.image;
     const aspect = img.width / img.height;
+    // A cut-out (Steam's stock render) floats in its display. A rectangular picture,
+    // such as an in-game screenshot, is hung like a photograph instead.
+    const photo = !isCutout(img);
+    d.photo = photo;
 
     if (d.kind === 'pedestal') {
       // plinth
@@ -352,20 +358,32 @@ export function buildMuseum(scene, data, images, renderer) {
       for (const [w, dd, x, z] of [[0.86, 0.016, 0, 0.43], [0.86, 0.016, 0, -0.43], [0.016, 0.86, 0.43, 0], [0.016, 0.86, -0.43, 0]]) {
         box(group, accentMat, w, 0.012, dd, x, 1.008, z);
       }
-      // floating piece
+      // floating piece, or a brass-edged print when it is a photograph
       let w = d.size.w, h = w / aspect;
-      if (h > d.size.h) { h = d.size.h; w = h * aspect; }
-      const halo = plane(group, glowMat, 1.0, 1.0, 0, d.cy, 0); halo.renderOrder = 1;
-      const piece = plane(group, new THREE.MeshBasicMaterial({ map: image, transparent: true, depthWrite: false, alphaTest: 0.02 }), w, h, 0, d.cy, 0);
+      const maxH = photo ? 0.5 : d.size.h;
+      if (h > maxH) { h = maxH; w = h * aspect; }
+      let piece;
+      if (photo) {
+        piece = plane(group, new THREE.MeshBasicMaterial({ map: image }), w, h, 0, d.cy, 0);
+        const mount = new THREE.Mesh(planeGeo, new THREE.MeshBasicMaterial({ color: 0x9a7a45 }));
+        mount.scale.set((w + 0.028) / w, (h + 0.028) / h, 1); mount.position.z = -0.004;
+        const halo = new THREE.Mesh(planeGeo, glowMat);
+        halo.scale.set(1.15 / w, 1.0 / h, 1); halo.position.z = -0.012; halo.renderOrder = 1;
+        piece.add(mount, halo);
+        d.billboard = [piece];
+      } else {
+        const halo = plane(group, glowMat, 1.0, 1.0, 0, d.cy, 0); halo.renderOrder = 1;
+        piece = plane(group, new THREE.MeshBasicMaterial({ map: image, transparent: true, depthWrite: false, alphaTest: 0.02 }), w, h, 0, d.cy, 0);
+        d.billboard = [piece, halo];
+      }
       piece.renderOrder = 3;
-      d.billboard = [piece, halo];
       // glass case with brass edges
       box(group, mat.glass, 0.84, 0.98, 0.84, 0, 1.5, 0);
       const edges = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(0.84, 0.98, 0.84)), new THREE.LineBasicMaterial({ color: 0xc9a45c, transparent: true, opacity: 0.75 }));
       edges.position.set(0, 1.5, 0); group.add(edges);
       box(group, mat.brass, 0.87, 0.02, 0.87, 0, 1.995, 0);
       // plaques: aisle side and the side facing the entrance
-      const pw = 0.78, ph = pw * 288 / 1024;
+      const pw = 0.78, ph = pw * plaqueRatio;
       plane(group, plaqueMat, pw, ph, 0, 0.66, 0.4515);
       const side = plane(group, plaqueMat, pw, ph, d.rotY > 0 ? -0.4515 : 0.4515, 0.66, 0);
       side.rotation.y = d.rotY > 0 ? -Math.PI / 2 : Math.PI / 2;
@@ -382,7 +400,12 @@ export function buildMuseum(scene, data, images, renderer) {
       colliders.push({ x: d.pos.x, z: d.pos.z, hx: 0.5, hz: 0.5 });
     } else {
       const hero = d.kind === 'hero';
-      const W = d.size.w, Hh = d.size.h, cy = d.cy;
+      let W = d.size.w, Hh = d.size.h;
+      const cy = d.cy;
+      if (photo) {
+        // the frame takes on the photograph's proportions
+        if (W / aspect <= Hh) Hh = W / aspect; else W = Hh * aspect;
+      }
       const t = hero ? 0.07 : 0.05, depth = 0.16;
       // lit wall wash behind the frame
       plane(group, additive(tex.wash, WARM, hero ? 0.26 : 0.3), W * (hero ? 1.45 : 2.1), Hh * (hero ? 1.9 : 2.5), 0, cy + Hh * (hero ? 0.2 : 0.28), 0.012);
@@ -390,24 +413,33 @@ export function buildMuseum(scene, data, images, renderer) {
         const up = plane(group, additive(tex.wash, d.color, 0.16), W * 1.5, Hh * 1.4, 0, cy - Hh * 0.55, 0.014);
         up.rotation.z = Math.PI;
       }
-      // velvet backdrop, brass frame
-      plane(group, new THREE.MeshBasicMaterial({ map: backdropTexture(d.skin.rarityColor, W / Hh) }), W, Hh, 0, cy, 0.03);
+      // velvet backdrop (cut-outs only), brass frame
+      if (!photo) plane(group, new THREE.MeshBasicMaterial({ map: backdropTexture(d.skin.rarityColor, W / Hh) }), W, Hh, 0, cy, 0.03);
       box(group, mat.brass, W + t * 2, t, depth, 0, cy + Hh / 2 + t / 2, depth / 2);
       box(group, mat.brass, W + t * 2, t, depth, 0, cy - Hh / 2 - t / 2, depth / 2);
       box(group, mat.brass, t, Hh, depth, -W / 2 - t / 2, cy, depth / 2);
       box(group, mat.brass, t, Hh, depth, W / 2 + t / 2, cy, depth / 2);
-      // floating piece with halo and drop shadow
-      let w = W * 0.84, h = w / aspect;
-      if (h > Hh * 0.9) { h = Hh * 0.9; w = h * aspect; }
-      const halo = plane(group, glowMat, W * 1.05, Hh * 1.05, 0, cy, 0.04); halo.renderOrder = 1;
-      const shadow = plane(group, new THREE.MeshBasicMaterial({ map: shadowTexture(img), transparent: true, opacity: 0.8, depthWrite: false }), w * 1.06, h * 1.06, w * 0.02, cy - h * 0.07, 0.05);
-      shadow.renderOrder = 2;
-      const piece = plane(group, new THREE.MeshBasicMaterial({ map: image, transparent: true, depthWrite: false, alphaTest: 0.02 }), w, h, 0, cy, 0.2);
+      let piece;
+      if (photo) {
+        // the photograph fills the frame, with the rarity colour as an aura on the wall around it
+        const aura = plane(group, glowMat, W * 1.55, Hh * 1.8, 0, cy, 0.02); aura.renderOrder = 1;
+        piece = plane(group, new THREE.MeshBasicMaterial({ map: image }), W, Hh, 0, cy, 0.03);
+        d.still = true;
+      } else {
+        // floating piece with halo and drop shadow
+        let w = W * 0.84, h = w / aspect;
+        if (h > Hh * 0.9) { h = Hh * 0.9; w = h * aspect; }
+        const halo = plane(group, glowMat, W * 1.05, Hh * 1.05, 0, cy, 0.04); halo.renderOrder = 1;
+        const shadow = plane(group, new THREE.MeshBasicMaterial({ map: shadowTexture(img), transparent: true, opacity: 0.8, depthWrite: false }), w * 1.06, h * 1.06, w * 0.02, cy - h * 0.07, 0.05);
+        shadow.renderOrder = 2;
+        d.shadowMesh = shadow;
+        piece = plane(group, new THREE.MeshBasicMaterial({ map: image, transparent: true, depthWrite: false, alphaTest: 0.02 }), w, h, 0, cy, 0.2);
+      }
       piece.renderOrder = 3;
       // rarity light line under the frame
       box(group, accentMat, W * 0.6, 0.014, 0.02, 0, cy - Hh / 2 - t - 0.04, 0.03);
       // plaque
-      const pw = hero ? 1.9 : 1.4, ph = pw * 288 / 1024;
+      const pw = hero ? 1.9 : 1.4, ph = pw * plaqueRatio;
       const py = cy - Hh / 2 - t - 0.1 - ph / 2;
       box(group, mat.brass, pw + 0.03, ph + 0.03, 0.02, 0, py, 0.012);
       plane(group, plaqueMat, pw, ph, 0, py, 0.024);
@@ -426,7 +458,7 @@ export function buildMuseum(scene, data, images, renderer) {
           plane(group, new THREE.MeshBasicMaterial({ map: letteringTexture(name, null, { w: 2048, h: 256 }), color: new THREE.Color(1.45, 1.45, 1.45), transparent: true, depthWrite: false, fog: false }), 5.4, 0.675, 0, cy + Hh / 2 + 0.92, 0.03);
         }
       }
-      d.parts = { piece, shadow, accentMat, glowMat, baseY: cy, baseScale: piece.scale.clone() };
+      d.parts = { piece, accentMat, glowMat, baseY: cy, baseScale: piece.scale.clone() };
     }
   }
 
@@ -472,19 +504,76 @@ export function buildMuseum(scene, data, images, renderer) {
   dust.frustumCulled = false;
   hall.add(dust);
 
+  // ---- real 3D models -------------------------------------------------------
+  const _bounds = new THREE.Box3(), _size = new THREE.Vector3(), _centre = new THREE.Vector3();
+  /**
+   * Swap a display's flat picture for a real model (a loaded glTF scene). The model is
+   * centred, scaled to fit and lit by the studio environment. From then on it turns
+   * slowly in its glass case, or sways in its frame so the depth reads as you walk past.
+   * `rotationDeg` ([x, y, z]) corrects models that were not exported play-side-forward.
+   */
+  function attachModel(d, root, rotationDeg) {
+    if (rotationDeg) root.rotation.set(...rotationDeg.map((deg) => THREE.MathUtils.degToRad(deg)));
+    root.updateMatrixWorld(true);
+    _bounds.setFromObject(root);
+    _bounds.getSize(_size); _bounds.getCenter(_centre);
+    const cased = d.kind === 'pedestal';
+    const maxW = cased ? 0.7 : d.parts.baseScale.x * 0.92;
+    const maxH = cased ? 0.5 : d.parts.baseScale.y;
+    const span = cased ? Math.hypot(_size.x, _size.z) : _size.x;   // a turntable sweeps its diagonal
+    const s = Math.min(maxW / span, maxH / _size.y);
+
+    const fit = new THREE.Group();
+    fit.add(root);
+    fit.scale.setScalar(s);
+    fit.position.copy(_centre).multiplyScalar(-s);
+    const holder = new THREE.Group();
+    holder.add(fit);
+    holder.position.set(0, d.cy, cased ? 0 : 0.2 + (_size.z * s) / 2);
+    d.group.add(holder);
+
+    root.traverse((o) => {
+      if (!o.isMesh) return;
+      for (const m of Array.isArray(o.material) ? o.material : [o.material]) {
+        if (!m.isMeshStandardMaterial) continue;
+        m.envMap = scene.environment;   // its own studio light, brighter than the dim room
+        m.envMapIntensity = 1.25;
+      }
+    });
+
+    d.parts.piece.visible = false;
+    if (d.shadowMesh) d.shadowMesh.visible = false;
+    d.model = { holder, spin: d.phase, yaw: 0, pitch: 0 };
+  }
+
   // ---- per-frame life -------------------------------------------------------
   const q = new THREE.Quaternion();
-  function update(t, dt, camera, target) {
+  function update(t, dt, camera, target, inspected) {
     dustMat.uniforms.uTime.value = t;
     for (const d of displays) {
       const p = d.parts;
       const focus = d === target ? 1 : 0;
       d.focus = THREE.MathUtils.damp(d.focus || 0, focus, 7, dt);
-      p.piece.position.y = p.baseY + Math.sin(t * 0.8 + d.phase) * (d.kind === 'pedestal' ? 0.012 : 0.018);
-      p.piece.scale.copy(p.baseScale).multiplyScalar(1 + d.focus * 0.035);
+      if (!d.still) {
+        p.piece.position.y = p.baseY + Math.sin(t * 0.8 + d.phase) * (d.kind === 'pedestal' ? 0.012 : 0.018);
+        p.piece.scale.copy(p.baseScale).multiplyScalar(1 + d.focus * 0.035);
+      }
       const pulse = 0.5 + 0.5 * Math.sin(t * 1.3 + d.phase);
       p.glowMat.opacity = (d.kind === 'hero' ? 0.2 + pulse * 0.08 : 0.2) + d.focus * 0.22;
       p.accentMat.color.copy(d.color).multiplyScalar((d.kind === 'pedestal' ? 1.05 : 1.4) + d.focus * 1.1 + (d.kind === 'hero' ? pulse * 0.5 : 0));
+      if (d.model) {
+        const m = d.model;
+        const held = d === inspected;   // while inspected, the visitor turns it by hand
+        if (!held) {
+          m.yaw = THREE.MathUtils.damp(m.yaw, 0, 2.5, dt);
+          m.pitch = THREE.MathUtils.damp(m.pitch, 0, 2.5, dt);
+        }
+        let base;
+        if (d.kind === 'pedestal') { m.spin += dt * (held ? 0.05 : 0.38); base = m.spin; }
+        else base = Math.sin(t * 0.45 + d.phase) * (held ? 0.08 : 0.3);
+        m.holder.rotation.set(m.pitch, base + m.yaw, 0);
+        m.holder.position.y = p.baseY + Math.sin(t * 0.8 + d.phase) * 0.012;
+      }
       if (d.billboard) {
         // turn the piece to face the visitor (yaw only)
         const yaw = Math.atan2(camera.position.x - d.pos.x, camera.position.z - d.pos.z) - d.rotY;
@@ -500,5 +589,5 @@ export function buildMuseum(scene, data, images, renderer) {
     dustMat.uniforms.uScale.value = h * pixelRatio;
   }
 
-  return { layout, displays, colliders, update, resize };
+  return { layout, displays, colliders, update, resize, attachModel };
 }

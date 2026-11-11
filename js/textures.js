@@ -91,7 +91,8 @@ export function backdropTexture(color, aspect = 1.5) {
 
 /** Engraved bronze plaque: exhibit number, weapon, finish, wear and rarity. */
 export function plaqueTexture(skin, number) {
-  const w = 1024, h = 288;
+  const tag = skin.nameTag;
+  const w = 1024, h = tag ? 372 : 288;   // a name tag gets its own engraved line
   return make(w, h, (ctx) => {
     const bg = ctx.createLinearGradient(0, 0, 0, h);
     bg.addColorStop(0, '#1d1812'); bg.addColorStop(0.5, '#14110d'); bg.addColorStop(1, '#0c0a08');
@@ -104,9 +105,9 @@ export function plaqueTexture(skin, number) {
     // exhibit number
     ctx.fillStyle = '#c9a45c'; ctx.textBaseline = 'middle'; ctx.textAlign = 'center';
     ctx.font = `500 26px ${SANS}`; spaced(ctx, 6);
-    ctx.fillText('Nº', 112, 92);
+    ctx.fillText('Nº', 112, h / 2 - 52);
     ctx.font = `500 92px ${SERIF}`; spaced(ctx, 0);
-    ctx.fillText(String(number).padStart(2, '0'), 112, 172);
+    ctx.fillText(String(number).padStart(2, '0'), 112, h / 2 + 28);
     ctx.fillStyle = 'rgba(201,164,92,0.45)'; ctx.fillRect(196, 52, 2, h - 104);
 
     // text block
@@ -123,11 +124,26 @@ export function plaqueTexture(skin, number) {
     fitText(ctx, title, maxW, 84, (s) => `600 ${s}px ${SERIF}`, 36);
     ctx.fillText(title, x - 3, 150);
 
+    let metaY = 232;
+    if (tag) {
+      // the owner's name tag, as written (case and digits kept exactly)
+      ctx.fillStyle = '#9a8e78'; spaced(ctx, 6);
+      ctx.font = `500 22px ${SANS}`;
+      ctx.fillText('NAME TAG', x, 236);
+      const labelW = ctx.measureText('NAME TAG').width + 24;
+      ctx.fillStyle = '#f0cf85'; spaced(ctx, 1);
+      const quoted = `“${tag}”`;
+      fitText(ctx, quoted, maxW - labelW, 52, (s) => `500 ${s}px ${SANS}`, 22);
+      ctx.fillText(quoted, x + labelW, 232);
+      ctx.fillStyle = 'rgba(201,164,92,0.28)'; ctx.fillRect(x, 272, maxW, 1.5);
+      metaY = 316;
+    }
+
     const meta = [skin.exterior, skin.rarity, skin.category].filter(Boolean).join('   ·   ').toUpperCase();
-    ctx.fillStyle = skin.rarityColor; ctx.beginPath(); ctx.arc(x + 10, 230, 10, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = skin.rarityColor; ctx.beginPath(); ctx.arc(x + 10, metaY - 2, 10, 0, Math.PI * 2); ctx.fill();
     ctx.fillStyle = '#b3a791'; spaced(ctx, 4);
     fitText(ctx, meta, maxW - 36, 29, (s) => `400 ${s}px ${SANS}`);
-    ctx.fillText(meta, x + 36, 232);
+    ctx.fillText(meta, x + 36, metaY);
   });
 }
 
@@ -153,6 +169,24 @@ export function letteringTexture(title, subtitle, { w = 2048, h = 512 } = {}) {
       ctx.fillText(subtitle.toUpperCase(), w / 2 + 8, y + size * 0.62 + h * 0.13);
     }
   });
+}
+
+/**
+ * True when an image has a transparent surround (a cut-out that should float),
+ * false for a rectangular picture such as an in-game screenshot.
+ */
+export function isCutout(image) {
+  const n = 24;
+  const c = document.createElement('canvas');
+  c.width = c.height = n;
+  const ctx = c.getContext('2d', { willReadFrequently: true });
+  ctx.drawImage(image, 0, 0, n, n);
+  const px = ctx.getImageData(0, 0, n, n).data;
+  let clear = 0;
+  for (let i = 0; i < n; i++) {
+    for (const [x, y] of [[i, 0], [i, n - 1], [0, i], [n - 1, i]]) if (px[(y * n + x) * 4 + 3] < 24) clear++;
+  }
+  return clear / (n * 4) > 0.5;
 }
 
 /** Blurred black silhouette of an image, used as a fake drop shadow. */

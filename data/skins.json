@@ -58,7 +58,10 @@
       "market": "https://steamcommunity.com/market/listings/730/AWP%20%7C%20Dragon%20Lore%20(Factory%20New)",
       "featured": true,
       "display": "hero",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "52697697818",
@@ -116,7 +119,10 @@
       "market": "https://steamcommunity.com/market/listings/730/M4A4%20%7C%20Howl%20(Minimal%20Wear)",
       "featured": true,
       "display": "hero",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "47544527361",
@@ -169,7 +175,10 @@
       "market": "https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20AK-47%20%7C%20Fire%20Serpent%20(Minimal%20Wear)",
       "featured": true,
       "display": "hero",
-      "note": "Final Boss AK (Titan Holo Kato 14 Lineup)"
+      "note": "Final Boss AK (Titan Holo Kato 14 Lineup)",
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "52244166084",
@@ -212,7 +221,10 @@
       "market": "https://steamcommunity.com/market/listings/730/Glock-18%20%7C%20Dragon%20Tattoo%20(Factory%20New)",
       "featured": false,
       "display": "wall",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "52497143946",
@@ -260,7 +272,10 @@
       "market": "https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Case%20Hardened%20(Minimal%20Wear)",
       "featured": false,
       "display": "wall",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "48532534134",
@@ -293,7 +308,10 @@
       "market": "https://steamcommunity.com/market/listings/730/AK-47%20%7C%20Panthera%20onca%20(Factory%20New)",
       "featured": false,
       "display": "wall",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "54435511885",
@@ -331,7 +349,10 @@
       "market": null,
       "featured": false,
       "display": "wall",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "54418498842",
@@ -358,7 +379,10 @@
       "market": null,
       "featured": false,
       "display": "wall",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "54410501608",
@@ -416,7 +440,10 @@
       "market": "https://steamcommunity.com/market/listings/730/M4A1-S%20%7C%20Hot%20Rod%20(Factory%20New)",
       "featured": false,
       "display": "wall",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "54409941376",
@@ -464,7 +491,10 @@
       "market": "https://steamcommunity.com/market/listings/730/USP-S%20%7C%20Stainless%20(Field-Tested)",
       "featured": false,
       "display": "wall",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "54410543988",
@@ -512,7 +542,10 @@
       "market": "https://steamcommunity.com/market/listings/730/Desert%20Eagle%20%7C%20Hypnotic%20(Factory%20New)",
       "featured": false,
       "display": "wall",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "54032362374",
@@ -545,7 +578,10 @@
       "market": "https://steamcommunity.com/market/listings/730/StatTrak%E2%84%A2%20P250%20%7C%20Steel%20Disruption%20(Minimal%20Wear)",
       "featured": false,
       "display": "wall",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "54410429036",
@@ -572,7 +608,10 @@
       "market": "https://steamcommunity.com/market/listings/730/%E2%98%85%20Sport%20Gloves%20%7C%20Pandora's%20Box%20(Minimal%20Wear)",
       "featured": false,
       "display": "pedestal",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "53601763605",
@@ -599,7 +638,10 @@
       "market": "https://steamcommunity.com/market/listings/730/%E2%98%85%20Sport%20Gloves%20%7C%20Hedge%20Maze%20(Minimal%20Wear)",
       "featured": false,
       "display": "pedestal",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "47367519750",
@@ -626,7 +668,10 @@
       "market": "https://steamcommunity.com/market/listings/730/%E2%98%85%20StatTrak%E2%84%A2%20Karambit%20%7C%20Fade%20(Factory%20New)",
       "featured": false,
       "display": "pedestal",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "54205409666",
@@ -653,7 +698,10 @@
       "market": "https://steamcommunity.com/market/listings/730/%E2%98%85%20Flip%20Knife%20%7C%20Doppler%20(Factory%20New)",
       "featured": false,
       "display": "pedestal",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "48689107877",
@@ -680,7 +728,10 @@
       "market": "https://steamcommunity.com/market/listings/730/%E2%98%85%20Gut%20Knife%20%7C%20Rust%20Coat%20(Battle-Scarred)",
       "featured": false,
       "display": "pedestal",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "54410429037",
@@ -707,7 +758,10 @@
       "market": "https://steamcommunity.com/market/listings/730/%E2%98%85%20Butterfly%20Knife%20%7C%20Doppler%20(Factory%20New)",
       "featured": false,
       "display": "pedestal",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "54100263214",
@@ -734,7 +788,10 @@
       "market": "https://steamcommunity.com/market/listings/730/%E2%98%85%20Butterfly%20Knife%20%7C%20Gamma%20Doppler%20(Factory%20New)",
       "featured": false,
       "display": "pedestal",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "54462560137",
@@ -761,7 +818,10 @@
       "market": null,
       "featured": false,
       "display": "pedestal",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "53146633330",
@@ -788,7 +848,10 @@
       "market": null,
       "featured": false,
       "display": "pedestal",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     },
     {
       "id": "52983920210",
@@ -815,7 +878,10 @@
       "market": null,
       "featured": false,
       "display": "pedestal",
-      "note": null
+      "note": null,
+      "ingame": null,
+      "model": null,
+      "modelRotation": null
     }
   ]
 }

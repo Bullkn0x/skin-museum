@@ -64,11 +64,12 @@
     <canvas id="minimap" width="150" height="320"></canvas>
     <div id="crosshair"></div>
     <div id="prompt" class="prompt"><kbd>E</kbd><span id="prompt-text">Inspect</span></div>
+    <div class="turn-hint">Drag to turn it</div>
     <div class="legend"><kbd>WASD</kbd> walk <span class="drag-only"><kbd>Drag</kbd> look</span> <kbd>Shift</kbd> faster <kbd>E</kbd> inspect <kbd>M</kbd> map</div>
   </div>
 
   <!-- Exhibit detail -->
-  <aside id="panel" class="panel" aria-hidden="true">
+  <aside id="panel" class="panel" aria-hidden="true" inert>
     <button class="panel-close" id="panel-close" aria-label="Close">✕</button>
     <div class="panel-scroll" id="panel-body"></div>
     <div class="panel-nav">

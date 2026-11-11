@@ -9,6 +9,12 @@
  *   node scripts/sync-skins.mjs --list        print every item in the inventory (asset id + name)
  *   node scripts/sync-skins.mjs --list karambit   ...filtered by a search term
  *   node scripts/sync-skins.mjs --showcase    replace the item list with the profile's Item Showcase
+ *   node scripts/sync-skins.mjs --images      only re-scan assets/ingame/ for pictures (no Steam requests)
+ *
+ * In-game pictures: save a screenshot of the actual item as assets/ingame/<asset id>.png
+ * (or .jpg / .webp) and the display shows it instead of Steam's stock render.
+ * 3D models: save a binary glTF as assets/models/<asset id>.glb and the display shows
+ * the real model instead of any picture.
  *
  * Per-item keys in museum.config.json:
  *   asset     Steam asset id (the number at the end of an inventory link)
@@ -17,11 +23,14 @@
  *   featured  true = gets a hero spot (first featured item takes the end wall)
  *   display   "wall" | "pedestal" | "hero" - override the automatic placement
  *   note      your own curator's note, shown in the detail panel
- *   image     path to your own render/screenshot to use instead of the Steam icon
- *   float, pattern, nameTag   manual overrides when Steam does not expose them
+ *   image     path to an in-game picture, if it is not at assets/ingame/<asset id>.<ext>
+ *   model     path to a .glb, if it is not at assets/models/<asset id>.glb
+ *   modelRotation   [x, y, z] in degrees, to turn a model that faces the wrong way
+ *   float, pattern, nameTag, inspect   manual values when Steam does not expose them
  */
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import { existsSync } from 'node:fs';
+import { existsSync, statSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -44,7 +53,67 @@ const RARITY_COLORS = {
 const RARITIES = Object.keys(RARITY_COLORS).sort((a, b) => b.length - a.length);
 const PEDESTAL_CATEGORIES = /knife|gloves|collectible|charm|sticker|agent|patch|music|container|graffiti/i;
 
+const INGAME_DIR = 'assets/ingame';
+const INGAME_EXT = ['png', 'jpg', 'jpeg', 'webp'];
+const WEB_MAX_PX = 2048;          // longest edge served to the browser
+const WEB_MAX_BYTES = 900 * 1024; // originals above this get a lighter copy
+
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/** The picture the user saved for this item, if any. */
+function findIngame(entry) {
+  if (entry.image) return existsSync(path.join(ROOT, entry.image)) ? entry.image : null;
+  for (const ext of INGAME_EXT) {
+    const rel = `${INGAME_DIR}/${entry.asset}.${ext}`;
+    if (existsSync(path.join(ROOT, rel))) return rel;
+  }
+  return null;
+}
+
+/**
+ * 4K screenshots are far too heavy for a web page. On macOS, write a web-sized copy
+ * to assets/ingame/web/ with the built-in `sips` tool; elsewhere use the original.
+ */
+function webCopy(rel) {
+  const src = path.join(ROOT, rel);
+  const sips = (...args) => execFileSync('sips', args, { stdio: ['ignore', 'pipe', 'ignore'] }).toString();
+  try {
+    const info = sips('-g', 'pixelWidth', '-g', 'pixelHeight', '-g', 'hasAlpha', src);
+    const px = Math.max(Number(/pixelWidth: (\d+)/.exec(info)?.[1]), Number(/pixelHeight: (\d+)/.exec(info)?.[1]));
+    if (px <= WEB_MAX_PX && statSync(src).size <= WEB_MAX_BYTES) return rel;
+    const alpha = /hasAlpha: yes/.test(info);
+    const outRel = `${INGAME_DIR}/web/${path.parse(rel).name}.${alpha ? 'png' : 'jpg'}`;
+    const out = path.join(ROOT, outRel);
+    if (existsSync(out) && statSync(out).mtimeMs >= statSync(src).mtimeMs) return outRel;
+    execFileSync('mkdir', ['-p', path.dirname(out)]);
+    const fmt = alpha ? ['-s', 'format', 'png'] : ['-s', 'format', 'jpeg', '-s', 'formatOptions', '88'];
+    sips(...fmt, '-Z', String(Math.min(px, WEB_MAX_PX)), src, '--out', out);
+    return outRel;
+  } catch {
+    if (statSync(src).size > 3 * 1024 * 1024) console.warn(`  ! ${rel} is large (${(statSync(src).size / 1048576).toFixed(1)} MB) - consider resizing it`);
+    return rel;
+  }
+}
+
+function attachIngame(skins, config) {
+  const entries = new Map(config.items.map((e) => [String(e.asset), e]));
+  let n = 0, models = 0;
+  for (const s of skins) {
+    const entry = entries.get(s.id) || { asset: s.id };
+    const rel = findIngame(entry);
+    s.ingame = rel ? webCopy(rel) : null;
+    if (s.ingame) { n++; console.log(`  in-game picture: ${s.marketHashName}  <- ${rel}`); }
+
+    const glb = entry.model || `assets/models/${s.id}.glb`;
+    s.model = existsSync(path.join(ROOT, glb)) ? glb : null;
+    s.modelRotation = s.model && entry.modelRotation ? entry.modelRotation : null;
+    if (s.model) {
+      models++;
+      console.log(`  3D model: ${s.marketHashName}  <- ${glb} (${(statSync(path.join(ROOT, glb)).size / 1048576).toFixed(1)} MB)`);
+    }
+  }
+  console.log(`${n} of ${skins.length} exhibits have an in-game picture, ${models} have a 3D model (the rest show the Steam render)`);
+}
 
 async function get(url, { tries = 4, as = 'text' } = {}) {
   for (let i = 0; i < tries; i++) {
@@ -159,7 +228,9 @@ function buildSkin(entry, desc, prop, steamId) {
   const cert = pv(6)?.string_value;
   const inspectTemplate = (desc.actions || [])[0]?.link;
   let inspect = null;
-  if (inspectTemplate && inspectTemplate.includes('%propid:6%')) {
+  if (entry.inspect) {
+    inspect = entry.inspect;
+  } else if (inspectTemplate && inspectTemplate.includes('%propid:6%')) {
     inspect = cert ? inspectTemplate.replace('%propid:6%', cert) : null;
   } else if (inspectTemplate) {
     inspect = inspectTemplate.replace('%owner_steamid%', steamId).replace('%assetid%', entry.asset);
@@ -186,7 +257,8 @@ function buildSkin(entry, desc, prop, steamId) {
     float: floatRaw != null ? Number(floatRaw) : null,
     pattern: entry.pattern ?? (pv(1)?.int_value != null ? Number(pv(1).int_value) : null),
     stickers, charm,
-    image: entry.image || null,
+    image: null,      // Steam's stock render, downloaded below
+    ingame: null,     // the owner's in-game picture, attached below
     iconUrl: desc.icon_url_large || desc.icon_url,
     inspect,
     market: desc.marketable === 0 ? null : `https://steamcommunity.com/market/listings/${APP}/${encodeURIComponent(desc.market_hash_name)}`,
@@ -248,6 +320,14 @@ async function main() {
     return;
   }
 
+  if (args[0] === '--images') {
+    const out = JSON.parse(await readFile(OUT_PATH, 'utf8'));
+    attachIngame(out.skins, config);
+    await writeFile(OUT_PATH, JSON.stringify(out, null, 2) + '\n');
+    console.log('Updated data/skins.json');
+    return;
+  }
+
   console.log('Fetching inventory...');
   const inv = await fetchInventory(steamId);
 
@@ -283,6 +363,7 @@ async function main() {
 
   console.log('Downloading images...');
   await localiseImages(skins);
+  attachIngame(skins, config);
 
   const out = {
     museum: { title: config.title, subtitle: config.subtitle, curator: config.curator, profile: config.profile },
