@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Skin Museum</title>
+  <meta name="description" content="A walk-through 3D museum of legendary CS2 skins.">
+  <meta name="theme-color" content="#060608">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three/build/three.module.js",
+        "three/addons/": "./vendor/three/addons/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="scene" tabindex="-1"></canvas>
+
+  <!-- Entrance -->
+  <section id="intro" class="overlay is-open">
+    <div class="intro-card">
+      <p class="kicker" id="intro-kicker">A private collection</p>
+      <h1 id="intro-title">The Collection</h1>
+      <p class="lede" id="intro-subtitle"></p>
+      <div class="rule"><span></span><i>❦</i><span></span></div>
+      <ul class="controls controls-touch">
+        <li><span class="keys"><kbd>Left pad</kbd></span> Walk</li>
+        <li><span class="keys"><kbd>Drag</kbd></span> Look around</li>
+        <li><span class="keys"><kbd>Tap</kbd></span> the prompt to inspect a display</li>
+      </ul>
+      <ul class="controls controls-keys">
+        <li><span class="keys"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd></span> Walk</li>
+        <li><span class="keys"><kbd>Mouse</kbd></span> Look around</li>
+        <li><span class="keys"><kbd>Shift</kbd></span> Walk faster</li>
+        <li><span class="keys"><kbd>E</kbd></span> Inspect a display</li>
+      </ul>
+      <div class="progress" id="progress"><div class="progress-bar" id="progress-bar"></div></div>
+      <button id="enter" class="btn btn-primary" disabled>Loading the collection…</button>
+      <p class="fineprint" id="intro-count"></p>
+    </div>
+  </section>
+
+  <!-- Paused (pointer released) -->
+  <section id="pause" class="overlay">
+    <div class="pause-card">
+      <p class="kicker">Paused</p>
+      <h2>Click to step back in</h2>
+      <p class="fineprint">WASD to walk · Mouse to look · E to inspect · M for the map</p>
+    </div>
+  </section>
+
+  <!-- Heads-up display -->
+  <div id="hud" class="hud">
+    <div class="brand">
+      <span class="brand-title" id="hud-title"></span>
+      <span class="brand-sub" id="hud-sub"></span>
+    </div>
+    <canvas id="minimap" width="150" height="320"></canvas>
+    <div id="crosshair"></div>
+    <div id="prompt" class="prompt"><kbd>E</kbd><span id="prompt-text">Inspect</span></div>
+    <div class="legend"><kbd>WASD</kbd> walk <span class="drag-only"><kbd>Drag</kbd> look</span> <kbd>Shift</kbd> faster <kbd>E</kbd> inspect <kbd>M</kbd> map</div>
+  </div>
+
+  <!-- Exhibit detail -->
+  <aside id="panel" class="panel" aria-hidden="true">
+    <button class="panel-close" id="panel-close" aria-label="Close">✕</button>
+    <div class="panel-scroll" id="panel-body"></div>
+    <div class="panel-nav">
+      <button class="btn btn-ghost" id="panel-prev">← Previous</button>
+      <button class="btn btn-ghost" id="panel-back"><kbd>E</kbd> Step back</button>
+      <button class="btn btn-ghost" id="panel-next">Next →</button>
+    </div>
+  </aside>
+
+  <!-- Touch controls -->
+  <div id="touch" class="touch">
+    <div id="stick" class="stick"><div id="stick-knob" class="stick-knob"></div></div>
+  </div>
+
+  <div id="fatal" class="fatal"></div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
