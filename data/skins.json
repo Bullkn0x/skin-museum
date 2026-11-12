@@ -22,9 +22,9 @@
       "collection": "The Cobblestone Collection",
       "description": "High risk and high reward, the infamous AWP is recognizable by its signature report and one-shot, one-kill policy. It has been custom painted with a knotwork dragon.",
       "flavor": "200 keys could never unlock its secrets",
-      "nameTag": null,
-      "float": null,
-      "pattern": null,
+      "nameTag": "P250 | Sand Dune",
+      "float": 0.009406151250004768,
+      "pattern": 215,
       "stickers": [
         {
           "name": "Crown (Foil)",
@@ -54,13 +54,13 @@
         "pattern": null
       },
       "image": "assets/skins/54410428513.png",
-      "inspect": null,
+      "inspect": "steam://run/730//+csgo_econ_action_preview%209E8E7F1E6B46549F8697BE469CB698AE9AA65C26767E9DDE499FFC9A969D8EBBFC91969E8E35A0A35ED272A3DBBE1EED22FC91969A8E46DEA338D411A0DBEE81B1A3FC91969A8E61BFA3087610A0DB4EE319A3F61E9CEE9A3C9F8B969E8EBBA3B848095EDBCA17A2A1D30EE563DEFEAAF7C2EAC2",
       "market": "https://steamcommunity.com/market/listings/730/AWP%20%7C%20Dragon%20Lore%20(Factory%20New)",
       "featured": true,
       "display": "hero",
       "note": null,
       "ingame": null,
-      "model": null,
+      "model": "assets/models/54410428513.glb",
       "modelRotation": null
     },
     {
@@ -121,7 +121,7 @@
       "display": "hero",
       "note": null,
       "ingame": null,
-      "model": null,
+      "model": "assets/models/52697697818.glb",
       "modelRotation": null
     },
     {
@@ -177,7 +177,7 @@
       "display": "hero",
       "note": "Final Boss AK (Titan Holo Kato 14 Lineup)",
       "ingame": null,
-      "model": null,
+      "model": "assets/models/47544527361.glb",
       "modelRotation": null
     },
     {
@@ -310,7 +310,7 @@
       "display": "wall",
       "note": null,
       "ingame": null,
-      "model": null,
+      "model": "assets/models/48532534134.glb",
       "modelRotation": null
     },
     {

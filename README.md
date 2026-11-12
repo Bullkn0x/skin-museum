@@ -84,7 +84,7 @@ A name tag, where the item has one, is engraved on its plaque automatically.
 
 ## 3D models
 
-A display shows a real model instead of a picture when `assets/models/<asset id>.glb` exists (run the same `--images` command to register it). Models turn slowly in the glass cases, sway in the wall frames, and can be dragged around while inspecting. See `docs/3d-pilot.md` for the model requirements and the pilot plan.
+A display shows a real model instead of a picture when `assets/models/<asset id>.glb` exists (run the same `--images` command to register it). Models turn slowly in the glass cases, float parallel to the canvas in the wall frames, and can be dragged around while inspecting (a framed model moves forward as it turns so it never passes through the canvas). See `docs/3d-pilot.md` for the model requirements and the pilot plan.
 
 ## Hosting
 
