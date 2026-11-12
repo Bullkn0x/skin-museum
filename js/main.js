@@ -113,6 +113,7 @@ async function init() {
     gltf.setMeshoptDecoder(MeshoptDecoder);
     for (const d of modelled) {
       gltf.loadAsync(d.skin.model)
+        .then((g) => museum.prepareModel(g))   // sticker draw order, holo sticker textures
         .then((g) => {
           museum.attachModel(d, g.scene, d.skin.modelRotation);
           if (d === inspecting) document.body.classList.add('has-model');

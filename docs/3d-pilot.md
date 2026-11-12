@@ -87,10 +87,10 @@ Windows PC, 11 November 2026. Result: `assets/models/47544527361.glb`, 4.7 MB. I
 
 ### What was faked or left out
 
-- **Titan holo is static.** In game its colour shifts with the viewing angle. Here it is frozen at the angle where the foil is brightest. The holo mask and spectrum textures are carried in the GLB (the sticker material's `extras.holo`) so a view-dependent shader can be added on the web side.
+- **Titan holo is static in the file.** In game its colour shifts with the viewing angle. The GLB's own texture holds one frozen angle; the holo mask and spectrum textures are carried alongside (the sticker material's `extras.holo`). The museum now uses those to draw the live effect (see "Later the same day").
 - **Where the scratches sit is unverified.** The game offsets and rotates the wear texture by pattern seed in client code that cannot be read from the files. The old CS:GO draw order was used for seed 545. If CS2 differs, the 2% of wear is in different spots from the real item.
 - **Sticker mask is per triangle,** not per pixel as in game. Edges of the allowed area follow mesh edges.
-- **Charm is not included.** Semi-Precious changes colour with its pattern (8311) through a hue shift that was not recovered; a wrong-coloured charm seemed worse than none.
+- **Charm was left out of the pilot** and added later the same day, with its colour still a guess (see "Later the same day").
 - **Small shading differences.** Valve darkens diffuse light on metals more steeply than glTF does, and gives stickers a faint raised edge. Neither is reproduced.
 
 ### How close it is
@@ -110,7 +110,7 @@ The compositor covers one of the game's nine paint styles. The collection splits
 
 | Paint style | Exhibits | Status |
 |---|---|---|
-| Custom paint | AWP Dragon Lore, M4A4 Howl, AK-47 Fire Serpent, AK-47 Panthera onca | Same path as this pilot |
+| Custom paint | AWP Dragon Lore, M4A4 Howl, AK-47 Fire Serpent, AK-47 Panthera onca | Built |
 | Anodized multicolour | Glock Dragon Tattoo, M4A1-S Knight, M4A1-S Hot Rod, P250 Steel Disruption, Flip Doppler, Butterfly Doppler, Butterfly Gamma Doppler | New shader path to port |
 | Patina | AK-47 Case Hardened, USP-S Stainless, Gut Rust Coat | New shader path to port |
 | Anodized airbrush | Desert Eagle Hypnotic, Karambit Fade, Butterfly Fade | New shader path to port |
@@ -127,6 +127,50 @@ Do the hero pieces next, not all 22 yet.
 2. Dragon Lore, Howl and Panthera onca use the same shader path, so they are cheap once a driver script exists.
 3. Hold the Dopplers, Fades and Case Hardened until step 1 confirms the seed handling. On those the seed decides the whole look, so an unverified seed would make a confidently wrong model.
 4. Gloves and pins: keep in-game pictures.
+
+### Second round: the other three custom-paint finishes
+
+Same day. `work/pipeline/make_item.py <asset id>` now builds an exhibit from its asset id alone: it decodes the inspect link, finds the weapon model, materials, finish and stickers in the game files, and writes the GLB. Rebuilding the Fire Serpent through it gives the same model.
+
+| Exhibit | File | Item data | Notes |
+|---|---|---|---|
+| AK-47 Panthera onca | `48532534134.glb`, 2.8 MB | Exact (float 0.0068, seed 912) | The finish brings its own normal map (the carved wood), which replaces the gun's. One sticker, name tag. |
+| M4A4 Howl | `52697697818.glb`, 4.8 MB | Exact (float 0.0766, seed 531) | Five hand-placed stickers, four of them rotated holos, one scraped to 0.98 wear. Name tag, sticker-slab charm. |
+| AWP Dragon Lore | `54410428513.glb`, 6.7 MB | Exact (float 0.0094, seed 215) | Four stickers: one in its default spot on the scope, three hand-placed in a stack on the stock, two of them overlapping. Name tag, sticker-slab charm. First built from guesses; see below. |
+
+**The Dragon Lore was first built from guesses, then rebuilt from its real data.** Steam's public inventory does not list this item (checked 11 November; the same is true of the Safari Mesh, Knight, Hot Rod, Pandora's Box, Butterfly Doppler and Butterfly Fade), so the first build used float 0.035, seed 0 and the four stickers in their default slots. That put three of the four stickers in the wrong place. The real values came later the same day; see "The Dragon Lore's real data" below.
+
+What this round added, and how sure it is:
+
+- **Hand-placed stickers.** The inspect link stores a sticker's position as an offset from its slot's own position, in the model's sticker coordinates. Checked two ways: with that reading every sticker centre on the Howl and on the Case Hardened AK falls inside the model's allowed sticker regions, and with the other readings several fall outside. The **rotation direction is not verified** (it only affects the four slash-shaped holos on the Howl).
+- **Sticker wear** is ported from the shader. The Howl's "Jackass" sticker at 0.98 wear comes out reading "ass", which is the craft the owner made, so placement and wear agree with the real item at least there.
+- **Foil and gold stickers** use the shader's metallic path: metal reflectance fitted from the picture, plus the sticker's own embossed normal and roughness maps.
+- **Wear level is still unverified.** The M4A4 and AWP wear maps are much brighter than the AK's, so the same float removes more paint on them. That is what the game data says, but it has not been compared with a screenshot.
+
+In the museum all four models load with no errors. The Dragon Lore first bloomed: its pale finish and foil stickers were over-lit by the hall's ceiling point lights (`work/screens/dragonlore_lights_compare.png`). The owner approved lighting models from the environment only, and `attachModel` now does that.
+
+### Later the same day: sticker colour, holo, name tags, charms
+
+All at the owner's request, after looking at the models in the museum.
+
+- **Metallic sticker colour was wrong and is fixed.** Foil and gold stickers came out nearly grey. The shader uses `1 - tintSaturate`, and that had been read the wrong way round, which threw away the picture's colour. Every sticker on the four guns has since been compared with Steam's own picture of it (`work/screens/sticker_colours_vs_steam_*.png`); hues agree. Steam's pictures are lit renders, so brightness and gloss are not comparable, only colour.
+- **Holographic stickers are now live in the museum.** `js/museum.js` draws them with the game's lookup, `u = mask.g + V·N + V·L`, using the mask and spectrum textures in the GLB and the game's colour fitting. The foil shifts as the visitor moves or turns the gun. Two things are not the game's: the key-light direction `L` is a fixed direction chosen for the hall (the game's inspect light is not in the files), and the museum's lighting and bloom are its own. The frozen angle stored in the GLB, for other viewers, is now the one whose colour is closest to Steam's picture.
+- **Name tags.** The plate is the game's `nametag_module` at each gun's `nametag` attachment, with the label drawn the way the game's recipe says (position, colour, "Arial Narrow"). Arial Narrow is not installed on this PC, so plain Arial squeezed to its width was used, and the recipe gives no font size, so the size is an estimate. Howl, Panthera onca and Dragon Lore have tags; the Fire Serpent has none.
+- **Charms.** Each hangs from the attach point stored in the inspect link. The Howl's is the sticker slab holding its Team Dignitas holo. Three caveats: the slab is clear plastic in game and is drawn opaque; the slab's printed label is not reproduced; and the Fire Serpent's Semi-Precious is recoloured by template number (8311) in game code that is not in the files, so its hue was matched to Steam's picture of the charm and **may not be this one's real colour**. The Dragon Lore's is a slab too, holding a Team Dignitas | Katowice 2014 sticker, with the same caveats.
+
+### The Dragon Lore's real data
+
+The owner signed in to `steamcommunity.com` in the browser pane, and the signed-in view of the ordinary inventory (`/inventory/<steam id>/730/2`) lists the items the anonymous view leaves out, each with its float, seed, name tag and inspect data (asset property 6). The trade-protected list (context 16) held only the Butterfly Fade. The values for all seven hidden exhibits are saved in `work/build/steam_owner_view_2026-11-11.json`.
+
+For the Dragon Lore: float 0.0094, seed 215, name tag "P250 | Sand Dune", a sticker-slab charm, and four stickers. The Crown foil sits in its default slot on the scope. The other three were placed by hand on the butt of the stock, one above the other, so the gun reads BIG / FLOPPY / DICK from top to bottom; the last two overlap, with the later one on top. That the three land in a tidy stack with the names lined up is good evidence the placement reading is right for this gun as well.
+
+These values are now in `museum.config.json` as manual values for this item (the sync script's own mechanism for items Steam hides) and in `data/skins.json`, so `make_item.py 54410428513` rebuilds the same file with no options. The museum's detail panel shows the float, pattern and name tag as a result.
+
+**Overlapping stickers needed a museum fix.** The game paints sticker layers in order, so a later sticker covers an earlier one. In the GLB each sticker is a see-through decal a hair further off the surface than the one before, which Blender draws correctly. three.js instead draws see-through meshes back to front by the centre of each mesh, then by creation order, so the overlap on the Dragon Lore came out the wrong way round and could have flipped with the viewing angle. `prepareModel` in `js/museum.js` now gives a model's stickers one shared sort centre and re-creates them in sticker order. Checked on the Dragon Lore in the museum against the Blender render (`work/screens/museum_dragonlore_real_stock.jpg`, `work/screens/dragonlore_real_stock_check_render.png`).
+
+Still not checked against the game itself: nothing here has been compared with an in-game screenshot, including which of two overlapping stickers is on top (taken from the shader's layer order and the order of the stickers in the inspect data).
+
+The four models total 19.7 MB (the Fire Serpent is now 5.5 MB with its charm, the Dragon Lore 6.7 MB) and the museum fetches all of them when the doors open.
 
 ### Museum change made alongside
 

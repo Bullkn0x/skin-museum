@@ -506,6 +506,99 @@ export function buildMuseum(scene, data, images, renderer) {
 
   // ---- real 3D models -------------------------------------------------------
   const _bounds = new THREE.Box3(), _size = new THREE.Vector3(), _centre = new THREE.Vector3();
+
+  // Holographic stickers. A model's sticker material carries, in `userData.holo`, a mask
+  // (r = how holographic, g = offset into the spectrum, b = which row of it) and a spectrum
+  // strip. The game picks the colour by viewing angle: u = mask.g + V.N + V.L, where V points at
+  // the camera, N is the surface normal and L the key light. The texture in the file holds one
+  // frozen angle (`bakedPhase`); this swaps that for the live one, so the foil shifts as the
+  // visitor moves or turns the gun. The colour fitting is the game's own.
+  const HOLO_LIGHT = new THREE.Vector3(0.25, 0.9, 0.35).normalize();
+  const HOLO_PARS = /* glsl */`
+    uniform sampler2D uHoloMask;
+    uniform sampler2D uHoloSpectrum;
+    uniform float uHoloPhase;
+    uniform float uHoloBoost;
+    uniform vec3 uHoloLight;
+    varying vec3 vHoloPos;
+    varying vec3 vHoloNormal;
+    vec3 holoFit( vec3 s ) {
+      const vec3 W = vec3( 0.2125, 0.7154, 0.0721 );
+      const vec3 H = vec3( 0.05, 0.6214905, 0.85 );
+      float lum = dot( clamp( s * uHoloBoost, 0.0, 1.0 ), W );
+      vec3 n = normalize( max( vec3( 0.0003 ), s ) ) * 1.06;
+      vec3 a = ( n * H.x * 1.732 / length( n ) ) / dot( n, W );
+      vec3 b = n * mix( H.x, H.z, clamp( pow( max( s.r, max( s.g, s.b ) ) * uHoloBoost, H.y ), 0.0, 1.0 ) );
+      vec3 v = max( a, b );
+      v = mix( v, min( vec3( H.z ), v + vec3( lum ) * uHoloBoost ), max( 0.0, uHoloBoost - 1.0 ) / 63.0 );
+      return mix( vec3( H.x ), v, sqrt( smoothstep( 0.0003, H.x, lum ) ) );
+    }`;
+  const HOLO_MAIN = /* glsl */`
+    {
+      vec3 hMask = texture2D( uHoloMask, vMapUv ).rgb;
+      if ( hMask.r > 0.0 ) {
+        vec3 hView = normalize( cameraPosition - vHoloPos );
+        float hU = hMask.g + dot( hView, normalize( vHoloNormal ) ) + dot( hView, uHoloLight );
+        vec3 hLive = holoFit( texture2D( uHoloSpectrum, vec2( hU, hMask.b ) ).rgb );
+        vec3 hStill = holoFit( texture2D( uHoloSpectrum, vec2( hMask.g + uHoloPhase, hMask.b ) ).rgb );
+        diffuseColor.rgb = max( diffuseColor.rgb + ( hLive - hStill ) * hMask.r, vec3( 0.0 ) );
+      }
+    }`;
+
+  /**
+   * Get a loaded model ready for attachModel: put its stickers in drawing order and fetch the
+   * extra textures its holographic stickers need.
+   */
+  async function prepareModel(gltf) {
+    // Where stickers overlap, the one applied later lies on top. They are see-through decals, and
+    // three.js draws those back to front by the centre of each mesh, then in the order the meshes
+    // were created. Left alone, the order would change with the viewing angle and with which
+    // texture happened to load first. So a model's stickers (siblings with no transform of their
+    // own) get one shared centre and are re-created in sticker order.
+    const layers = new Map();
+    gltf.scene.traverse((o) => {
+      const n = o.isMesh && /^sticker_(\d+)$/.exec(o.name);
+      if (!n) return;
+      if (!layers.has(o.parent)) layers.set(o.parent, []);
+      layers.get(o.parent).push([Number(n[1]), o]);
+    });
+    for (const [parent, list] of layers) {
+      list.sort((x, y) => x[0] - y[0]);
+      const box = new THREE.Box3();
+      for (const [, o] of list) {
+        o.geometry.computeBoundingBox();
+        box.union(o.geometry.boundingBox);
+      }
+      const shared = box.getBoundingSphere(new THREE.Sphere());
+      for (const [, o] of list) {
+        o.geometry.boundingSphere = shared.clone();
+        parent.remove(o);
+        parent.add(o.clone());
+      }
+    }
+
+    const jobs = [];
+    gltf.scene.traverse((o) => {
+      if (!o.isMesh) return;
+      for (const m of Array.isArray(o.material) ? o.material : [o.material]) {
+        const h = m.userData?.holo;
+        if (!h || h.maskTexture == null || h.spectrumTexture == null || !m.map) continue;
+        jobs.push(Promise.all([
+          gltf.parser.getDependency('texture', h.maskTexture),
+          gltf.parser.getDependency('texture', h.spectrumTexture),
+        ]).then(([mask, spectrum]) => {
+          mask.colorSpace = THREE.NoColorSpace;
+          spectrum.colorSpace = THREE.SRGBColorSpace;
+          spectrum.wrapS = THREE.RepeatWrapping;       // the angle wraps around the strip
+          spectrum.wrapT = THREE.ClampToEdgeWrapping;
+          mask.needsUpdate = true; spectrum.needsUpdate = true;
+          m.userData.holoMaps = { mask, spectrum };
+        }).catch(() => { /* the still holo in the texture is shown instead */ }));
+      }
+    });
+    await Promise.all(jobs);
+    return gltf;
+  }
   /**
    * Swap a display's flat picture for a real model (a loaded glTF scene). The model is
    * centred, scaled to fit and lit by the studio environment. From then on it turns
@@ -538,6 +631,29 @@ export function buildMuseum(scene, data, images, renderer) {
         if (!m.isMeshStandardMaterial) continue;
         m.envMap = scene.environment;   // its own studio light, brighter than the dim room
         m.envMapIntensity = 0.5;        // higher washes out paint and blooms glossy stickers
+        // The hall's ceiling lights sit close to the walls and blow out pale finishes and foil
+        // stickers, so a model takes only the environment and the sky light, not the lamps.
+        const holo = m.userData.holoMaps ? m.userData.holo : null;
+        m.onBeforeCompile = (shader) => {
+          shader.fragmentShader = shader.fragmentShader.replace(
+            '#include <lights_fragment_end>',
+            '#include <lights_fragment_end>\n\treflectedLight.directDiffuse = vec3( 0.0 );\n\treflectedLight.directSpecular = vec3( 0.0 );',
+          );
+          if (!holo) return;
+          shader.uniforms.uHoloMask = { value: m.userData.holoMaps.mask };
+          shader.uniforms.uHoloSpectrum = { value: m.userData.holoMaps.spectrum };
+          shader.uniforms.uHoloPhase = { value: holo.bakedPhase ?? 0 };
+          shader.uniforms.uHoloBoost = { value: holo.sfxBoost ?? 1 };
+          shader.uniforms.uHoloLight = { value: HOLO_LIGHT };
+          shader.vertexShader = shader.vertexShader
+            .replace('#include <common>', '#include <common>\nvarying vec3 vHoloPos;\nvarying vec3 vHoloNormal;')
+            .replace('#include <fog_vertex>', '#include <fog_vertex>\n\tvHoloPos = ( modelMatrix * vec4( transformed, 1.0 ) ).xyz;\n\tvHoloNormal = normalize( mat3( modelMatrix ) * objectNormal );');
+          shader.fragmentShader = shader.fragmentShader
+            .replace('#include <common>', `#include <common>\n${HOLO_PARS}`)
+            .replace('#include <map_fragment>', `#include <map_fragment>\n${HOLO_MAIN}`);
+        };
+        m.customProgramCacheKey = () => (holo ? 'model-environment-light-only-holo' : 'model-environment-light-only');
+        m.needsUpdate = true;
       }
     });
 
@@ -601,5 +717,5 @@ export function buildMuseum(scene, data, images, renderer) {
     dustMat.uniforms.uScale.value = h * pixelRatio;
   }
 
-  return { layout, displays, colliders, update, resize, attachModel };
+  return { layout, displays, colliders, update, resize, attachModel, prepareModel };
 }
