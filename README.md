@@ -246,6 +246,8 @@ A door in the dead end of the left aisle, under the VIP gallery, leads to an arm
 
 ## Hosting
 
+The entrance card and the pause card carry a link back to the owner's own site, Knox Nation, whose front page links here ("Back to Knox Nation" in `index.html`, twice; change both, or take them out, for another site).
+
 Upload the whole folder to any static host (GitHub Pages, Netlify, Cloudflare Pages, Vercel, S3). All paths are relative, so it works from a sub-path such as `username.github.io/skin-museum/`. Only these are needed at runtime:
 
 ```

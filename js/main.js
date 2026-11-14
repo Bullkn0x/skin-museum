@@ -421,7 +421,8 @@ function step(delta) {
 // ---------------------------------------------------------------------------
 function bindInput() {
   document.getElementById('enter').addEventListener('click', enter);
-  document.getElementById('pause').addEventListener('click', enter);
+  // a click anywhere on the pause card steps back in, except on its link out, which is a way to leave
+  document.getElementById('pause').addEventListener('click', (e) => { if (!e.target.closest?.('a')) enter(); });
   document.getElementById('panel-close').addEventListener('click', closeInspect);
   document.getElementById('panel-back').addEventListener('click', closeInspect);
   document.getElementById('panel-prev').addEventListener('click', () => step(-1));
@@ -444,7 +445,8 @@ function bindInput() {
 
   window.addEventListener('keydown', (e) => {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
-    if (state === 'intro' && (e.code === 'Enter' || e.code === 'Space')) { e.preventDefault(); enter(); return; }
+    // Enter or Space walks in, unless a link has the focus: then the key is the link's
+    if (state === 'intro' && (e.code === 'Enter' || e.code === 'Space') && !e.target.closest?.('a')) { e.preventDefault(); enter(); return; }
     if (state === 'menu') {
       const typing = e.target instanceof HTMLElement && e.target.closest('input, textarea');
       if (e.code === 'Escape' || (e.code === 'KeyE' && !typing)) { e.preventDefault(); closeMenu(); }

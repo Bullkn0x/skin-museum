@@ -119,6 +119,14 @@ body.is-touch .controls-touch { display: grid; grid-template-columns: 1fr; width
 .progress-bar { height: 100%; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
 .fineprint { margin: 20px 0 0; color: rgba(157, 146, 127, 0.75); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; }
 
+/* The way back to the owner's site: under the entrance card and on the pause card. */
+.home { margin: 18px 0 0; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; }
+.home-link { color: rgba(214, 203, 184, 0.85); text-decoration: none; text-shadow: none; padding-bottom: 3px; border-bottom: 1px solid rgba(214, 203, 184, 0.35); transition: color 0.2s, border-color 0.2s; }
+.home-link:hover { color: #fff; border-bottom-color: #fff; }
+.home-link:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+body[data-theme="velvet"] .home-link { color: #f0d9a8; border-bottom-color: rgba(227, 184, 102, 0.5); }
+body[data-theme="neon"] .home-link { color: #9fefff; border-bottom-color: rgba(25, 227, 255, 0.45); }
+
 #pause { background: rgba(6, 6, 8, 0.62); cursor: pointer; transition-duration: 0.3s; }
 .pause-card { text-align: center; }
 .pause-card h2 { margin: 0.3em 0 0; font: 500 clamp(2rem, 5vw, 3rem)/1.1 var(--serif); }
