@@ -1,0 +1,600 @@
+{
+ "anims": {
+  "file": "anims.glb",
+  "clips": {
+   "idle": {
+    "duration": 6.3333,
+    "loop": true,
+    "frames": 191,
+    "source": "rifle/_default_rifle/idle_rifle+shared/breathing",
+    "closes_within_deg": 0.28
+   },
+   "crouch_idle": {
+    "duration": 6.3333,
+    "loop": true,
+    "frames": 191,
+    "source": "rifle/_default_rifle/idle_crouch_rifle+shared/breathing",
+    "closes_within_deg": 0.28
+   },
+   "run": {
+    "duration": 0.7333,
+    "loop": true,
+    "frames": 23,
+    "source": "rifle/_default_rifle/run_n_rifle",
+    "closes_within_deg": 0.05,
+    "travel_mps": {
+     "forward": 4.36,
+     "left": 0.03
+    }
+   },
+   "walk": {
+    "duration": 1.0,
+    "loop": true,
+    "frames": 31,
+    "source": "rifle/_default_rifle/walk_n_rifle",
+    "closes_within_deg": 0.04,
+    "travel_mps": {
+     "forward": 1.91,
+     "left": -0.04
+    }
+   },
+   "strafe_left": {
+    "duration": 0.7333,
+    "loop": true,
+    "frames": 23,
+    "source": "rifle/_default_rifle/run_w_rifle",
+    "closes_within_deg": 0.03,
+    "travel_mps": {
+     "forward": -0.07,
+     "left": 3.6
+    }
+   },
+   "strafe_right": {
+    "duration": 0.7333,
+    "loop": true,
+    "frames": 23,
+    "source": "rifle/_default_rifle/run_e_rifle",
+    "closes_within_deg": 0.05,
+    "travel_mps": {
+     "forward": 0.14,
+     "left": -3.78
+    }
+   },
+   "run_back": {
+    "duration": 0.7333,
+    "loop": true,
+    "frames": 23,
+    "source": "rifle/_default_rifle/run_s_rifle",
+    "closes_within_deg": 0.01,
+    "travel_mps": {
+     "forward": -4.59,
+     "left": 0.05
+    }
+   },
+   "crouch_walk": {
+    "duration": 0.8,
+    "loop": true,
+    "frames": 25,
+    "source": "rifle/_default_rifle/crouch_n_rifle",
+    "closes_within_deg": 0.01,
+    "travel_mps": {
+     "forward": 0.87,
+     "left": -0.01
+    }
+   },
+   "death_1": {
+    "duration": 2.5,
+    "loop": false,
+    "frames": 76,
+    "source": "shared/death_chest_a",
+    "closes_within_deg": 136.41,
+    "ends_with_pelvis_at": {
+     "forward": -1.06,
+     "left": 0.01,
+     "up": 0.17
+    }
+   },
+   "death_2": {
+    "duration": 1.4667,
+    "loop": false,
+    "frames": 45,
+    "source": "shared/death_chest_b",
+    "closes_within_deg": 174.48,
+    "ends_with_pelvis_at": {
+     "forward": -0.16,
+     "left": -0.16,
+     "up": 0.07
+    }
+   },
+   "death_3": {
+    "duration": 2.3667,
+    "loop": false,
+    "frames": 72,
+    "source": "shared/death_gut_a",
+    "closes_within_deg": 178.17,
+    "ends_with_pelvis_at": {
+     "forward": 1.13,
+     "left": 0.07,
+     "up": 0.16
+    }
+   },
+   "death_4": {
+    "duration": 3.0,
+    "loop": false,
+    "frames": 91,
+    "source": "shared/death_gut_b",
+    "closes_within_deg": 169.23,
+    "ends_with_pelvis_at": {
+     "forward": -1.07,
+     "left": 0.03,
+     "up": 0.15
+    }
+   },
+   "death_5": {
+    "duration": 1.5,
+    "loop": false,
+    "frames": 46,
+    "source": "shared/death_rknee_a",
+    "closes_within_deg": 168.22,
+    "ends_with_pelvis_at": {
+     "forward": -0.99,
+     "left": -0.26,
+     "up": 0.16
+    }
+   },
+   "death_6": {
+    "duration": 1.3,
+    "loop": false,
+    "frames": 40,
+    "source": "shared/death_rknee_b",
+    "closes_within_deg": 174.87,
+    "ends_with_pelvis_at": {
+     "forward": -0.94,
+     "left": 0.34,
+     "up": -0.05
+    }
+   },
+   "death_7": {
+    "duration": 3.0,
+    "loop": false,
+    "frames": 91,
+    "source": "shared/death_rshoulder",
+    "closes_within_deg": 172.37,
+    "ends_with_pelvis_at": {
+     "forward": -1.59,
+     "left": 0.21,
+     "up": 0.21
+    }
+   }
+  }
+ },
+ "bones": {
+  "root": "root_motion",
+  "pelvis": "pelvis",
+  "chest": "spine_3",
+  "neck": "neck_0",
+  "head": "head_0",
+  "hand_r": "hand_R",
+  "hand_l": "hand_L",
+  "foot_l": "ankle_L",
+  "foot_r": "ankle_R",
+  "weapon": "wpn"
+ },
+ "tree": "every file: node \"rig\" (turns the game's axes to y up, facing +z, metres), then the game's bones by name; do not animate \"rig\"",
+ "notes": [
+  "Agents with no base model in the game files use their first numbered variant (ctm_st6_variante, tm_leet_varianta, tm_balkan_variantf): my pick.",
+  "idle and crouch_idle are the game's still poses with its breathing clip layered on at full strength, composed as the game composes additive clips.",
+  "travel_mps is measured from the feet while planted, not a number from the game; the game scales playback to the speed moved.",
+  "Twist, shoulder-blade and jiggle bones (extra_bones) are driven by the game's rig at run time and have no tracks: they stay at rest.",
+  "Roughness is the game's where its texture carries it, otherwise 0.7; skin has no subsurface shading.",
+  "head_in_bone_m and head_radius_m are fitted to each head mesh by this script, not the game's hit boxes.",
+  "The rifle hangs from \"wpn\" with no offset, on the reading that a weapon model's own space is that bone's frame, as in first person.",
+  "The death clips are the game's; it also has death_poses_* files (sets of poses, not played here) and leaves the rest to physics."
+ ],
+ "weapons": {
+  "t": {
+   "file": "weapon_ak47.glb",
+   "bone": "wpn",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "note": "add the file's scene to the bone as it is: its vertices are already in the bone's frame"
+  },
+  "ct": {
+   "file": "weapon_m4a4.glb",
+   "bone": "wpn",
+   "position": [
+    0,
+    0,
+    0
+   ],
+   "quaternion": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "note": "add the file's scene to the bone as it is: its vertices are already in the bone's frame"
+  }
+ },
+ "agents": [
+  {
+   "id": "ctm_sas",
+   "name": "SAS",
+   "team": "ct",
+   "file": "agents/ctm_sas.glb",
+   "model": "agents/models/ctm_sas/ctm_sas.vmdl",
+   "height_m": 1.819,
+   "crouch_height_m": 1.412,
+   "modelled_height_m": 1.996,
+   "feet_y_m": -0.003,
+   "triangles": 16470,
+   "head_center_m": [
+    0.025,
+    1.851,
+    0.024
+   ],
+   "head_in_bone_m": [
+    0.0534,
+    0.0588,
+    0.0246
+   ],
+   "head_radius_m": 0.126,
+   "extra_bones": [
+    "arm_lower_L_TWIST",
+    "arm_lower_L_TWIST1",
+    "arm_lower_R_TWIST",
+    "arm_lower_R_TWIST1",
+    "arm_upper_L_TWIST",
+    "arm_upper_L_TWIST1",
+    "arm_upper_R_TWIST",
+    "arm_upper_R_TWIST1",
+    "eye_target",
+    "eyeball_l",
+    "eyeball_r",
+    "head_0_TWIST",
+    "jiggle_climbinggear_01",
+    "jiggle_climbinggear_02",
+    "jiggle_front_micropouches",
+    "jiggle_front_pouch_01",
+    "jiggle_front_pouch_02",
+    "jiggle_holster",
+    "jiggle_hood",
+    "jiggle_primary",
+    "jiggle_radio",
+    "leg_upper_L_TWIST",
+    "leg_upper_L_TWIST1",
+    "leg_upper_R_TWIST",
+    "leg_upper_R_TWIST1",
+    "scap_AIMUP",
+    "scap_L_AIMAT",
+    "scap_R_AIMAT",
+    "scapula_L",
+    "scapula_R"
+   ],
+   "meshes": [
+    "body_ctm_sas_lenses",
+    "body_ctm_sas_head_gasmask",
+    "body_ctm_sas_bodylegs",
+    "body_ctm_sas_body",
+    "default_gloves_glove_hardknuckle_black"
+   ],
+   "notes": [
+    "ctm_sas_lenses: no roughness in the texture: 0.7 everywhere",
+    "ctm_sas_body: no roughness in the texture: 0.7 everywhere"
+   ],
+   "bytes": 1556592
+  },
+  {
+   "id": "ctm_fbi",
+   "name": "FBI",
+   "team": "ct",
+   "file": "agents/ctm_fbi.glb",
+   "model": "agents/models/ctm_fbi/ctm_fbi.vmdl",
+   "height_m": 1.808,
+   "crouch_height_m": 1.375,
+   "modelled_height_m": 1.99,
+   "feet_y_m": -0.007,
+   "triangles": 21710,
+   "head_center_m": [
+    0.0,
+    1.844,
+    -0.009
+   ],
+   "head_in_bone_m": [
+    0.0463,
+    0.0256,
+    0.0002
+   ],
+   "head_radius_m": 0.117,
+   "extra_bones": [
+    "arm_lower_L_TWIST",
+    "arm_lower_L_TWIST1",
+    "arm_lower_R_TWIST",
+    "arm_lower_R_TWIST1",
+    "arm_upper_L_TWIST",
+    "arm_upper_L_TWIST1",
+    "arm_upper_R_TWIST",
+    "arm_upper_R_TWIST1",
+    "eye_target",
+    "eyeball_l",
+    "eyeball_r",
+    "head_0_TWIST",
+    "jiggle_back_micropouches",
+    "jiggle_climbinggear_01",
+    "jiggle_climbinggear_02",
+    "jiggle_front_micropouches",
+    "jiggle_front_pouch_01",
+    "jiggle_front_pouch_02",
+    "jiggle_holster",
+    "jiggle_hood",
+    "jiggle_primary",
+    "leg_upper_L_TWIST",
+    "leg_upper_L_TWIST1",
+    "leg_upper_R_TWIST",
+    "leg_upper_R_TWIST1",
+    "scap_AIMUP",
+    "scap_L_AIMAT",
+    "scap_R_AIMAT",
+    "scapula_L",
+    "scapula_R"
+   ],
+   "meshes": [
+    "body_ctm_fbi_v2_hat_glasses_radio_varianta",
+    "body_ctm_fbi_v2_head",
+    "body_ctm_fbi_v2_lower_body_variantb",
+    "body_ctm_fbi_v2_body_varianta",
+    "default_gloves_glove_hardknuckle_black"
+   ],
+   "notes": [
+    "ctm_fbi_v2_hat_glasses_radio_varianta: no roughness in the texture: 0.7 everywhere",
+    "ctm_fbi_v2_body_varianta: no roughness in the texture: 0.7 everywhere"
+   ],
+   "bytes": 1874692
+  },
+  {
+   "id": "ctm_st6",
+   "name": "SEAL Team 6",
+   "team": "ct",
+   "file": "agents/ctm_st6.glb",
+   "model": "agents/models/ctm_st6/ctm_st6_variante.vmdl",
+   "height_m": 1.849,
+   "crouch_height_m": 1.427,
+   "modelled_height_m": 2.01,
+   "feet_y_m": -0.005,
+   "triangles": 27893,
+   "head_center_m": [
+    -0.0,
+    1.855,
+    -0.008
+   ],
+   "head_in_bone_m": [
+    0.0573,
+    0.0268,
+    -0.0
+   ],
+   "head_radius_m": 0.14,
+   "extra_bones": [
+    "arm_lower_L_TWIST",
+    "arm_lower_L_TWIST1",
+    "arm_lower_R_TWIST",
+    "arm_lower_R_TWIST1",
+    "arm_upper_L_TWIST",
+    "arm_upper_L_TWIST1",
+    "arm_upper_R_TWIST",
+    "arm_upper_R_TWIST1",
+    "eye_target",
+    "eyeball_l",
+    "eyeball_r",
+    "head_0_TWIST",
+    "jiggle_climbinggear_02",
+    "jiggle_front_micropouches",
+    "jiggle_front_pouch_01",
+    "jiggle_front_pouch_02",
+    "jiggle_holster",
+    "jiggle_primary",
+    "leg_upper_L_TWIST",
+    "leg_upper_L_TWIST1",
+    "leg_upper_R_TWIST",
+    "leg_upper_R_TWIST1",
+    "scap_AIMUP",
+    "scap_L_AIMAT",
+    "scap_R_AIMAT",
+    "scapula_L",
+    "scapula_R"
+   ],
+   "meshes": [
+    "body_ctm_st6_generalist_upperbody",
+    "body_ctm_st6_gen_pant_variante",
+    "body_ctm_st6_night_vision_helmet",
+    "default_gloves_glove_hardknuckle_black"
+   ],
+   "notes": [
+    "ctm_st6_generalist_upperbody: no roughness in the texture: 0.7 everywhere"
+   ],
+   "bytes": 2192896
+  },
+  {
+   "id": "tm_phoenix",
+   "name": "Phoenix",
+   "team": "t",
+   "file": "agents/tm_phoenix.glb",
+   "model": "agents/models/tm_phoenix/tm_phoenix.vmdl",
+   "height_m": 1.798,
+   "crouch_height_m": 1.365,
+   "modelled_height_m": 1.981,
+   "feet_y_m": -0.011,
+   "triangles": 17715,
+   "head_center_m": [
+    0.0,
+    1.866,
+    -0.016
+   ],
+   "head_in_bone_m": [
+    0.0682,
+    0.0189,
+    0.0003
+   ],
+   "head_radius_m": 0.105,
+   "extra_bones": [
+    "arm_lower_L_TWIST",
+    "arm_lower_L_TWIST1",
+    "arm_lower_R_TWIST",
+    "arm_lower_R_TWIST1",
+    "arm_upper_L_TWIST",
+    "arm_upper_L_TWIST1",
+    "arm_upper_R_TWIST",
+    "arm_upper_R_TWIST1",
+    "eye_target",
+    "eyeball_l",
+    "eyeball_r",
+    "head_0_TWIST",
+    "jiggle_primary",
+    "leg_upper_L_TWIST",
+    "leg_upper_L_TWIST1",
+    "leg_upper_R_TWIST",
+    "leg_upper_R_TWIST1",
+    "scap_AIMUP",
+    "scap_L_AIMAT",
+    "scap_R_AIMAT",
+    "scapula_L",
+    "scapula_R"
+   ],
+   "meshes": [
+    "body_bare_arm_133",
+    "body_tm_phoenix_v2_balaclava_varianta",
+    "body_tm_phoenix_v2_legs_variantb",
+    "body_tm_phoenix_v2_body_variante",
+    "default_gloves_glove_fullfinger"
+   ],
+   "notes": [],
+   "bytes": 1627912
+  },
+  {
+   "id": "tm_leet",
+   "name": "Elite Crew",
+   "team": "t",
+   "file": "agents/tm_leet.glb",
+   "model": "agents/models/tm_leet/tm_leet_varianta.vmdl",
+   "height_m": 1.771,
+   "crouch_height_m": 1.337,
+   "modelled_height_m": 1.954,
+   "feet_y_m": 0.001,
+   "triangles": 20925,
+   "head_center_m": [
+    0.001,
+    1.785,
+    -0.018
+   ],
+   "head_in_bone_m": [
+    -0.0133,
+    0.017,
+    0.0009
+   ],
+   "head_radius_m": 0.104,
+   "extra_bones": [
+    "arm_lower_L_TWIST",
+    "arm_lower_L_TWIST1",
+    "arm_lower_R_TWIST",
+    "arm_lower_R_TWIST1",
+    "arm_upper_L_TWIST",
+    "arm_upper_L_TWIST1",
+    "arm_upper_R_TWIST",
+    "arm_upper_R_TWIST1",
+    "eye_target",
+    "eyeball_l",
+    "eyeball_r",
+    "head_0_TWIST",
+    "jiggle_primary",
+    "leg_upper_L_TWIST",
+    "leg_upper_L_TWIST1",
+    "leg_upper_R_TWIST",
+    "leg_upper_R_TWIST1",
+    "scap_AIMUP",
+    "scap_L_AIMAT",
+    "scap_R_AIMAT",
+    "scapula_L",
+    "scapula_R"
+   ],
+   "meshes": [
+    "body_tm_leet_v2_head_varianta",
+    "body_tm_leet_v2_lower_body_varianta",
+    "body_tm_leet_v2_body_varianta",
+    "body_bare_arm_55",
+    "default_gloves_glove_fingerless",
+    "default_gloves_bare_arm_55"
+   ],
+   "notes": [],
+   "bytes": 2057960
+  },
+  {
+   "id": "tm_balkan",
+   "name": "Balkan",
+   "team": "t",
+   "file": "agents/tm_balkan.glb",
+   "model": "agents/models/tm_balkan/tm_balkan_variantf.vmdl",
+   "height_m": 1.801,
+   "crouch_height_m": 1.37,
+   "modelled_height_m": 1.982,
+   "feet_y_m": -0.002,
+   "triangles": 29826,
+   "head_center_m": [
+    0.0,
+    1.855,
+    0.015
+   ],
+   "head_in_bone_m": [
+    0.0569,
+    0.0497,
+    0.0003
+   ],
+   "head_radius_m": 0.108,
+   "extra_bones": [
+    "arm_lower_L_TWIST",
+    "arm_lower_L_TWIST1",
+    "arm_lower_R_TWIST",
+    "arm_lower_R_TWIST1",
+    "arm_upper_L_TWIST",
+    "arm_upper_L_TWIST1",
+    "arm_upper_R_TWIST",
+    "arm_upper_R_TWIST1",
+    "eye_target",
+    "eyeball_l",
+    "eyeball_r",
+    "head_0_TWIST",
+    "jiggle_primary",
+    "leg_upper_L_TWIST",
+    "leg_upper_L_TWIST1",
+    "leg_upper_R_TWIST",
+    "leg_upper_R_TWIST1",
+    "scap_AIMUP",
+    "scap_L_AIMAT",
+    "scap_R_AIMAT",
+    "scapula_L",
+    "scapula_R"
+   ],
+   "meshes": [
+    "body_tm_balkan_v2_body_variantd",
+    "body_tm_balkan_v2_head_varianta",
+    "body_tm_balkan_v2_lower_body_variantd",
+    "default_gloves_glove_fullfinger"
+   ],
+   "notes": [],
+   "bytes": 2306408
+  }
+ ],
+ "head_radius_m": 0.117,
+ "head_in_bone_m": [
+  0.0448,
+  0.0328,
+  0.0044
+ ]
+}
