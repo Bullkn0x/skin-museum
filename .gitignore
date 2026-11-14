@@ -3,3 +3,6 @@ node_modules/
 .claude/
 # scratch space for extracted game files and Blender projects (never published)
 work/
+# music for the club jukebox: kept on this computer, not published (see README, Music)
+assets/music/*
+!assets/music/.gitkeep

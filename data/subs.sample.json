@@ -1,0 +1,61 @@
+{
+  "note": "Made-up names for trying the stream room's sub wall before the real feed exists. Nobody here is a real subscriber. 'pool' is who the demo lets arrive later.",
+  "updated": "2026-11-13T22:00:00Z",
+  "channel": "sample",
+  "subs": [
+    { "id": "s3-1", "name": "NovaKat", "tier": 3, "avatar": "", "since": "2026-03-02T19:10:00Z" },
+    { "id": "s3-2", "name": "ghostpepper77", "tier": 3, "avatar": "", "since": "2026-06-18T02:40:00Z" },
+    { "id": "s3-3", "name": "lunar_tide", "tier": 3, "avatar": "", "since": "2026-10-05T21:15:00Z" },
+
+    { "id": "s2-1", "name": "frag_owl", "tier": 2, "avatar": "", "since": "2026-02-11T18:00:00Z" },
+    { "id": "s2-2", "name": "wafflecone", "tier": 2, "avatar": "", "since": "2026-04-03T23:30:00Z" },
+    { "id": "s2-3", "name": "kira_vx", "tier": 2, "avatar": "", "since": "2026-05-27T20:05:00Z" },
+    { "id": "s2-4", "name": "deadzone_dan", "tier": 2, "avatar": "", "since": "2026-07-14T01:20:00Z" },
+    { "id": "s2-5", "name": "quietstorm", "tier": 2, "avatar": "", "since": "2026-08-30T19:45:00Z" },
+    { "id": "s2-6", "name": "byte_bandit", "tier": 2, "avatar": "", "since": "2026-10-12T22:10:00Z" },
+    { "id": "s2-7", "name": "hexa", "tier": 2, "avatar": "", "since": "2026-11-02T03:00:00Z" },
+
+    { "id": "s1-1", "name": "pixelmoth", "tier": 1, "avatar": "", "since": "2026-01-09T20:00:00Z" },
+    { "id": "s1-2", "name": "mossy", "tier": 1, "avatar": "", "since": "2026-01-22T21:30:00Z" },
+    { "id": "s1-3", "name": "tin_robot", "tier": 1, "avatar": "", "since": "2026-02-04T19:15:00Z" },
+    { "id": "s1-4", "name": "saltlamp", "tier": 1, "avatar": "", "since": "2026-02-19T00:40:00Z" },
+    { "id": "s1-5", "name": "OrbitOtter", "tier": 1, "avatar": "", "since": "2026-03-08T22:05:00Z" },
+    { "id": "s1-6", "name": "marrow_jr", "tier": 1, "avatar": "", "since": "2026-03-21T18:50:00Z" },
+    { "id": "s1-7", "name": "velcro_sam", "tier": 1, "avatar": "", "since": "2026-04-02T20:25:00Z" },
+    { "id": "s1-8", "name": "ninefold", "tier": 1, "avatar": "", "since": "2026-04-17T23:10:00Z" },
+    { "id": "s1-9", "name": "Clementine_x", "tier": 1, "avatar": "", "since": "2026-05-01T19:00:00Z" },
+    { "id": "s1-10", "name": "dustbunny", "tier": 1, "avatar": "", "since": "2026-05-13T21:45:00Z" },
+    { "id": "s1-11", "name": "halfpipe", "tier": 1, "avatar": "", "since": "2026-05-29T02:15:00Z" },
+    { "id": "s1-12", "name": "RustyAnchor", "tier": 1, "avatar": "", "since": "2026-06-07T20:30:00Z" },
+    { "id": "s1-13", "name": "plum_duff", "tier": 1, "avatar": "", "since": "2026-06-20T22:00:00Z" },
+    { "id": "s1-14", "name": "zed_not_zee", "tier": 1, "avatar": "", "since": "2026-07-03T19:20:00Z" },
+    { "id": "s1-15", "name": "kettlechip", "tier": 1, "avatar": "", "since": "2026-07-19T23:55:00Z" },
+    { "id": "s1-16", "name": "Wren_Fable", "tier": 1, "avatar": "", "since": "2026-08-02T21:10:00Z" },
+    { "id": "s1-17", "name": "lowtide99", "tier": 1, "avatar": "", "since": "2026-08-15T18:35:00Z" },
+    { "id": "s1-18", "name": "copperpot", "tier": 1, "avatar": "", "since": "2026-08-28T20:50:00Z" },
+    { "id": "s1-19", "name": "MothLantern", "tier": 1, "avatar": "", "since": "2026-09-06T22:40:00Z" },
+    { "id": "s1-20", "name": "bramble", "tier": 1, "avatar": "", "since": "2026-09-18T01:05:00Z" },
+    { "id": "s1-21", "name": "sixpence", "tier": 1, "avatar": "", "since": "2026-09-30T19:30:00Z" },
+    { "id": "s1-22", "name": "Juno_Static", "tier": 1, "avatar": "", "since": "2026-10-09T21:20:00Z" },
+    { "id": "s1-23", "name": "oatmilk", "tier": 1, "avatar": "", "since": "2026-10-21T23:00:00Z" },
+    { "id": "s1-24", "name": "tangle", "tier": 1, "avatar": "", "since": "2026-10-30T20:15:00Z" },
+    { "id": "s1-25", "name": "PaperCrane_", "tier": 1, "avatar": "", "since": "2026-11-05T22:35:00Z" },
+    { "id": "s1-26", "name": "figment", "tier": 1, "avatar": "", "since": "2026-11-10T19:50:00Z" }
+  ],
+  "bits": {
+    "period": "all",
+    "leaders": [
+      { "id": "s3-2", "name": "ghostpepper77", "avatar": "", "rank": 1, "score": 48200 },
+      { "id": "s3-3", "name": "lunar_tide", "avatar": "", "rank": 2, "score": 21750 },
+      { "id": "s2-2", "name": "wafflecone", "avatar": "", "rank": 3, "score": 9400 },
+      { "id": "s2-3", "name": "kira_vx", "avatar": "", "rank": 4, "score": 6120 },
+      { "id": "s2-4", "name": "deadzone_dan", "avatar": "", "rank": 5, "score": 3300 },
+      { "id": "s1-2", "name": "mossy", "avatar": "", "rank": 6, "score": 2050 },
+      { "id": "s2-5", "name": "quietstorm", "avatar": "", "rank": 7, "score": 1500 },
+      { "id": "s2-6", "name": "byte_bandit", "avatar": "", "rank": 8, "score": 800 },
+      { "id": "s2-7", "name": "hexa", "avatar": "", "rank": 9, "score": 450 },
+      { "id": "s1-3", "name": "tin_robot", "avatar": "", "rank": 10, "score": 300 }
+    ]
+  },
+  "pool": ["skylark_io", "Bantam", "greyhound_gus", "nettle", "FoxglovePark", "two_left_feet", "ember_and_ash", "quill", "Marzipan_", "driftwood", "hollowlog", "peppercorn", "Tessellate", "lark_ascending", "bootlace", "sundial", "wobbleboard", "inkwell", "Persimmon", "thimble"]
+}
