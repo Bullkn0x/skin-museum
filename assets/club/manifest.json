@@ -1,0 +1,4858 @@
+{
+ "agents": [
+  {
+   "id": "tm_professional_varf",
+   "name": "Sir Bloody Miami Darryl | The Professionals",
+   "team": "t",
+   "file": "agents/tm_professional_varf.glb",
+   "model": "agents/models/tm_professional/tm_professional_varf.vmdl",
+   "height_m": 1.809,
+   "crouch_height_m": 1.376,
+   "modelled_height_m": 1.989,
+   "feet_y_m": -0.007,
+   "triangles": 30856,
+   "head_center_m": [
+    0.001,
+    1.861,
+    -0.012
+   ],
+   "head_in_bone_m": [
+    0.0628,
+    0.0226,
+    0.0012
+   ],
+   "head_radius_m": 0.118,
+   "extra_bones": [
+    "arm_lower_L_TWIST",
+    "arm_lower_L_TWIST1",
+    "arm_lower_R_TWIST",
+    "arm_lower_R_TWIST1",
+    "arm_upper_L_TWIST",
+    "arm_upper_L_TWIST1",
+    "arm_upper_R_TWIST",
+    "arm_upper_R_TWIST1",
+    "eye_target",
+    "eyeball_l",
+    "eyeball_r",
+    "head_0_TWIST",
+    "jiggle_climbinggear_02",
+    "jiggle_front_micropouches",
+    "jiggle_front_pouch_01",
+    "jiggle_hood",
+    "jiggle_primary",
+    "leg_upper_L_TWIST",
+    "leg_upper_L_TWIST1",
+    "leg_upper_R_TWIST",
+    "leg_upper_R_TWIST1",
+    "scap_AIMUP",
+    "scap_L_AIMAT",
+    "scap_R_AIMAT",
+    "scapula_L",
+    "scapula_R"
+   ],
+   "meshes": [
+    "body_tm_professional_body_varf",
+    "body_tm_professional_mask_varf",
+    "body_tm_professional_lowerbody_varf",
+    "body_tm_professional_head_varf",
+    "default_gloves_glove_fullfinger"
+   ],
+   "notes": [
+    "tm_professional_head_varf: no roughness in the texture: 0.7 everywhere"
+   ],
+   "bytes": 2679960,
+   "found": {
+    "english": "resource/csgo_english.txt: CSGO_Customplayer_tm_professional_varf",
+    "item": "scripts/items/items_game.txt: item 4726 \"customplayer_tm_professional_varf\", model_player",
+    "default_cheer": "mask_f",
+    "default_defeat": "darryl_defeat"
+   },
+   "upright_top_m": 1.95
+  }
+ ],
+ "anims": {
+  "file": "anims.glb",
+  "clips": {
+   "stand_1": {
+    "duration": 5.4,
+    "loop": true,
+    "pingpong": false,
+    "source": "ui_anims/end_round/celebrate/t/celebrate_muhlik_idle04",
+    "holds_weapon": false,
+    "frames": 163,
+    "closes_within_deg": 0.77,
+    "closes_within_m": 0.0009,
+    "does": "stands easy, arms loose at the sides, small weight shifts",
+    "facing_deg": -17.2,
+    "hips_facing_deg": -24.7,
+    "pelvis_at_m": {
+     "forward": -0.046,
+     "left": 0.052
+    },
+    "roams_m": 0.06,
+    "feet_leave_floor_m": 0.0,
+    "root_moves_m": 0.0,
+    "hands": {
+     "R": {
+      "forward_m": -0.04,
+      "left_m": -0.32,
+      "up_m": 1.0,
+      "up_min_m": 0.99,
+      "up_max_m": 1.02,
+      "finger_curl_deg": [
+       18,
+       23
+      ]
+     },
+     "L": {
+      "forward_m": 0.05,
+      "left_m": 0.38,
+      "up_m": 1.01,
+      "up_min_m": 1.0,
+      "up_max_m": 1.02,
+      "finger_curl_deg": [
+       6,
+       22
+      ]
+     }
+    },
+    "mesh_top_m_at_middle": 1.95
+   },
+   "stand_2": {
+    "duration": 3.6333,
+    "loop": true,
+    "pingpong": false,
+    "source": "ui_anims/end_round/celebrate/ct/celebrate_ava_idle04",
+    "holds_weapon": false,
+    "frames": 110,
+    "closes_within_deg": 0.01,
+    "closes_within_m": 0.0,
+    "does": "stands easy, arms loose at the sides, a different stance",
+    "facing_deg": 16.3,
+    "hips_facing_deg": 13.1,
+    "pelvis_at_m": {
+     "forward": 0.022,
+     "left": -0.037
+    },
+    "roams_m": 0.03,
+    "feet_leave_floor_m": 0.0,
+    "root_moves_m": 0.0,
+    "hands": {
+     "R": {
+      "forward_m": 0.09,
+      "left_m": -0.42,
+      "up_m": 1.03,
+      "up_min_m": 1.0,
+      "up_max_m": 1.05,
+      "finger_curl_deg": [
+       23,
+       34
+      ]
+     },
+     "L": {
+      "forward_m": -0.02,
+      "left_m": 0.3,
+      "up_m": 1.04,
+      "up_min_m": 1.02,
+      "up_max_m": 1.07,
+      "finger_curl_deg": [
+       0,
+       67
+      ]
+     }
+    },
+    "mesh_top_m_at_middle": 1.96
+   },
+   "stand_3": {
+    "duration": 13.2,
+    "loop": true,
+    "pingpong": false,
+    "source": "ui_anims/end_round/celebrate/ct/celebrate_mae_idle02",
+    "holds_weapon": false,
+    "frames": 397,
+    "closes_within_deg": 0.01,
+    "closes_within_m": 0.0,
+    "does": "stands turned to one side with a hand on the hip, looks about",
+    "facing_deg": -38.1,
+    "hips_facing_deg": -42.0,
+    "pelvis_at_m": {
+     "forward": 0.075,
+     "left": 0.052
+    },
+    "roams_m": 0.17,
+    "feet_leave_floor_m": 0.0,
+    "root_moves_m": 0.0,
+    "hands": {
+     "R": {
+      "forward_m": -0.06,
+      "left_m": -0.3,
+      "up_m": 1.0,
+      "up_min_m": 0.95,
+      "up_max_m": 1.02,
+      "finger_curl_deg": [
+       18,
+       69
+      ]
+     },
+     "L": {
+      "forward_m": 0.36,
+      "left_m": 0.3,
+      "up_m": 1.11,
+      "up_min_m": 1.06,
+      "up_max_m": 1.21,
+      "finger_curl_deg": [
+       5,
+       24
+      ]
+     }
+    },
+    "mesh_top_m_at_middle": 1.95
+   },
+   "cheer_1": {
+    "duration": 6.9333,
+    "loop": true,
+    "pingpong": false,
+    "source": "ui_anims/end_round/celebrate/t/celebrate_vypa_idle03",
+    "holds_weapon": false,
+    "frames": 209,
+    "closes_within_deg": 0.12,
+    "closes_within_m": 0.0005,
+    "does": "throws both hands up, then claps in front of the face",
+    "facing_deg": -4.9,
+    "hips_facing_deg": -5.9,
+    "pelvis_at_m": {
+     "forward": 0.008,
+     "left": -0.059
+    },
+    "roams_m": 0.27,
+    "feet_leave_floor_m": 0.0,
+    "root_moves_m": 0.0,
+    "hands": {
+     "R": {
+      "forward_m": 0.13,
+      "left_m": -0.32,
+      "up_m": 1.33,
+      "up_min_m": 0.99,
+      "up_max_m": 1.87,
+      "finger_curl_deg": [
+       10,
+       23
+      ]
+     },
+     "L": {
+      "forward_m": 0.22,
+      "left_m": 0.22,
+      "up_m": 1.31,
+      "up_min_m": 0.98,
+      "up_max_m": 1.83,
+      "finger_curl_deg": [
+       0,
+       10
+      ]
+     }
+    },
+    "mesh_top_m_at_middle": 1.95
+   },
+   "cheer_2": {
+    "duration": 7.4,
+    "loop": true,
+    "pingpong": false,
+    "source": "ui_anims/end_round/celebrate/t/celebrate_vypa_idle02",
+    "holds_weapon": false,
+    "frames": 223,
+    "closes_within_deg": 0.01,
+    "closes_within_m": 0.0,
+    "does": "pumps a fist overhead, right arm then left",
+    "facing_deg": -3.1,
+    "hips_facing_deg": -3.1,
+    "pelvis_at_m": {
+     "forward": 0.003,
+     "left": -0.082
+    },
+    "roams_m": 0.23,
+    "feet_leave_floor_m": 0.0,
+    "root_moves_m": 0.0,
+    "hands": {
+     "R": {
+      "forward_m": 0.05,
+      "left_m": -0.3,
+      "up_m": 1.32,
+      "up_min_m": 0.97,
+      "up_max_m": 1.95,
+      "finger_curl_deg": [
+       6,
+       69
+      ]
+     },
+     "L": {
+      "forward_m": 0.09,
+      "left_m": 0.16,
+      "up_m": 1.19,
+      "up_min_m": 0.98,
+      "up_max_m": 1.92,
+      "finger_curl_deg": [
+       4,
+       69
+      ]
+     }
+    },
+    "mesh_top_m_at_middle": 1.96
+   },
+   "cheer_3": {
+    "duration": 11.2667,
+    "loop": true,
+    "pingpong": false,
+    "source": "ui_anims/end_round/celebrate/t/celebrate_doctor_idle05",
+    "holds_weapon": false,
+    "frames": 339,
+    "closes_within_deg": 0.02,
+    "closes_within_m": 0.0,
+    "does": "both fists straight up with a hop, then a crouching fist pump",
+    "facing_deg": -10.3,
+    "hips_facing_deg": -10.8,
+    "pelvis_at_m": {
+     "forward": -0.132,
+     "left": 0.035
+    },
+    "roams_m": 0.4,
+    "feet_leave_floor_m": 0.14,
+    "root_moves_m": 0.0,
+    "hands": {
+     "R": {
+      "forward_m": -0.03,
+      "left_m": -0.31,
+      "up_m": 1.58,
+      "up_min_m": 0.9,
+      "up_max_m": 2.3,
+      "finger_curl_deg": [
+       8,
+       76
+      ]
+     },
+     "L": {
+      "forward_m": 0.06,
+      "left_m": 0.22,
+      "up_m": 1.61,
+      "up_min_m": 1.0,
+      "up_max_m": 2.3,
+      "finger_curl_deg": [
+       5,
+       76
+      ]
+     }
+    },
+    "mesh_top_m_at_middle": 1.83
+   },
+   "cheer_4": {
+    "duration": 4.1333,
+    "loop": true,
+    "pingpong": false,
+    "source": "ui_anims/end_round/celebrate/ct/celebrate_goggles_idle05",
+    "holds_weapon": false,
+    "frames": 125,
+    "closes_within_deg": 0.97,
+    "closes_within_m": 0.0,
+    "does": "a short dance: dips, then both arms up and waving",
+    "facing_deg": 11.7,
+    "hips_facing_deg": 17.0,
+    "pelvis_at_m": {
+     "forward": -0.116,
+     "left": -0.023
+    },
+    "roams_m": 0.39,
+    "feet_leave_floor_m": 0.08,
+    "root_moves_m": 0.0,
+    "hands": {
+     "R": {
+      "forward_m": 0.2,
+      "left_m": -0.32,
+      "up_m": 1.44,
+      "up_min_m": 0.99,
+      "up_max_m": 2.05,
+      "finger_curl_deg": [
+       8,
+       81
+      ]
+     },
+     "L": {
+      "forward_m": 0.11,
+      "left_m": 0.43,
+      "up_m": 1.42,
+      "up_min_m": 1.0,
+      "up_max_m": 1.97,
+      "finger_curl_deg": [
+       7,
+       67
+      ]
+     }
+    },
+    "mesh_top_m_at_middle": 2.11
+   },
+   "dj_1": {
+    "duration": 7.8333,
+    "loop": true,
+    "pingpong": false,
+    "source": "ui_anims/main_menu/t/t_main_menu_m249_idle",
+    "holds_weapon": true,
+    "frames": 236,
+    "closes_within_deg": 0.61,
+    "closes_within_m": 0.0,
+    "does": "stands with both hands forward at waist height, hardly moving",
+    "weapon": "m249",
+    "hands_note": "authored holding the M249: the fingers are curled round a grip and a handguard that are not there",
+    "weapon_skeleton_in_clip": [
+     "m249"
+    ],
+    "facing_deg": -1.7,
+    "hips_facing_deg": -5.0,
+    "pelvis_at_m": {
+     "forward": -0.068,
+     "left": 0.03
+    },
+    "roams_m": 0.02,
+    "feet_leave_floor_m": 0.0,
+    "root_moves_m": 0.0,
+    "hands": {
+     "R": {
+      "forward_m": 0.24,
+      "left_m": -0.22,
+      "up_m": 1.11,
+      "up_min_m": 1.1,
+      "up_max_m": 1.11,
+      "finger_curl_deg": [
+       31,
+       31
+      ]
+     },
+     "L": {
+      "forward_m": 0.2,
+      "left_m": 0.37,
+      "up_m": 1.13,
+      "up_min_m": 1.12,
+      "up_max_m": 1.14,
+      "finger_curl_deg": [
+       28,
+       28
+      ]
+     }
+    },
+    "mesh_top_m_at_middle": 1.95
+   },
+   "dj_2": {
+    "duration": 6.9333,
+    "loop": true,
+    "pingpong": false,
+    "source": "ui_anims/main_menu/t/t_main_menu_m249_lookatgun01",
+    "holds_weapon": true,
+    "frames": 209,
+    "closes_within_deg": 0.12,
+    "closes_within_m": 0.0,
+    "does": "from the dj_1 pose: looks down at the hands, lifts and turns the left one forward, settles back",
+    "weapon": "m249",
+    "hands_note": "authored holding the M249: the fingers are curled round a grip and a handguard that are not there",
+    "weapon_skeleton_in_clip": [
+     "m249"
+    ],
+    "facing_deg": -11.5,
+    "hips_facing_deg": -10.3,
+    "pelvis_at_m": {
+     "forward": -0.042,
+     "left": 0.061
+    },
+    "roams_m": 0.11,
+    "feet_leave_floor_m": 0.0,
+    "root_moves_m": 0.0,
+    "hands": {
+     "R": {
+      "forward_m": 0.23,
+      "left_m": -0.21,
+      "up_m": 1.2,
+      "up_min_m": 1.11,
+      "up_max_m": 1.38,
+      "finger_curl_deg": [
+       31,
+       31
+      ]
+     },
+     "L": {
+      "forward_m": 0.34,
+      "left_m": 0.32,
+      "up_m": 1.21,
+      "up_min_m": 1.11,
+      "up_max_m": 1.48,
+      "finger_curl_deg": [
+       10,
+       28
+      ]
+     }
+    },
+    "mesh_top_m_at_middle": 1.93
+   }
+  },
+  "same_rest_pose": [
+   [
+    "stand_1"
+   ],
+   [
+    "stand_2"
+   ],
+   [
+    "stand_3"
+   ],
+   [
+    "cheer_1",
+    "cheer_2"
+   ],
+   [
+    "cheer_3"
+   ],
+   [
+    "cheer_4"
+   ],
+   [
+    "dj_1",
+    "dj_2"
+   ]
+  ],
+  "play_on": [
+   "tm_professional_varf.glb",
+   "ctm_fbi.glb",
+   "ctm_sas.glb",
+   "ctm_st6.glb",
+   "tm_balkan.glb",
+   "tm_leet.glb",
+   "tm_phoenix.glb"
+  ]
+ },
+ "bones": {
+  "root": "root_motion",
+  "pelvis": "pelvis",
+  "chest": "spine_3",
+  "neck": "neck_0",
+  "head": "head_0",
+  "hand_r": "hand_R",
+  "hand_l": "hand_L",
+  "foot_l": "ankle_L",
+  "foot_r": "ankle_R",
+  "weapon": "wpn"
+ },
+ "tree": "every file: node \"rig\" (turns the game's axes to y up, facing +z, metres), then the game's bones by name; do not animate \"rig\". The same tree as assets/range.",
+ "clip_fields": {
+  "loop": "first and last pose within 2 degrees and 5 mm: play it round",
+  "pingpong": "it does not close: play it forward then backward",
+  "holds_weapon": "the clip was authored with a weapon in the hands (see weapon, hands_note)",
+  "facing_deg": "which way the chest faces on average, about the up axis: 0 is +z, positive is a turn to the figure's own left (+x). Turn the figure by minus this to square it up",
+  "roams_m": "how far the pelvis wanders over the floor during the clip",
+  "feet_leave_floor_m": "how high the lower foot gets: a jump",
+  "hands": "each hand's average place from the feet (forward +z, left +x, up +y, metres), its lowest and highest, and how far the fingers curl from flat, least and most, in degrees"
+ },
+ "blood": {
+  "decals": [
+   {
+    "file": "blood/decal_1.png",
+    "width": 512,
+    "height": 512,
+    "kind": "hit",
+    "source": "materials/decals/blood/blood_decals_10_12.vmat",
+    "texture": "materials/decals/blood/blood_decals_10_color.12_tga_e58f670c.vtex (1024x1024 BC7)",
+    "decal_group": "scripts/decalgroups.vdata: Blood",
+    "bytes": 103821,
+    "covers": 0.138,
+    "mean_rgb": [
+     66,
+     0,
+     0
+    ]
+   },
+   {
+    "file": "blood/decal_2.png",
+    "width": 512,
+    "height": 512,
+    "kind": "hit",
+    "source": "materials/decals/blood/blood_decals_10_30.vmat",
+    "texture": "materials/decals/blood/blood_decals_10_color.30_tga_fad0abb3.vtex (1024x1024 BC7)",
+    "decal_group": "scripts/decalgroups.vdata: Blood",
+    "bytes": 121053,
+    "covers": 0.143,
+    "mean_rgb": [
+     65,
+     0,
+     0
+    ]
+   },
+   {
+    "file": "blood/decal_3.png",
+    "width": 512,
+    "height": 512,
+    "kind": "hit",
+    "source": "materials/decals/blood/blood_decals_15_05.vmat",
+    "texture": "materials/decals/blood/blood_decals_15_color.5_tga_fd9e3296.vtex (1024x1024 BC7)",
+    "decal_group": "scripts/decalgroups.vdata: Blood",
+    "bytes": 107684,
+    "covers": 0.187,
+    "mean_rgb": [
+     75,
+     0,
+     0
+    ]
+   },
+   {
+    "file": "blood/decal_4.png",
+    "width": 512,
+    "height": 512,
+    "kind": "hit",
+    "source": "materials/decals/blood/blood_decals_10_20.vmat",
+    "texture": "materials/decals/blood/blood_decals_10_color.20_tga_24c1c7c2.vtex (1024x1024 BC7)",
+    "decal_group": "scripts/decalgroups.vdata: Blood",
+    "bytes": 64517,
+    "covers": 0.066,
+    "mean_rgb": [
+     67,
+     0,
+     0
+    ]
+   },
+   {
+    "file": "blood/decal_5.png",
+    "width": 512,
+    "height": 512,
+    "kind": "hit",
+    "source": "materials/decals/blood/blood_decals_10_04.vmat",
+    "texture": "materials/decals/blood/blood_decals_10_color.4_tga_5f5c5c7b.vtex (1024x1024 BC7)",
+    "decal_group": "scripts/decalgroups.vdata: Blood",
+    "bytes": 80562,
+    "covers": 0.093,
+    "mean_rgb": [
+     66,
+     0,
+     0
+    ]
+   },
+   {
+    "file": "blood/decal_6.png",
+    "width": 512,
+    "height": 512,
+    "kind": "hit",
+    "source": "materials/decals/blood/blood_decals_15_21.vmat",
+    "texture": "materials/decals/blood/blood_decals_15_color.21_tga_a205d768.vtex (1024x1024 BC7)",
+    "decal_group": "scripts/decalgroups.vdata: Blood",
+    "bytes": 97431,
+    "covers": 0.114,
+    "mean_rgb": [
+     71,
+     0,
+     0
+    ]
+   },
+   {
+    "file": "blood/decal_7.png",
+    "width": 512,
+    "height": 512,
+    "kind": "hit",
+    "source": "materials/decals/blood/blood_decals_15_07.vmat",
+    "texture": "materials/decals/blood/blood_decals_15_color.7_tga_f3f40567.vtex (1024x1024 BC7)",
+    "decal_group": "scripts/decalgroups.vdata: Blood",
+    "bytes": 56394,
+    "covers": 0.069,
+    "mean_rgb": [
+     74,
+     0,
+     0
+    ]
+   },
+   {
+    "file": "blood/decal_ground.png",
+    "width": 512,
+    "height": 512,
+    "kind": "ground_spray",
+    "source": "materials/decals/blood/blood_decals_spray_med.vmat",
+    "texture": "materials/decals/blood/blood_decals_15_color.15_tga_cf2de627.vtex (1024x1024 BC7)",
+    "used_by": "particles/blood_impact/blood_impact_med_ground_decal.vpcf",
+    "bytes": 130509,
+    "covers": 0.161,
+    "mean_rgb": [
+     67,
+     0,
+     0
+    ]
+   }
+  ],
+  "sprites": [
+   {
+    "file": "blood/spray_0.png",
+    "cols": 4,
+    "rows": 4,
+    "frames": 16,
+    "frame_width": 181,
+    "frame_height": 256,
+    "width": 724,
+    "height": 1024,
+    "kind": "spray",
+    "source": "materials/particle/fluids/blood/blood_spray_top.vtex",
+    "sequence": 0,
+    "tint_rgb": [
+     154,
+     13,
+     13
+    ],
+    "tint_from": "particles/blood_impact/blood_impact_med_vis_spray.vpcf: first stop of the renderer's colour lookup",
+    "used_by": [
+     "blood_impact_high_vis_spray",
+     "blood_impact_low_forw_spray",
+     "blood_impact_med_vis_spray"
+    ],
+    "bytes": 213078,
+    "in_the_game": "frames 181x256 in a 2048x2048 DXT5 sheet of 3 sequences; grey with the shape in alpha, coloured at draw time"
+   },
+   {
+    "file": "blood/spray_1.png",
+    "cols": 4,
+    "rows": 4,
+    "frames": 16,
+    "frame_width": 190,
+    "frame_height": 256,
+    "width": 760,
+    "height": 1024,
+    "kind": "spray",
+    "source": "materials/particle/fluids/blood/blood_spray_top.vtex",
+    "sequence": 1,
+    "tint_rgb": [
+     154,
+     13,
+     13
+    ],
+    "tint_from": "particles/blood_impact/blood_impact_med_vis_spray.vpcf: first stop of the renderer's colour lookup",
+    "used_by": [
+     "blood_impact_high_vis_spray",
+     "blood_impact_low_forw_spray",
+     "blood_impact_med_vis_spray"
+    ],
+    "bytes": 189719,
+    "in_the_game": "frames 190x256 in a 2048x2048 DXT5 sheet of 3 sequences; grey with the shape in alpha, coloured at draw time"
+   },
+   {
+    "file": "blood/spray_2.png",
+    "cols": 4,
+    "rows": 4,
+    "frames": 16,
+    "frame_width": 174,
+    "frame_height": 256,
+    "width": 696,
+    "height": 1024,
+    "kind": "spray",
+    "source": "materials/particle/fluids/blood/blood_spray_top.vtex",
+    "sequence": 2,
+    "tint_rgb": [
+     154,
+     13,
+     13
+    ],
+    "tint_from": "particles/blood_impact/blood_impact_med_vis_spray.vpcf: first stop of the renderer's colour lookup",
+    "used_by": [
+     "blood_impact_high_vis_spray",
+     "blood_impact_low_forw_spray",
+     "blood_impact_med_vis_spray"
+    ],
+    "bytes": 211241,
+    "in_the_game": "frames 174x256 in a 2048x2048 DXT5 sheet of 3 sequences; grey with the shape in alpha, coloured at draw time"
+   },
+   {
+    "file": "blood/trail_0.png",
+    "cols": 4,
+    "rows": 4,
+    "frames": 16,
+    "frame_width": 183,
+    "frame_height": 256,
+    "width": 732,
+    "height": 1024,
+    "kind": "trail",
+    "source": "materials/particle/fluids/blood/blood_spray_med.vtex",
+    "sequence": 0,
+    "tint_rgb": [
+     143,
+     1,
+     1
+    ],
+    "tint_from": "particles/blood_impact/blood_impact_med_vis_spray_trail.vpcf: first stop of the renderer's colour lookup",
+    "used_by": [
+     "blood_impact_med_vis_spray_trail"
+    ],
+    "bytes": 121927,
+    "in_the_game": "frames 183x256 in a 2048x2048 DXT5 sheet of 4 sequences; grey with the shape in alpha, coloured at draw time"
+   },
+   {
+    "file": "blood/trail_1.png",
+    "cols": 4,
+    "rows": 4,
+    "frames": 16,
+    "frame_width": 256,
+    "frame_height": 222,
+    "width": 1024,
+    "height": 888,
+    "kind": "trail",
+    "source": "materials/particle/fluids/blood/blood_spray_med.vtex",
+    "sequence": 1,
+    "tint_rgb": [
+     143,
+     1,
+     1
+    ],
+    "tint_from": "particles/blood_impact/blood_impact_med_vis_spray_trail.vpcf: first stop of the renderer's colour lookup",
+    "used_by": [
+     "blood_impact_med_vis_spray_trail"
+    ],
+    "bytes": 145304,
+    "in_the_game": "frames 294x256 in a 2048x2048 DXT5 sheet of 4 sequences; grey with the shape in alpha, coloured at draw time"
+   },
+   {
+    "file": "blood/trail_2.png",
+    "cols": 4,
+    "rows": 4,
+    "frames": 16,
+    "frame_width": 152,
+    "frame_height": 256,
+    "width": 608,
+    "height": 1024,
+    "kind": "trail",
+    "source": "materials/particle/fluids/blood/blood_spray_med.vtex",
+    "sequence": 2,
+    "tint_rgb": [
+     143,
+     1,
+     1
+    ],
+    "tint_from": "particles/blood_impact/blood_impact_med_vis_spray_trail.vpcf: first stop of the renderer's colour lookup",
+    "used_by": [
+     "blood_impact_med_vis_spray_trail"
+    ],
+    "bytes": 126532,
+    "in_the_game": "frames 152x256 in a 2048x2048 DXT5 sheet of 4 sequences; grey with the shape in alpha, coloured at draw time"
+   },
+   {
+    "file": "blood/trail_3.png",
+    "cols": 4,
+    "rows": 4,
+    "frames": 16,
+    "frame_width": 142,
+    "frame_height": 256,
+    "width": 568,
+    "height": 1024,
+    "kind": "trail",
+    "source": "materials/particle/fluids/blood/blood_spray_med.vtex",
+    "sequence": 3,
+    "tint_rgb": [
+     143,
+     1,
+     1
+    ],
+    "tint_from": "particles/blood_impact/blood_impact_med_vis_spray_trail.vpcf: first stop of the renderer's colour lookup",
+    "used_by": [
+     "blood_impact_med_vis_spray_trail"
+    ],
+    "bytes": 130478,
+    "in_the_game": "frames 142x256 in a 2048x2048 DXT5 sheet of 4 sequences; grey with the shape in alpha, coloured at draw time"
+   },
+   {
+    "file": "blood/mist_0.png",
+    "cols": 5,
+    "rows": 6,
+    "frames": 26,
+    "frame_width": 170,
+    "frame_height": 170,
+    "width": 850,
+    "height": 1020,
+    "kind": "mist",
+    "source": "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+    "sequence": 0,
+    "tint_rgb": [
+     96,
+     0,
+     0
+    ],
+    "tint_from": "particles/blood_impact/blood_impact_med_mist_away.vpcf: middle of C_INIT_RandomColor",
+    "used_by": [
+     "blood_impact_high_mist_away",
+     "blood_impact_low_mist_away",
+     "blood_impact_med_mist_away",
+     "blood_impact_med_vis_spray"
+    ],
+    "bytes": 511238,
+    "in_the_game": "frames 255x255 in a 4096x2048 DXT5 sheet of 4 sequences; grey with the shape in alpha, coloured at draw time"
+   },
+   {
+    "file": "blood/mist_1.png",
+    "cols": 5,
+    "rows": 6,
+    "frames": 26,
+    "frame_width": 170,
+    "frame_height": 170,
+    "width": 850,
+    "height": 1020,
+    "kind": "mist",
+    "source": "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+    "sequence": 1,
+    "tint_rgb": [
+     96,
+     0,
+     0
+    ],
+    "tint_from": "particles/blood_impact/blood_impact_med_mist_away.vpcf: middle of C_INIT_RandomColor",
+    "used_by": [
+     "blood_impact_high_mist_away",
+     "blood_impact_low_mist_away",
+     "blood_impact_med_mist_away",
+     "blood_impact_med_vis_spray"
+    ],
+    "bytes": 496692,
+    "in_the_game": "frames 255x255 in a 4096x2048 DXT5 sheet of 4 sequences; grey with the shape in alpha, coloured at draw time"
+   }
+  ],
+  "impact": {
+   "unit_m": 0.0254,
+   "units": "the game's: 1 unit is an inch. speeds in units a second, gravity in units a second squared, z up",
+   "chosen_by": "client.dll names blood_impact_low, _med and _high (and the older _light, _medium, _heavy); which one a hit plays is decided in code",
+   "levels": {
+    "low": {
+     "system": "blood_impact_low",
+     "spawns": {
+      "blood_impact_low_mist_away": {
+       "source": "particles/blood_impact/blood_impact_low_mist_away.vpcf",
+       "max_particles": 4,
+       "count": {
+        "per_detail_level": [
+         1.0,
+         2.0,
+         3.0,
+         4.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         7.0,
+         8.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         0.5,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         0.5,
+         1.0
+        ],
+        "bias": -0.46
+       },
+       "flipbook_position": {
+        "random": [
+         0.8,
+         1.0
+        ]
+       },
+       "sequence": [
+        0,
+        2
+       ],
+       "spawn_within_units": 2.0,
+       "speed_outward_units_s": [
+        25.0,
+        25.0
+       ],
+       "speed_local_units_s": {
+        "min": [
+         -50.0,
+         -50.0,
+         -50.0
+        ],
+        "max": [
+         -100.0,
+         50.0,
+         50.0
+        ],
+        "frame": "control point 2"
+       },
+       "speed_noise_units_s": {
+        "min": [
+         0.0,
+         0.0,
+         50.0
+        ],
+        "max": [
+         1.0,
+         1.0,
+         50.0
+        ]
+       },
+       "colour": {
+        "min": [
+         92,
+         0,
+         0
+        ],
+        "max": [
+         101,
+         0,
+         0
+        ]
+       },
+       "born_aged_s": [
+        0.1,
+        0.125
+       ],
+       "gravity_units_s2": [
+        0.0,
+        0.0,
+        -50.0
+       ],
+       "drag": 0.125,
+       "radius_scale": {
+        "start": 0.25,
+        "end": 2.0,
+        "bias": 0.85,
+        "from_life": 0,
+        "to_life": 1
+       },
+       "fade_out_last_share_of_life": [
+        1.0,
+        1.0
+       ],
+       "flipbook_over_life": [
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.4996,
+         0.7514
+        ],
+        [
+         1.0,
+         1.0
+        ]
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.178,
+         0.203
+        ],
+        "speed_local_mps": {
+         "min": [
+          -1.27,
+          -1.27,
+          -1.27
+         ],
+         "max": [
+          -2.54,
+          1.27,
+          1.27
+         ]
+        },
+        "speed_outward_mps": [
+         0.64,
+         0.64
+        ],
+        "speed_noise_mps": {
+         "min": [
+          0.0,
+          0.0,
+          1.27
+         ],
+         "max": [
+          0.03,
+          0.03,
+          1.27
+         ]
+        },
+        "gravity_mps2": [
+         0.0,
+         0.0,
+         -1.27
+        ]
+       },
+       "draws": [
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+          "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex"
+         ],
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        },
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+          "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex",
+          "materials/particle/tile/tile_noise_gaussian.vtex"
+         ],
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        },
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+          "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex"
+         ],
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        }
+       ]
+      },
+      "blood_impact_low_vis_spray_trail": {
+       "source": "particles/blood_impact/blood_impact_low_vis_spray_trail.vpcf",
+       "max_particles": 2,
+       "count": {
+        "per_detail_level": [
+         1.0,
+         2.0,
+         3.0,
+         4.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         16.0,
+         32.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         0.5,
+         0.65
+        ]
+       },
+       "trail_length": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "flipbook_position": {
+        "random": [
+         0.95,
+         1.0
+        ]
+       },
+       "yaw_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "sequence": [
+        1,
+        3
+       ],
+       "spawn_within_units": 2.0,
+       "speed_outward_units_s": [
+        50.0,
+        50.0
+       ],
+       "speed_local_units_s": {
+        "min": [
+         200.0,
+         50.0,
+         0.0
+        ],
+        "max": [
+         350.0,
+         50.0,
+         0.0
+        ],
+        "frame": "control point 0"
+       },
+       "speed_noise_units_s": {
+        "min": [
+         0.0,
+         0.0,
+         25.0
+        ],
+        "max": [
+         1.0,
+         1.0,
+         50.0
+        ]
+       },
+       "colour": {
+        "min": [
+         155,
+         0,
+         0,
+         null
+        ],
+        "max": [
+         164,
+         0,
+         0,
+         null
+        ]
+       },
+       "gravity_units_s2": [
+        0.0,
+        0.0,
+        -450.0
+       ],
+       "drag": 0.1,
+       "radius_scale": {
+        "start": 0.25,
+        "end": 1,
+        "bias": 0.25,
+        "from_life": 0,
+        "to_life": 1
+       },
+       "fade_out_last_share_of_life": [
+        0.125,
+        0.25
+       ],
+       "flipbook_over_life": [
+        [
+         0.0,
+         0.0073
+        ],
+        [
+         0.2146,
+         0.2763
+        ],
+        [
+         0.6441,
+         0.7054
+        ],
+        [
+         1.0,
+         0.9
+        ]
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.406,
+         0.813
+        ],
+        "speed_local_mps": {
+         "min": [
+          5.08,
+          1.27,
+          0.0
+         ],
+         "max": [
+          8.89,
+          1.27,
+          0.0
+         ]
+        },
+        "speed_outward_mps": [
+         1.27,
+         1.27
+        ],
+        "speed_noise_mps": {
+         "min": [
+          0.0,
+          0.0,
+          0.64
+         ],
+         "max": [
+          0.03,
+          0.03,
+          1.27
+         ]
+        },
+        "gravity_mps2": [
+         0.0,
+         0.0,
+         -11.43
+        ]
+       },
+       "draws": [
+        {
+         "as": "trails",
+         "textures": [
+          "materials/particle/fluids/blood/blood_spray_low.vtex",
+          "materials/particle/fluids/blood/blood_spray_low_mv.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            25,
+            0,
+            0
+           ]
+          ],
+          [
+           0.1008,
+           [
+            178,
+            11,
+            11
+           ]
+          ],
+          [
+           0.2842,
+           [
+            139,
+            0,
+            0
+           ]
+          ],
+          [
+           0.5245,
+           [
+            140,
+            0,
+            0
+           ]
+          ],
+          [
+           0.8553,
+           [
+            30,
+            1,
+            1
+           ]
+          ],
+          [
+           1.0,
+           [
+            16,
+            0,
+            0
+           ]
+          ]
+         ],
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flMaxLength": 500.0,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        },
+        {
+         "as": "trails",
+         "textures": [
+          "materials/particle/fluids/blood/blood_spray_low.vtex",
+          "materials/particle/fluids/blood/blood_spray_low_mv.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            25,
+            0,
+            0
+           ]
+          ],
+          [
+           0.1008,
+           [
+            178,
+            11,
+            11
+           ]
+          ],
+          [
+           0.2842,
+           [
+            139,
+            0,
+            0
+           ]
+          ],
+          [
+           0.5245,
+           [
+            140,
+            0,
+            0
+           ]
+          ],
+          [
+           0.8553,
+           [
+            30,
+            1,
+            1
+           ]
+          ],
+          [
+           1.0,
+           [
+            16,
+            0,
+            0
+           ]
+          ]
+         ],
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flMaxLength": 500.0,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        }
+       ],
+       "children": [
+        "blood_impact_low_ground_decal",
+        "blood_impact_low_ground_decal_alt"
+       ]
+      },
+      "blood_impact_low_ground_decal": {
+       "source": "particles/blood_impact/blood_impact_low_ground_decal.vpcf",
+       "max_particles": 1,
+       "count": {
+        "per_detail_level": [
+         0.0,
+         0.0,
+         1.0,
+         1.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         20.0,
+         25.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         5.0,
+         10.0
+        ]
+       },
+       "fade_out_last_share_of_life": [
+        0.1,
+        0.1
+       ],
+       "fade_in_s": [
+        0.125,
+        0.15
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.508,
+         0.635
+        ]
+       },
+       "draws": [
+        {
+         "as": "projected decal",
+         "textures": [],
+         "materials": [
+          "materials/decals/blood/blood_decals_spray_low.vmat"
+         ],
+         "m_flMinProjectionDepth": -15.0,
+         "m_flMaxProjectionDepth": 5.0
+        }
+       ]
+      },
+      "blood_impact_low_ground_decal_alt": {
+       "source": "particles/blood_impact/blood_impact_low_ground_decal_alt.vpcf",
+       "max_particles": 1,
+       "count": {
+        "per_detail_level": [
+         0.0,
+         0.0,
+         1.0,
+         1.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         20.0,
+         30.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         5.0,
+         10.0
+        ]
+       },
+       "fade_out_last_share_of_life": [
+        0.1,
+        0.1
+       ],
+       "fade_in_s": [
+        0.125,
+        0.15
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.508,
+         0.762
+        ]
+       },
+       "draws": [
+        {
+         "as": "projected decal",
+         "textures": [],
+         "materials": [
+          "materials/decals/blood/blood_decals_spray_lowalt.vmat"
+         ],
+         "m_flMinProjectionDepth": -15.0,
+         "m_flMaxProjectionDepth": 5.0
+        }
+       ]
+      },
+      "blood_impact_low_spray_screen": {
+       "source": "particles/blood_impact/blood_impact_low_spray_screen.vpcf",
+       "max_particles": 1,
+       "count": 1.0,
+       "radius_units": {
+        "random": [
+         4.0,
+         8.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         0.35,
+         0.5
+        ]
+       },
+       "trail_length": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "flipbook_position": {
+        "random": [
+         0.85,
+         1.0
+        ]
+       },
+       "yaw_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "attribute_13": {
+        "driven_by": "particle_float"
+       },
+       "sequence": [
+        2,
+        3
+       ],
+       "spawn_within_units": 2.0,
+       "speed_outward_units_s": [
+        50.0,
+        50.0
+       ],
+       "speed_local_units_s": {
+        "min": [
+         250.0,
+         -0.0,
+         0.0
+        ],
+        "max": [
+         450.0,
+         -0.0,
+         0.0
+        ],
+        "frame": "control point 0"
+       },
+       "colour": {
+        "min": [
+         155,
+         0,
+         0,
+         null
+        ],
+        "max": [
+         164,
+         0,
+         0,
+         null
+        ]
+       },
+       "born_aged_s": [
+        0.1,
+        0.125
+       ],
+       "gravity_units_s2": [
+        0.0,
+        0.0,
+        -450.0
+       ],
+       "drag": 0.05,
+       "radius_scale": {
+        "start": 0.25,
+        "end": 2.0,
+        "bias": 0.5,
+        "from_life": 0,
+        "to_life": 1
+       },
+       "fade_out_last_share_of_life": [
+        0.125,
+        0.25
+       ],
+       "flipbook_over_life": [
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.3423,
+         0.5414
+        ],
+        [
+         0.8111,
+         0.9454
+        ],
+        [
+         1.0,
+         1.0
+        ]
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.102,
+         0.203
+        ],
+        "speed_local_mps": {
+         "min": [
+          6.35,
+          -0.0,
+          0.0
+         ],
+         "max": [
+          11.43,
+          -0.0,
+          0.0
+         ]
+        },
+        "speed_outward_mps": [
+         1.27,
+         1.27
+        ],
+        "gravity_mps2": [
+         0.0,
+         0.0,
+         -11.43
+        ]
+       },
+       "draws": [
+        {
+         "as": "trails",
+         "textures": [
+          "materials/particle/fluids/blood/blood_spray_multi.vtex",
+          "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile_inv.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            178,
+            11,
+            11
+           ]
+          ],
+          [
+           0.2842,
+           [
+            139,
+            0,
+            0
+           ]
+          ],
+          [
+           0.5245,
+           [
+            140,
+            0,
+            0
+           ]
+          ],
+          [
+           0.8553,
+           [
+            30,
+            1,
+            1
+           ]
+          ],
+          [
+           1.0,
+           [
+            16,
+            0,
+            0
+           ]
+          ]
+         ],
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flMaxLength": 500.0,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        }
+       ]
+      },
+      "blood_impact_friendly_flash": {
+       "source": "particles/impact_fx/blood_impact_friendly_flash.vpcf",
+       "skipped": "not a blood sprite: the flash shown for a hit on a team mate"
+      },
+      "blood_impact_low_forw_spray": {
+       "source": "particles/blood_impact/blood_impact_low_forw_spray.vpcf",
+       "max_particles": 3,
+       "count": {
+        "per_detail_level": [
+         1.0,
+         2.0,
+         3.0,
+         3.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         5.0,
+         8.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         -45.0,
+         -90.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         0.7843,
+         0.8627
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         0.35,
+         0.75
+        ]
+       },
+       "flipbook_position": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "sequence": [
+        1,
+        3
+       ],
+       "spawn_within_units": 2.0,
+       "speed_local_units_s": {
+        "min": [
+         150.0,
+         -12.0,
+         -15.0
+        ],
+        "max": [
+         250.0,
+         15.0,
+         15.0
+        ],
+        "frame": "control point 2"
+       },
+       "born_aged_s": [
+        0.25,
+        0.5
+       ],
+       "gravity_units_s2": [
+        0,
+        0,
+        0
+       ],
+       "drag": 0.2,
+       "radius_scale": {
+        "start": 0.1,
+        "end": 3.0,
+        "bias": 0.65,
+        "from_life": 0.3,
+        "to_life": 1
+       },
+       "fade_out_last_share_of_life": [
+        0.25,
+        0.25
+       ],
+       "flipbook_over_life": [
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.3684,
+         0.6222
+        ],
+        [
+         1.0,
+         1.0
+        ]
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.127,
+         0.203
+        ],
+        "speed_local_mps": {
+         "min": [
+          3.81,
+          -0.3,
+          -0.38
+         ],
+         "max": [
+          6.35,
+          0.38,
+          0.38
+         ]
+        },
+        "gravity_mps2": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "draws": [
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/fluids/blood/blood_spray_top.vtex",
+          "materials/particle/fluids/blood/blood_spray_top_mv.vtex",
+          "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            154,
+            13,
+            13
+           ]
+          ],
+          [
+           0.2842,
+           [
+            127,
+            15,
+            15
+           ]
+          ],
+          [
+           0.5245,
+           [
+            108,
+            15,
+            15
+           ]
+          ],
+          [
+           1.0,
+           [
+            34,
+            3,
+            36
+           ]
+          ]
+         ],
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flOverbrightFactor": 0.5,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        },
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/smoke/static/static_smoke.vtex",
+          "materials/particle/fluids/blood/blood_spray_top_mv.vtex",
+          "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            34,
+            3,
+            36
+           ]
+          ],
+          [
+           0.2842,
+           [
+            127,
+            15,
+            15
+           ]
+          ],
+          [
+           0.5245,
+           [
+            108,
+            15,
+            15
+           ]
+          ],
+          [
+           1.0,
+           [
+            154,
+            13,
+            13
+           ]
+          ]
+         ],
+         "m_flRadiusScale": 0.5,
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flOverbrightFactor": 0.5,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        }
+       ]
+      }
+     }
+    },
+    "med": {
+     "system": "blood_impact_med",
+     "spawns": {
+      "blood_impact_med_vis_spray": {
+       "source": "particles/blood_impact/blood_impact_med_vis_spray.vpcf",
+       "max_particles": 3,
+       "count": {
+        "per_detail_level": [
+         1.0,
+         2.0,
+         3.0,
+         3.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         11.0,
+         16.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         -45.0,
+         -90.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         0.7843,
+         0.8627
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         0.5,
+         0.7
+        ]
+       },
+       "flipbook_position": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "sequence": [
+        1,
+        3
+       ],
+       "spawn_within_units": 2.0,
+       "speed_local_units_s": {
+        "min": [
+         50.0,
+         -12.0,
+         -15.0
+        ],
+        "max": [
+         120.0,
+         15.0,
+         15.0
+        ],
+        "frame": "control point 2"
+       },
+       "born_aged_s": [
+        0.25,
+        0.5
+       ],
+       "gravity_units_s2": [
+        0.0,
+        0.0,
+        -250.0
+       ],
+       "drag": 0.05,
+       "radius_scale": {
+        "start": 0.1,
+        "end": 2.0,
+        "bias": 0.52,
+        "from_life": 0,
+        "to_life": 1
+       },
+       "fade_out_last_share_of_life": [
+        0.5,
+        0.6
+       ],
+       "flipbook_over_life": [
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.3684,
+         0.6222
+        ],
+        [
+         1.0,
+         1.0
+        ]
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.279,
+         0.406
+        ],
+        "speed_local_mps": {
+         "min": [
+          1.27,
+          -0.3,
+          -0.38
+         ],
+         "max": [
+          3.05,
+          0.38,
+          0.38
+         ]
+        },
+        "gravity_mps2": [
+         0.0,
+         0.0,
+         -6.35
+        ]
+       },
+       "draws": [
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/fluids/blood/blood_spray_top.vtex",
+          "materials/particle/fluids/blood/blood_spray_top_mv.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            154,
+            13,
+            13
+           ]
+          ],
+          [
+           0.2842,
+           [
+            127,
+            15,
+            15
+           ]
+          ],
+          [
+           0.5245,
+           [
+            108,
+            15,
+            15
+           ]
+          ],
+          [
+           1.0,
+           [
+            34,
+            3,
+            36
+           ]
+          ]
+         ],
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flOverbrightFactor": 0.5,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        },
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/smoke/static/static_smoke.vtex",
+          "materials/particle/fluids/blood/blood_spray_top_mv.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            34,
+            3,
+            36
+           ]
+          ],
+          [
+           0.2842,
+           [
+            127,
+            15,
+            15
+           ]
+          ],
+          [
+           0.5245,
+           [
+            108,
+            15,
+            15
+           ]
+          ],
+          [
+           1.0,
+           [
+            154,
+            13,
+            13
+           ]
+          ]
+         ],
+         "m_flRadiusScale": 0.5,
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flOverbrightFactor": 0.5,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        },
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+          "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            34,
+            3,
+            36
+           ]
+          ],
+          [
+           0.2842,
+           [
+            127,
+            15,
+            15
+           ]
+          ],
+          [
+           0.5245,
+           [
+            108,
+            15,
+            15
+           ]
+          ],
+          [
+           1.0,
+           [
+            154,
+            13,
+            13
+           ]
+          ]
+         ],
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        }
+       ]
+      },
+      "blood_impact_med_spray_screen": {
+       "source": "particles/blood_impact/blood_impact_med_spray_screen.vpcf",
+       "max_particles": 3,
+       "count": 1.0,
+       "radius_units": {
+        "random": [
+         4.0,
+         8.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         0.35,
+         0.5
+        ]
+       },
+       "trail_length": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "flipbook_position": {
+        "random": [
+         0.85,
+         1.0
+        ]
+       },
+       "yaw_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "attribute_13": {
+        "driven_by": "particle_float"
+       },
+       "sequence": [
+        2,
+        2
+       ],
+       "spawn_within_units": 2.0,
+       "speed_outward_units_s": [
+        50.0,
+        50.0
+       ],
+       "speed_local_units_s": {
+        "min": [
+         250.0,
+         -0.0,
+         0.0
+        ],
+        "max": [
+         450.0,
+         -0.0,
+         0.0
+        ],
+        "frame": "control point 0"
+       },
+       "born_aged_s": [
+        0.1,
+        0.125
+       ],
+       "gravity_units_s2": [
+        0.0,
+        0.0,
+        -450.0
+       ],
+       "drag": 0.05,
+       "radius_scale": {
+        "start": 0.25,
+        "end": 2.0,
+        "bias": 0.5,
+        "from_life": 0,
+        "to_life": 1
+       },
+       "fade_out_last_share_of_life": [
+        0.125,
+        0.25
+       ],
+       "flipbook_over_life": [
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.3423,
+         0.5414
+        ],
+        [
+         0.8111,
+         0.9454
+        ],
+        [
+         1.0,
+         1.0
+        ]
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.102,
+         0.203
+        ],
+        "speed_local_mps": {
+         "min": [
+          6.35,
+          -0.0,
+          0.0
+         ],
+         "max": [
+          11.43,
+          -0.0,
+          0.0
+         ]
+        },
+        "speed_outward_mps": [
+         1.27,
+         1.27
+        ],
+        "gravity_mps2": [
+         0.0,
+         0.0,
+         -11.43
+        ]
+       },
+       "draws": [
+        {
+         "as": "trails",
+         "textures": [
+          "materials/particle/fluids/blood/blood_spray_multi.vtex",
+          "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile_inv.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            30,
+            1,
+            1
+           ]
+          ],
+          [
+           0.2558,
+           [
+            64,
+            0,
+            0
+           ]
+          ],
+          [
+           0.5995,
+           [
+            92,
+            0,
+            0
+           ]
+          ],
+          [
+           1.0,
+           [
+            143,
+            1,
+            1
+           ]
+          ]
+         ],
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flMaxLength": 500.0,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        }
+       ]
+      },
+      "blood_impact_med_vis_spray_trail": {
+       "source": "particles/blood_impact/blood_impact_med_vis_spray_trail.vpcf",
+       "max_particles": 2,
+       "count": {
+        "per_detail_level": [
+         1.0,
+         1.0,
+         2.0,
+         2.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         14.0,
+         20.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         0.5,
+         0.75
+        ]
+       },
+       "trail_length": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "flipbook_position": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "yaw_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "sequence": [
+        0,
+        3
+       ],
+       "spawn_within_units": 2.0,
+       "speed_outward_units_s": [
+        50.0,
+        50.0
+       ],
+       "speed_local_units_s": {
+        "min": [
+         120.0,
+         -0.0,
+         0.0
+        ],
+        "max": [
+         250.0,
+         -0.0,
+         0.0
+        ],
+        "frame": "control point 0"
+       },
+       "speed_noise_units_s": {
+        "min": [
+         0.0,
+         0.0,
+         25.0
+        ],
+        "max": [
+         1.0,
+         1.0,
+         50.0
+        ]
+       },
+       "born_aged_s": [
+        0.1,
+        0.125
+       ],
+       "gravity_units_s2": [
+        0.0,
+        0.0,
+        -450.0
+       ],
+       "drag": 0.05,
+       "radius_scale": {
+        "start": 0.25,
+        "end": 2.0,
+        "bias": 0.5,
+        "from_life": 0,
+        "to_life": 1
+       },
+       "fade_out_last_share_of_life": [
+        0.125,
+        0.25
+       ],
+       "flipbook_over_life": [
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.2049,
+         0.4121
+        ],
+        [
+         0.573,
+         0.7595
+        ],
+        [
+         1.0,
+         1.0
+        ]
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.356,
+         0.508
+        ],
+        "speed_local_mps": {
+         "min": [
+          3.05,
+          -0.0,
+          0.0
+         ],
+         "max": [
+          6.35,
+          -0.0,
+          0.0
+         ]
+        },
+        "speed_outward_mps": [
+         1.27,
+         1.27
+        ],
+        "speed_noise_mps": {
+         "min": [
+          0.0,
+          0.0,
+          0.64
+         ],
+         "max": [
+          0.03,
+          0.03,
+          1.27
+         ]
+        },
+        "gravity_mps2": [
+         0.0,
+         0.0,
+         -11.43
+        ]
+       },
+       "draws": [
+        {
+         "as": "trails",
+         "textures": [
+          "materials/particle/fluids/blood/blood_spray_med.vtex",
+          "materials/particle/fluids/blood/blood_spray_med_mv.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            143,
+            1,
+            1
+           ]
+          ],
+          [
+           0.3902,
+           [
+            92,
+            0,
+            0
+           ]
+          ],
+          [
+           0.7674,
+           [
+            64,
+            0,
+            0
+           ]
+          ],
+          [
+           1.0,
+           [
+            30,
+            1,
+            1
+           ]
+          ]
+         ],
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flMaxLength": 500.0,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        }
+       ],
+       "children": [
+        "blood_impact_med_ground_decal",
+        "blood_impact_med_ground_decalalt",
+        "blood_impact_med_ground_decalaltb"
+       ]
+      },
+      "blood_impact_med_ground_decal": {
+       "source": "particles/blood_impact/blood_impact_med_ground_decal.vpcf",
+       "max_particles": 1,
+       "count": {
+        "per_detail_level": [
+         0.0,
+         1.0,
+         1.0,
+         1.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         30.0,
+         40.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         5.0,
+         10.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         -45.0,
+         45.0
+        ]
+       },
+       "fade_out_last_share_of_life": [
+        0.1,
+        0.1
+       ],
+       "fade_in_s": [
+        0.125,
+        0.15
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.762,
+         1.016
+        ]
+       },
+       "draws": [
+        {
+         "as": "projected decal",
+         "textures": [],
+         "materials": [
+          "materials/decals/blood/blood_decals_spray_med.vmat"
+         ],
+         "m_flMinProjectionDepth": -15.0,
+         "m_flMaxProjectionDepth": 5.0,
+         "m_bOrientToNormal": true
+        }
+       ]
+      },
+      "blood_impact_med_ground_decalalt": {
+       "source": "particles/blood_impact/blood_impact_med_ground_decalalt.vpcf",
+       "max_particles": 1,
+       "count": {
+        "per_detail_level": [
+         0.0,
+         1.0,
+         1.0,
+         1.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         30.0,
+         40.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         5.0,
+         10.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         -30.0,
+         30.0
+        ]
+       },
+       "fade_out_last_share_of_life": [
+        0.1,
+        0.1
+       ],
+       "fade_in_s": [
+        0.125,
+        0.15
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.762,
+         1.016
+        ]
+       },
+       "draws": [
+        {
+         "as": "projected decal",
+         "textures": [],
+         "materials": [
+          "materials/decals/blood/blood_decals_spray_medalt.vmat"
+         ],
+         "m_flMinProjectionDepth": -15.0,
+         "m_flMaxProjectionDepth": 5.0,
+         "m_bOrientToNormal": true
+        }
+       ]
+      },
+      "blood_impact_med_ground_decalaltb": {
+       "source": "particles/blood_impact/blood_impact_med_ground_decalaltb.vpcf",
+       "max_particles": 1,
+       "count": {
+        "per_detail_level": [
+         0.0,
+         1.0,
+         1.0,
+         1.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         30.0,
+         40.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         20.0,
+         20.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         -30.0,
+         30.0
+        ]
+       },
+       "fade_out_last_share_of_life": [
+        0.2,
+        0.2
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.762,
+         1.016
+        ]
+       },
+       "draws": [
+        {
+         "as": "projected decal",
+         "textures": [],
+         "materials": [
+          "materials/decals/blood/blood_decals_spray_lowalt_b.vmat"
+         ],
+         "m_flMinProjectionDepth": -15.0,
+         "m_flMaxProjectionDepth": 5.0,
+         "m_bOrientToNormal": true
+        }
+       ]
+      },
+      "blood_impact_med_mist_away": {
+       "source": "particles/blood_impact/blood_impact_med_mist_away.vpcf",
+       "max_particles": 5,
+       "count": {
+        "per_detail_level": [
+         2.0,
+         3.0,
+         4.0,
+         5.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         9.0,
+         12.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         0.3,
+         0.65
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         0.5,
+         1.0
+        ],
+        "bias": -0.405
+       },
+       "flipbook_position": {
+        "random": [
+         0.8,
+         1.0
+        ]
+       },
+       "sequence": [
+        0,
+        2
+       ],
+       "spawn_within_units": 2.0,
+       "speed_outward_units_s": [
+        35.0,
+        65.0
+       ],
+       "speed_local_units_s": {
+        "min": [
+         -75.0,
+         20.0,
+         -50.0
+        ],
+        "max": [
+         -250.0,
+         50.0,
+         50.0
+        ],
+        "frame": "control point 2"
+       },
+       "speed_noise_units_s": {
+        "min": [
+         0.0,
+         0.0,
+         30.0
+        ],
+        "max": [
+         1.0,
+         1.0,
+         50.0
+        ]
+       },
+       "colour": {
+        "min": [
+         92,
+         0,
+         0
+        ],
+        "max": [
+         101,
+         0,
+         0
+        ]
+       },
+       "born_aged_s": [
+        0.1,
+        0.125
+       ],
+       "gravity_units_s2": [
+        0.0,
+        0.0,
+        -50.0
+       ],
+       "drag": 0.135,
+       "radius_scale": {
+        "start": 0.25,
+        "end": 3.0,
+        "bias": 0.75,
+        "from_life": 0,
+        "to_life": 1
+       },
+       "fade_out_last_share_of_life": [
+        0.6,
+        1.0
+       ],
+       "flipbook_over_life": [
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.4996,
+         0.7514
+        ],
+        [
+         1.0,
+         1.0
+        ]
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.229,
+         0.305
+        ],
+        "speed_local_mps": {
+         "min": [
+          -1.91,
+          0.51,
+          -1.27
+         ],
+         "max": [
+          -6.35,
+          1.27,
+          1.27
+         ]
+        },
+        "speed_outward_mps": [
+         0.89,
+         1.65
+        ],
+        "speed_noise_mps": {
+         "min": [
+          0.0,
+          0.0,
+          0.76
+         ],
+         "max": [
+          0.03,
+          0.03,
+          1.27
+         ]
+        },
+        "gravity_mps2": [
+         0.0,
+         0.0,
+         -1.27
+        ]
+       },
+       "draws": [
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+          "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex"
+         ],
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        },
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+          "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex",
+          "materials/particle/tile/tile_noise_gaussian.vtex"
+         ],
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        },
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+          "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex"
+         ],
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        }
+       ]
+      },
+      "blood_impact_med_spray_away": {
+       "source": "particles/blood_impact/blood_impact_med_spray_away.vpcf",
+       "max_particles": 3,
+       "count": 1.0,
+       "radius_units": {
+        "random": [
+         4.0,
+         8.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         0.5,
+         0.65
+        ]
+       },
+       "trail_length": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "flipbook_position": {
+        "random": [
+         0.85,
+         1.0
+        ]
+       },
+       "yaw_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "attribute_13": {
+        "driven_by": "particle_float"
+       },
+       "sequence": [
+        2,
+        2
+       ],
+       "spawn_within_units": 2.0,
+       "speed_outward_units_s": [
+        50.0,
+        50.0
+       ],
+       "speed_local_units_s": {
+        "min": [
+         250.0,
+         -0.0,
+         0.0
+        ],
+        "max": [
+         450.0,
+         -0.0,
+         0.0
+        ],
+        "frame": "control point 0"
+       },
+       "colour": {
+        "min": [
+         92,
+         0,
+         0
+        ],
+        "max": [
+         92,
+         0,
+         0
+        ]
+       },
+       "born_aged_s": [
+        0.1,
+        0.125
+       ],
+       "gravity_units_s2": [
+        0.0,
+        0.0,
+        -450.0
+       ],
+       "drag": 0.05,
+       "radius_scale": {
+        "start": 0.25,
+        "end": 2.0,
+        "bias": 0.5,
+        "from_life": 0,
+        "to_life": 1
+       },
+       "fade_out_last_share_of_life": [
+        0.125,
+        0.25
+       ],
+       "flipbook_over_life": [
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.3423,
+         0.5414
+        ],
+        [
+         0.8111,
+         0.9454
+        ],
+        [
+         1.0,
+         1.0
+        ]
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.102,
+         0.203
+        ],
+        "speed_local_mps": {
+         "min": [
+          6.35,
+          -0.0,
+          0.0
+         ],
+         "max": [
+          11.43,
+          -0.0,
+          0.0
+         ]
+        },
+        "speed_outward_mps": [
+         1.27,
+         1.27
+        ],
+        "gravity_mps2": [
+         0.0,
+         0.0,
+         -11.43
+        ]
+       },
+       "draws": [
+        {
+         "as": "trails",
+         "textures": [
+          "materials/particle/fluids/blood/blood_spray_multi.vtex",
+          "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile_inv.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            178,
+            11,
+            11
+           ]
+          ],
+          [
+           0.2842,
+           [
+            139,
+            0,
+            0
+           ]
+          ],
+          [
+           0.5245,
+           [
+            140,
+            0,
+            0
+           ]
+          ],
+          [
+           0.8553,
+           [
+            30,
+            1,
+            1
+           ]
+          ],
+          [
+           1.0,
+           [
+            16,
+            0,
+            0
+           ]
+          ]
+         ],
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flMaxLength": 500.0,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        }
+       ]
+      },
+      "blood_impact_friendly_flash": {
+       "source": "particles/impact_fx/blood_impact_friendly_flash.vpcf",
+       "skipped": "not a blood sprite: the flash shown for a hit on a team mate"
+      },
+      "blood_impact_low_forw_spray": {
+       "source": "particles/blood_impact/blood_impact_low_forw_spray.vpcf",
+       "max_particles": 3,
+       "count": {
+        "per_detail_level": [
+         1.0,
+         2.0,
+         3.0,
+         3.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         5.0,
+         8.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         -45.0,
+         -90.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         0.7843,
+         0.8627
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         0.35,
+         0.75
+        ]
+       },
+       "flipbook_position": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "sequence": [
+        1,
+        3
+       ],
+       "spawn_within_units": 2.0,
+       "speed_local_units_s": {
+        "min": [
+         150.0,
+         -12.0,
+         -15.0
+        ],
+        "max": [
+         250.0,
+         15.0,
+         15.0
+        ],
+        "frame": "control point 2"
+       },
+       "born_aged_s": [
+        0.25,
+        0.5
+       ],
+       "gravity_units_s2": [
+        0,
+        0,
+        0
+       ],
+       "drag": 0.2,
+       "radius_scale": {
+        "start": 0.1,
+        "end": 3.0,
+        "bias": 0.65,
+        "from_life": 0.3,
+        "to_life": 1
+       },
+       "fade_out_last_share_of_life": [
+        0.25,
+        0.25
+       ],
+       "flipbook_over_life": [
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.3684,
+         0.6222
+        ],
+        [
+         1.0,
+         1.0
+        ]
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.127,
+         0.203
+        ],
+        "speed_local_mps": {
+         "min": [
+          3.81,
+          -0.3,
+          -0.38
+         ],
+         "max": [
+          6.35,
+          0.38,
+          0.38
+         ]
+        },
+        "gravity_mps2": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "draws": [
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/fluids/blood/blood_spray_top.vtex",
+          "materials/particle/fluids/blood/blood_spray_top_mv.vtex",
+          "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            154,
+            13,
+            13
+           ]
+          ],
+          [
+           0.2842,
+           [
+            127,
+            15,
+            15
+           ]
+          ],
+          [
+           0.5245,
+           [
+            108,
+            15,
+            15
+           ]
+          ],
+          [
+           1.0,
+           [
+            34,
+            3,
+            36
+           ]
+          ]
+         ],
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flOverbrightFactor": 0.5,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        },
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/smoke/static/static_smoke.vtex",
+          "materials/particle/fluids/blood/blood_spray_top_mv.vtex",
+          "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            34,
+            3,
+            36
+           ]
+          ],
+          [
+           0.2842,
+           [
+            127,
+            15,
+            15
+           ]
+          ],
+          [
+           0.5245,
+           [
+            108,
+            15,
+            15
+           ]
+          ],
+          [
+           1.0,
+           [
+            154,
+            13,
+            13
+           ]
+          ]
+         ],
+         "m_flRadiusScale": 0.5,
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flOverbrightFactor": 0.5,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        }
+       ]
+      }
+     }
+    },
+    "high": {
+     "system": "blood_impact_high",
+     "spawns": {
+      "blood_impact_high_vis_spray": {
+       "source": "particles/blood_impact/blood_impact_high_vis_spray.vpcf",
+       "max_particles": 1,
+       "count": {
+        "per_detail_level": [
+         1.0,
+         1.0,
+         2.0,
+         2.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         14.0,
+         20.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         0.5,
+         0.75
+        ]
+       },
+       "flipbook_position": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "sequence": [
+        0,
+        3
+       ],
+       "spawn_within_units": 2.0,
+       "speed_local_units_s": {
+        "min": [
+         50.0,
+         0.0,
+         0.0
+        ],
+        "max": [
+         120.0,
+         0.0,
+         0.0
+        ],
+        "frame": "control point 2"
+       },
+       "born_aged_s": [
+        null,
+        0.1
+       ],
+       "gravity_units_s2": [
+        0.0,
+        0.0,
+        -100.0
+       ],
+       "drag": 0.05,
+       "radius_scale": {
+        "start": 0.25,
+        "end": 1,
+        "bias": 0.75,
+        "from_life": 0,
+        "to_life": 1
+       },
+       "fade_out_last_share_of_life": [
+        0.125,
+        0.5
+       ],
+       "flipbook_over_life": [
+        [
+         0.0,
+         0.1616
+        ],
+        [
+         0.3097,
+         0.606
+        ],
+        [
+         1.0,
+         1.0
+        ]
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.356,
+         0.508
+        ],
+        "speed_local_mps": {
+         "min": [
+          1.27,
+          0.0,
+          0.0
+         ],
+         "max": [
+          3.05,
+          0.0,
+          0.0
+         ]
+        },
+        "gravity_mps2": [
+         0.0,
+         0.0,
+         -2.54
+        ]
+       },
+       "draws": [
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/fluids/blood/blood_spray_top.vtex",
+          "materials/particle/fluids/blood/blood_spray_top_mv.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            34,
+            3,
+            36
+           ]
+          ],
+          [
+           0.2842,
+           [
+            127,
+            15,
+            15
+           ]
+          ],
+          [
+           0.5245,
+           [
+            108,
+            15,
+            15
+           ]
+          ],
+          [
+           1.0,
+           [
+            154,
+            13,
+            13
+           ]
+          ]
+         ],
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flOverbrightFactor": 0.5,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        },
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/smoke/static/static_smoke.vtex",
+          "materials/particle/fluids/blood/blood_spray_top_mv.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            34,
+            3,
+            36
+           ]
+          ],
+          [
+           0.2842,
+           [
+            127,
+            15,
+            15
+           ]
+          ],
+          [
+           0.5245,
+           [
+            108,
+            15,
+            15
+           ]
+          ],
+          [
+           1.0,
+           [
+            154,
+            13,
+            13
+           ]
+          ]
+         ],
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flOverbrightFactor": 0.5,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        }
+       ]
+      },
+      "blood_impact_high_vis_spray_trail": {
+       "source": "particles/blood_impact/blood_impact_high_vis_spray_trail.vpcf",
+       "max_particles": 2,
+       "count": 1.0,
+       "radius_units": {
+        "random": [
+         16.0,
+         32.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         0.5,
+         0.75
+        ]
+       },
+       "trail_length": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "flipbook_position": {
+        "random": [
+         0.95,
+         1.0
+        ]
+       },
+       "yaw_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "sequence": [
+        1,
+        1
+       ],
+       "spawn_within_units": 2.0,
+       "speed_local_units_s": {
+        "min": [
+         100.0,
+         0.0,
+         0.0
+        ],
+        "max": [
+         200.0,
+         0.0,
+         0.0
+        ],
+        "frame": "control point 0"
+       },
+       "speed_noise_units_s": {
+        "min": [
+         0.0,
+         50.0,
+         25.0
+        ],
+        "max": [
+         1.0,
+         50.0,
+         50.0
+        ]
+       },
+       "born_aged_s": [
+        0.1,
+        0.125
+       ],
+       "gravity_units_s2": [
+        0.0,
+        0.0,
+        -550.0
+       ],
+       "drag": 0.05,
+       "radius_scale": {
+        "start": 0.25,
+        "end": 2.0,
+        "bias": 0.5,
+        "from_life": 0,
+        "to_life": 1
+       },
+       "fade_out_last_share_of_life": [
+        0.125,
+        0.25
+       ],
+       "flipbook_over_life": [
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.2237,
+         0.2747
+        ],
+        [
+         0.808,
+         0.913
+        ],
+        [
+         1.0,
+         1.0
+        ]
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.406,
+         0.813
+        ],
+        "speed_local_mps": {
+         "min": [
+          2.54,
+          0.0,
+          0.0
+         ],
+         "max": [
+          5.08,
+          0.0,
+          0.0
+         ]
+        },
+        "speed_noise_mps": {
+         "min": [
+          0.0,
+          1.27,
+          0.64
+         ],
+         "max": [
+          0.03,
+          1.27,
+          1.27
+         ]
+        },
+        "gravity_mps2": [
+         0.0,
+         0.0,
+         -13.97
+        ]
+       },
+       "draws": [
+        {
+         "as": "trails",
+         "textures": [
+          "materials/particle/fluids/blood/blood_spray_high.vtex",
+          "materials/particle/fluids/blood/blood_spray_high_mv.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            178,
+            11,
+            11
+           ]
+          ],
+          [
+           0.2842,
+           [
+            139,
+            0,
+            0
+           ]
+          ],
+          [
+           0.5245,
+           [
+            140,
+            0,
+            0
+           ]
+          ],
+          [
+           0.8553,
+           [
+            30,
+            1,
+            1
+           ]
+          ],
+          [
+           1.0,
+           [
+            16,
+            0,
+            0
+           ]
+          ]
+         ],
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flMaxLength": 500.0,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        }
+       ],
+       "children": [
+        "blood_impact_high_ground_decal",
+        "blood_impact_high_ground_decalalt",
+        "blood_impact_med_ground_decalaltb"
+       ]
+      },
+      "blood_impact_high_ground_decal": {
+       "source": "particles/blood_impact/blood_impact_high_ground_decal.vpcf",
+       "max_particles": 1,
+       "count": {
+        "per_detail_level": [
+         0.0,
+         0.0,
+         1.0,
+         1.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         30.0,
+         40.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         5.0,
+         10.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         -45.0,
+         45.0
+        ]
+       },
+       "fade_out_last_share_of_life": [
+        0.1,
+        0.1
+       ],
+       "fade_in_s": [
+        0.125,
+        0.15
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.762,
+         1.016
+        ]
+       },
+       "draws": [
+        {
+         "as": "projected decal",
+         "textures": [],
+         "materials": [
+          "materials/decals/blood/blood_decals_spray_high.vmat"
+         ],
+         "m_flMinProjectionDepth": -15.0,
+         "m_flMaxProjectionDepth": 10.0,
+         "m_bOrientToNormal": true
+        }
+       ]
+      },
+      "blood_impact_high_ground_decalalt": {
+       "source": "particles/blood_impact/blood_impact_high_ground_decalalt.vpcf",
+       "max_particles": 1,
+       "count": {
+        "per_detail_level": [
+         0.0,
+         1.0,
+         1.0,
+         1.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         30.0,
+         40.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         5.0,
+         10.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         -45.0,
+         45.0
+        ]
+       },
+       "fade_out_last_share_of_life": [
+        0.1,
+        0.1
+       ],
+       "fade_in_s": [
+        0.125,
+        0.15
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.762,
+         1.016
+        ]
+       },
+       "draws": [
+        {
+         "as": "projected decal",
+         "textures": [],
+         "materials": [
+          "materials/decals/blood/blood_decals_spray_high.vmat"
+         ],
+         "m_flMinProjectionDepth": -15.0,
+         "m_flMaxProjectionDepth": 5.0,
+         "m_bOrientToNormal": true
+        }
+       ]
+      },
+      "blood_impact_med_ground_decalaltb": {
+       "source": "particles/blood_impact/blood_impact_med_ground_decalaltb.vpcf",
+       "max_particles": 1,
+       "count": {
+        "per_detail_level": [
+         0.0,
+         1.0,
+         1.0,
+         1.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         30.0,
+         40.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         20.0,
+         20.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         -30.0,
+         30.0
+        ]
+       },
+       "fade_out_last_share_of_life": [
+        0.2,
+        0.2
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.762,
+         1.016
+        ]
+       },
+       "draws": [
+        {
+         "as": "projected decal",
+         "textures": [],
+         "materials": [
+          "materials/decals/blood/blood_decals_spray_lowalt_b.vmat"
+         ],
+         "m_flMinProjectionDepth": -15.0,
+         "m_flMaxProjectionDepth": 5.0,
+         "m_bOrientToNormal": true
+        }
+       ]
+      },
+      "blood_impact_high_mist_away": {
+       "source": "particles/blood_impact/blood_impact_high_mist_away.vpcf",
+       "max_particles": 3,
+       "count": {
+        "per_detail_level": [
+         1.0,
+         2.0,
+         4.0,
+         6.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         10.0,
+         15.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         0.3,
+         0.65
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         0.75,
+         1.25
+        ],
+        "bias": -0.32
+       },
+       "flipbook_position": {
+        "random": [
+         0.8,
+         1.0
+        ]
+       },
+       "sequence": [
+        0,
+        2
+       ],
+       "spawn_within_units": 2.0,
+       "speed_outward_units_s": [
+        80.0,
+        80.0
+       ],
+       "speed_local_units_s": {
+        "min": [
+         -120.0,
+         50.0,
+         -50.0
+        ],
+        "max": [
+         -200.0,
+         75.0,
+         50.0
+        ],
+        "frame": "control point 2"
+       },
+       "speed_noise_units_s": {
+        "min": [
+         0.0,
+         0.0,
+         30.0
+        ],
+        "max": [
+         1.0,
+         1.0,
+         50.0
+        ]
+       },
+       "colour": {
+        "min": [
+         92,
+         0,
+         0
+        ],
+        "max": [
+         101,
+         0,
+         0
+        ]
+       },
+       "born_aged_s": [
+        0.1,
+        0.125
+       ],
+       "gravity_units_s2": [
+        0.0,
+        0.0,
+        -50.0
+       ],
+       "drag": 0.15,
+       "radius_scale": {
+        "start": 0.25,
+        "end": 3.0,
+        "bias": 0.85,
+        "from_life": 0,
+        "to_life": 1
+       },
+       "fade_out_last_share_of_life": [
+        0.65,
+        1.0
+       ],
+       "flipbook_over_life": [
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.4996,
+         0.7514
+        ],
+        [
+         1.0,
+         1.0
+        ]
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.254,
+         0.381
+        ],
+        "speed_local_mps": {
+         "min": [
+          -3.05,
+          1.27,
+          -1.27
+         ],
+         "max": [
+          -5.08,
+          1.91,
+          1.27
+         ]
+        },
+        "speed_outward_mps": [
+         2.03,
+         2.03
+        ],
+        "speed_noise_mps": {
+         "min": [
+          0.0,
+          0.0,
+          0.76
+         ],
+         "max": [
+          0.03,
+          0.03,
+          1.27
+         ]
+        },
+        "gravity_mps2": [
+         0.0,
+         0.0,
+         -1.27
+        ]
+       },
+       "draws": [
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+          "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex"
+         ],
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        },
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+          "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex",
+          "materials/particle/tile/tile_noise_gaussian.vtex"
+         ],
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        },
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+          "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex"
+         ],
+         "m_flAlphaScale": 0.5,
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        }
+       ]
+      },
+      "blood_impact_high_spray_away": {
+       "source": "particles/blood_impact/blood_impact_high_spray_away.vpcf",
+       "max_particles": 3,
+       "count": {
+        "per_detail_level": [
+         1.0,
+         2.0,
+         2.0,
+         3.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         8.0,
+         16.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         0.35,
+         0.75
+        ]
+       },
+       "trail_length": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "flipbook_position": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "yaw_deg": {
+        "random": [
+         0.0,
+         360.0
+        ]
+       },
+       "attribute_13": {
+        "driven_by": "particle_float"
+       },
+       "sequence": [
+        0,
+        0
+       ],
+       "spawn_within_units": 2.0,
+       "speed_outward_units_s": [
+        50.0,
+        50.0
+       ],
+       "speed_local_units_s": {
+        "min": [
+         200.0,
+         -0.0,
+         0.0
+        ],
+        "max": [
+         400.0,
+         -0.0,
+         0.0
+        ],
+        "frame": "control point 0"
+       },
+       "colour": {
+        "min": [
+         155,
+         0,
+         0,
+         null
+        ],
+        "max": [
+         164,
+         0,
+         0,
+         null
+        ]
+       },
+       "born_aged_s": [
+        0.1,
+        0.125
+       ],
+       "gravity_units_s2": [
+        0.0,
+        0.0,
+        -450.0
+       ],
+       "drag": 0.05,
+       "radius_scale": {
+        "start": 0.25,
+        "end": 4.0,
+        "bias": 0.5,
+        "from_life": 0,
+        "to_life": 1
+       },
+       "fade_out_last_share_of_life": [
+        0.125,
+        0.25
+       ],
+       "flipbook_over_life": [
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.3423,
+         0.5414
+        ],
+        [
+         0.8111,
+         0.9454
+        ],
+        [
+         1.0,
+         1.0
+        ]
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.203,
+         0.406
+        ],
+        "speed_local_mps": {
+         "min": [
+          5.08,
+          -0.0,
+          0.0
+         ],
+         "max": [
+          10.16,
+          -0.0,
+          0.0
+         ]
+        },
+        "speed_outward_mps": [
+         1.27,
+         1.27
+        ],
+        "gravity_mps2": [
+         0.0,
+         0.0,
+         -11.43
+        ]
+       },
+       "draws": [
+        {
+         "as": "trails",
+         "textures": [
+          "materials/particle/fluids/blood/blood_spray_high.vtex",
+          "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile_inv.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            154,
+            13,
+            13
+           ]
+          ],
+          [
+           0.2842,
+           [
+            127,
+            15,
+            15
+           ]
+          ],
+          [
+           0.5245,
+           [
+            108,
+            15,
+            15
+           ]
+          ],
+          [
+           1.0,
+           [
+            34,
+            3,
+            36
+           ]
+          ]
+         ],
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flMaxLength": 500.0,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        }
+       ]
+      },
+      "blood_impact_friendly_flash": {
+       "source": "particles/impact_fx/blood_impact_friendly_flash.vpcf",
+       "skipped": "not a blood sprite: the flash shown for a hit on a team mate"
+      },
+      "blood_impact_low_forw_spray": {
+       "source": "particles/blood_impact/blood_impact_low_forw_spray.vpcf",
+       "max_particles": 3,
+       "count": {
+        "per_detail_level": [
+         1.0,
+         2.0,
+         3.0,
+         3.0
+        ]
+       },
+       "radius_units": {
+        "random": [
+         5.0,
+         8.0
+        ]
+       },
+       "roll_deg": {
+        "random": [
+         -45.0,
+         -90.0
+        ]
+       },
+       "alpha": {
+        "random": [
+         0.7843,
+         0.8627
+        ]
+       },
+       "lifetime_s": {
+        "random": [
+         0.35,
+         0.75
+        ]
+       },
+       "flipbook_position": {
+        "random": [
+         1.0,
+         1.0
+        ]
+       },
+       "sequence": [
+        1,
+        3
+       ],
+       "spawn_within_units": 2.0,
+       "speed_local_units_s": {
+        "min": [
+         150.0,
+         -12.0,
+         -15.0
+        ],
+        "max": [
+         250.0,
+         15.0,
+         15.0
+        ],
+        "frame": "control point 2"
+       },
+       "born_aged_s": [
+        0.25,
+        0.5
+       ],
+       "gravity_units_s2": [
+        0,
+        0,
+        0
+       ],
+       "drag": 0.2,
+       "radius_scale": {
+        "start": 0.1,
+        "end": 3.0,
+        "bias": 0.65,
+        "from_life": 0.3,
+        "to_life": 1
+       },
+       "fade_out_last_share_of_life": [
+        0.25,
+        0.25
+       ],
+       "flipbook_over_life": [
+        [
+         0.0,
+         0.0
+        ],
+        [
+         0.3684,
+         0.6222
+        ],
+        [
+         1.0,
+         1.0
+        ]
+       ],
+       "in_metres": {
+        "radius_m": [
+         0.127,
+         0.203
+        ],
+        "speed_local_mps": {
+         "min": [
+          3.81,
+          -0.3,
+          -0.38
+         ],
+         "max": [
+          6.35,
+          0.38,
+          0.38
+         ]
+        },
+        "gravity_mps2": [
+         0.0,
+         0.0,
+         0.0
+        ]
+       },
+       "draws": [
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/fluids/blood/blood_spray_top.vtex",
+          "materials/particle/fluids/blood/blood_spray_top_mv.vtex",
+          "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            154,
+            13,
+            13
+           ]
+          ],
+          [
+           0.2842,
+           [
+            127,
+            15,
+            15
+           ]
+          ],
+          [
+           0.5245,
+           [
+            108,
+            15,
+            15
+           ]
+          ],
+          [
+           1.0,
+           [
+            34,
+            3,
+            36
+           ]
+          ]
+         ],
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flOverbrightFactor": 0.5,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        },
+        {
+         "as": "sprites",
+         "textures": [
+          "materials/particle/smoke/static/static_smoke.vtex",
+          "materials/particle/fluids/blood/blood_spray_top_mv.vtex",
+          "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile.vtex"
+         ],
+         "colour_lookup": [
+          [
+           0.0,
+           [
+            34,
+            3,
+            36
+           ]
+          ],
+          [
+           0.2842,
+           [
+            127,
+            15,
+            15
+           ]
+          ],
+          [
+           0.5245,
+           [
+            108,
+            15,
+            15
+           ]
+          ],
+          [
+           1.0,
+           [
+            154,
+            13,
+            13
+           ]
+          ]
+         ],
+         "m_flRadiusScale": 0.5,
+         "m_flAnimationRate": 1.0,
+         "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+         "m_flOverbrightFactor": 0.5,
+         "m_flDesaturation": {
+          "driven_by": "control_point_component",
+          "m_nControlPoint": 3,
+          "m_flInput0": 0.0,
+          "m_flInput1": 1.0,
+          "m_flOutput0": 0.0,
+          "m_flOutput1": 1.0
+         }
+        }
+       ]
+      }
+     }
+    }
+   },
+   "full_reading": "blood/particles.json"
+  }
+ },
+ "contact_sheet": "contact_sheet.png",
+ "notes": [
+  "The DJ is the agent whose English name is \"Sir Bloody Miami Darryl | The Professionals\": resource/csgo_english.txt: CSGO_Customplayer_tm_professional_varf; scripts/items/items_game.txt: item 4726 \"customplayer_tm_professional_varf\", model_player.",
+  "All nine clips are the game's own, undoctored, on the same skeleton as the range's clips (animation/skeletons/characters/worldmodel.vnmskel; all 775 clips under ui_anims/, world/shared/, world/equipment/ and world/grenade/ name it).",
+  "stand_* and cheer_* are end-of-match celebration clips (ui_anims/end_round/celebrate): no weapon skeleton is attached to them and the hands open and close freely, so they are read as empty-handed. Each starts and ends in its character's rest pose, so they loop, but a cheer is a rest, a gesture, and a rest again, not a continuous dance.",
+  "The names stand_/cheer_ and the descriptions in \"does\" are my reading of the stick figures and the Blender renders, not the game's names.",
+  "dj_1 and dj_2 are STAND-INS: the game has no animation of a person working a desk. They are the main-menu idle of a Terrorist holding an M249 at the hip, and a variation of it in which he looks down at the gun and lifts it. The fingers are curled round a gun that is not there and the hands will not land on anything exactly.",
+  "A desk for the DJ, from dj_1: the wrists are 1.11 m (right) and 1.13 m (left) above the floor, 0.24 and 0.20 m in front of the feet, and 0.59 m apart; in dj_2 they lift to 1.48 m. A top a little under the wrists is my suggestion, not a number from the game.",
+  "Clips made for different characters start from different rest poses: anims.same_rest_pose groups the ones that share one; cross-fade between groups.",
+  "The agent's height_m is measured as the range's are, in the rifle idle (a slight stoop); upright_top_m is the top of the hair standing in stand_1, measured in Blender.",
+  "Twist, shoulder-blade and jiggle bones have no tracks and stay at rest, as on the range's agents. Head ball, roughness and skin are as make_agents does them.",
+  "Blood decals are exported as the game stores them: the colour texture is already a dark red in the red channel alone with the shape in alpha. Only resized (1024 to 512).",
+  "Blood spray, trail and mist sprites are grey in the game with the shape in alpha and are coloured when drawn. Converted: RGB is that grey times one blood red (tint_rgb, taken from the particle definition), alpha kept. The game runs the grey through a colour gradient instead; which end of the gradient is which is not something I could read, so one colour stands for it.",
+  "Exported sprites are the medium impact's: blood_spray_top (spray), blood_spray_med (trail: the game draws these stretched along the particle's path) and the steam flipbook its mist uses (2 of its 4 sequences). The low and high impacts use blood_spray_low / _high for their trails, not exported.",
+  "Flipbook frames are stored cropped and packed; each was put back into its full cell (from the sheet's cropped and uncropped rectangles) and laid out in an even grid, left to right, top to bottom.",
+  "Which of blood_impact_low / med / high a bullet plays, and what the control points mean (the sprays fly along +x of control point 2, the \"away\" mist along -x), is decided in code: read as \"toward the shooter\" and \"out the back\", a guess.",
+  "A wall decal's size in the world is not in its material or in decalgroups.vdata. The floor decal a spray leaves is a particle of radius 30 to 40 units (blood_impact_med_ground_decal.vpcf).",
+  "Particle attribute numbers were read as: 1 lifetime, 3 radius, 4 roll, 7 alpha, 9 sequence, 10 trail length, 12 yaw, 38 the place in the flipbook (the values fit; 38 runs 0 to 1 over the life and the renderers use manual frames); others are left numbered in blood/particles.json.",
+  "count per_detail_level is [LOD0..LOD3] as the file has it; taken as more particles at a higher particle detail setting."
+ ]
+}

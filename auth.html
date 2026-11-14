@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'">
+<title>Signing in</title>
+<style>
+  html, body { height: 100%; margin: 0; }
+  body { display: grid; place-items: center; background: #0e0e12; color: #e8e6e1; font: 16px/1.5 system-ui, sans-serif; text-align: center; }
+  p { margin: 0; padding: 24px; max-width: 28em; }
+</style>
+</head>
+<body>
+<p id="note">Signing you in&hellip;</p>
+<script>
+// Twitch sends the sign-in window back to this page, with its answer in the part of the address
+// after the # (or after the ? when the visitor said no). All this page does is hand that answer
+// to the museum page that opened the window, and only if that page is on this same site. It
+// loads nothing and sends nothing anywhere else.
+(function () {
+  var hash = location.hash;
+  var query = location.search;
+  // the answer has been read: take it out of the address bar and this window's history
+  try { history.replaceState(null, '', location.pathname); } catch (e) { /* no harm if it stays */ }
+
+  var opener = null;
+  try { opener = window.opener; } catch (e) { /* treated as no opener */ }
+  if (opener && !opener.closed) {
+    opener.postMessage({ type: 'twitch-auth', hash: hash, query: query }, location.origin);
+    window.close();
+    document.getElementById('note').textContent = 'Done. You can close this window.';
+  } else {
+    document.getElementById('note').textContent = 'This page only finishes a Twitch sign-in started from the museum. You can close it.';
+  }
+})();
+</script>
+</body>
+</html>

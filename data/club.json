@@ -1,0 +1,15 @@
+{
+  "floorDisplays": ["47367519750", "54462560137", "54410429037", "54100263214"],
+  "stream": { "channel": "bullkn0xcs", "chat": true },
+  "range": { "site": "https://kn0xnation.com", "prize": "a skin" },
+  "subs": { "url": "https://kn0xnation.com/api/public/sub-wall", "hide": [] },
+  "music": {
+    "volume": 0.7,
+    "order": "playlist",
+    "autoplay": true,
+    "tracks": [
+      { "title": "dashstar*", "artist": "Knock2", "src": "assets/music/knock2-dashstar.mp3" },
+      { "title": "Can I Come Too?", "artist": "Jonasu", "src": "assets/music/jonasu-can-i-come-too.mp3" }
+    ]
+  }
+}

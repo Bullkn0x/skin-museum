@@ -1,0 +1,9252 @@
+{
+ "systems": {
+  "blood_impact_low": {
+   "source": "particles/blood_impact/blood_impact_low.vpcf",
+   "max_particles": 1,
+   "draws": [],
+   "children": [
+    "blood_impact_low_mist_away",
+    "blood_impact_low_vis_spray_trail",
+    "blood_impact_low_spray_screen",
+    "blood_impact_friendly_flash",
+    "blood_impact_low_forw_spray"
+   ],
+   "ops": [
+    {
+     "stage": "before",
+     "class": "C_OP_DistanceBetweenCPsToCP",
+     "m_nOutputCP": 4,
+     "m_flInputMin": 128.0,
+     "m_flInputMax": 1024.0,
+     "m_flOutputMin": 0.2,
+     "m_flOutputMax": 0.85
+    },
+    {
+     "stage": "before",
+     "class": "C_OP_StopAfterCPDuration",
+     "m_flDuration": 3.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_PositionLock",
+     "m_bLockRot": true
+    }
+   ]
+  },
+  "blood_impact_low_mist_away": {
+   "source": "particles/blood_impact/blood_impact_low_mist_away.vpcf",
+   "max_particles": 4,
+   "count": {
+    "per_detail_level": [
+     1.0,
+     2.0,
+     3.0,
+     4.0
+    ]
+   },
+   "radius_units": {
+    "random": [
+     7.0,
+     8.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     0.5,
+     1.0
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     0.5,
+     1.0
+    ],
+    "bias": -0.46
+   },
+   "flipbook_position": {
+    "random": [
+     0.8,
+     1.0
+    ]
+   },
+   "sequence": [
+    0,
+    2
+   ],
+   "spawn_within_units": 2.0,
+   "speed_outward_units_s": [
+    25.0,
+    25.0
+   ],
+   "speed_local_units_s": {
+    "min": [
+     -50.0,
+     -50.0,
+     -50.0
+    ],
+    "max": [
+     -100.0,
+     50.0,
+     50.0
+    ],
+    "frame": "control point 2"
+   },
+   "speed_noise_units_s": {
+    "min": [
+     0.0,
+     0.0,
+     50.0
+    ],
+    "max": [
+     1.0,
+     1.0,
+     50.0
+    ]
+   },
+   "colour": {
+    "min": [
+     92,
+     0,
+     0
+    ],
+    "max": [
+     101,
+     0,
+     0
+    ]
+   },
+   "born_aged_s": [
+    0.1,
+    0.125
+   ],
+   "gravity_units_s2": [
+    0.0,
+    0.0,
+    -50.0
+   ],
+   "drag": 0.125,
+   "radius_scale": {
+    "start": 0.25,
+    "end": 2.0,
+    "bias": 0.85,
+    "from_life": 0,
+    "to_life": 1
+   },
+   "fade_out_last_share_of_life": [
+    1.0,
+    1.0
+   ],
+   "flipbook_over_life": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.4996,
+     0.7514
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.178,
+     0.203
+    ],
+    "speed_local_mps": {
+     "min": [
+      -1.27,
+      -1.27,
+      -1.27
+     ],
+     "max": [
+      -2.54,
+      1.27,
+      1.27
+     ]
+    },
+    "speed_outward_mps": [
+     0.64,
+     0.64
+    ],
+    "speed_noise_mps": {
+     "min": [
+      0.0,
+      0.0,
+      1.27
+     ],
+     "max": [
+      0.03,
+      0.03,
+      1.27
+     ]
+    },
+    "gravity_mps2": [
+     0.0,
+     0.0,
+     -1.27
+    ]
+   },
+   "draws": [
+    {
+     "as": "sprites",
+     "textures": [
+      "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+      "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex"
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    },
+    {
+     "as": "sprites",
+     "textures": [
+      "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+      "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex",
+      "materials/particle/tile/tile_noise_gaussian.vtex"
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    },
+    {
+     "as": "sprites",
+     "textures": [
+      "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+      "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex"
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nParticlesToEmit": {
+      "per_detail_level": [
+       1.0,
+       2.0,
+       3.0,
+       4.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomSequence",
+     "m_nSequenceMax": 2
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_CreateWithinSphereTransform",
+     "m_fRadiusMax": 2.0,
+     "m_vecDistanceBiasAbs": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "m_LocalCoordinateSystemSpeedMin": [
+      -50.0,
+      -50.0,
+      -50.0
+     ],
+     "m_LocalCoordinateSystemSpeedMax": [
+      -100.0,
+      50.0,
+      50.0
+     ],
+     "m_TransformInput": {
+      "m_nControlPoint": 2
+     },
+     "m_fSpeedMin": 25.0,
+     "m_fSpeedMax": 25.0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       7.0,
+       8.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 4
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.5,
+       1.0
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomYawFlip"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.5,
+       1.0
+      ],
+      "bias": -0.46
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitialVelocityNoise",
+     "m_vecOutputMin": [
+      0.0,
+      0.0,
+      50.0
+     ],
+     "m_vecOutputMax": [
+      1.0,
+      1.0,
+      50.0
+     ],
+     "m_TransformInput": {
+      "driven_by": "invalid"
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.8,
+       1.0
+      ]
+     },
+     "m_nOutputField": 38
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_AgeNoise",
+     "m_flAgeMin": 0.1,
+     "m_flAgeMax": 0.125
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_GlobalScale",
+     "m_flScale": 1.5
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor",
+     "m_ColorMin": [
+      92,
+      0,
+      0
+     ],
+     "m_ColorMax": [
+      101,
+      0,
+      0
+     ],
+     "m_TintMin": [
+      68,
+      68,
+      68,
+      0
+     ],
+     "m_flTintPerc": 0.5,
+     "m_nTintBlendMode": "4"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_BasicMovement",
+     "m_Gravity": [
+      0.0,
+      0.0,
+      -50.0
+     ],
+     "m_fDrag": 0.125
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Spin",
+     "m_nSpinRateDegrees": 4,
+     "m_fSpinRateStopTime": 1.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_InterpolateRadius",
+     "m_flStartScale": 0.25,
+     "m_flEndScale": 2.0,
+     "m_flBias": 0.85
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age_normalized",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.4996,
+        0.7514
+       ],
+       [
+        1.0,
+        1.0
+       ]
+      ]
+     },
+     "m_nOutputField": 38,
+     "m_nSetMethod": "PARTICLE_SET_SCALE_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOutSimple",
+     "m_flFadeOutTime": 1.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_DistanceToTransform",
+     "m_nFieldOutput": 16,
+     "m_flInputMax": 300.0,
+     "m_flOutputMin": 1.0,
+     "m_flOutputMax": 0.0,
+     "m_flInputMin": 100.0
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderSprites",
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b.vtex"
+      },
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex",
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC"
+      }
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_bUseMixedResolutionRendering": true,
+     "m_nFeatheringMode": "PARTICLE_DEPTH_FEATHERING_ON_OPTIONAL",
+     "m_flMaxSize": 0.6,
+     "m_flStartFadeSize": 0.2,
+     "m_flEndFadeSize": 0.3,
+     "m_bParticleShadows": true
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderSprites",
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b.vtex"
+      },
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex",
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC"
+      },
+      {
+       "m_hTexture": "materials/particle/tile/tile_noise_gaussian.vtex",
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_MOD2X"
+      }
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_nFeatheringMode": "PARTICLE_DEPTH_FEATHERING_ON_OPTIONAL",
+     "m_flMaxSize": 0.6,
+     "m_flStartFadeSize": 0.3,
+     "m_flEndFadeSize": 0.5,
+     "m_bParticleShadows": true
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderSprites",
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b.vtex"
+      },
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex",
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC"
+      }
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_bOnlyRenderInEffectsBloomPass": true,
+     "m_nFeatheringMode": "PARTICLE_DEPTH_FEATHERING_ON_OPTIONAL",
+     "m_flMaxSize": 0.6,
+     "m_flStartFadeSize": 0.3,
+     "m_flEndFadeSize": 0.5,
+     "m_bParticleShadows": true
+    }
+   ]
+  },
+  "blood_impact_low_vis_spray_trail": {
+   "source": "particles/blood_impact/blood_impact_low_vis_spray_trail.vpcf",
+   "max_particles": 2,
+   "count": {
+    "per_detail_level": [
+     1.0,
+     2.0,
+     3.0,
+     4.0
+    ]
+   },
+   "radius_units": {
+    "random": [
+     16.0,
+     32.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     0.5,
+     0.65
+    ]
+   },
+   "trail_length": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "flipbook_position": {
+    "random": [
+     0.95,
+     1.0
+    ]
+   },
+   "yaw_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "sequence": [
+    1,
+    3
+   ],
+   "spawn_within_units": 2.0,
+   "speed_outward_units_s": [
+    50.0,
+    50.0
+   ],
+   "speed_local_units_s": {
+    "min": [
+     200.0,
+     50.0,
+     0.0
+    ],
+    "max": [
+     350.0,
+     50.0,
+     0.0
+    ],
+    "frame": "control point 0"
+   },
+   "speed_noise_units_s": {
+    "min": [
+     0.0,
+     0.0,
+     25.0
+    ],
+    "max": [
+     1.0,
+     1.0,
+     50.0
+    ]
+   },
+   "colour": {
+    "min": [
+     155,
+     0,
+     0,
+     null
+    ],
+    "max": [
+     164,
+     0,
+     0,
+     null
+    ]
+   },
+   "gravity_units_s2": [
+    0.0,
+    0.0,
+    -450.0
+   ],
+   "drag": 0.1,
+   "radius_scale": {
+    "start": 0.25,
+    "end": 1,
+    "bias": 0.25,
+    "from_life": 0,
+    "to_life": 1
+   },
+   "fade_out_last_share_of_life": [
+    0.125,
+    0.25
+   ],
+   "flipbook_over_life": [
+    [
+     0.0,
+     0.0073
+    ],
+    [
+     0.2146,
+     0.2763
+    ],
+    [
+     0.6441,
+     0.7054
+    ],
+    [
+     1.0,
+     0.9
+    ]
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.406,
+     0.813
+    ],
+    "speed_local_mps": {
+     "min": [
+      5.08,
+      1.27,
+      0.0
+     ],
+     "max": [
+      8.89,
+      1.27,
+      0.0
+     ]
+    },
+    "speed_outward_mps": [
+     1.27,
+     1.27
+    ],
+    "speed_noise_mps": {
+     "min": [
+      0.0,
+      0.0,
+      0.64
+     ],
+     "max": [
+      0.03,
+      0.03,
+      1.27
+     ]
+    },
+    "gravity_mps2": [
+     0.0,
+     0.0,
+     -11.43
+    ]
+   },
+   "draws": [
+    {
+     "as": "trails",
+     "textures": [
+      "materials/particle/fluids/blood/blood_spray_low.vtex",
+      "materials/particle/fluids/blood/blood_spray_low_mv.vtex"
+     ],
+     "colour_lookup": [
+      [
+       0.0,
+       [
+        25,
+        0,
+        0
+       ]
+      ],
+      [
+       0.1008,
+       [
+        178,
+        11,
+        11
+       ]
+      ],
+      [
+       0.2842,
+       [
+        139,
+        0,
+        0
+       ]
+      ],
+      [
+       0.5245,
+       [
+        140,
+        0,
+        0
+       ]
+      ],
+      [
+       0.8553,
+       [
+        30,
+        1,
+        1
+       ]
+      ],
+      [
+       1.0,
+       [
+        16,
+        0,
+        0
+       ]
+      ]
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flMaxLength": 500.0,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    },
+    {
+     "as": "trails",
+     "textures": [
+      "materials/particle/fluids/blood/blood_spray_low.vtex",
+      "materials/particle/fluids/blood/blood_spray_low_mv.vtex"
+     ],
+     "colour_lookup": [
+      [
+       0.0,
+       [
+        25,
+        0,
+        0
+       ]
+      ],
+      [
+       0.1008,
+       [
+        178,
+        11,
+        11
+       ]
+      ],
+      [
+       0.2842,
+       [
+        139,
+        0,
+        0
+       ]
+      ],
+      [
+       0.5245,
+       [
+        140,
+        0,
+        0
+       ]
+      ],
+      [
+       0.8553,
+       [
+        30,
+        1,
+        1
+       ]
+      ],
+      [
+       1.0,
+       [
+        16,
+        0,
+        0
+       ]
+      ]
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flMaxLength": 500.0,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ],
+   "children": [
+    "blood_impact_low_ground_decal",
+    "blood_impact_low_ground_decal_alt"
+   ],
+   "ops": [
+    {
+     "stage": "before",
+     "class": "C_OP_ChooseRandomChildrenInGroup",
+     "m_bRunOnce": true
+    },
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nMaxEmittedPerFrame": 100,
+     "m_nParticlesToEmit": {
+      "per_detail_level": [
+       1.0,
+       2.0,
+       3.0,
+       4.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomSequence",
+     "m_nSequenceMax": 3,
+     "m_nSequenceMin": 1,
+     "m_bShuffle": true
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_CreateWithinSphereTransform",
+     "m_fRadiusMax": 2.0,
+     "m_fSpeedMax": 50.0,
+     "m_vecDistanceBiasAbs": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "m_fSpeedMin": 50.0,
+     "m_LocalCoordinateSystemSpeedMin": [
+      200.0,
+      50.0,
+      0.0
+     ],
+     "m_LocalCoordinateSystemSpeedMax": [
+      350.0,
+      50.0,
+      0.0
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       16.0,
+       32.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 4
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor",
+     "m_ColorMin": [
+      155,
+      0,
+      0,
+      null
+     ],
+     "m_ColorMax": [
+      164,
+      0,
+      0,
+      null
+     ],
+     "m_flTintPerc": 0.5,
+     "m_TintMin": [
+      68,
+      68,
+      68,
+      0
+     ],
+     "m_nTintBlendMode": "4"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomYawFlip"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.5,
+       0.65
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitialVelocityNoise",
+     "m_vecOutputMin": [
+      0.0,
+      0.0,
+      25.0
+     ],
+     "m_vecOutputMax": [
+      1.0,
+      1.0,
+      50.0
+     ],
+     "m_TransformInput": {
+      "driven_by": "invalid"
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitVec",
+     "m_InputValue": {
+      "driven_by": "particle_vector"
+     },
+     "m_nOutputField": 17
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 10
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.95,
+       1.0
+      ]
+     },
+     "m_nOutputField": 38
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 12
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor",
+     "m_TintMin": [
+      68,
+      68,
+      68,
+      0
+     ],
+     "m_flTintPerc": 0.5,
+     "m_nTintBlendMode": "4"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_DistanceToCPInit",
+     "m_nFieldOutput": 39,
+     "m_flInputMin": 256.0,
+     "m_flInputMax": 512.0,
+     "m_nStartCP": 1
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Spin",
+     "m_nSpinRateDegrees": 4,
+     "m_fSpinRateStopTime": 1.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOut",
+     "m_flFadeOutTimeMin": 0.125
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_InterpolateRadius",
+     "m_flStartScale": 0.25,
+     "m_flBias": 0.25
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age_normalized",
+      "curve": [
+       [
+        0.0,
+        0.0073
+       ],
+       [
+        0.2146,
+        0.2763
+       ],
+       [
+        0.6441,
+        0.7054
+       ],
+       [
+        1.0,
+        0.9
+       ]
+      ]
+     },
+     "m_nOutputField": 38,
+     "m_nSetMethod": "PARTICLE_SET_SCALE_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetVec",
+     "m_InputValue": {
+      "driven_by": "float_components"
+     },
+     "m_nOutputField": 30,
+     "m_nSetMethod": "PARTICLE_SET_RAMP_CURRENT_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetVec",
+     "m_InputValue": {
+      "driven_by": "particle_vector"
+     },
+     "m_nOutputField": 17,
+     "m_nSetMethod": "PARTICLE_SET_ADD_TO_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_BasicMovement",
+     "m_fDrag": 0.1,
+     "m_Gravity": [
+      0.0,
+      0.0,
+      -450.0
+     ]
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderTrails",
+     "m_nPrevPntSource": 17,
+     "m_flMaxLength": 500.0,
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_low.vtex"
+      },
+      {
+       "m_bReplaceTextureWithGradient": true,
+       "m_nTextureType": "SPRITECARD_TEXTURE_1D_COLOR_LOOKUP",
+       "m_Gradient": {
+        "m_Stops": [
+         {
+          "m_flPosition": 0.0,
+          "m_Color": [
+           25,
+           0,
+           0
+          ]
+         },
+         {
+          "m_flPosition": 0.1008,
+          "m_Color": [
+           178,
+           11,
+           11
+          ]
+         },
+         {
+          "m_flPosition": 0.2842,
+          "m_Color": [
+           139,
+           0,
+           0
+          ]
+         },
+         {
+          "m_flPosition": 0.5245,
+          "m_Color": [
+           140,
+           0,
+           0
+          ]
+         },
+         {
+          "m_flPosition": 0.8553,
+          "m_Color": [
+           30,
+           1,
+           1
+          ]
+         },
+         {
+          "m_flPosition": 1.0,
+          "m_Color": [
+           16,
+           0,
+           0
+          ]
+         }
+        ]
+       },
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_REPLACE"
+      },
+      {
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_low_mv.vtex",
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC"
+      }
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_nCropTextureOverride": "PARTICLE_SEQUENCE_CROP_OVERRIDE_FORCE_ON",
+     "m_flForwardShift": -0.1,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_flStartFadeSize": 0.1,
+     "m_flEndFadeSize": 0.2
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderTrails",
+     "m_nPrevPntSource": 17,
+     "m_flMaxLength": 500.0,
+     "m_flForwardShift": -0.1,
+     "m_nAlpha2Field": 39,
+     "m_nCropTextureOverride": "PARTICLE_SEQUENCE_CROP_OVERRIDE_FORCE_ON",
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_low.vtex"
+      },
+      {
+       "m_bReplaceTextureWithGradient": true,
+       "m_nTextureType": "SPRITECARD_TEXTURE_1D_COLOR_LOOKUP",
+       "m_Gradient": {
+        "m_Stops": [
+         {
+          "m_flPosition": 0.0,
+          "m_Color": [
+           25,
+           0,
+           0
+          ]
+         },
+         {
+          "m_flPosition": 0.1008,
+          "m_Color": [
+           178,
+           11,
+           11
+          ]
+         },
+         {
+          "m_flPosition": 0.2842,
+          "m_Color": [
+           139,
+           0,
+           0
+          ]
+         },
+         {
+          "m_flPosition": 0.5245,
+          "m_Color": [
+           140,
+           0,
+           0
+          ]
+         },
+         {
+          "m_flPosition": 0.8553,
+          "m_Color": [
+           30,
+           1,
+           1
+          ]
+         },
+         {
+          "m_flPosition": 1.0,
+          "m_Color": [
+           16,
+           0,
+           0
+          ]
+         }
+        ]
+       },
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_REPLACE"
+      },
+      {
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_low_mv.vtex",
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC"
+      }
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flSourceAlphaValueToMapToZero": 0.85,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_flStartFadeSize": 0.1,
+     "m_flEndFadeSize": 0.2
+    }
+   ]
+  },
+  "blood_impact_low_ground_decal": {
+   "source": "particles/blood_impact/blood_impact_low_ground_decal.vpcf",
+   "max_particles": 1,
+   "count": {
+    "per_detail_level": [
+     0.0,
+     0.0,
+     1.0,
+     1.0
+    ]
+   },
+   "radius_units": {
+    "random": [
+     20.0,
+     25.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     5.0,
+     10.0
+    ]
+   },
+   "fade_out_last_share_of_life": [
+    0.1,
+    0.1
+   ],
+   "fade_in_s": [
+    0.125,
+    0.15
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.508,
+     0.635
+    ]
+   },
+   "draws": [
+    {
+     "as": "projected decal",
+     "textures": [],
+     "materials": [
+      "materials/decals/blood/blood_decals_spray_low.vmat"
+     ],
+     "m_flMinProjectionDepth": -15.0,
+     "m_flMaxProjectionDepth": 5.0
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "before",
+     "class": "C_OP_SetSingleControlPointPosition",
+     "m_vecCP1Pos": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "m_bRunOnce": true
+    },
+    {
+     "stage": "before",
+     "class": "C_OP_StopAfterCPDuration",
+     "m_flDuration": 0.0,
+     "m_bDestroyImmediately": true
+    },
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nParticlesToEmit": {
+      "per_detail_level": [
+       0.0,
+       0.0,
+       1.0,
+       1.0
+      ]
+     },
+     "m_flInitFromKilledParentParticles": 1.0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFromParentKilled",
+     "m_nAttributeToCopy": 0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFromParentKilled",
+     "m_nAttributeToCopy": 2
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionWarp",
+     "m_vecWarpMin": [
+      0.4,
+      0.4,
+      0.4
+     ],
+     "m_vecWarpMax": [
+      0.75,
+      0.75,
+      0.75
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       20.0,
+       25.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       5.0,
+       10.0
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionOffset",
+     "m_OffsetMin": [
+      0.0,
+      0.0,
+      64.0
+     ],
+     "m_OffsetMax": [
+      0.0,
+      0.0,
+      64.0
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionPlaceOnGround",
+     "m_flMaxTraceLength": 256.0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_Orient2DRelToCP",
+     "m_nCP": 1,
+     "m_flRotOffset": 180.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOutSimple",
+     "m_flFadeOutTime": 0.1
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeIn",
+     "m_flFadeInTimeMin": 0.125,
+     "m_flFadeInTimeMax": 0.15,
+     "m_bProportional": false
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SpinUpdate"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.9439,
+        0.9696
+       ],
+       [
+        13.0023,
+        30.0
+       ]
+      ]
+     },
+     "m_nOutputField": 18
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderProjected",
+     "m_flMinProjectionDepth": -15.0,
+     "m_flMaxProjectionDepth": 5.0,
+     "m_bEnableProjectedDepthControls": true,
+     "m_bProjectWater": false,
+     "m_MaterialVars": [
+      {
+       "m_strVariable": "$particle_age"
+      }
+     ],
+     "m_vecProjectedMaterials": [
+      {
+       "m_hMaterial": "materials/decals/blood/blood_decals_spray_low.vmat"
+      }
+     ]
+    }
+   ]
+  },
+  "blood_impact_low_ground_decal_alt": {
+   "source": "particles/blood_impact/blood_impact_low_ground_decal_alt.vpcf",
+   "max_particles": 1,
+   "count": {
+    "per_detail_level": [
+     0.0,
+     0.0,
+     1.0,
+     1.0
+    ]
+   },
+   "radius_units": {
+    "random": [
+     20.0,
+     30.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     5.0,
+     10.0
+    ]
+   },
+   "fade_out_last_share_of_life": [
+    0.1,
+    0.1
+   ],
+   "fade_in_s": [
+    0.125,
+    0.15
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.508,
+     0.762
+    ]
+   },
+   "draws": [
+    {
+     "as": "projected decal",
+     "textures": [],
+     "materials": [
+      "materials/decals/blood/blood_decals_spray_lowalt.vmat"
+     ],
+     "m_flMinProjectionDepth": -15.0,
+     "m_flMaxProjectionDepth": 5.0
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "before",
+     "class": "C_OP_SetSingleControlPointPosition",
+     "m_vecCP1Pos": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "m_bRunOnce": true
+    },
+    {
+     "stage": "before",
+     "class": "C_OP_StopAfterCPDuration",
+     "m_flDuration": 0.0,
+     "m_bDestroyImmediately": true
+    },
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nParticlesToEmit": {
+      "per_detail_level": [
+       0.0,
+       0.0,
+       1.0,
+       1.0
+      ]
+     },
+     "m_flInitFromKilledParentParticles": 1.0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFromParentKilled",
+     "m_nAttributeToCopy": 0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFromParentKilled",
+     "m_nAttributeToCopy": 2
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionWarp",
+     "m_vecWarpMin": [
+      0.4,
+      0.4,
+      0.4
+     ],
+     "m_vecWarpMax": [
+      0.75,
+      0.75,
+      0.75
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       20.0,
+       30.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       5.0,
+       10.0
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionOffset",
+     "m_OffsetMin": [
+      0.0,
+      0.0,
+      64.0
+     ],
+     "m_OffsetMax": [
+      0.0,
+      0.0,
+      64.0
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionPlaceOnGround",
+     "m_flMaxTraceLength": 256.0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFromParentKilled",
+     "m_nAttributeToCopy": 4
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_Orient2DRelToCP",
+     "m_nCP": 1,
+     "m_flRotOffset": 270.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOutSimple",
+     "m_flFadeOutTime": 0.1
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeIn",
+     "m_flFadeInTimeMin": 0.125,
+     "m_flFadeInTimeMax": 0.15,
+     "m_bProportional": false
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SpinUpdate"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.9439,
+        0.9696
+       ],
+       [
+        13.0023,
+        30.0
+       ]
+      ]
+     },
+     "m_nOutputField": 18
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderProjected",
+     "m_flMinProjectionDepth": -15.0,
+     "m_flMaxProjectionDepth": 5.0,
+     "m_bEnableProjectedDepthControls": true,
+     "m_bProjectWater": false,
+     "m_MaterialVars": [
+      {
+       "m_strVariable": "$particle_age"
+      }
+     ],
+     "m_vecProjectedMaterials": [
+      {
+       "m_hMaterial": "materials/decals/blood/blood_decals_spray_lowalt.vmat"
+      }
+     ]
+    }
+   ]
+  },
+  "blood_impact_low_spray_screen": {
+   "source": "particles/blood_impact/blood_impact_low_spray_screen.vpcf",
+   "max_particles": 1,
+   "count": 1.0,
+   "radius_units": {
+    "random": [
+     4.0,
+     8.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     0.35,
+     0.5
+    ]
+   },
+   "trail_length": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "flipbook_position": {
+    "random": [
+     0.85,
+     1.0
+    ]
+   },
+   "yaw_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "attribute_13": {
+    "driven_by": "particle_float"
+   },
+   "sequence": [
+    2,
+    3
+   ],
+   "spawn_within_units": 2.0,
+   "speed_outward_units_s": [
+    50.0,
+    50.0
+   ],
+   "speed_local_units_s": {
+    "min": [
+     250.0,
+     -0.0,
+     0.0
+    ],
+    "max": [
+     450.0,
+     -0.0,
+     0.0
+    ],
+    "frame": "control point 0"
+   },
+   "colour": {
+    "min": [
+     155,
+     0,
+     0,
+     null
+    ],
+    "max": [
+     164,
+     0,
+     0,
+     null
+    ]
+   },
+   "born_aged_s": [
+    0.1,
+    0.125
+   ],
+   "gravity_units_s2": [
+    0.0,
+    0.0,
+    -450.0
+   ],
+   "drag": 0.05,
+   "radius_scale": {
+    "start": 0.25,
+    "end": 2.0,
+    "bias": 0.5,
+    "from_life": 0,
+    "to_life": 1
+   },
+   "fade_out_last_share_of_life": [
+    0.125,
+    0.25
+   ],
+   "flipbook_over_life": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.3423,
+     0.5414
+    ],
+    [
+     0.8111,
+     0.9454
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.102,
+     0.203
+    ],
+    "speed_local_mps": {
+     "min": [
+      6.35,
+      -0.0,
+      0.0
+     ],
+     "max": [
+      11.43,
+      -0.0,
+      0.0
+     ]
+    },
+    "speed_outward_mps": [
+     1.27,
+     1.27
+    ],
+    "gravity_mps2": [
+     0.0,
+     0.0,
+     -11.43
+    ]
+   },
+   "draws": [
+    {
+     "as": "trails",
+     "textures": [
+      "materials/particle/fluids/blood/blood_spray_multi.vtex",
+      "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile_inv.vtex"
+     ],
+     "colour_lookup": [
+      [
+       0.0,
+       [
+        178,
+        11,
+        11
+       ]
+      ],
+      [
+       0.2842,
+       [
+        139,
+        0,
+        0
+       ]
+      ],
+      [
+       0.5245,
+       [
+        140,
+        0,
+        0
+       ]
+      ],
+      [
+       0.8553,
+       [
+        30,
+        1,
+        1
+       ]
+      ],
+      [
+       1.0,
+       [
+        16,
+        0,
+        0
+       ]
+      ]
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flMaxLength": 500.0,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nMaxEmittedPerFrame": 2,
+     "m_nParticlesToEmit": 1.0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomSequence",
+     "m_nSequenceMax": 3,
+     "m_nSequenceMin": 2,
+     "m_bShuffle": true
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_CreateWithinSphereTransform",
+     "m_fRadiusMax": 2.0,
+     "m_fSpeedMax": 50.0,
+     "m_vecDistanceBiasAbs": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "m_fSpeedMin": 50.0,
+     "m_LocalCoordinateSystemSpeedMin": [
+      250.0,
+      -0.0,
+      0.0
+     ],
+     "m_LocalCoordinateSystemSpeedMax": [
+      450.0,
+      -0.0,
+      0.0
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       4.0,
+       8.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 4
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor",
+     "m_ColorMin": [
+      155,
+      0,
+      0,
+      null
+     ],
+     "m_ColorMax": [
+      164,
+      0,
+      0,
+      null
+     ],
+     "m_flTintPerc": 0.5,
+     "m_TintMin": [
+      68,
+      68,
+      68,
+      0
+     ],
+     "m_nTintBlendMode": "4"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomYawFlip"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.35,
+       0.5
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitVec",
+     "m_InputValue": {
+      "driven_by": "particle_vector"
+     },
+     "m_nOutputField": 17
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 10
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.85,
+       1.0
+      ]
+     },
+     "m_nOutputField": 38
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 12
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor",
+     "m_TintMin": [
+      68,
+      68,
+      68,
+      0
+     ],
+     "m_flTintPerc": 0.5,
+     "m_nTintBlendMode": "4"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "driven_by": "particle_float"
+     },
+     "m_nOutputField": 13
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_AgeNoise",
+     "m_flAgeMin": 0.1,
+     "m_flAgeMax": 0.125
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Spin",
+     "m_nSpinRateDegrees": 4,
+     "m_fSpinRateStopTime": 1.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOut",
+     "m_flFadeOutTimeMin": 0.125
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_InterpolateRadius",
+     "m_flStartScale": 0.25,
+     "m_flEndScale": 2.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age_normalized",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.3423,
+        0.5414
+       ],
+       [
+        0.8111,
+        0.9454
+       ],
+       [
+        1.0,
+        1.0
+       ]
+      ]
+     },
+     "m_nOutputField": 38,
+     "m_nSetMethod": "PARTICLE_SET_SCALE_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetVec",
+     "m_InputValue": {
+      "driven_by": "float_components"
+     },
+     "m_nOutputField": 30,
+     "m_nSetMethod": "PARTICLE_SET_RAMP_CURRENT_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetVec",
+     "m_InputValue": {
+      "driven_by": "particle_vector"
+     },
+     "m_nOutputField": 17,
+     "m_nSetMethod": "PARTICLE_SET_ADD_TO_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_BasicMovement",
+     "m_Gravity": [
+      0.0,
+      0.0,
+      -450.0
+     ],
+     "m_fDrag": 0.05
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderTrails",
+     "m_nPrevPntSource": 17,
+     "m_flMaxLength": 500.0,
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_multi.vtex"
+      },
+      {
+       "m_hTexture": "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile_inv.vtex",
+       "m_nTextureChannels": "SPRITECARD_TEXTURE_CHANNEL_MIX_A",
+       "m_flTextureBlend": {
+        "driven_by": "collection_age",
+        "curve": [
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.1432,
+          0.6868
+         ],
+         [
+          0.5028,
+          1.0
+         ],
+         [
+          1.0,
+          1.0
+         ]
+        ]
+       },
+       "m_TextureControls": {
+        "m_flFinalTextureScaleU": 0.2,
+        "m_flFinalTextureScaleV": 0.2
+       }
+      },
+      {
+       "m_bReplaceTextureWithGradient": true,
+       "m_nTextureType": "SPRITECARD_TEXTURE_1D_COLOR_LOOKUP",
+       "m_Gradient": {
+        "m_Stops": [
+         {
+          "m_flPosition": 0.0,
+          "m_Color": [
+           178,
+           11,
+           11
+          ]
+         },
+         {
+          "m_flPosition": 0.2842,
+          "m_Color": [
+           139,
+           0,
+           0
+          ]
+         },
+         {
+          "m_flPosition": 0.5245,
+          "m_Color": [
+           140,
+           0,
+           0
+          ]
+         },
+         {
+          "m_flPosition": 0.8553,
+          "m_Color": [
+           30,
+           1,
+           1
+          ]
+         },
+         {
+          "m_flPosition": 1.0,
+          "m_Color": [
+           16,
+           0,
+           0
+          ]
+         }
+        ]
+       },
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_REPLACE"
+      }
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_nCropTextureOverride": "PARTICLE_SEQUENCE_CROP_OVERRIDE_FORCE_ON",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_bEnableFadingAndClamping": true,
+     "m_flStartFadeSize": 0.1,
+     "m_flEndFadeSize": 0.2
+    }
+   ]
+  },
+  "blood_impact_friendly_flash": {
+   "source": "particles/impact_fx/blood_impact_friendly_flash.vpcf",
+   "skipped": "not a blood sprite: the flash shown for a hit on a team mate"
+  },
+  "blood_impact_low_forw_spray": {
+   "source": "particles/blood_impact/blood_impact_low_forw_spray.vpcf",
+   "max_particles": 3,
+   "count": {
+    "per_detail_level": [
+     1.0,
+     2.0,
+     3.0,
+     3.0
+    ]
+   },
+   "radius_units": {
+    "random": [
+     5.0,
+     8.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     -45.0,
+     -90.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     0.7843,
+     0.8627
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     0.35,
+     0.75
+    ]
+   },
+   "flipbook_position": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "sequence": [
+    1,
+    3
+   ],
+   "spawn_within_units": 2.0,
+   "speed_local_units_s": {
+    "min": [
+     150.0,
+     -12.0,
+     -15.0
+    ],
+    "max": [
+     250.0,
+     15.0,
+     15.0
+    ],
+    "frame": "control point 2"
+   },
+   "born_aged_s": [
+    0.25,
+    0.5
+   ],
+   "gravity_units_s2": [
+    0,
+    0,
+    0
+   ],
+   "drag": 0.2,
+   "radius_scale": {
+    "start": 0.1,
+    "end": 3.0,
+    "bias": 0.65,
+    "from_life": 0.3,
+    "to_life": 1
+   },
+   "fade_out_last_share_of_life": [
+    0.25,
+    0.25
+   ],
+   "flipbook_over_life": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.3684,
+     0.6222
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.127,
+     0.203
+    ],
+    "speed_local_mps": {
+     "min": [
+      3.81,
+      -0.3,
+      -0.38
+     ],
+     "max": [
+      6.35,
+      0.38,
+      0.38
+     ]
+    },
+    "gravity_mps2": [
+     0.0,
+     0.0,
+     0.0
+    ]
+   },
+   "draws": [
+    {
+     "as": "sprites",
+     "textures": [
+      "materials/particle/fluids/blood/blood_spray_top.vtex",
+      "materials/particle/fluids/blood/blood_spray_top_mv.vtex",
+      "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01.vtex"
+     ],
+     "colour_lookup": [
+      [
+       0.0,
+       [
+        154,
+        13,
+        13
+       ]
+      ],
+      [
+       0.2842,
+       [
+        127,
+        15,
+        15
+       ]
+      ],
+      [
+       0.5245,
+       [
+        108,
+        15,
+        15
+       ]
+      ],
+      [
+       1.0,
+       [
+        34,
+        3,
+        36
+       ]
+      ]
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flOverbrightFactor": 0.5,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    },
+    {
+     "as": "sprites",
+     "textures": [
+      "materials/particle/smoke/static/static_smoke.vtex",
+      "materials/particle/fluids/blood/blood_spray_top_mv.vtex",
+      "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile.vtex"
+     ],
+     "colour_lookup": [
+      [
+       0.0,
+       [
+        34,
+        3,
+        36
+       ]
+      ],
+      [
+       0.2842,
+       [
+        127,
+        15,
+        15
+       ]
+      ],
+      [
+       0.5245,
+       [
+        108,
+        15,
+        15
+       ]
+      ],
+      [
+       1.0,
+       [
+        154,
+        13,
+        13
+       ]
+      ]
+     ],
+     "m_flRadiusScale": 0.5,
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flOverbrightFactor": 0.5,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nMaxEmittedPerFrame": 100,
+     "m_nParticlesToEmit": {
+      "per_detail_level": [
+       1.0,
+       2.0,
+       3.0,
+       3.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomSequence",
+     "m_nSequenceMax": 3,
+     "m_nSequenceMin": 1,
+     "m_bShuffle": true
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_CreateWithinSphereTransform",
+     "m_fRadiusMax": 2.0,
+     "m_vecDistanceBiasAbs": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "m_TransformInput": {
+      "m_nControlPoint": 2
+     },
+     "m_LocalCoordinateSystemSpeedMin": [
+      150.0,
+      -12.0,
+      -15.0
+     ],
+     "m_LocalCoordinateSystemSpeedMax": [
+      250.0,
+      15.0,
+      15.0
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       5.0,
+       8.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 4
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.7843,
+       0.8627
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomYawFlip"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.35,
+       0.75
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 38
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_AgeNoise",
+     "m_flAgeMin": 0.25,
+     "m_flAgeMax": 0.5
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       -45.0,
+       -90.0
+      ]
+     },
+     "m_nOutputField": 4
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_BasicMovement",
+     "m_fDrag": 0.2
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Spin",
+     "m_nSpinRateDegrees": 4,
+     "m_fSpinRateStopTime": 1.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOut"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_InterpolateRadius",
+     "m_flStartScale": 0.1,
+     "m_flEndScale": 3.0,
+     "m_flBias": 0.65,
+     "m_flStartTime": 0.3
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age_normalized",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.3684,
+        0.6222
+       ],
+       [
+        1.0,
+        1.0
+       ]
+      ]
+     },
+     "m_nOutputField": 38,
+     "m_nSetMethod": "PARTICLE_SET_SCALE_INITIAL_VALUE"
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderSprites",
+     "m_nCropTextureOverride": "PARTICLE_SEQUENCE_CROP_OVERRIDE_FORCE_ON",
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_top.vtex"
+      },
+      {
+       "m_bReplaceTextureWithGradient": true,
+       "m_nTextureType": "SPRITECARD_TEXTURE_1D_COLOR_LOOKUP",
+       "m_Gradient": {
+        "m_Stops": [
+         {
+          "m_flPosition": 0.0,
+          "m_Color": [
+           154,
+           13,
+           13
+          ]
+         },
+         {
+          "m_flPosition": 0.2842,
+          "m_Color": [
+           127,
+           15,
+           15
+          ]
+         },
+         {
+          "m_flPosition": 0.5245,
+          "m_Color": [
+           108,
+           15,
+           15
+          ]
+         },
+         {
+          "m_flPosition": 1.0,
+          "m_Color": [
+           34,
+           3,
+           36
+          ]
+         }
+        ]
+       },
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_REPLACE"
+      },
+      {
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC",
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_top_mv.vtex",
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_ADD"
+      },
+      {
+       "m_hTexture": "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01.vtex",
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_SUBTRACT",
+       "m_flTextureBlend": {
+        "driven_by": "collection_age"
+       }
+      }
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flMotionVectorScaleU": -8.0,
+     "m_flMotionVectorScaleV": -8.0,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_flOverbrightFactor": 0.5,
+     "m_flSourceAlphaValueToMapToZero": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 4,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_bUseMixedResolutionRendering": true,
+     "m_flMaxSize": 0.1,
+     "m_flStartFadeSize": 0.5,
+     "m_flEndFadeSize": 1.0,
+     "m_bParticleShadows": true,
+     "m_flShadowDensity": 2.0
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderSprites",
+     "m_flRadiusScale": 0.5,
+     "m_nCropTextureOverride": "PARTICLE_SEQUENCE_CROP_OVERRIDE_FORCE_ON",
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/smoke/static/static_smoke.vtex"
+      },
+      {
+       "m_bReplaceTextureWithGradient": true,
+       "m_nTextureType": "SPRITECARD_TEXTURE_1D_COLOR_LOOKUP",
+       "m_Gradient": {
+        "m_Stops": [
+         {
+          "m_flPosition": 0.0,
+          "m_Color": [
+           34,
+           3,
+           36
+          ]
+         },
+         {
+          "m_flPosition": 0.2842,
+          "m_Color": [
+           127,
+           15,
+           15
+          ]
+         },
+         {
+          "m_flPosition": 0.5245,
+          "m_Color": [
+           108,
+           15,
+           15
+          ]
+         },
+         {
+          "m_flPosition": 1.0,
+          "m_Color": [
+           154,
+           13,
+           13
+          ]
+         }
+        ]
+       },
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_REPLACE",
+       "m_nTextureChannels": "SPRITECARD_TEXTURE_CHANNEL_MIX_RGB"
+      },
+      {
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC",
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_top_mv.vtex",
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_ADD"
+      },
+      {
+       "m_hTexture": "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile.vtex",
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_SUBTRACT",
+       "m_flTextureBlend": {
+        "driven_by": "collection_age"
+       }
+      }
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flMotionVectorScaleU": -16.0,
+     "m_flMotionVectorScaleV": -16.0,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_flOverbrightFactor": 0.5,
+     "m_bUseMixedResolutionRendering": true,
+     "m_flMaxSize": 0.1,
+     "m_flStartFadeSize": 0.354,
+     "m_flEndFadeSize": 0.75,
+     "m_bParticleShadows": true,
+     "m_flShadowDensity": 2.0
+    }
+   ]
+  },
+  "blood_impact_med": {
+   "source": "particles/blood_impact/blood_impact_med.vpcf",
+   "max_particles": 1,
+   "draws": [],
+   "children": [
+    "blood_impact_med_vis_spray",
+    "blood_impact_med_spray_screen",
+    "blood_impact_med_vis_spray_trail",
+    "blood_impact_med_mist_away",
+    "blood_impact_med_spray_away",
+    "blood_impact_friendly_flash",
+    "blood_impact_low_forw_spray"
+   ],
+   "ops": [
+    {
+     "stage": "before",
+     "class": "C_OP_DistanceBetweenCPsToCP",
+     "m_nOutputCP": 4,
+     "m_flInputMin": 128.0,
+     "m_flInputMax": 1024.0,
+     "m_flOutputMin": 0.2,
+     "m_flOutputMax": 0.85
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_PositionLock",
+     "m_bLockRot": true
+    }
+   ]
+  },
+  "blood_impact_med_vis_spray": {
+   "source": "particles/blood_impact/blood_impact_med_vis_spray.vpcf",
+   "max_particles": 3,
+   "count": {
+    "per_detail_level": [
+     1.0,
+     2.0,
+     3.0,
+     3.0
+    ]
+   },
+   "radius_units": {
+    "random": [
+     11.0,
+     16.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     -45.0,
+     -90.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     0.7843,
+     0.8627
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     0.5,
+     0.7
+    ]
+   },
+   "flipbook_position": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "sequence": [
+    1,
+    3
+   ],
+   "spawn_within_units": 2.0,
+   "speed_local_units_s": {
+    "min": [
+     50.0,
+     -12.0,
+     -15.0
+    ],
+    "max": [
+     120.0,
+     15.0,
+     15.0
+    ],
+    "frame": "control point 2"
+   },
+   "born_aged_s": [
+    0.25,
+    0.5
+   ],
+   "gravity_units_s2": [
+    0.0,
+    0.0,
+    -250.0
+   ],
+   "drag": 0.05,
+   "radius_scale": {
+    "start": 0.1,
+    "end": 2.0,
+    "bias": 0.52,
+    "from_life": 0,
+    "to_life": 1
+   },
+   "fade_out_last_share_of_life": [
+    0.5,
+    0.6
+   ],
+   "flipbook_over_life": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.3684,
+     0.6222
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.279,
+     0.406
+    ],
+    "speed_local_mps": {
+     "min": [
+      1.27,
+      -0.3,
+      -0.38
+     ],
+     "max": [
+      3.05,
+      0.38,
+      0.38
+     ]
+    },
+    "gravity_mps2": [
+     0.0,
+     0.0,
+     -6.35
+    ]
+   },
+   "draws": [
+    {
+     "as": "sprites",
+     "textures": [
+      "materials/particle/fluids/blood/blood_spray_top.vtex",
+      "materials/particle/fluids/blood/blood_spray_top_mv.vtex"
+     ],
+     "colour_lookup": [
+      [
+       0.0,
+       [
+        154,
+        13,
+        13
+       ]
+      ],
+      [
+       0.2842,
+       [
+        127,
+        15,
+        15
+       ]
+      ],
+      [
+       0.5245,
+       [
+        108,
+        15,
+        15
+       ]
+      ],
+      [
+       1.0,
+       [
+        34,
+        3,
+        36
+       ]
+      ]
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flOverbrightFactor": 0.5,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    },
+    {
+     "as": "sprites",
+     "textures": [
+      "materials/particle/smoke/static/static_smoke.vtex",
+      "materials/particle/fluids/blood/blood_spray_top_mv.vtex"
+     ],
+     "colour_lookup": [
+      [
+       0.0,
+       [
+        34,
+        3,
+        36
+       ]
+      ],
+      [
+       0.2842,
+       [
+        127,
+        15,
+        15
+       ]
+      ],
+      [
+       0.5245,
+       [
+        108,
+        15,
+        15
+       ]
+      ],
+      [
+       1.0,
+       [
+        154,
+        13,
+        13
+       ]
+      ]
+     ],
+     "m_flRadiusScale": 0.5,
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flOverbrightFactor": 0.5,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    },
+    {
+     "as": "sprites",
+     "textures": [
+      "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+      "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex"
+     ],
+     "colour_lookup": [
+      [
+       0.0,
+       [
+        34,
+        3,
+        36
+       ]
+      ],
+      [
+       0.2842,
+       [
+        127,
+        15,
+        15
+       ]
+      ],
+      [
+       0.5245,
+       [
+        108,
+        15,
+        15
+       ]
+      ],
+      [
+       1.0,
+       [
+        154,
+        13,
+        13
+       ]
+      ]
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nMaxEmittedPerFrame": 100,
+     "m_nParticlesToEmit": {
+      "per_detail_level": [
+       1.0,
+       2.0,
+       3.0,
+       3.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomSequence",
+     "m_nSequenceMax": 3,
+     "m_nSequenceMin": 1,
+     "m_bShuffle": true
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_CreateWithinSphereTransform",
+     "m_fRadiusMax": 2.0,
+     "m_vecDistanceBiasAbs": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "m_TransformInput": {
+      "m_nControlPoint": 2
+     },
+     "m_LocalCoordinateSystemSpeedMin": [
+      50.0,
+      -12.0,
+      -15.0
+     ],
+     "m_LocalCoordinateSystemSpeedMax": [
+      120.0,
+      15.0,
+      15.0
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       11.0,
+       16.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 4
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.7843,
+       0.8627
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomYawFlip"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.5,
+       0.7
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 38
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_AgeNoise",
+     "m_flAgeMin": 0.25,
+     "m_flAgeMax": 0.5
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       -45.0,
+       -90.0
+      ]
+     },
+     "m_nOutputField": 4
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_BasicMovement",
+     "m_Gravity": [
+      0.0,
+      0.0,
+      -250.0
+     ],
+     "m_fDrag": 0.05
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Spin",
+     "m_nSpinRateDegrees": 4,
+     "m_fSpinRateStopTime": 1.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOut",
+     "m_flFadeOutTimeMin": 0.5,
+     "m_flFadeOutTimeMax": 0.6
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_InterpolateRadius",
+     "m_flStartScale": 0.1,
+     "m_flEndScale": 2.0,
+     "m_flBias": 0.52
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age_normalized",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.3684,
+        0.6222
+       ],
+       [
+        1.0,
+        1.0
+       ]
+      ]
+     },
+     "m_nOutputField": 38,
+     "m_nSetMethod": "PARTICLE_SET_SCALE_INITIAL_VALUE"
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderSprites",
+     "m_nCropTextureOverride": "PARTICLE_SEQUENCE_CROP_OVERRIDE_FORCE_ON",
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_top.vtex"
+      },
+      {
+       "m_bReplaceTextureWithGradient": true,
+       "m_nTextureType": "SPRITECARD_TEXTURE_1D_COLOR_LOOKUP",
+       "m_Gradient": {
+        "m_Stops": [
+         {
+          "m_flPosition": 0.0,
+          "m_Color": [
+           154,
+           13,
+           13
+          ]
+         },
+         {
+          "m_flPosition": 0.2842,
+          "m_Color": [
+           127,
+           15,
+           15
+          ]
+         },
+         {
+          "m_flPosition": 0.5245,
+          "m_Color": [
+           108,
+           15,
+           15
+          ]
+         },
+         {
+          "m_flPosition": 1.0,
+          "m_Color": [
+           34,
+           3,
+           36
+          ]
+         }
+        ]
+       },
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_REPLACE"
+      },
+      {
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC",
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_top_mv.vtex",
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_ADD"
+      }
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flMotionVectorScaleU": -8.0,
+     "m_flMotionVectorScaleV": -8.0,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_flOverbrightFactor": 0.5,
+     "m_flSourceAlphaValueToMapToZero": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 4,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_bUseMixedResolutionRendering": true,
+     "m_flMaxSize": 0.85,
+     "m_flStartFadeSize": 0.5,
+     "m_flEndFadeSize": 1.0,
+     "m_bParticleShadows": true,
+     "m_flShadowDensity": 2.0
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderSprites",
+     "m_flRadiusScale": 0.5,
+     "m_nCropTextureOverride": "PARTICLE_SEQUENCE_CROP_OVERRIDE_FORCE_ON",
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/smoke/static/static_smoke.vtex"
+      },
+      {
+       "m_bReplaceTextureWithGradient": true,
+       "m_nTextureType": "SPRITECARD_TEXTURE_1D_COLOR_LOOKUP",
+       "m_Gradient": {
+        "m_Stops": [
+         {
+          "m_flPosition": 0.0,
+          "m_Color": [
+           34,
+           3,
+           36
+          ]
+         },
+         {
+          "m_flPosition": 0.2842,
+          "m_Color": [
+           127,
+           15,
+           15
+          ]
+         },
+         {
+          "m_flPosition": 0.5245,
+          "m_Color": [
+           108,
+           15,
+           15
+          ]
+         },
+         {
+          "m_flPosition": 1.0,
+          "m_Color": [
+           154,
+           13,
+           13
+          ]
+         }
+        ]
+       },
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_REPLACE",
+       "m_nTextureChannels": "SPRITECARD_TEXTURE_CHANNEL_MIX_RGB"
+      },
+      {
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC",
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_top_mv.vtex",
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_ADD"
+      }
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flMotionVectorScaleU": -16.0,
+     "m_flMotionVectorScaleV": -16.0,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_flOverbrightFactor": 0.5,
+     "m_bUseMixedResolutionRendering": true,
+     "m_flMaxSize": 0.85,
+     "m_flStartFadeSize": 0.354,
+     "m_flEndFadeSize": 0.75,
+     "m_bParticleShadows": true,
+     "m_flShadowDensity": 2.0
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderSprites",
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b.vtex"
+      },
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex",
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC"
+      },
+      {
+       "m_bReplaceTextureWithGradient": true,
+       "m_nTextureType": "SPRITECARD_TEXTURE_1D_COLOR_LOOKUP",
+       "m_Gradient": {
+        "m_Stops": [
+         {
+          "m_flPosition": 0.0,
+          "m_Color": [
+           34,
+           3,
+           36
+          ]
+         },
+         {
+          "m_flPosition": 0.2842,
+          "m_Color": [
+           127,
+           15,
+           15
+          ]
+         },
+         {
+          "m_flPosition": 0.5245,
+          "m_Color": [
+           108,
+           15,
+           15
+          ]
+         },
+         {
+          "m_flPosition": 1.0,
+          "m_Color": [
+           154,
+           13,
+           13
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_bOnlyRenderInEffectsBloomPass": true,
+     "m_nFeatheringMode": "PARTICLE_DEPTH_FEATHERING_ON_OPTIONAL",
+     "m_flMaxSize": 0.6,
+     "m_flStartFadeSize": 0.3,
+     "m_flEndFadeSize": 0.5,
+     "m_bParticleShadows": true
+    }
+   ]
+  },
+  "blood_impact_med_spray_screen": {
+   "source": "particles/blood_impact/blood_impact_med_spray_screen.vpcf",
+   "max_particles": 3,
+   "count": 1.0,
+   "radius_units": {
+    "random": [
+     4.0,
+     8.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     0.35,
+     0.5
+    ]
+   },
+   "trail_length": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "flipbook_position": {
+    "random": [
+     0.85,
+     1.0
+    ]
+   },
+   "yaw_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "attribute_13": {
+    "driven_by": "particle_float"
+   },
+   "sequence": [
+    2,
+    2
+   ],
+   "spawn_within_units": 2.0,
+   "speed_outward_units_s": [
+    50.0,
+    50.0
+   ],
+   "speed_local_units_s": {
+    "min": [
+     250.0,
+     -0.0,
+     0.0
+    ],
+    "max": [
+     450.0,
+     -0.0,
+     0.0
+    ],
+    "frame": "control point 0"
+   },
+   "born_aged_s": [
+    0.1,
+    0.125
+   ],
+   "gravity_units_s2": [
+    0.0,
+    0.0,
+    -450.0
+   ],
+   "drag": 0.05,
+   "radius_scale": {
+    "start": 0.25,
+    "end": 2.0,
+    "bias": 0.5,
+    "from_life": 0,
+    "to_life": 1
+   },
+   "fade_out_last_share_of_life": [
+    0.125,
+    0.25
+   ],
+   "flipbook_over_life": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.3423,
+     0.5414
+    ],
+    [
+     0.8111,
+     0.9454
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.102,
+     0.203
+    ],
+    "speed_local_mps": {
+     "min": [
+      6.35,
+      -0.0,
+      0.0
+     ],
+     "max": [
+      11.43,
+      -0.0,
+      0.0
+     ]
+    },
+    "speed_outward_mps": [
+     1.27,
+     1.27
+    ],
+    "gravity_mps2": [
+     0.0,
+     0.0,
+     -11.43
+    ]
+   },
+   "draws": [
+    {
+     "as": "trails",
+     "textures": [
+      "materials/particle/fluids/blood/blood_spray_multi.vtex",
+      "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile_inv.vtex"
+     ],
+     "colour_lookup": [
+      [
+       0.0,
+       [
+        30,
+        1,
+        1
+       ]
+      ],
+      [
+       0.2558,
+       [
+        64,
+        0,
+        0
+       ]
+      ],
+      [
+       0.5995,
+       [
+        92,
+        0,
+        0
+       ]
+      ],
+      [
+       1.0,
+       [
+        143,
+        1,
+        1
+       ]
+      ]
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flMaxLength": 500.0,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nMaxEmittedPerFrame": 2,
+     "m_nParticlesToEmit": 1.0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomSequence",
+     "m_nSequenceMax": 2,
+     "m_nSequenceMin": 2
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_CreateWithinSphereTransform",
+     "m_fRadiusMax": 2.0,
+     "m_fSpeedMax": 50.0,
+     "m_vecDistanceBiasAbs": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "m_fSpeedMin": 50.0,
+     "m_LocalCoordinateSystemSpeedMin": [
+      250.0,
+      -0.0,
+      0.0
+     ],
+     "m_LocalCoordinateSystemSpeedMax": [
+      450.0,
+      -0.0,
+      0.0
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       4.0,
+       8.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 4
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomYawFlip"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.35,
+       0.5
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitVec",
+     "m_InputValue": {
+      "driven_by": "particle_vector"
+     },
+     "m_nOutputField": 17
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 10
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.85,
+       1.0
+      ]
+     },
+     "m_nOutputField": 38
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 12
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor",
+     "m_TintMin": [
+      68,
+      68,
+      68,
+      0
+     ],
+     "m_flTintPerc": 0.5,
+     "m_nTintBlendMode": "4"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "driven_by": "particle_float"
+     },
+     "m_nOutputField": 13
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_AgeNoise",
+     "m_flAgeMin": 0.1,
+     "m_flAgeMax": 0.125
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Spin",
+     "m_nSpinRateDegrees": 4,
+     "m_fSpinRateStopTime": 1.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOut",
+     "m_flFadeOutTimeMin": 0.125
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_InterpolateRadius",
+     "m_flStartScale": 0.25,
+     "m_flEndScale": 2.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age_normalized",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.3423,
+        0.5414
+       ],
+       [
+        0.8111,
+        0.9454
+       ],
+       [
+        1.0,
+        1.0
+       ]
+      ]
+     },
+     "m_nOutputField": 38,
+     "m_nSetMethod": "PARTICLE_SET_SCALE_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetVec",
+     "m_InputValue": {
+      "driven_by": "float_components"
+     },
+     "m_nOutputField": 30,
+     "m_nSetMethod": "PARTICLE_SET_RAMP_CURRENT_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetVec",
+     "m_InputValue": {
+      "driven_by": "particle_vector"
+     },
+     "m_nOutputField": 17,
+     "m_nSetMethod": "PARTICLE_SET_ADD_TO_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_BasicMovement",
+     "m_Gravity": [
+      0.0,
+      0.0,
+      -450.0
+     ],
+     "m_fDrag": 0.05
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderTrails",
+     "m_nPrevPntSource": 17,
+     "m_flMaxLength": 500.0,
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_multi.vtex"
+      },
+      {
+       "m_hTexture": "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile_inv.vtex",
+       "m_nTextureChannels": "SPRITECARD_TEXTURE_CHANNEL_MIX_A",
+       "m_flTextureBlend": {
+        "driven_by": "collection_age",
+        "curve": [
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.1432,
+          0.6868
+         ],
+         [
+          0.5028,
+          1.0
+         ],
+         [
+          1.0,
+          1.0
+         ]
+        ]
+       },
+       "m_TextureControls": {
+        "m_flFinalTextureScaleU": 0.2,
+        "m_flFinalTextureScaleV": 0.2
+       }
+      },
+      {
+       "m_bReplaceTextureWithGradient": true,
+       "m_nTextureType": "SPRITECARD_TEXTURE_1D_COLOR_LOOKUP",
+       "m_Gradient": {
+        "m_Stops": [
+         {
+          "m_flPosition": 0.0,
+          "m_Color": [
+           30,
+           1,
+           1
+          ]
+         },
+         {
+          "m_flPosition": 0.2558,
+          "m_Color": [
+           64,
+           0,
+           0
+          ]
+         },
+         {
+          "m_flPosition": 0.5995,
+          "m_Color": [
+           92,
+           0,
+           0
+          ]
+         },
+         {
+          "m_flPosition": 1.0,
+          "m_Color": [
+           143,
+           1,
+           1
+          ]
+         }
+        ]
+       },
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_REPLACE"
+      }
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_nCropTextureOverride": "PARTICLE_SEQUENCE_CROP_OVERRIDE_FORCE_ON",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_bEnableFadingAndClamping": true,
+     "m_flStartFadeSize": 0.1,
+     "m_flEndFadeSize": 0.2,
+     "m_flSourceAlphaValueToMapToZero": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 4,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ]
+  },
+  "blood_impact_med_vis_spray_trail": {
+   "source": "particles/blood_impact/blood_impact_med_vis_spray_trail.vpcf",
+   "max_particles": 2,
+   "count": {
+    "per_detail_level": [
+     1.0,
+     1.0,
+     2.0,
+     2.0
+    ]
+   },
+   "radius_units": {
+    "random": [
+     14.0,
+     20.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     0.5,
+     0.75
+    ]
+   },
+   "trail_length": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "flipbook_position": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "yaw_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "sequence": [
+    0,
+    3
+   ],
+   "spawn_within_units": 2.0,
+   "speed_outward_units_s": [
+    50.0,
+    50.0
+   ],
+   "speed_local_units_s": {
+    "min": [
+     120.0,
+     -0.0,
+     0.0
+    ],
+    "max": [
+     250.0,
+     -0.0,
+     0.0
+    ],
+    "frame": "control point 0"
+   },
+   "speed_noise_units_s": {
+    "min": [
+     0.0,
+     0.0,
+     25.0
+    ],
+    "max": [
+     1.0,
+     1.0,
+     50.0
+    ]
+   },
+   "born_aged_s": [
+    0.1,
+    0.125
+   ],
+   "gravity_units_s2": [
+    0.0,
+    0.0,
+    -450.0
+   ],
+   "drag": 0.05,
+   "radius_scale": {
+    "start": 0.25,
+    "end": 2.0,
+    "bias": 0.5,
+    "from_life": 0,
+    "to_life": 1
+   },
+   "fade_out_last_share_of_life": [
+    0.125,
+    0.25
+   ],
+   "flipbook_over_life": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.2049,
+     0.4121
+    ],
+    [
+     0.573,
+     0.7595
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.356,
+     0.508
+    ],
+    "speed_local_mps": {
+     "min": [
+      3.05,
+      -0.0,
+      0.0
+     ],
+     "max": [
+      6.35,
+      -0.0,
+      0.0
+     ]
+    },
+    "speed_outward_mps": [
+     1.27,
+     1.27
+    ],
+    "speed_noise_mps": {
+     "min": [
+      0.0,
+      0.0,
+      0.64
+     ],
+     "max": [
+      0.03,
+      0.03,
+      1.27
+     ]
+    },
+    "gravity_mps2": [
+     0.0,
+     0.0,
+     -11.43
+    ]
+   },
+   "draws": [
+    {
+     "as": "trails",
+     "textures": [
+      "materials/particle/fluids/blood/blood_spray_med.vtex",
+      "materials/particle/fluids/blood/blood_spray_med_mv.vtex"
+     ],
+     "colour_lookup": [
+      [
+       0.0,
+       [
+        143,
+        1,
+        1
+       ]
+      ],
+      [
+       0.3902,
+       [
+        92,
+        0,
+        0
+       ]
+      ],
+      [
+       0.7674,
+       [
+        64,
+        0,
+        0
+       ]
+      ],
+      [
+       1.0,
+       [
+        30,
+        1,
+        1
+       ]
+      ]
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flMaxLength": 500.0,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ],
+   "children": [
+    "blood_impact_med_ground_decal",
+    "blood_impact_med_ground_decalalt",
+    "blood_impact_med_ground_decalaltb"
+   ],
+   "ops": [
+    {
+     "stage": "before",
+     "class": "C_OP_ChooseRandomChildrenInGroup",
+     "m_bRunOnce": true
+    },
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nMaxEmittedPerFrame": 100,
+     "m_nParticlesToEmit": {
+      "per_detail_level": [
+       1.0,
+       1.0,
+       2.0,
+       2.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomSequence",
+     "m_nSequenceMax": 3,
+     "m_bShuffle": true
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_CreateWithinSphereTransform",
+     "m_fRadiusMax": 2.0,
+     "m_fSpeedMax": 50.0,
+     "m_vecDistanceBiasAbs": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "m_fSpeedMin": 50.0,
+     "m_LocalCoordinateSystemSpeedMin": [
+      120.0,
+      -0.0,
+      0.0
+     ],
+     "m_LocalCoordinateSystemSpeedMax": [
+      250.0,
+      -0.0,
+      0.0
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       14.0,
+       20.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 4
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomYawFlip"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.5,
+       0.75
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitialVelocityNoise",
+     "m_vecOutputMin": [
+      0.0,
+      0.0,
+      25.0
+     ],
+     "m_vecOutputMax": [
+      1.0,
+      1.0,
+      50.0
+     ],
+     "m_TransformInput": {
+      "driven_by": "invalid"
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitVec",
+     "m_InputValue": {
+      "driven_by": "particle_vector"
+     },
+     "m_nOutputField": 17
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 10
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 38
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 12
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor",
+     "m_TintMin": [
+      68,
+      68,
+      68,
+      0
+     ],
+     "m_flTintPerc": 0.5,
+     "m_nTintBlendMode": "4"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_AgeNoise",
+     "m_flAgeMin": 0.1,
+     "m_flAgeMax": 0.125
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_GlobalScale"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Spin",
+     "m_nSpinRateDegrees": 4,
+     "m_fSpinRateStopTime": 1.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOut",
+     "m_flFadeOutTimeMin": 0.125
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_InterpolateRadius",
+     "m_flStartScale": 0.25,
+     "m_flEndScale": 2.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age_normalized",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.2049,
+        0.4121
+       ],
+       [
+        0.573,
+        0.7595
+       ],
+       [
+        1.0,
+        1.0
+       ]
+      ]
+     },
+     "m_nOutputField": 38,
+     "m_nSetMethod": "PARTICLE_SET_SCALE_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetVec",
+     "m_InputValue": {
+      "driven_by": "float_components"
+     },
+     "m_nOutputField": 30,
+     "m_nSetMethod": "PARTICLE_SET_RAMP_CURRENT_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetVec",
+     "m_InputValue": {
+      "driven_by": "particle_vector"
+     },
+     "m_nOutputField": 17,
+     "m_nSetMethod": "PARTICLE_SET_ADD_TO_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_BasicMovement",
+     "m_Gravity": [
+      0.0,
+      0.0,
+      -450.0
+     ],
+     "m_fDrag": 0.05
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderTrails",
+     "m_nPrevPntSource": 17,
+     "m_flMaxLength": 500.0,
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_med.vtex"
+      },
+      {
+       "m_bReplaceTextureWithGradient": true,
+       "m_nTextureType": "SPRITECARD_TEXTURE_1D_COLOR_LOOKUP",
+       "m_Gradient": {
+        "m_Stops": [
+         {
+          "m_flPosition": 0.0,
+          "m_Color": [
+           143,
+           1,
+           1
+          ]
+         },
+         {
+          "m_flPosition": 0.3902,
+          "m_Color": [
+           92,
+           0,
+           0
+          ]
+         },
+         {
+          "m_flPosition": 0.7674,
+          "m_Color": [
+           64,
+           0,
+           0
+          ]
+         },
+         {
+          "m_flPosition": 1.0,
+          "m_Color": [
+           30,
+           1,
+           1
+          ]
+         }
+        ]
+       },
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_REPLACE"
+      },
+      {
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_med_mv.vtex",
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC"
+      }
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_nCropTextureOverride": "PARTICLE_SEQUENCE_CROP_OVERRIDE_FORCE_ON",
+     "m_bMaxLuminanceBlendingSequence0": true,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_bEnableFadingAndClamping": true,
+     "m_flStartFadeSize": 0.1,
+     "m_flEndFadeSize": 0.2,
+     "m_flSourceAlphaValueToMapToZero": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 4,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ]
+  },
+  "blood_impact_med_ground_decal": {
+   "source": "particles/blood_impact/blood_impact_med_ground_decal.vpcf",
+   "max_particles": 1,
+   "count": {
+    "per_detail_level": [
+     0.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "radius_units": {
+    "random": [
+     30.0,
+     40.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     5.0,
+     10.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     -45.0,
+     45.0
+    ]
+   },
+   "fade_out_last_share_of_life": [
+    0.1,
+    0.1
+   ],
+   "fade_in_s": [
+    0.125,
+    0.15
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.762,
+     1.016
+    ]
+   },
+   "draws": [
+    {
+     "as": "projected decal",
+     "textures": [],
+     "materials": [
+      "materials/decals/blood/blood_decals_spray_med.vmat"
+     ],
+     "m_flMinProjectionDepth": -15.0,
+     "m_flMaxProjectionDepth": 5.0,
+     "m_bOrientToNormal": true
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "before",
+     "class": "C_OP_SetSingleControlPointPosition",
+     "m_vecCP1Pos": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "m_bRunOnce": true
+    },
+    {
+     "stage": "before",
+     "class": "C_OP_StopAfterCPDuration",
+     "m_flDuration": 0.0,
+     "m_bDestroyImmediately": true
+    },
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nParticlesToEmit": {
+      "per_detail_level": [
+       0.0,
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "m_flInitFromKilledParentParticles": 1.0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFromParentKilled",
+     "m_nAttributeToCopy": 0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFromParentKilled",
+     "m_nAttributeToCopy": 2
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionWarp",
+     "m_vecWarpMin": [
+      0.4,
+      0.4,
+      0.4
+     ],
+     "m_vecWarpMax": [
+      0.75,
+      0.75,
+      0.75
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       30.0,
+       40.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       5.0,
+       10.0
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionOffset",
+     "m_OffsetMin": [
+      0.0,
+      0.0,
+      32.0
+     ],
+     "m_OffsetMax": [
+      0.0,
+      0.0,
+      32.0
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionPlaceOnGround",
+     "m_flMaxTraceLength": 256.0,
+     "m_bSetNormal": true
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       -45.0,
+       45.0
+      ]
+     },
+     "m_nOutputField": 4,
+     "m_nSetMethod": "PARTICLE_SET_ADD_TO_INITIAL_VALUE"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_Orient2DRelToCP",
+     "m_nCP": 1,
+     "m_flRotOffset": 180.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOutSimple",
+     "m_flFadeOutTime": 0.1
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeIn",
+     "m_flFadeInTimeMin": 0.125,
+     "m_flFadeInTimeMax": 0.15,
+     "m_bProportional": false
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.9439,
+        0.9696
+       ],
+       [
+        13.0023,
+        30.0
+       ]
+      ]
+     },
+     "m_nOutputField": 18
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderProjected",
+     "m_flMinProjectionDepth": -15.0,
+     "m_flMaxProjectionDepth": 5.0,
+     "m_bEnableProjectedDepthControls": true,
+     "m_bProjectWater": false,
+     "m_bOrientToNormal": true,
+     "m_MaterialVars": [
+      {
+       "m_strVariable": "$particle_age"
+      }
+     ],
+     "m_vecProjectedMaterials": [
+      {
+       "m_hMaterial": "materials/decals/blood/blood_decals_spray_med.vmat"
+      }
+     ]
+    }
+   ]
+  },
+  "blood_impact_med_ground_decalalt": {
+   "source": "particles/blood_impact/blood_impact_med_ground_decalalt.vpcf",
+   "max_particles": 1,
+   "count": {
+    "per_detail_level": [
+     0.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "radius_units": {
+    "random": [
+     30.0,
+     40.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     5.0,
+     10.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     -30.0,
+     30.0
+    ]
+   },
+   "fade_out_last_share_of_life": [
+    0.1,
+    0.1
+   ],
+   "fade_in_s": [
+    0.125,
+    0.15
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.762,
+     1.016
+    ]
+   },
+   "draws": [
+    {
+     "as": "projected decal",
+     "textures": [],
+     "materials": [
+      "materials/decals/blood/blood_decals_spray_medalt.vmat"
+     ],
+     "m_flMinProjectionDepth": -15.0,
+     "m_flMaxProjectionDepth": 5.0,
+     "m_bOrientToNormal": true
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "before",
+     "class": "C_OP_SetSingleControlPointPosition",
+     "m_vecCP1Pos": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "m_bRunOnce": true
+    },
+    {
+     "stage": "before",
+     "class": "C_OP_StopAfterCPDuration",
+     "m_flDuration": 0.0,
+     "m_bDestroyImmediately": true
+    },
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nParticlesToEmit": {
+      "per_detail_level": [
+       0.0,
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "m_flInitFromKilledParentParticles": 1.0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFromParentKilled",
+     "m_nAttributeToCopy": 0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFromParentKilled",
+     "m_nAttributeToCopy": 2
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionWarp",
+     "m_vecWarpMin": [
+      0.4,
+      0.4,
+      0.4
+     ],
+     "m_vecWarpMax": [
+      0.75,
+      0.75,
+      0.75
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionOffset",
+     "m_OffsetMin": [
+      0.0,
+      0.0,
+      32.0
+     ],
+     "m_OffsetMax": [
+      0.0,
+      0.0,
+      32.0
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       30.0,
+       40.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       5.0,
+       10.0
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionPlaceOnGround",
+     "m_flMaxTraceLength": 256.0,
+     "m_bSetNormal": true
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_Orient2DRelToCP",
+     "m_nCP": 1,
+     "m_flRotOffset": 270.0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       -30.0,
+       30.0
+      ]
+     },
+     "m_nOutputField": 4,
+     "m_nSetMethod": "PARTICLE_SET_ADD_TO_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOutSimple",
+     "m_flFadeOutTime": 0.1
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeIn",
+     "m_flFadeInTimeMin": 0.125,
+     "m_flFadeInTimeMax": 0.15,
+     "m_bProportional": false
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.9439,
+        0.9696
+       ],
+       [
+        13.0023,
+        30.0
+       ]
+      ]
+     },
+     "m_nOutputField": 18
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderProjected",
+     "m_flMinProjectionDepth": -15.0,
+     "m_flMaxProjectionDepth": 5.0,
+     "m_bEnableProjectedDepthControls": true,
+     "m_bProjectWater": false,
+     "m_bOrientToNormal": true,
+     "m_MaterialVars": [
+      {
+       "m_strVariable": "$particle_age"
+      }
+     ],
+     "m_vecProjectedMaterials": [
+      {
+       "m_hMaterial": "materials/decals/blood/blood_decals_spray_medalt.vmat"
+      }
+     ]
+    }
+   ]
+  },
+  "blood_impact_med_ground_decalaltb": {
+   "source": "particles/blood_impact/blood_impact_med_ground_decalaltb.vpcf",
+   "max_particles": 1,
+   "count": {
+    "per_detail_level": [
+     0.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "radius_units": {
+    "random": [
+     30.0,
+     40.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     20.0,
+     20.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     -30.0,
+     30.0
+    ]
+   },
+   "fade_out_last_share_of_life": [
+    0.2,
+    0.2
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.762,
+     1.016
+    ]
+   },
+   "draws": [
+    {
+     "as": "projected decal",
+     "textures": [],
+     "materials": [
+      "materials/decals/blood/blood_decals_spray_lowalt_b.vmat"
+     ],
+     "m_flMinProjectionDepth": -15.0,
+     "m_flMaxProjectionDepth": 5.0,
+     "m_bOrientToNormal": true
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "before",
+     "class": "C_OP_SetSingleControlPointPosition",
+     "m_vecCP1Pos": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "m_bRunOnce": true
+    },
+    {
+     "stage": "before",
+     "class": "C_OP_StopAfterCPDuration",
+     "m_flDuration": 0.0,
+     "m_bDestroyImmediately": true
+    },
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nParticlesToEmit": {
+      "per_detail_level": [
+       0.0,
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "m_flInitFromKilledParentParticles": 1.0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFromParentKilled",
+     "m_nAttributeToCopy": 0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFromParentKilled",
+     "m_nAttributeToCopy": 2
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionWarp",
+     "m_vecWarpMin": [
+      0.4,
+      0.4,
+      0.4
+     ],
+     "m_vecWarpMax": [
+      0.75,
+      0.75,
+      0.75
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionOffset",
+     "m_OffsetMin": [
+      0.0,
+      0.0,
+      64.0
+     ],
+     "m_OffsetMax": [
+      0.0,
+      0.0,
+      64.0
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       30.0,
+       40.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       20.0,
+       20.0
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionPlaceOnGround",
+     "m_flMaxTraceLength": 256.0,
+     "m_bSetNormal": true
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_Orient2DRelToCP",
+     "m_nCP": 1,
+     "m_flRotOffset": 270.0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       -30.0,
+       30.0
+      ]
+     },
+     "m_nOutputField": 4,
+     "m_nSetMethod": "PARTICLE_SET_ADD_TO_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOutSimple",
+     "m_flFadeOutTime": 0.2
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.9439,
+        0.9696
+       ],
+       [
+        13.0023,
+        30.0
+       ]
+      ]
+     },
+     "m_nOutputField": 18
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderProjected",
+     "m_flMinProjectionDepth": -15.0,
+     "m_flMaxProjectionDepth": 5.0,
+     "m_bEnableProjectedDepthControls": true,
+     "m_bProjectWater": false,
+     "m_bOrientToNormal": true,
+     "m_MaterialVars": [
+      {
+       "m_strVariable": "$particle_age"
+      }
+     ],
+     "m_vecProjectedMaterials": [
+      {
+       "m_hMaterial": "materials/decals/blood/blood_decals_spray_lowalt_b.vmat"
+      }
+     ]
+    }
+   ]
+  },
+  "blood_impact_med_mist_away": {
+   "source": "particles/blood_impact/blood_impact_med_mist_away.vpcf",
+   "max_particles": 5,
+   "count": {
+    "per_detail_level": [
+     2.0,
+     3.0,
+     4.0,
+     5.0
+    ]
+   },
+   "radius_units": {
+    "random": [
+     9.0,
+     12.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     0.3,
+     0.65
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     0.5,
+     1.0
+    ],
+    "bias": -0.405
+   },
+   "flipbook_position": {
+    "random": [
+     0.8,
+     1.0
+    ]
+   },
+   "sequence": [
+    0,
+    2
+   ],
+   "spawn_within_units": 2.0,
+   "speed_outward_units_s": [
+    35.0,
+    65.0
+   ],
+   "speed_local_units_s": {
+    "min": [
+     -75.0,
+     20.0,
+     -50.0
+    ],
+    "max": [
+     -250.0,
+     50.0,
+     50.0
+    ],
+    "frame": "control point 2"
+   },
+   "speed_noise_units_s": {
+    "min": [
+     0.0,
+     0.0,
+     30.0
+    ],
+    "max": [
+     1.0,
+     1.0,
+     50.0
+    ]
+   },
+   "colour": {
+    "min": [
+     92,
+     0,
+     0
+    ],
+    "max": [
+     101,
+     0,
+     0
+    ]
+   },
+   "born_aged_s": [
+    0.1,
+    0.125
+   ],
+   "gravity_units_s2": [
+    0.0,
+    0.0,
+    -50.0
+   ],
+   "drag": 0.135,
+   "radius_scale": {
+    "start": 0.25,
+    "end": 3.0,
+    "bias": 0.75,
+    "from_life": 0,
+    "to_life": 1
+   },
+   "fade_out_last_share_of_life": [
+    0.6,
+    1.0
+   ],
+   "flipbook_over_life": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.4996,
+     0.7514
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.229,
+     0.305
+    ],
+    "speed_local_mps": {
+     "min": [
+      -1.91,
+      0.51,
+      -1.27
+     ],
+     "max": [
+      -6.35,
+      1.27,
+      1.27
+     ]
+    },
+    "speed_outward_mps": [
+     0.89,
+     1.65
+    ],
+    "speed_noise_mps": {
+     "min": [
+      0.0,
+      0.0,
+      0.76
+     ],
+     "max": [
+      0.03,
+      0.03,
+      1.27
+     ]
+    },
+    "gravity_mps2": [
+     0.0,
+     0.0,
+     -1.27
+    ]
+   },
+   "draws": [
+    {
+     "as": "sprites",
+     "textures": [
+      "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+      "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex"
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    },
+    {
+     "as": "sprites",
+     "textures": [
+      "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+      "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex",
+      "materials/particle/tile/tile_noise_gaussian.vtex"
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    },
+    {
+     "as": "sprites",
+     "textures": [
+      "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+      "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex"
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nMaxEmittedPerFrame": 100,
+     "m_nParticlesToEmit": {
+      "per_detail_level": [
+       2.0,
+       3.0,
+       4.0,
+       5.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomSequence",
+     "m_nSequenceMax": 2
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_CreateWithinSphereTransform",
+     "m_fRadiusMax": 2.0,
+     "m_fSpeedMax": 65.0,
+     "m_vecDistanceBiasAbs": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "m_fSpeedMin": 35.0,
+     "m_LocalCoordinateSystemSpeedMin": [
+      -75.0,
+      20.0,
+      -50.0
+     ],
+     "m_LocalCoordinateSystemSpeedMax": [
+      -250.0,
+      50.0,
+      50.0
+     ],
+     "m_TransformInput": {
+      "m_nControlPoint": 2
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       9.0,
+       12.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 4
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.3,
+       0.65
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor",
+     "m_ColorMin": [
+      92,
+      0,
+      0
+     ],
+     "m_ColorMax": [
+      101,
+      0,
+      0
+     ],
+     "m_flTintPerc": 0.5,
+     "m_TintMin": [
+      68,
+      68,
+      68,
+      0
+     ],
+     "m_nTintBlendMode": "4"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomYawFlip"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.5,
+       1.0
+      ],
+      "bias": -0.405
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitialVelocityNoise",
+     "m_vecOutputMin": [
+      0.0,
+      0.0,
+      30.0
+     ],
+     "m_vecOutputMax": [
+      1.0,
+      1.0,
+      50.0
+     ],
+     "m_TransformInput": {
+      "driven_by": "invalid"
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.8,
+       1.0
+      ]
+     },
+     "m_nOutputField": 38
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_AgeNoise",
+     "m_flAgeMin": 0.1,
+     "m_flAgeMax": 0.125
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_BasicMovement",
+     "m_Gravity": [
+      0.0,
+      0.0,
+      -50.0
+     ],
+     "m_fDrag": 0.135
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Spin",
+     "m_nSpinRateDegrees": 4,
+     "m_fSpinRateStopTime": 1.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOut",
+     "m_flFadeOutTimeMin": 0.6,
+     "m_flFadeOutTimeMax": 1.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_InterpolateRadius",
+     "m_flStartScale": 0.25,
+     "m_flEndScale": 3.0,
+     "m_flBias": 0.75
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age_normalized",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.4996,
+        0.7514
+       ],
+       [
+        1.0,
+        1.0
+       ]
+      ]
+     },
+     "m_nOutputField": 38,
+     "m_nSetMethod": "PARTICLE_SET_SCALE_INITIAL_VALUE"
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderSprites",
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b.vtex"
+      },
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex",
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC"
+      }
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_bUseMixedResolutionRendering": true,
+     "m_nFeatheringMode": "PARTICLE_DEPTH_FEATHERING_ON_OPTIONAL",
+     "m_flMaxSize": 0.6,
+     "m_flStartFadeSize": 0.2,
+     "m_flEndFadeSize": 0.3,
+     "m_bParticleShadows": true
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderSprites",
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b.vtex"
+      },
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex",
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC"
+      },
+      {
+       "m_hTexture": "materials/particle/tile/tile_noise_gaussian.vtex",
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_MOD2X"
+      }
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_nFeatheringMode": "PARTICLE_DEPTH_FEATHERING_ON_OPTIONAL",
+     "m_flMaxSize": 0.6,
+     "m_flStartFadeSize": 0.3,
+     "m_flEndFadeSize": 0.5,
+     "m_bParticleShadows": true
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderSprites",
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b.vtex"
+      },
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex",
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC"
+      }
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_bOnlyRenderInEffectsBloomPass": true,
+     "m_nFeatheringMode": "PARTICLE_DEPTH_FEATHERING_ON_OPTIONAL",
+     "m_flMaxSize": 0.6,
+     "m_flStartFadeSize": 0.3,
+     "m_flEndFadeSize": 0.5,
+     "m_bParticleShadows": true
+    }
+   ]
+  },
+  "blood_impact_med_spray_away": {
+   "source": "particles/blood_impact/blood_impact_med_spray_away.vpcf",
+   "max_particles": 3,
+   "count": 1.0,
+   "radius_units": {
+    "random": [
+     4.0,
+     8.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     0.5,
+     0.65
+    ]
+   },
+   "trail_length": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "flipbook_position": {
+    "random": [
+     0.85,
+     1.0
+    ]
+   },
+   "yaw_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "attribute_13": {
+    "driven_by": "particle_float"
+   },
+   "sequence": [
+    2,
+    2
+   ],
+   "spawn_within_units": 2.0,
+   "speed_outward_units_s": [
+    50.0,
+    50.0
+   ],
+   "speed_local_units_s": {
+    "min": [
+     250.0,
+     -0.0,
+     0.0
+    ],
+    "max": [
+     450.0,
+     -0.0,
+     0.0
+    ],
+    "frame": "control point 0"
+   },
+   "colour": {
+    "min": [
+     92,
+     0,
+     0
+    ],
+    "max": [
+     92,
+     0,
+     0
+    ]
+   },
+   "born_aged_s": [
+    0.1,
+    0.125
+   ],
+   "gravity_units_s2": [
+    0.0,
+    0.0,
+    -450.0
+   ],
+   "drag": 0.05,
+   "radius_scale": {
+    "start": 0.25,
+    "end": 2.0,
+    "bias": 0.5,
+    "from_life": 0,
+    "to_life": 1
+   },
+   "fade_out_last_share_of_life": [
+    0.125,
+    0.25
+   ],
+   "flipbook_over_life": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.3423,
+     0.5414
+    ],
+    [
+     0.8111,
+     0.9454
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.102,
+     0.203
+    ],
+    "speed_local_mps": {
+     "min": [
+      6.35,
+      -0.0,
+      0.0
+     ],
+     "max": [
+      11.43,
+      -0.0,
+      0.0
+     ]
+    },
+    "speed_outward_mps": [
+     1.27,
+     1.27
+    ],
+    "gravity_mps2": [
+     0.0,
+     0.0,
+     -11.43
+    ]
+   },
+   "draws": [
+    {
+     "as": "trails",
+     "textures": [
+      "materials/particle/fluids/blood/blood_spray_multi.vtex",
+      "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile_inv.vtex"
+     ],
+     "colour_lookup": [
+      [
+       0.0,
+       [
+        178,
+        11,
+        11
+       ]
+      ],
+      [
+       0.2842,
+       [
+        139,
+        0,
+        0
+       ]
+      ],
+      [
+       0.5245,
+       [
+        140,
+        0,
+        0
+       ]
+      ],
+      [
+       0.8553,
+       [
+        30,
+        1,
+        1
+       ]
+      ],
+      [
+       1.0,
+       [
+        16,
+        0,
+        0
+       ]
+      ]
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flMaxLength": 500.0,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nMaxEmittedPerFrame": 2,
+     "m_nParticlesToEmit": 1.0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomSequence",
+     "m_nSequenceMax": 2,
+     "m_nSequenceMin": 2
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_CreateWithinSphereTransform",
+     "m_fRadiusMax": 2.0,
+     "m_fSpeedMax": 50.0,
+     "m_vecDistanceBiasAbs": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "m_fSpeedMin": 50.0,
+     "m_LocalCoordinateSystemSpeedMin": [
+      250.0,
+      -0.0,
+      0.0
+     ],
+     "m_LocalCoordinateSystemSpeedMax": [
+      450.0,
+      -0.0,
+      0.0
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       4.0,
+       8.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 4
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor",
+     "m_ColorMin": [
+      92,
+      0,
+      0
+     ],
+     "m_ColorMax": [
+      92,
+      0,
+      0
+     ],
+     "m_flTintPerc": 0.5,
+     "m_TintMin": [
+      68,
+      68,
+      68,
+      0
+     ],
+     "m_nTintBlendMode": "4"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomYawFlip"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.5,
+       0.65
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitVec",
+     "m_InputValue": {
+      "driven_by": "particle_vector"
+     },
+     "m_nOutputField": 17
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 10
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.85,
+       1.0
+      ]
+     },
+     "m_nOutputField": 38
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 12
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor",
+     "m_TintMin": [
+      68,
+      68,
+      68,
+      0
+     ],
+     "m_flTintPerc": 0.5,
+     "m_nTintBlendMode": "4"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "driven_by": "particle_float"
+     },
+     "m_nOutputField": 13
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_AgeNoise",
+     "m_flAgeMin": 0.1,
+     "m_flAgeMax": 0.125
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Spin",
+     "m_nSpinRateDegrees": 4,
+     "m_fSpinRateStopTime": 1.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOut",
+     "m_flFadeOutTimeMin": 0.125
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_InterpolateRadius",
+     "m_flStartScale": 0.25,
+     "m_flEndScale": 2.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age_normalized",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.3423,
+        0.5414
+       ],
+       [
+        0.8111,
+        0.9454
+       ],
+       [
+        1.0,
+        1.0
+       ]
+      ]
+     },
+     "m_nOutputField": 38,
+     "m_nSetMethod": "PARTICLE_SET_SCALE_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetVec",
+     "m_InputValue": {
+      "driven_by": "float_components"
+     },
+     "m_nOutputField": 30,
+     "m_nSetMethod": "PARTICLE_SET_RAMP_CURRENT_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetVec",
+     "m_InputValue": {
+      "driven_by": "particle_vector"
+     },
+     "m_nOutputField": 17,
+     "m_nSetMethod": "PARTICLE_SET_ADD_TO_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_BasicMovement",
+     "m_Gravity": [
+      0.0,
+      0.0,
+      -450.0
+     ],
+     "m_fDrag": 0.05
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderTrails",
+     "m_nPrevPntSource": 17,
+     "m_flMaxLength": 500.0,
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_multi.vtex"
+      },
+      {
+       "m_hTexture": "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile_inv.vtex",
+       "m_nTextureChannels": "SPRITECARD_TEXTURE_CHANNEL_MIX_A",
+       "m_flTextureBlend": {
+        "driven_by": "collection_age",
+        "curve": [
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.2349,
+          0.6626
+         ],
+         [
+          0.8623,
+          0.9696
+         ],
+         [
+          1.0,
+          1.0
+         ]
+        ]
+       },
+       "m_TextureControls": {
+        "m_flFinalTextureScaleU": 0.2,
+        "m_flFinalTextureScaleV": 0.2
+       }
+      },
+      {
+       "m_bReplaceTextureWithGradient": true,
+       "m_nTextureType": "SPRITECARD_TEXTURE_1D_COLOR_LOOKUP",
+       "m_Gradient": {
+        "m_Stops": [
+         {
+          "m_flPosition": 0.0,
+          "m_Color": [
+           178,
+           11,
+           11
+          ]
+         },
+         {
+          "m_flPosition": 0.2842,
+          "m_Color": [
+           139,
+           0,
+           0
+          ]
+         },
+         {
+          "m_flPosition": 0.5245,
+          "m_Color": [
+           140,
+           0,
+           0
+          ]
+         },
+         {
+          "m_flPosition": 0.8553,
+          "m_Color": [
+           30,
+           1,
+           1
+          ]
+         },
+         {
+          "m_flPosition": 1.0,
+          "m_Color": [
+           16,
+           0,
+           0
+          ]
+         }
+        ]
+       },
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_REPLACE"
+      }
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_nCropTextureOverride": "PARTICLE_SEQUENCE_CROP_OVERRIDE_FORCE_ON",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_bEnableFadingAndClamping": true,
+     "m_flStartFadeSize": 0.1,
+     "m_flEndFadeSize": 0.2,
+     "m_flSourceAlphaValueToMapToZero": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 4,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ]
+  },
+  "blood_impact_high": {
+   "source": "particles/blood_impact/blood_impact_high.vpcf",
+   "max_particles": 1,
+   "draws": [],
+   "children": [
+    "blood_impact_high_vis_spray",
+    "blood_impact_high_vis_spray_trail",
+    "blood_impact_high_mist_away",
+    "blood_impact_high_spray_away",
+    "blood_impact_friendly_flash",
+    "blood_impact_low_forw_spray"
+   ],
+   "ops": [
+    {
+     "stage": "before",
+     "class": "C_OP_DistanceBetweenCPsToCP",
+     "m_nOutputCP": 4,
+     "m_flInputMin": 128.0,
+     "m_flInputMax": 1024.0,
+     "m_flOutputMin": 0.2,
+     "m_flOutputMax": 0.85
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_PositionLock",
+     "m_bLockRot": true
+    }
+   ]
+  },
+  "blood_impact_high_vis_spray": {
+   "source": "particles/blood_impact/blood_impact_high_vis_spray.vpcf",
+   "max_particles": 1,
+   "count": {
+    "per_detail_level": [
+     1.0,
+     1.0,
+     2.0,
+     2.0
+    ]
+   },
+   "radius_units": {
+    "random": [
+     14.0,
+     20.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     0.5,
+     0.75
+    ]
+   },
+   "flipbook_position": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "sequence": [
+    0,
+    3
+   ],
+   "spawn_within_units": 2.0,
+   "speed_local_units_s": {
+    "min": [
+     50.0,
+     0.0,
+     0.0
+    ],
+    "max": [
+     120.0,
+     0.0,
+     0.0
+    ],
+    "frame": "control point 2"
+   },
+   "born_aged_s": [
+    null,
+    0.1
+   ],
+   "gravity_units_s2": [
+    0.0,
+    0.0,
+    -100.0
+   ],
+   "drag": 0.05,
+   "radius_scale": {
+    "start": 0.25,
+    "end": 1,
+    "bias": 0.75,
+    "from_life": 0,
+    "to_life": 1
+   },
+   "fade_out_last_share_of_life": [
+    0.125,
+    0.5
+   ],
+   "flipbook_over_life": [
+    [
+     0.0,
+     0.1616
+    ],
+    [
+     0.3097,
+     0.606
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.356,
+     0.508
+    ],
+    "speed_local_mps": {
+     "min": [
+      1.27,
+      0.0,
+      0.0
+     ],
+     "max": [
+      3.05,
+      0.0,
+      0.0
+     ]
+    },
+    "gravity_mps2": [
+     0.0,
+     0.0,
+     -2.54
+    ]
+   },
+   "draws": [
+    {
+     "as": "sprites",
+     "textures": [
+      "materials/particle/fluids/blood/blood_spray_top.vtex",
+      "materials/particle/fluids/blood/blood_spray_top_mv.vtex"
+     ],
+     "colour_lookup": [
+      [
+       0.0,
+       [
+        34,
+        3,
+        36
+       ]
+      ],
+      [
+       0.2842,
+       [
+        127,
+        15,
+        15
+       ]
+      ],
+      [
+       0.5245,
+       [
+        108,
+        15,
+        15
+       ]
+      ],
+      [
+       1.0,
+       [
+        154,
+        13,
+        13
+       ]
+      ]
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flOverbrightFactor": 0.5,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    },
+    {
+     "as": "sprites",
+     "textures": [
+      "materials/particle/smoke/static/static_smoke.vtex",
+      "materials/particle/fluids/blood/blood_spray_top_mv.vtex"
+     ],
+     "colour_lookup": [
+      [
+       0.0,
+       [
+        34,
+        3,
+        36
+       ]
+      ],
+      [
+       0.2842,
+       [
+        127,
+        15,
+        15
+       ]
+      ],
+      [
+       0.5245,
+       [
+        108,
+        15,
+        15
+       ]
+      ],
+      [
+       1.0,
+       [
+        154,
+        13,
+        13
+       ]
+      ]
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flOverbrightFactor": 0.5,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nMaxEmittedPerFrame": 100,
+     "m_nParticlesToEmit": {
+      "per_detail_level": [
+       1.0,
+       1.0,
+       2.0,
+       2.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomSequence",
+     "m_nSequenceMax": 3,
+     "m_bShuffle": true
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_CreateWithinSphereTransform",
+     "m_fRadiusMax": 2.0,
+     "m_vecDistanceBiasAbs": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "m_LocalCoordinateSystemSpeedMin": [
+      50.0,
+      0.0,
+      0.0
+     ],
+     "m_LocalCoordinateSystemSpeedMax": [
+      120.0,
+      0.0,
+      0.0
+     ],
+     "m_TransformInput": {
+      "m_nControlPoint": 2
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       14.0,
+       20.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 4
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomYawFlip"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.5,
+       0.75
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 38
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_AgeNoise",
+     "m_flAgeMax": 0.1
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_BasicMovement",
+     "m_Gravity": [
+      0.0,
+      0.0,
+      -100.0
+     ],
+     "m_fDrag": 0.05
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Spin",
+     "m_nSpinRateDegrees": 4,
+     "m_fSpinRateStopTime": 1.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOut",
+     "m_flFadeOutTimeMin": 0.125,
+     "m_flFadeOutTimeMax": 0.5
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_InterpolateRadius",
+     "m_flStartScale": 0.25,
+     "m_flBias": 0.75
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age_normalized",
+      "curve": [
+       [
+        0.0,
+        0.1616
+       ],
+       [
+        0.3097,
+        0.606
+       ],
+       [
+        1.0,
+        1.0
+       ]
+      ]
+     },
+     "m_nOutputField": 38,
+     "m_nSetMethod": "PARTICLE_SET_SCALE_INITIAL_VALUE"
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderSprites",
+     "m_flStartFadeSize": 0.5,
+     "m_flEndFadeSize": 1.0,
+     "m_flMaxSize": 0.85,
+     "m_flOverbrightFactor": 0.5,
+     "m_flAnimationRate": 1.0,
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_top.vtex"
+      },
+      {
+       "m_bReplaceTextureWithGradient": true,
+       "m_nTextureType": "SPRITECARD_TEXTURE_1D_COLOR_LOOKUP",
+       "m_Gradient": {
+        "m_Stops": [
+         {
+          "m_flPosition": 0.0,
+          "m_Color": [
+           34,
+           3,
+           36
+          ]
+         },
+         {
+          "m_flPosition": 0.2842,
+          "m_Color": [
+           127,
+           15,
+           15
+          ]
+         },
+         {
+          "m_flPosition": 0.5245,
+          "m_Color": [
+           108,
+           15,
+           15
+          ]
+         },
+         {
+          "m_flPosition": 1.0,
+          "m_Color": [
+           154,
+           13,
+           13
+          ]
+         }
+        ]
+       },
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_REPLACE"
+      },
+      {
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC",
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_top_mv.vtex",
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_ADD"
+      }
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_bParticleShadows": true,
+     "m_flShadowDensity": 2.0,
+     "m_nCropTextureOverride": "PARTICLE_SEQUENCE_CROP_OVERRIDE_FORCE_ON",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_bUseMixedResolutionRendering": true,
+     "m_flSourceAlphaValueToMapToZero": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 4,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_flMotionVectorScaleU": -16.0,
+     "m_flMotionVectorScaleV": -16.0
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderSprites",
+     "m_nCropTextureOverride": "PARTICLE_SEQUENCE_CROP_OVERRIDE_FORCE_ON",
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/smoke/static/static_smoke.vtex"
+      },
+      {
+       "m_bReplaceTextureWithGradient": true,
+       "m_nTextureType": "SPRITECARD_TEXTURE_1D_COLOR_LOOKUP",
+       "m_Gradient": {
+        "m_Stops": [
+         {
+          "m_flPosition": 0.0,
+          "m_Color": [
+           34,
+           3,
+           36
+          ]
+         },
+         {
+          "m_flPosition": 0.2842,
+          "m_Color": [
+           127,
+           15,
+           15
+          ]
+         },
+         {
+          "m_flPosition": 0.5245,
+          "m_Color": [
+           108,
+           15,
+           15
+          ]
+         },
+         {
+          "m_flPosition": 1.0,
+          "m_Color": [
+           154,
+           13,
+           13
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC",
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_top_mv.vtex",
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_ADD"
+      }
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flMotionVectorScaleU": -16.0,
+     "m_flMotionVectorScaleV": -16.0,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_flOverbrightFactor": 0.5,
+     "m_bUseMixedResolutionRendering": true,
+     "m_flMaxSize": 0.85,
+     "m_flStartFadeSize": 0.354,
+     "m_flEndFadeSize": 0.75,
+     "m_bParticleShadows": true,
+     "m_flShadowDensity": 2.0
+    }
+   ]
+  },
+  "blood_impact_high_vis_spray_trail": {
+   "source": "particles/blood_impact/blood_impact_high_vis_spray_trail.vpcf",
+   "max_particles": 2,
+   "count": 1.0,
+   "radius_units": {
+    "random": [
+     16.0,
+     32.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     0.5,
+     0.75
+    ]
+   },
+   "trail_length": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "flipbook_position": {
+    "random": [
+     0.95,
+     1.0
+    ]
+   },
+   "yaw_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "sequence": [
+    1,
+    1
+   ],
+   "spawn_within_units": 2.0,
+   "speed_local_units_s": {
+    "min": [
+     100.0,
+     0.0,
+     0.0
+    ],
+    "max": [
+     200.0,
+     0.0,
+     0.0
+    ],
+    "frame": "control point 0"
+   },
+   "speed_noise_units_s": {
+    "min": [
+     0.0,
+     50.0,
+     25.0
+    ],
+    "max": [
+     1.0,
+     50.0,
+     50.0
+    ]
+   },
+   "born_aged_s": [
+    0.1,
+    0.125
+   ],
+   "gravity_units_s2": [
+    0.0,
+    0.0,
+    -550.0
+   ],
+   "drag": 0.05,
+   "radius_scale": {
+    "start": 0.25,
+    "end": 2.0,
+    "bias": 0.5,
+    "from_life": 0,
+    "to_life": 1
+   },
+   "fade_out_last_share_of_life": [
+    0.125,
+    0.25
+   ],
+   "flipbook_over_life": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.2237,
+     0.2747
+    ],
+    [
+     0.808,
+     0.913
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.406,
+     0.813
+    ],
+    "speed_local_mps": {
+     "min": [
+      2.54,
+      0.0,
+      0.0
+     ],
+     "max": [
+      5.08,
+      0.0,
+      0.0
+     ]
+    },
+    "speed_noise_mps": {
+     "min": [
+      0.0,
+      1.27,
+      0.64
+     ],
+     "max": [
+      0.03,
+      1.27,
+      1.27
+     ]
+    },
+    "gravity_mps2": [
+     0.0,
+     0.0,
+     -13.97
+    ]
+   },
+   "draws": [
+    {
+     "as": "trails",
+     "textures": [
+      "materials/particle/fluids/blood/blood_spray_high.vtex",
+      "materials/particle/fluids/blood/blood_spray_high_mv.vtex"
+     ],
+     "colour_lookup": [
+      [
+       0.0,
+       [
+        178,
+        11,
+        11
+       ]
+      ],
+      [
+       0.2842,
+       [
+        139,
+        0,
+        0
+       ]
+      ],
+      [
+       0.5245,
+       [
+        140,
+        0,
+        0
+       ]
+      ],
+      [
+       0.8553,
+       [
+        30,
+        1,
+        1
+       ]
+      ],
+      [
+       1.0,
+       [
+        16,
+        0,
+        0
+       ]
+      ]
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flMaxLength": 500.0,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ],
+   "children": [
+    "blood_impact_high_ground_decal",
+    "blood_impact_high_ground_decalalt",
+    "blood_impact_med_ground_decalaltb"
+   ],
+   "ops": [
+    {
+     "stage": "before",
+     "class": "C_OP_ChooseRandomChildrenInGroup",
+     "m_bRunOnce": true
+    },
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nMaxEmittedPerFrame": 100,
+     "m_nParticlesToEmit": 1.0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomSequence",
+     "m_nSequenceMax": 1,
+     "m_nSequenceMin": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_CreateWithinSphereTransform",
+     "m_fRadiusMax": 2.0,
+     "m_vecDistanceBiasAbs": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "m_LocalCoordinateSystemSpeedMin": [
+      100.0,
+      0.0,
+      0.0
+     ],
+     "m_LocalCoordinateSystemSpeedMax": [
+      200.0,
+      0.0,
+      0.0
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       16.0,
+       32.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 4
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomYawFlip"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.5,
+       0.75
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitialVelocityNoise",
+     "m_vecOutputMin": [
+      0.0,
+      50.0,
+      25.0
+     ],
+     "m_vecOutputMax": [
+      1.0,
+      50.0,
+      50.0
+     ],
+     "m_TransformInput": {
+      "driven_by": "invalid"
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitVec",
+     "m_InputValue": {
+      "driven_by": "particle_vector"
+     },
+     "m_nOutputField": 17
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 10
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.95,
+       1.0
+      ]
+     },
+     "m_nOutputField": 38
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 12
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor",
+     "m_TintMin": [
+      68,
+      68,
+      68,
+      0
+     ],
+     "m_flTintPerc": 0.5,
+     "m_nTintBlendMode": "4"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_AgeNoise",
+     "m_flAgeMin": 0.1,
+     "m_flAgeMax": 0.125
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Spin",
+     "m_nSpinRateDegrees": 4,
+     "m_fSpinRateStopTime": 1.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOut",
+     "m_flFadeOutTimeMin": 0.125
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_InterpolateRadius",
+     "m_flStartScale": 0.25,
+     "m_flEndScale": 2.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age_normalized",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.2237,
+        0.2747
+       ],
+       [
+        0.808,
+        0.913
+       ],
+       [
+        1.0,
+        1.0
+       ]
+      ]
+     },
+     "m_nOutputField": 38,
+     "m_nSetMethod": "PARTICLE_SET_SCALE_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetVec",
+     "m_InputValue": {
+      "driven_by": "float_components"
+     },
+     "m_nOutputField": 30,
+     "m_nSetMethod": "PARTICLE_SET_RAMP_CURRENT_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetVec",
+     "m_InputValue": {
+      "driven_by": "particle_vector"
+     },
+     "m_nOutputField": 17,
+     "m_nSetMethod": "PARTICLE_SET_ADD_TO_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_BasicMovement",
+     "m_Gravity": [
+      0.0,
+      0.0,
+      -550.0
+     ],
+     "m_fDrag": 0.05
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderTrails",
+     "m_nAlpha2Field": 39,
+     "m_nCropTextureOverride": "PARTICLE_SEQUENCE_CROP_OVERRIDE_FORCE_ON",
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_high.vtex"
+      },
+      {
+       "m_bReplaceTextureWithGradient": true,
+       "m_nTextureType": "SPRITECARD_TEXTURE_1D_COLOR_LOOKUP",
+       "m_Gradient": {
+        "m_Stops": [
+         {
+          "m_flPosition": 0.0,
+          "m_Color": [
+           178,
+           11,
+           11
+          ]
+         },
+         {
+          "m_flPosition": 0.2842,
+          "m_Color": [
+           139,
+           0,
+           0
+          ]
+         },
+         {
+          "m_flPosition": 0.5245,
+          "m_Color": [
+           140,
+           0,
+           0
+          ]
+         },
+         {
+          "m_flPosition": 0.8553,
+          "m_Color": [
+           30,
+           1,
+           1
+          ]
+         },
+         {
+          "m_flPosition": 1.0,
+          "m_Color": [
+           16,
+           0,
+           0
+          ]
+         }
+        ]
+       },
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_REPLACE"
+      },
+      {
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_high_mv.vtex",
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC"
+      }
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_flSourceAlphaValueToMapToZero": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 4,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_flStartFadeSize": 0.1,
+     "m_flEndFadeSize": 1.0,
+     "m_nPrevPntSource": 17,
+     "m_flMaxLength": 500.0,
+     "m_flForwardShift": -0.1
+    }
+   ]
+  },
+  "blood_impact_high_ground_decal": {
+   "source": "particles/blood_impact/blood_impact_high_ground_decal.vpcf",
+   "max_particles": 1,
+   "count": {
+    "per_detail_level": [
+     0.0,
+     0.0,
+     1.0,
+     1.0
+    ]
+   },
+   "radius_units": {
+    "random": [
+     30.0,
+     40.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     5.0,
+     10.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     -45.0,
+     45.0
+    ]
+   },
+   "fade_out_last_share_of_life": [
+    0.1,
+    0.1
+   ],
+   "fade_in_s": [
+    0.125,
+    0.15
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.762,
+     1.016
+    ]
+   },
+   "draws": [
+    {
+     "as": "projected decal",
+     "textures": [],
+     "materials": [
+      "materials/decals/blood/blood_decals_spray_high.vmat"
+     ],
+     "m_flMinProjectionDepth": -15.0,
+     "m_flMaxProjectionDepth": 10.0,
+     "m_bOrientToNormal": true
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "before",
+     "class": "C_OP_SetSingleControlPointPosition",
+     "m_vecCP1Pos": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "m_bRunOnce": true
+    },
+    {
+     "stage": "before",
+     "class": "C_OP_StopAfterCPDuration",
+     "m_flDuration": 0.0,
+     "m_bDestroyImmediately": true
+    },
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nParticlesToEmit": {
+      "per_detail_level": [
+       0.0,
+       0.0,
+       1.0,
+       1.0
+      ]
+     },
+     "m_flInitFromKilledParentParticles": 1.0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFromParentKilled",
+     "m_nAttributeToCopy": 0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFromParentKilled",
+     "m_nAttributeToCopy": 2
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionWarp",
+     "m_vecWarpMin": [
+      0.5,
+      0.5,
+      0.5
+     ],
+     "m_vecWarpMax": [
+      0.75,
+      0.75,
+      0.75
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionOffset",
+     "m_OffsetMin": [
+      0.0,
+      0.0,
+      32.0
+     ],
+     "m_OffsetMax": [
+      0.0,
+      0.0,
+      32.0
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       30.0,
+       40.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       5.0,
+       10.0
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_Orient2DRelToCP",
+     "m_nCP": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionPlaceOnGround",
+     "m_flMaxTraceLength": 256.0,
+     "m_bSetNormal": true
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       -45.0,
+       45.0
+      ]
+     },
+     "m_nOutputField": 4,
+     "m_nSetMethod": "PARTICLE_SET_ADD_TO_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOutSimple",
+     "m_flFadeOutTime": 0.1
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeIn",
+     "m_flFadeInTimeMin": 0.125,
+     "m_flFadeInTimeMax": 0.15,
+     "m_bProportional": false
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.9439,
+        0.9696
+       ],
+       [
+        13.0023,
+        30.0
+       ]
+      ]
+     },
+     "m_nOutputField": 18
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderProjected",
+     "m_flMinProjectionDepth": -15.0,
+     "m_flMaxProjectionDepth": 10.0,
+     "m_bEnableProjectedDepthControls": true,
+     "m_bProjectWater": false,
+     "m_bOrientToNormal": true,
+     "m_MaterialVars": [
+      {
+       "m_strVariable": "$particle_age"
+      }
+     ],
+     "m_vecProjectedMaterials": [
+      {
+       "m_hMaterial": "materials/decals/blood/blood_decals_spray_high.vmat"
+      }
+     ]
+    }
+   ]
+  },
+  "blood_impact_high_ground_decalalt": {
+   "source": "particles/blood_impact/blood_impact_high_ground_decalalt.vpcf",
+   "max_particles": 1,
+   "count": {
+    "per_detail_level": [
+     0.0,
+     1.0,
+     1.0,
+     1.0
+    ]
+   },
+   "radius_units": {
+    "random": [
+     30.0,
+     40.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     5.0,
+     10.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     -45.0,
+     45.0
+    ]
+   },
+   "fade_out_last_share_of_life": [
+    0.1,
+    0.1
+   ],
+   "fade_in_s": [
+    0.125,
+    0.15
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.762,
+     1.016
+    ]
+   },
+   "draws": [
+    {
+     "as": "projected decal",
+     "textures": [],
+     "materials": [
+      "materials/decals/blood/blood_decals_spray_high.vmat"
+     ],
+     "m_flMinProjectionDepth": -15.0,
+     "m_flMaxProjectionDepth": 5.0,
+     "m_bOrientToNormal": true
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "before",
+     "class": "C_OP_SetSingleControlPointPosition",
+     "m_vecCP1Pos": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "m_bRunOnce": true
+    },
+    {
+     "stage": "before",
+     "class": "C_OP_StopAfterCPDuration",
+     "m_flDuration": 0.0,
+     "m_bDestroyImmediately": true
+    },
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nParticlesToEmit": {
+      "per_detail_level": [
+       0.0,
+       1.0,
+       1.0,
+       1.0
+      ]
+     },
+     "m_flInitFromKilledParentParticles": 1.0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFromParentKilled",
+     "m_nAttributeToCopy": 0
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFromParentKilled",
+     "m_nAttributeToCopy": 2
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionWarp",
+     "m_vecWarpMin": [
+      0.4,
+      0.4,
+      0.4
+     ],
+     "m_vecWarpMax": [
+      0.75,
+      0.75,
+      0.75
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionOffset",
+     "m_OffsetMin": [
+      0.0,
+      0.0,
+      32.0
+     ],
+     "m_OffsetMax": [
+      0.0,
+      0.0,
+      32.0
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       30.0,
+       40.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       5.0,
+       10.0
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_Orient2DRelToCP",
+     "m_nCP": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_PositionPlaceOnGround",
+     "m_flMaxTraceLength": 256.0,
+     "m_bSetNormal": true
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       -45.0,
+       45.0
+      ]
+     },
+     "m_nOutputField": 4,
+     "m_nSetMethod": "PARTICLE_SET_ADD_TO_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOutSimple",
+     "m_flFadeOutTime": 0.1
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeIn",
+     "m_flFadeInTimeMin": 0.125,
+     "m_flFadeInTimeMax": 0.15,
+     "m_bProportional": false
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.9439,
+        0.9696
+       ],
+       [
+        13.0023,
+        30.0
+       ]
+      ]
+     },
+     "m_nOutputField": 18
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderProjected",
+     "m_flMinProjectionDepth": -15.0,
+     "m_flMaxProjectionDepth": 5.0,
+     "m_bEnableProjectedDepthControls": true,
+     "m_bProjectWater": false,
+     "m_bOrientToNormal": true,
+     "m_MaterialVars": [
+      {
+       "m_strVariable": "$particle_age"
+      }
+     ],
+     "m_vecProjectedMaterials": [
+      {
+       "m_hMaterial": "materials/decals/blood/blood_decals_spray_high.vmat"
+      }
+     ]
+    }
+   ]
+  },
+  "blood_impact_high_mist_away": {
+   "source": "particles/blood_impact/blood_impact_high_mist_away.vpcf",
+   "max_particles": 3,
+   "count": {
+    "per_detail_level": [
+     1.0,
+     2.0,
+     4.0,
+     6.0
+    ]
+   },
+   "radius_units": {
+    "random": [
+     10.0,
+     15.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     0.3,
+     0.65
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     0.75,
+     1.25
+    ],
+    "bias": -0.32
+   },
+   "flipbook_position": {
+    "random": [
+     0.8,
+     1.0
+    ]
+   },
+   "sequence": [
+    0,
+    2
+   ],
+   "spawn_within_units": 2.0,
+   "speed_outward_units_s": [
+    80.0,
+    80.0
+   ],
+   "speed_local_units_s": {
+    "min": [
+     -120.0,
+     50.0,
+     -50.0
+    ],
+    "max": [
+     -200.0,
+     75.0,
+     50.0
+    ],
+    "frame": "control point 2"
+   },
+   "speed_noise_units_s": {
+    "min": [
+     0.0,
+     0.0,
+     30.0
+    ],
+    "max": [
+     1.0,
+     1.0,
+     50.0
+    ]
+   },
+   "colour": {
+    "min": [
+     92,
+     0,
+     0
+    ],
+    "max": [
+     101,
+     0,
+     0
+    ]
+   },
+   "born_aged_s": [
+    0.1,
+    0.125
+   ],
+   "gravity_units_s2": [
+    0.0,
+    0.0,
+    -50.0
+   ],
+   "drag": 0.15,
+   "radius_scale": {
+    "start": 0.25,
+    "end": 3.0,
+    "bias": 0.85,
+    "from_life": 0,
+    "to_life": 1
+   },
+   "fade_out_last_share_of_life": [
+    0.65,
+    1.0
+   ],
+   "flipbook_over_life": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.4996,
+     0.7514
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.254,
+     0.381
+    ],
+    "speed_local_mps": {
+     "min": [
+      -3.05,
+      1.27,
+      -1.27
+     ],
+     "max": [
+      -5.08,
+      1.91,
+      1.27
+     ]
+    },
+    "speed_outward_mps": [
+     2.03,
+     2.03
+    ],
+    "speed_noise_mps": {
+     "min": [
+      0.0,
+      0.0,
+      0.76
+     ],
+     "max": [
+      0.03,
+      0.03,
+      1.27
+     ]
+    },
+    "gravity_mps2": [
+     0.0,
+     0.0,
+     -1.27
+    ]
+   },
+   "draws": [
+    {
+     "as": "sprites",
+     "textures": [
+      "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+      "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex"
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    },
+    {
+     "as": "sprites",
+     "textures": [
+      "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+      "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex",
+      "materials/particle/tile/tile_noise_gaussian.vtex"
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    },
+    {
+     "as": "sprites",
+     "textures": [
+      "materials/particle/simulated/steam/wispy_steam_burst_b.vtex",
+      "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex"
+     ],
+     "m_flAlphaScale": 0.5,
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nMaxEmittedPerFrame": 100,
+     "m_nParticlesToEmit": {
+      "per_detail_level": [
+       1.0,
+       2.0,
+       4.0,
+       6.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomSequence",
+     "m_nSequenceMax": 2
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_CreateWithinSphereTransform",
+     "m_fRadiusMax": 2.0,
+     "m_fSpeedMax": 80.0,
+     "m_vecDistanceBiasAbs": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "m_fSpeedMin": 80.0,
+     "m_LocalCoordinateSystemSpeedMin": [
+      -120.0,
+      50.0,
+      -50.0
+     ],
+     "m_LocalCoordinateSystemSpeedMax": [
+      -200.0,
+      75.0,
+      50.0
+     ],
+     "m_TransformInput": {
+      "m_nControlPoint": 2
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       10.0,
+       15.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 4
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.3,
+       0.65
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomYawFlip"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.75,
+       1.25
+      ],
+      "bias": -0.32
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitialVelocityNoise",
+     "m_vecOutputMin": [
+      0.0,
+      0.0,
+      30.0
+     ],
+     "m_vecOutputMax": [
+      1.0,
+      1.0,
+      50.0
+     ],
+     "m_TransformInput": {
+      "driven_by": "invalid"
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.8,
+       1.0
+      ]
+     },
+     "m_nOutputField": 38
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_AgeNoise",
+     "m_flAgeMin": 0.1,
+     "m_flAgeMax": 0.125
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor",
+     "m_ColorMin": [
+      92,
+      0,
+      0
+     ],
+     "m_ColorMax": [
+      101,
+      0,
+      0
+     ],
+     "m_TintMin": [
+      68,
+      68,
+      68,
+      0
+     ],
+     "m_flTintPerc": 0.5,
+     "m_nTintBlendMode": "4"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_BasicMovement",
+     "m_Gravity": [
+      0.0,
+      0.0,
+      -50.0
+     ],
+     "m_fDrag": 0.15
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Spin",
+     "m_nSpinRateDegrees": 2,
+     "m_fSpinRateStopTime": 1.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOut",
+     "m_flFadeOutTimeMin": 0.65,
+     "m_flFadeOutTimeMax": 1.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_InterpolateRadius",
+     "m_flStartScale": 0.25,
+     "m_flEndScale": 3.0,
+     "m_flBias": 0.85
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age_normalized",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.4996,
+        0.7514
+       ],
+       [
+        1.0,
+        1.0
+       ]
+      ]
+     },
+     "m_nOutputField": 38,
+     "m_nSetMethod": "PARTICLE_SET_SCALE_INITIAL_VALUE"
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderSprites",
+     "m_flStartFadeSize": 0.2,
+     "m_flEndFadeSize": 0.3,
+     "m_flMaxSize": 0.6,
+     "m_flAnimationRate": 1.0,
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b.vtex"
+      },
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex",
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC"
+      }
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_bParticleShadows": true,
+     "m_nFeatheringMode": "PARTICLE_DEPTH_FEATHERING_ON_OPTIONAL",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_bUseMixedResolutionRendering": true
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderSprites",
+     "m_flMaxSize": 0.6,
+     "m_flStartFadeSize": 0.3,
+     "m_flEndFadeSize": 0.5,
+     "m_bParticleShadows": true,
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b.vtex"
+      },
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex",
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC"
+      },
+      {
+       "m_hTexture": "materials/particle/tile/tile_noise_gaussian.vtex",
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_MOD2X"
+      }
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_nFeatheringMode": "PARTICLE_DEPTH_FEATHERING_ON_OPTIONAL",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderSprites",
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b.vtex"
+      },
+      {
+       "m_hTexture": "materials/particle/simulated/steam/wispy_steam_burst_b_mv.vtex",
+       "m_nTextureType": "SPRITECARD_TEXTURE_ANIMMOTIONVEC"
+      }
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_bOnlyRenderInEffectsBloomPass": true,
+     "m_nFeatheringMode": "PARTICLE_DEPTH_FEATHERING_ON_OPTIONAL",
+     "m_flMaxSize": 0.6,
+     "m_flStartFadeSize": 0.3,
+     "m_flEndFadeSize": 0.5,
+     "m_bParticleShadows": true,
+     "m_flAlphaScale": 0.5
+    }
+   ]
+  },
+  "blood_impact_high_spray_away": {
+   "source": "particles/blood_impact/blood_impact_high_spray_away.vpcf",
+   "max_particles": 3,
+   "count": {
+    "per_detail_level": [
+     1.0,
+     2.0,
+     2.0,
+     3.0
+    ]
+   },
+   "radius_units": {
+    "random": [
+     8.0,
+     16.0
+    ]
+   },
+   "roll_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "alpha": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "lifetime_s": {
+    "random": [
+     0.35,
+     0.75
+    ]
+   },
+   "trail_length": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "flipbook_position": {
+    "random": [
+     1.0,
+     1.0
+    ]
+   },
+   "yaw_deg": {
+    "random": [
+     0.0,
+     360.0
+    ]
+   },
+   "attribute_13": {
+    "driven_by": "particle_float"
+   },
+   "sequence": [
+    0,
+    0
+   ],
+   "spawn_within_units": 2.0,
+   "speed_outward_units_s": [
+    50.0,
+    50.0
+   ],
+   "speed_local_units_s": {
+    "min": [
+     200.0,
+     -0.0,
+     0.0
+    ],
+    "max": [
+     400.0,
+     -0.0,
+     0.0
+    ],
+    "frame": "control point 0"
+   },
+   "colour": {
+    "min": [
+     155,
+     0,
+     0,
+     null
+    ],
+    "max": [
+     164,
+     0,
+     0,
+     null
+    ]
+   },
+   "born_aged_s": [
+    0.1,
+    0.125
+   ],
+   "gravity_units_s2": [
+    0.0,
+    0.0,
+    -450.0
+   ],
+   "drag": 0.05,
+   "radius_scale": {
+    "start": 0.25,
+    "end": 4.0,
+    "bias": 0.5,
+    "from_life": 0,
+    "to_life": 1
+   },
+   "fade_out_last_share_of_life": [
+    0.125,
+    0.25
+   ],
+   "flipbook_over_life": [
+    [
+     0.0,
+     0.0
+    ],
+    [
+     0.3423,
+     0.5414
+    ],
+    [
+     0.8111,
+     0.9454
+    ],
+    [
+     1.0,
+     1.0
+    ]
+   ],
+   "in_metres": {
+    "radius_m": [
+     0.203,
+     0.406
+    ],
+    "speed_local_mps": {
+     "min": [
+      5.08,
+      -0.0,
+      0.0
+     ],
+     "max": [
+      10.16,
+      -0.0,
+      0.0
+     ]
+    },
+    "speed_outward_mps": [
+     1.27,
+     1.27
+    ],
+    "gravity_mps2": [
+     0.0,
+     0.0,
+     -11.43
+    ]
+   },
+   "draws": [
+    {
+     "as": "trails",
+     "textures": [
+      "materials/particle/fluids/blood/blood_spray_high.vtex",
+      "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile_inv.vtex"
+     ],
+     "colour_lookup": [
+      [
+       0.0,
+       [
+        154,
+        13,
+        13
+       ]
+      ],
+      [
+       0.2842,
+       [
+        127,
+        15,
+        15
+       ]
+      ],
+      [
+       0.5245,
+       [
+        108,
+        15,
+        15
+       ]
+      ],
+      [
+       1.0,
+       [
+        34,
+        3,
+        36
+       ]
+      ]
+     ],
+     "m_flAnimationRate": 1.0,
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_flMaxLength": 500.0,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ],
+   "children": [],
+   "ops": [
+    {
+     "stage": "emit",
+     "class": "C_OP_InstantaneousEmitter",
+     "m_nMaxEmittedPerFrame": 2,
+     "m_nParticlesToEmit": {
+      "per_detail_level": [
+       1.0,
+       2.0,
+       2.0,
+       3.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomSequence"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_CreateWithinSphereTransform",
+     "m_fRadiusMax": 2.0,
+     "m_fSpeedMax": 50.0,
+     "m_vecDistanceBiasAbs": [
+      1.0,
+      0.0,
+      0.0
+     ],
+     "m_fSpeedMin": 50.0,
+     "m_LocalCoordinateSystemSpeedMin": [
+      200.0,
+      -0.0,
+      0.0
+     ],
+     "m_LocalCoordinateSystemSpeedMax": [
+      400.0,
+      -0.0,
+      0.0
+     ]
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       8.0,
+       16.0
+      ]
+     }
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 4
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 7
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor",
+     "m_ColorMin": [
+      155,
+      0,
+      0,
+      null
+     ],
+     "m_ColorMax": [
+      164,
+      0,
+      0,
+      null
+     ],
+     "m_flTintPerc": 0.5,
+     "m_TintMin": [
+      68,
+      68,
+      68,
+      0
+     ],
+     "m_nTintBlendMode": "4"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomYawFlip"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.35,
+       0.75
+      ]
+     },
+     "m_nOutputField": 1
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitVec",
+     "m_InputValue": {
+      "driven_by": "particle_vector"
+     },
+     "m_nOutputField": 17
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 10
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       1.0,
+       1.0
+      ]
+     },
+     "m_nOutputField": 38
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "random": [
+       0.0,
+       360.0
+      ]
+     },
+     "m_nOutputField": 12
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_RandomColor",
+     "m_TintMin": [
+      68,
+      68,
+      68,
+      0
+     ],
+     "m_flTintPerc": 0.5,
+     "m_nTintBlendMode": "4"
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_InitFloat",
+     "m_InputValue": {
+      "driven_by": "particle_float"
+     },
+     "m_nOutputField": 13
+    },
+    {
+     "stage": "init",
+     "class": "C_INIT_AgeNoise",
+     "m_flAgeMin": 0.1,
+     "m_flAgeMax": 0.125
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Spin",
+     "m_nSpinRateDegrees": 4,
+     "m_fSpinRateStopTime": 1.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_FadeOut",
+     "m_flFadeOutTimeMin": 0.125
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_Decay"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_InterpolateRadius",
+     "m_flStartScale": 0.25,
+     "m_flEndScale": 4.0
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetFloat",
+     "m_InputValue": {
+      "driven_by": "particle_age_normalized",
+      "curve": [
+       [
+        0.0,
+        0.0
+       ],
+       [
+        0.3423,
+        0.5414
+       ],
+       [
+        0.8111,
+        0.9454
+       ],
+       [
+        1.0,
+        1.0
+       ]
+      ]
+     },
+     "m_nOutputField": 38,
+     "m_nSetMethod": "PARTICLE_SET_SCALE_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetVec",
+     "m_InputValue": {
+      "driven_by": "float_components"
+     },
+     "m_nOutputField": 30,
+     "m_nSetMethod": "PARTICLE_SET_RAMP_CURRENT_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_SetVec",
+     "m_InputValue": {
+      "driven_by": "particle_vector"
+     },
+     "m_nOutputField": 17,
+     "m_nSetMethod": "PARTICLE_SET_ADD_TO_INITIAL_VALUE"
+    },
+    {
+     "stage": "each_frame",
+     "class": "C_OP_BasicMovement",
+     "m_Gravity": [
+      0.0,
+      0.0,
+      -450.0
+     ],
+     "m_fDrag": 0.05
+    },
+    {
+     "stage": "draw",
+     "class": "C_OP_RenderTrails",
+     "m_nPrevPntSource": 17,
+     "m_flMaxLength": 500.0,
+     "m_vecTexturesInput": [
+      {
+       "m_hTexture": "materials/particle/fluids/blood/blood_spray_high.vtex"
+      },
+      {
+       "m_hTexture": "materials/particle/smoke_wisp_breakup_01/smoke_wisp_breakup_01_tile_inv.vtex",
+       "m_nTextureChannels": "SPRITECARD_TEXTURE_CHANNEL_MIX_A",
+       "m_flTextureBlend": {
+        "driven_by": "collection_age",
+        "curve": [
+         [
+          0.0,
+          0.0
+         ],
+         [
+          0.1432,
+          0.6868
+         ],
+         [
+          0.5028,
+          1.0
+         ],
+         [
+          1.0,
+          1.0
+         ]
+        ]
+       },
+       "m_TextureControls": {
+        "m_flFinalTextureScaleU": 0.2,
+        "m_flFinalTextureScaleV": 0.2
+       }
+      },
+      {
+       "m_bReplaceTextureWithGradient": true,
+       "m_nTextureType": "SPRITECARD_TEXTURE_1D_COLOR_LOOKUP",
+       "m_Gradient": {
+        "m_Stops": [
+         {
+          "m_flPosition": 0.0,
+          "m_Color": [
+           154,
+           13,
+           13
+          ]
+         },
+         {
+          "m_flPosition": 0.2842,
+          "m_Color": [
+           127,
+           15,
+           15
+          ]
+         },
+         {
+          "m_flPosition": 0.5245,
+          "m_Color": [
+           108,
+           15,
+           15
+          ]
+         },
+         {
+          "m_flPosition": 1.0,
+          "m_Color": [
+           34,
+           3,
+           36
+          ]
+         }
+        ]
+       },
+       "m_nTextureBlendMode": "SPRITECARD_TEXTURE_BLEND_REPLACE"
+      }
+     ],
+     "m_nAnimationType": "ANIMATION_TYPE_MANUAL_FRAMES",
+     "m_nCropTextureOverride": "PARTICLE_SEQUENCE_CROP_OVERRIDE_FORCE_ON",
+     "m_bMaxLuminanceBlendingSequence0": true,
+     "m_flDesaturation": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 3,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     },
+     "m_bEnableFadingAndClamping": true,
+     "m_flStartFadeSize": 0.1,
+     "m_flEndFadeSize": 0.15,
+     "m_flAnimationRate": 1.0,
+     "m_flSourceAlphaValueToMapToZero": {
+      "driven_by": "control_point_component",
+      "m_nControlPoint": 4,
+      "m_flInput0": 0.0,
+      "m_flInput1": 1.0,
+      "m_flOutput0": 0.0,
+      "m_flOutput1": 1.0
+     }
+    }
+   ]
+  }
+ },
+ "attribute_names_assumed": {
+  "0": "position",
+  "1": "lifetime_s",
+  "3": "radius_units",
+  "4": "roll_deg",
+  "5": "roll_speed",
+  "6": "colour",
+  "7": "alpha",
+  "9": "sequence",
+  "10": "trail_length",
+  "12": "yaw_deg",
+  "16": "alpha2",
+  "38": "flipbook_position"
+ }
+}

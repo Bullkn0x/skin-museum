@@ -1,0 +1,39 @@
+# Settings for the shooting range's score keeper. See README.md in this folder for the steps.
+
+name = "range-scores"
+main = "worker.js"
+compatibility_date = "2025-06-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "range-scores"
+database_id = "PASTE-THE-DATABASE-ID-HERE"   # printed by: npx wrangler d1 create range-scores
+
+# The sub wall is brought up to date on a timer: every five minutes. Until the channel has been
+# connected (see "Sub wall" in README.md) the timer finds nothing to do.
+[triggers]
+crons = ["*/5 * * * *"]
+
+[vars]
+# The Client ID of the application registered at dev.twitch.tv. It is public, so it can live here.
+# The sub wall uses the same one.
+TWITCH_CLIENT_ID = "PASTE-THE-TWITCH-CLIENT-ID-HERE"
+# The sites allowed to use the score keeper, separated by commas: the published site and the
+# addresses used when testing on this computer (4175 is the preview that never serves a stale
+# file, 4174 the plain one). Only the part up to the first slash counts.
+ALLOWED_ORIGINS = "https://bullkn0x.github.io,http://localhost:4175,http://localhost:4174"
+# Sub wall: the channel whose subscribers are shown, written as in its address
+# (twitch.tv/bullkn0xcs). Only this Twitch account is able to connect the wall at /connect.
+BROADCASTER_LOGIN = "bullkn0xcs"
+# Sub wall, optional: accounts that must never appear on the wall, as logins separated by
+# commas. For bots, or for a subscriber who asks to be left off. Example: "nightbot,some_viewer"
+SUBS_HIDE = ""
+# Sub wall, optional: "0" leaves out people whose sub was a gift from someone else. Anything
+# else, or leaving it out, shows them like every other subscriber.
+SUBS_GIFTED = "1"
+
+# Three more settings are secrets and must NOT be written in this file, because everything in
+# this folder is published with the site. Set them once from the command line instead:
+#   npx wrangler secret put TICKET_SECRET          (a long random string; signs the round tickets)
+#   npx wrangler secret put ADMIN_KEY              (a long random string; lets you delete an entry)
+#   npx wrangler secret put TWITCH_CLIENT_SECRET   (sub wall only: the Client Secret of the Twitch application)

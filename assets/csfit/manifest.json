@@ -1,0 +1,4 @@
+{
+  "note": "The owner's CSFIT pictures for the room behind the tape (js/club/csfit.js). Put the files named below in this folder; any that are missing are drawn as stand-ins. On a server that does not list its folders, every file named here is asked for.",
+  "files": ["logo.png", "banner.png", "case-blue.png", "case-green.png", "case-violet.png"]
+}

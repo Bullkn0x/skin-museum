@@ -1,0 +1,6046 @@
+{
+ "weapons": {
+  "weapon_knife_butterfly": {
+   "file": "anims/weapon_knife_butterfly.glb",
+   "clips": {
+    "draw": {
+     "clip": "animation/anims/viewmodel/knife/knife_butterfly/draw_butterfly.vnmclip",
+     "duration": 1.0,
+     "frames": 31,
+     "events": [
+      {
+       "id": "ButterflyKnife.T.Movement",
+       "start": 0.0,
+       "duration": 0.4,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.Gloves",
+       "start": 0.0,
+       "duration": 0.7,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.draw01",
+       "start": 0.2,
+       "duration": 0.55,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.T.Spins",
+       "start": 0.2333,
+       "duration": 0.3,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.N.End",
+       "start": 0.6333,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "blade",
+      "front",
+      "lock",
+      "rear",
+      "weapon_offset"
+     ]
+    },
+    "idle": {
+     "clip": "animation/anims/viewmodel/knife/knife_butterfly/idle1_butterfly.vnmclip",
+     "duration": 2.0,
+     "frames": 61,
+     "events": [],
+     "weapon_parts_moving": []
+    },
+    "inspect": {
+     "clip": "animation/anims/viewmodel/knife/knife_butterfly/lookat01_butterfly.vnmclip",
+     "duration": 4.1,
+     "frames": 124,
+     "events": [
+      {
+       "id": "WPN_INSPECT_INTRO",
+       "start": 0.0,
+       "duration": 0.252,
+       "sound": false
+      },
+      {
+       "id": "ButterflyKnife.look01_a",
+       "start": 0.0,
+       "duration": 0.2114,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.T.Spins",
+       "start": 0.0,
+       "duration": 0.0813,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.Gloves",
+       "start": 0.0081,
+       "duration": 0.1707,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0732,
+       "duration": 0.0894,
+       "sound": false
+      },
+      {
+       "id": "ButterflyKnife.N.Inspect.Clack",
+       "start": 0.0894,
+       "duration": 0.0343,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_LOOP",
+       "start": 0.252,
+       "duration": 0.4065,
+       "sound": false
+      },
+      {
+       "id": "ButterflyKnife.T.Movement",
+       "start": 0.6585,
+       "duration": 0.0994,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_OUTRO",
+       "start": 0.6585,
+       "duration": 0.3415,
+       "sound": false
+      },
+      {
+       "id": "ButterflyKnife.look01_b",
+       "start": 0.6585,
+       "duration": 0.2276,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.Gloves",
+       "start": 0.6585,
+       "duration": 0.1707,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.N.Clack",
+       "start": 0.7724,
+       "duration": 0.0343,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.T.Movement",
+       "start": 0.7724,
+       "duration": 0.0994,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.N.End",
+       "start": 0.8284,
+       "duration": 0.0343,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "blade",
+      "lock",
+      "rear",
+      "weapon_offset"
+     ]
+    },
+    "inspect2": {
+     "clip": "animation/anims/viewmodel/knife/knife_butterfly/lookat02_butterfly.vnmclip",
+     "duration": 4.5,
+     "frames": 136,
+     "events": [
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.1259,
+       "sound": false
+      },
+      {
+       "id": "ButterflyKnife.Gloves",
+       "start": 0.0,
+       "duration": 0.1556,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_INTRO",
+       "start": 0.0,
+       "duration": 0.3185,
+       "sound": false
+      },
+      {
+       "id": "ButterflyKnife.T.Spins.Q",
+       "start": 0.0074,
+       "duration": 0.0815,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.look02_a",
+       "start": 0.0074,
+       "duration": 0.2691,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.N.Inspect.Clack",
+       "start": 0.0593,
+       "duration": 0.0313,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0741,
+       "duration": 0.0815,
+       "sound": false
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.1481,
+       "duration": 0.0741,
+       "sound": false
+      },
+      {
+       "id": "ButterflyKnife.N.End",
+       "start": 0.2148,
+       "duration": 0.0313,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_LOOP",
+       "start": 0.3185,
+       "duration": 0.3704,
+       "sound": false
+      },
+      {
+       "id": "WPN_INSPECT_OUTRO",
+       "start": 0.6889,
+       "duration": 0.3111,
+       "sound": false
+      },
+      {
+       "id": "ButterflyKnife.T.Movement",
+       "start": 0.6946,
+       "duration": 0.0905,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.Gloves",
+       "start": 0.6963,
+       "duration": 0.1556,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.look02_b",
+       "start": 0.6979,
+       "duration": 0.1687,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.N.Clack",
+       "start": 0.8,
+       "duration": 0.0313,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.N.End",
+       "start": 0.8519,
+       "duration": 0.0313,
+       "sound": true
+      },
+      {
+       "id": "Knife.Catch.Quiet",
+       "start": 0.8626,
+       "duration": 0.0107,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "blade",
+      "lock",
+      "rear",
+      "weapon_offset"
+     ]
+    },
+    "inspect3": {
+     "clip": "animation/anims/viewmodel/knife/knife_butterfly/lookat03_butterfly.vnmclip",
+     "duration": 4.8667,
+     "frames": 147,
+     "events": [
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.0822,
+       "sound": false
+      },
+      {
+       "id": "ButterflyKnife.T.Movement",
+       "start": 0.0,
+       "duration": 0.0822,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_INTRO",
+       "start": 0.0,
+       "duration": 0.363,
+       "sound": false
+      },
+      {
+       "id": "ButterflyKnife.look03_a",
+       "start": 0.0111,
+       "duration": 0.3288,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.Gloves",
+       "start": 0.0342,
+       "duration": 0.1438,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.T.Spins.Q",
+       "start": 0.0685,
+       "duration": 0.0685,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.1027,
+       "duration": 0.0685,
+       "sound": false
+      },
+      {
+       "id": "ButterflyKnife.T.Spins.Q",
+       "start": 0.1201,
+       "duration": 0.0717,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.T.Spins.Q",
+       "start": 0.1834,
+       "duration": 0.0752,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.1849,
+       "duration": 0.0548,
+       "sound": false
+      },
+      {
+       "id": "ButterflyKnife.N.End",
+       "start": 0.2671,
+       "duration": 0.0411,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.T.End",
+       "start": 0.3151,
+       "duration": 0.0317,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_LOOP",
+       "start": 0.363,
+       "duration": 0.3425,
+       "sound": false
+      },
+      {
+       "id": "WPN_INSPECT_OUTRO",
+       "start": 0.7055,
+       "duration": 0.2945,
+       "sound": false
+      },
+      {
+       "id": "ButterflyKnife.look03_b",
+       "start": 0.7123,
+       "duration": 0.1704,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.Gloves",
+       "start": 0.7329,
+       "duration": 0.1438,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.T.Spins.Q",
+       "start": 0.75,
+       "duration": 0.0755,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.N.Clack",
+       "start": 0.8014,
+       "duration": 0.0197,
+       "sound": true
+      },
+      {
+       "id": "Knife.Catch.Quiet",
+       "start": 0.8425,
+       "duration": 0.0205,
+       "sound": true
+      },
+      {
+       "id": "ButterflyKnife.N.End",
+       "start": 0.8425,
+       "duration": 0.0289,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "blade",
+      "lock",
+      "rear",
+      "weapon_offset"
+     ]
+    },
+    "slash": {
+     "clip": "animation/anims/viewmodel/knife/knife_butterfly/light_miss1_butterfly.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Light",
+       "start": 0.0,
+       "duration": 0.1429,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear",
+       "start": 0.0,
+       "duration": 0.3086,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "weapon_offset"
+     ]
+    },
+    "slash2": {
+     "clip": "animation/anims/viewmodel/knife/knife_butterfly/light_miss2_butterfly.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Light",
+       "start": 0.0,
+       "duration": 0.1429,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear",
+       "start": 0.0,
+       "duration": 0.3192,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "lock",
+      "weapon_offset"
+     ]
+    },
+    "stab": {
+     "clip": "animation/anims/viewmodel/knife/knife_butterfly/heavy_miss1_butterfly.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Heavy",
+       "start": 0.0,
+       "duration": 0.1714,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear",
+       "start": 0.0,
+       "duration": 0.3429,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.3429,
+       "sound": false
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear.Quiet",
+       "start": 0.2571,
+       "duration": 0.3045,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "weapon_offset"
+     ]
+    },
+    "slash_hit": {
+     "clip": "animation/anims/viewmodel/knife/knife_butterfly/light_hit1_butterfly.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Light",
+       "start": 0.0,
+       "duration": 0.1429,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Gear",
+       "start": 0.0,
+       "duration": 0.2506,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Slice",
+       "start": 0.0,
+       "duration": 0.2041,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "weapon_offset"
+     ]
+    },
+    "slash2_hit": {
+     "clip": "animation/anims/viewmodel/knife/knife_butterfly/light_hit2_butterfly.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Light",
+       "start": 0.0,
+       "duration": 0.1486,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Gear",
+       "start": 0.0,
+       "duration": 0.2563,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Slice",
+       "start": 0.0,
+       "duration": 0.1992,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "lock"
+     ]
+    },
+    "stab_hit": {
+     "clip": "animation/anims/viewmodel/knife/knife_butterfly/heavy_hit1_butterfly.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Gear",
+       "start": 0.0,
+       "duration": 0.3143,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Swish.Heavy",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Heavy",
+       "start": 0.0,
+       "duration": 0.5143,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.3429,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "weapon_offset"
+     ]
+    }
+   },
+   "gun": {
+    "melee": true
+   }
+  },
+  "weapon_knife_flip": {
+   "file": "anims/weapon_knife_flip.glb",
+   "clips": {
+    "draw": {
+     "clip": "animation/anims/viewmodel/knife/knife_flip/draw_flip.vnmclip",
+     "duration": 1.0,
+     "frames": 31,
+     "events": [
+      {
+       "id": "WPN_INSPECT_USE_DRAW_VERSION",
+       "start": 0.0,
+       "duration": 0.4,
+       "sound": false
+      },
+      {
+       "id": "ButterflyKnife.Gloves",
+       "start": 0.0,
+       "duration": 0.7667,
+       "sound": true
+      },
+      {
+       "id": "Knife.Flip.Draw",
+       "start": 0.0,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Knife.Flip.Draw.End",
+       "start": 0.3667,
+       "duration": 0.2333,
+       "sound": true
+      },
+      {
+       "id": "KnifeNavaja.Open",
+       "start": 0.4,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "blade",
+      "weapon_offset"
+     ]
+    },
+    "idle": {
+     "clip": "animation/anims/viewmodel/knife/knife_flip/idle1_flip.vnmclip",
+     "duration": 2.0,
+     "frames": 61,
+     "events": [],
+     "weapon_parts_moving": [
+      "blade"
+     ]
+    },
+    "inspect": {
+     "clip": "animation/anims/viewmodel/knife/knife_flip/lookat01_flip.vnmclip",
+     "duration": 6.2,
+     "frames": 187,
+     "events": [
+      {
+       "id": "Inspect.Gear.Small",
+       "start": 0.0,
+       "duration": 0.1505,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_INTRO",
+       "start": 0.0,
+       "duration": 0.2097,
+       "sound": false
+      },
+      {
+       "id": "Weapon_Knife.Inspect.Turn",
+       "start": 0.0538,
+       "duration": 0.0645,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_LOOP",
+       "start": 0.2097,
+       "duration": 0.5968,
+       "sound": false
+      },
+      {
+       "id": "Inspect.Gear.UltraSmall",
+       "start": 0.2849,
+       "duration": 0.147,
+       "sound": true
+      },
+      {
+       "id": "Inspect.Gear.UltraSmall",
+       "start": 0.5645,
+       "duration": 0.147,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_OUTRO",
+       "start": 0.8065,
+       "duration": 0.1935,
+       "sound": false
+      },
+      {
+       "id": "Inspect.Gear.Small",
+       "start": 0.8217,
+       "duration": 0.172,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Inspect.Turn",
+       "start": 0.8602,
+       "duration": 0.0645,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "blade"
+     ]
+    },
+    "slash": {
+     "clip": "animation/anims/viewmodel/knife/knife_flip/light_miss1_flip.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Light",
+       "start": 0.0,
+       "duration": 0.1469,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear",
+       "start": 0.0,
+       "duration": 0.2996,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": []
+    },
+    "slash2": {
+     "clip": "animation/anims/viewmodel/knife/knife_flip/light_miss2_flip.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Light",
+       "start": 0.0,
+       "duration": 0.2571,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear",
+       "start": 0.0,
+       "duration": 0.8286,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "blade"
+     ]
+    },
+    "stab": {
+     "clip": "animation/anims/viewmodel/knife/knife_flip/heavy_miss1_flip.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Heavy",
+       "start": 0.0,
+       "duration": 0.1984,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear",
+       "start": 0.0,
+       "duration": 0.3143,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.3714,
+       "sound": false
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear.Quiet",
+       "start": 0.2571,
+       "duration": 0.3429,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": []
+    },
+    "slash_hit": {
+     "clip": "animation/anims/viewmodel/knife/knife_flip/light_hit1_flip.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Light",
+       "start": 0.0,
+       "duration": 0.1461,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Gear",
+       "start": 0.0,
+       "duration": 0.2539,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Slice",
+       "start": 0.0,
+       "duration": 0.2122,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": []
+    },
+    "slash2_hit": {
+     "clip": "animation/anims/viewmodel/knife/knife_flip/light_hit2_flip.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Light",
+       "start": 0.0,
+       "duration": 0.1478,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Gear",
+       "start": 0.0,
+       "duration": 0.2498,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Slice",
+       "start": 0.0,
+       "duration": 0.2114,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "blade"
+     ]
+    },
+    "stab_hit": {
+     "clip": "animation/anims/viewmodel/knife/knife_flip/heavy_hit1_flip.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Gear",
+       "start": 0.0,
+       "duration": 0.2971,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Swish.Heavy",
+       "start": 0.0,
+       "duration": 0.2008,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Heavy",
+       "start": 0.0,
+       "duration": 0.5143,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.3714,
+       "sound": false
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear.Quiet",
+       "start": 0.1714,
+       "duration": 0.3004,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": []
+    }
+   },
+   "gun": {
+    "melee": true
+   }
+  },
+  "weapon_knife_gut": {
+   "file": "anims/weapon_knife_gut.glb",
+   "clips": {
+    "draw": {
+     "clip": "animation/anims/viewmodel/knife/knife_gut/draw_gut.vnmclip",
+     "duration": 1.0,
+     "frames": 31,
+     "events": [
+      {
+       "id": "Weapon_Knife.Draw.Gear",
+       "start": 0.0,
+       "duration": 0.1,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Draw.Large",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Inspect.Turn",
+       "start": 0.0492,
+       "duration": 0.3792,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Inspect.Turn",
+       "start": 0.1475,
+       "duration": 0.3792,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Inspect.Turn",
+       "start": 0.29,
+       "duration": 0.3792,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Inspect.Turn",
+       "start": 0.3625,
+       "duration": 0.2042,
+       "sound": true
+      },
+      {
+       "id": "Knife.Catch.SoftGrab",
+       "start": 0.5,
+       "duration": 0.0392,
+       "sound": true
+      },
+      {
+       "id": "Knife.Catch",
+       "start": 0.5333,
+       "duration": 0.0392,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "weapon_offset"
+     ]
+    },
+    "idle": {
+     "clip": "animation/anims/viewmodel/knife/knife_gut/idle1_gut.vnmclip",
+     "duration": 2.0,
+     "frames": 61,
+     "events": [],
+     "weapon_parts_moving": []
+    },
+    "inspect": {
+     "clip": "animation/anims/viewmodel/knife/knife_gut/lookat01_gut.vnmclip",
+     "duration": 6.2,
+     "frames": 187,
+     "events": [
+      {
+       "id": "Inspect.Gear.UltraSmall",
+       "start": 0.0,
+       "duration": 0.147,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_INTRO",
+       "start": 0.0,
+       "duration": 0.2151,
+       "sound": false
+      },
+      {
+       "id": "Weapon_Knife.Inspect.Turn",
+       "start": 0.0699,
+       "duration": 0.0645,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_LOOP",
+       "start": 0.2151,
+       "duration": 0.6022,
+       "sound": false
+      },
+      {
+       "id": "Inspect.Gear.UltraSmall",
+       "start": 0.3387,
+       "duration": 0.147,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Inspect.Turn",
+       "start": 0.3925,
+       "duration": 0.0645,
+       "sound": true
+      },
+      {
+       "id": "Inspect.Gear.UltraSmall",
+       "start": 0.6129,
+       "duration": 0.147,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_OUTRO",
+       "start": 0.8172,
+       "duration": 0.1828,
+       "sound": false
+      },
+      {
+       "id": "Inspect.Gear.Small",
+       "start": 0.8226,
+       "duration": 0.129,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Inspect.Turn",
+       "start": 0.828,
+       "duration": 0.0645,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": []
+    },
+    "slash": {
+     "clip": "animation/anims/viewmodel/knife/knife_gut/light_miss1_gut.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Light",
+       "start": 0.0,
+       "duration": 0.2024,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear",
+       "start": 0.0,
+       "duration": 0.298,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": []
+    },
+    "slash2": {
+     "clip": "animation/anims/viewmodel/knife/knife_gut/light_miss2_gut.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Light",
+       "start": 0.0,
+       "duration": 0.2286,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear",
+       "start": 0.0,
+       "duration": 0.3429,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": []
+    },
+    "stab": {
+     "clip": "animation/anims/viewmodel/knife/knife_gut/heavy_miss1_gut.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Heavy",
+       "start": 0.0,
+       "duration": 0.1976,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear",
+       "start": 0.0,
+       "duration": 0.3037,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.3714,
+       "sound": false
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear.Quiet",
+       "start": 0.2571,
+       "duration": 0.302,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": []
+    },
+    "slash_hit": {
+     "clip": "animation/anims/viewmodel/knife/knife_gut/light_hit1_gut.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Light",
+       "start": 0.0,
+       "duration": 0.1437,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Gear",
+       "start": 0.0,
+       "duration": 0.231,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Slice",
+       "start": 0.0,
+       "duration": 0.2033,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": []
+    },
+    "slash2_hit": {
+     "clip": "animation/anims/viewmodel/knife/knife_gut/light_hit2_gut.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Light",
+       "start": 0.0,
+       "duration": 0.1437,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Gear",
+       "start": 0.0,
+       "duration": 0.231,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Slice",
+       "start": 0.0,
+       "duration": 0.2033,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": []
+    },
+    "stab_hit": {
+     "clip": "animation/anims/viewmodel/knife/knife_gut/heavy_hit1_gut.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Heavy",
+       "start": 0.0,
+       "duration": 0.1984,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Heavy",
+       "start": 0.0,
+       "duration": 0.5143,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear",
+       "start": 0.0,
+       "duration": 0.2963,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.3714,
+       "sound": false
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear.Quiet",
+       "start": 0.3143,
+       "duration": 0.3004,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": []
+    }
+   },
+   "gun": {
+    "melee": true
+   }
+  },
+  "weapon_knife_karambit": {
+   "file": "anims/weapon_knife_karambit.glb",
+   "clips": {
+    "draw": {
+     "clip": "animation/anims/viewmodel/knife/knife_karambit/draw_karambit.vnmclip",
+     "duration": 1.0,
+     "frames": 31,
+     "events": [
+      {
+       "id": "Weapon_Knife.Draw.Small",
+       "start": 0.0,
+       "duration": 0.3708,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Draw.Gear",
+       "start": 0.0,
+       "duration": 0.1158,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_USE_DRAW_VERSION",
+       "start": 0.0,
+       "duration": 0.2667,
+       "sound": false
+      },
+      {
+       "id": "Weapon_Knife.Inspect.Swish",
+       "start": 0.1333,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Inspect.Turn",
+       "start": 0.1667,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Inspect.Turn",
+       "start": 0.24,
+       "duration": 0.385,
+       "sound": true
+      },
+      {
+       "id": "Knife.Catch.SoftGrab",
+       "start": 0.4333,
+       "duration": 0.3333,
+       "sound": true
+      },
+      {
+       "id": "KnifeKarambit.Catch",
+       "start": 0.485,
+       "duration": 0.0442,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "weapon_offset"
+     ]
+    },
+    "idle": {
+     "clip": "animation/anims/viewmodel/knife/knife_karambit/idle1_karambit.vnmclip",
+     "duration": 2.0,
+     "frames": 61,
+     "events": [],
+     "weapon_parts_moving": []
+    },
+    "inspect": {
+     "clip": "animation/anims/viewmodel/knife/knife_karambit/lookat01_karambit.vnmclip",
+     "duration": 4.8667,
+     "frames": 147,
+     "events": [
+      {
+       "id": "WPN_INSPECT_INTRO",
+       "start": 0.0,
+       "duration": 0.363,
+       "sound": false
+      },
+      {
+       "id": "Weapon_Knife.Inspect.Turn",
+       "start": 0.0,
+       "duration": 0.0822,
+       "sound": true
+      },
+      {
+       "id": "Inspect.Gear.Small",
+       "start": 0.0,
+       "duration": 0.2432,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.1164,
+       "sound": false
+      },
+      {
+       "id": "Weapon_Knife.Inspect.Swish",
+       "start": 0.1096,
+       "duration": 0.0685,
+       "sound": true
+      },
+      {
+       "id": "Knife.Catch.SoftGrab",
+       "start": 0.1575,
+       "duration": 0.0685,
+       "sound": true
+      },
+      {
+       "id": "Knife.Catch.Quiet",
+       "start": 0.1644,
+       "duration": 0.0068,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_LOOP",
+       "start": 0.363,
+       "duration": 0.3425,
+       "sound": false
+      },
+      {
+       "id": "WPN_INSPECT_OUTRO",
+       "start": 0.7055,
+       "duration": 0.2945,
+       "sound": false
+      },
+      {
+       "id": "Inspect.Gear.Small",
+       "start": 0.7072,
+       "duration": 0.2432,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Inspect.Swish",
+       "start": 0.8151,
+       "duration": 0.0873,
+       "sound": true
+      },
+      {
+       "id": "Knife.Catch.SoftGrab",
+       "start": 0.863,
+       "duration": 0.0685,
+       "sound": true
+      },
+      {
+       "id": "Knife.Catch.Quiet",
+       "start": 0.8673,
+       "duration": 0.0188,
+       "sound": true
+      },
+      {
+       "id": "Inspect.Gear.UltraSmall",
+       "start": 0.9387,
+       "duration": 0.0613,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "weapon_offset"
+     ]
+    },
+    "slash": {
+     "clip": "animation/anims/viewmodel/knife/knife_karambit/light_miss1_karambit.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Light",
+       "start": 0.0,
+       "duration": 0.2571,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear",
+       "start": 0.0,
+       "duration": 0.3429,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": []
+    },
+    "slash2": {
+     "clip": "animation/anims/viewmodel/knife/knife_karambit/light_miss2_karambit.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Light",
+       "start": 0.0,
+       "duration": 0.2571,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear",
+       "start": 0.0,
+       "duration": 0.3143,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.2286,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "weapon_offset"
+     ]
+    },
+    "stab": {
+     "clip": "animation/anims/viewmodel/knife/knife_karambit/heavy_miss1_karambit.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Heavy",
+       "start": 0.0,
+       "duration": 0.2571,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear",
+       "start": 0.0,
+       "duration": 0.3429,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.4571,
+       "sound": false
+      },
+      {
+       "id": "Inspect.Gear.Small",
+       "start": 0.4571,
+       "duration": 0.3429,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": []
+    },
+    "slash_hit": {
+     "clip": "animation/anims/viewmodel/knife/knife_karambit/light_hit1_karambit.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Light",
+       "start": 0.0,
+       "duration": 0.1437,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Gear",
+       "start": 0.0,
+       "duration": 0.231,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Slice",
+       "start": 0.0,
+       "duration": 0.2033,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "weapon_offset"
+     ]
+    },
+    "slash2_hit": {
+     "clip": "animation/anims/viewmodel/knife/knife_karambit/light_hit2_karambit.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Light",
+       "start": 0.0,
+       "duration": 0.1437,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Gear",
+       "start": 0.0,
+       "duration": 0.231,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Slice",
+       "start": 0.0,
+       "duration": 0.2033,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.2,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": []
+    },
+    "stab_hit": {
+     "clip": "animation/anims/viewmodel/knife/knife_karambit/heavy_hit1_karambit.vnmclip",
+     "duration": 1.1667,
+     "frames": 36,
+     "events": [
+      {
+       "id": "Weapon_Knife.Swish.Heavy",
+       "start": 0.0,
+       "duration": 0.2571,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Swish.Gear",
+       "start": 0.0,
+       "duration": 0.3429,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Knife.Hit.Heavy",
+       "start": 0.0,
+       "duration": 0.6286,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.4571,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "weapon_offset"
+     ]
+    }
+   },
+   "gun": {
+    "melee": true
+   }
+  },
+  "weapon_pist_deagle": {
+   "file": "anims/weapon_pist_deagle.glb",
+   "clips": {
+    "draw": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_deagle/draw_deagle.vnmclip",
+     "duration": 1.0,
+     "frames": 31,
+     "events": [
+      {
+       "id": "WPN_INSPECT_USE_DRAW_VERSION",
+       "start": 0.0,
+       "duration": 0.6667,
+       "sound": false
+      },
+      {
+       "id": "Weapon_DEagle.Draw",
+       "start": 0.0,
+       "duration": 1.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0667,
+       "duration": 0.4333,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "clip",
+      "hammer",
+      "slide",
+      "trigger",
+      "weapon_offset"
+     ]
+    },
+    "idle": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_deagle/idle_deagle.vnmclip",
+     "duration": 0.0,
+     "frames": 1,
+     "events": [],
+     "weapon_parts_moving": [
+      "clip",
+      "slide",
+      "trigger",
+      "weapon_offset"
+     ]
+    },
+    "inspect": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_deagle/lookat01_deagle.vnmclip",
+     "duration": 5.6667,
+     "frames": 171,
+     "events": [
+      {
+       "id": "WPN_INSPECT_INTRO",
+       "start": 0.0,
+       "duration": 0.5176,
+       "sound": false
+      },
+      {
+       "id": "Weapon_DEagle.WeaponMove1",
+       "start": 0.0118,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_DISABLE_LEFT_HAND_IK",
+       "start": 0.0529,
+       "duration": 0.8294,
+       "sound": false
+      },
+      {
+       "id": "Weapon_DEagle.WeaponMove3",
+       "start": 0.2235,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_DEagle.WeaponMove4",
+       "start": 0.2529,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_LOOP",
+       "start": 0.5176,
+       "duration": 0.2353,
+       "sound": false
+      },
+      {
+       "id": "WPN_INSPECT_OUTRO",
+       "start": 0.7529,
+       "duration": 0.2471,
+       "sound": false
+      },
+      {
+       "id": "Weapon_DEagle.WeaponMove2",
+       "start": 0.7706,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_DEagle.WeaponMove4",
+       "start": 0.8059,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "clip",
+      "slide",
+      "trigger",
+      "weapon_offset"
+     ]
+    },
+    "inspect2": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_deagle/lookat02_deagle.vnmclip",
+     "duration": 8.5,
+     "frames": 256,
+     "events": [
+      {
+       "id": "WPN_INSPECT_INTRO",
+       "start": 0.0,
+       "duration": 0.3255,
+       "sound": false
+      },
+      {
+       "id": "WPN_DISABLE_LEFT_HAND_IK",
+       "start": 0.0314,
+       "duration": 0.5686,
+       "sound": false
+      },
+      {
+       "id": "Weapon_DEagle.LookAt009",
+       "start": 0.0353,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_DEagle.LookAt036",
+       "start": 0.1412,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_DEagle.LookAt057",
+       "start": 0.2235,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_DEagle.LookAt081",
+       "start": 0.3176,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_LOOP",
+       "start": 0.3255,
+       "duration": 0.1059,
+       "sound": false
+      },
+      {
+       "id": "WPN_INSPECT_OUTRO",
+       "start": 0.4314,
+       "duration": 0.5686,
+       "sound": false
+      },
+      {
+       "id": "Weapon_DEagle.LookAt111",
+       "start": 0.4353,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_DEagle.LookAt133",
+       "start": 0.5216,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_DEagle.LookAt166",
+       "start": 0.651,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_DEagle.LookAt193",
+       "start": 0.7569,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_DEagle.LookAt228",
+       "start": 0.8941,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "clip",
+      "slide",
+      "trigger",
+      "weapon_offset"
+     ]
+    },
+    "shoot": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_deagle/shoot1_deagle.vnmclip",
+     "duration": 0.7,
+     "frames": 22,
+     "events": [
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.4762,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "clip",
+      "hammer",
+      "slide",
+      "trigger"
+     ]
+    },
+    "shoot_empty": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_deagle/shoot_empty_deagle.vnmclip",
+     "duration": 0.7,
+     "frames": 22,
+     "events": [
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.4762,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "clip",
+      "hammer",
+      "slide",
+      "trigger"
+     ]
+    },
+    "idle_empty": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_deagle/idle_slide_back_deagle.vnmclip",
+     "duration": 0.0,
+     "frames": 1,
+     "events": [],
+     "weapon_parts_moving": []
+    },
+    "reload": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_deagle/reload_deagle.vnmclip",
+     "duration": 2.2,
+     "frames": 67,
+     "events": [
+      {
+       "id": "WPN_RELOAD_SILENT",
+       "start": 0.0,
+       "duration": 0.7576,
+       "sound": false
+      },
+      {
+       "id": "Weapon_DEagle.Clipout",
+       "start": 0.1515,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_DROP_MAG",
+       "start": 0.1818,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_DEagle.Clipin",
+       "start": 0.3182,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_DEagle.AddAmmo",
+       "start": 0.3485,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_RELOAD_ADD_AMMO",
+       "start": 0.3485,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_DEagle.Slideback",
+       "start": 0.6212,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_DEagle.Slideforward",
+       "start": 0.7121,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "clip",
+      "hammer",
+      "slide",
+      "trigger"
+     ]
+    },
+    "reload_empty": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_deagle/reload_empty_deagle.vnmclip",
+     "duration": 2.2,
+     "frames": 67,
+     "events": [
+      {
+       "id": "WPN_RELOAD_SILENT",
+       "start": 0.0,
+       "duration": 0.7424,
+       "sound": false
+      },
+      {
+       "id": "Weapon_DEagle.Clipout",
+       "start": 0.0909,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_DROP_MAG",
+       "start": 0.2273,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_DEagle.Clipin",
+       "start": 0.4242,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_DEagle.AddAmmo",
+       "start": 0.4697,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_RELOAD_ADD_AMMO",
+       "start": 0.4697,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_DEagle.Slideforward",
+       "start": 0.6818,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_DEagle.Slideback",
+       "start": 0.697,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "clip",
+      "slide"
+     ]
+    }
+   },
+   "gun": {
+    "entry": "weapon_deagle",
+    "mode": 0,
+    "clip": 7,
+    "reserve": 21,
+    "auto": false,
+    "cycle": 0.225,
+    "deploy": 1.0,
+    "no_attack_after_reload": 2.2,
+    "spread": 0.002,
+    "inaccuracy_stand": 0.0042,
+    "inaccuracy_fire": 0.07223,
+    "inaccuracy_move": 0.0481,
+    "recovery_stand": 0.8112,
+    "max_speed": 230.0,
+    "recoil": [
+     [
+      -58.392,
+      37.487
+     ],
+     [
+      -36.655,
+      57.136
+     ],
+     [
+      42.145,
+      38.25
+     ],
+     [
+      12.798,
+      31.086
+     ],
+     [
+      15.374,
+      36.99
+     ],
+     [
+      -14.474,
+      58.934
+     ],
+     [
+      27.986,
+      41.288
+     ],
+     [
+      12.779,
+      43.31
+     ],
+     [
+      43.568,
+      54.87
+     ],
+     [
+      -1.637,
+      41.96
+     ],
+     [
+      3.735,
+      60.968
+     ],
+     [
+      -36.931,
+      47.603
+     ],
+     [
+      -52.736,
+      65.061
+     ],
+     [
+      -54.784,
+      38.916
+     ],
+     [
+      -12.374,
+      52.592
+     ],
+     [
+      -47.824,
+      61.033
+     ],
+     [
+      22.622,
+      37.154
+     ],
+     [
+      44.868,
+      61.77
+     ],
+     [
+      -32.231,
+      31.972
+     ],
+     [
+      51.075,
+      52.233
+     ],
+     [
+      -56.626,
+      48.931
+     ],
+     [
+      9.155,
+      50.631
+     ],
+     [
+      -58.319,
+      40.325
+     ],
+     [
+      -15.446,
+      44.466
+     ],
+     [
+      -32.261,
+      59.796
+     ],
+     [
+      -27.858,
+      38.694
+     ],
+     [
+      58.08,
+      55.291
+     ],
+     [
+      22.867,
+      47.449
+     ],
+     [
+      9.316,
+      45.728
+     ],
+     [
+      26.034,
+      32.259
+     ],
+     [
+      -30.992,
+      43.742
+     ],
+     [
+      -34.589,
+      39.298
+     ],
+     [
+      -12.967,
+      52.044
+     ],
+     [
+      17.563,
+      49.719
+     ],
+     [
+      -15.355,
+      57.166
+     ],
+     [
+      25.745,
+      65.616
+     ],
+     [
+      -24.004,
+      47.136
+     ],
+     [
+      -40.147,
+      39.67
+     ],
+     [
+      1.062,
+      32.779
+     ],
+     [
+      38.502,
+      32.553
+     ],
+     [
+      -37.405,
+      40.585
+     ],
+     [
+      -44.124,
+      39.292
+     ],
+     [
+      -23.763,
+      43.211
+     ],
+     [
+      34.811,
+      56.265
+     ],
+     [
+      -48.655,
+      49.737
+     ],
+     [
+      -49.192,
+      40.998
+     ],
+     [
+      -50.677,
+      33.56
+     ],
+     [
+      21.287,
+      65.789
+     ],
+     [
+      -16.21,
+      55.496
+     ],
+     [
+      -57.898,
+      43.021
+     ],
+     [
+      1.558,
+      42.465
+     ],
+     [
+      -16.128,
+      30.845
+     ],
+     [
+      -3.959,
+      35.76
+     ],
+     [
+      -14.111,
+      36.899
+     ],
+     [
+      -20.928,
+      53.113
+     ],
+     [
+      -52.781,
+      38.839
+     ],
+     [
+      -17.778,
+      45.045
+     ],
+     [
+      10.478,
+      50.233
+     ],
+     [
+      22.131,
+      57.295
+     ],
+     [
+      -37.91,
+      51.505
+     ],
+     [
+      54.882,
+      65.268
+     ],
+     [
+      14.815,
+      55.325
+     ],
+     [
+      32.322,
+      61.011
+     ],
+     [
+      -23.492,
+      51.338
+     ]
+    ],
+    "muzzle_in": [
+     24.317,
+     -3.83,
+     -1.22
+    ],
+    "tracer_every": 1,
+    "damage": 53,
+    "headshot": 3.9,
+    "range_modifier": 0.85,
+    "zoom_fov": [],
+    "silenced": false,
+    "sounds": {
+     "single": "Weapon_DEagle.Single",
+     "nearlyempty": "Default.nearlyempty"
+    },
+    "scope": null
+   }
+  },
+  "weapon_pist_glock18": {
+   "file": "anims/weapon_pist_glock18.glb",
+   "clips": {
+    "draw": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_glock18/draw_glock.vnmclip",
+     "duration": 1.0,
+     "frames": 31,
+     "events": [
+      {
+       "id": "Weapon_Glock.Draw",
+       "start": 0.0,
+       "duration": 1.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Glock.Slideback_Q",
+       "start": 0.3,
+       "duration": 0.2667,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Glock.Sliderelease_Q",
+       "start": 0.5,
+       "duration": 0.3333,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "slide"
+     ]
+    },
+    "idle": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_glock18/idle_glock.vnmclip",
+     "duration": 0.0333,
+     "frames": 2,
+     "events": [],
+     "weapon_parts_moving": []
+    },
+    "inspect": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_glock18/lookat01_glock.vnmclip",
+     "duration": 6.4333,
+     "frames": 194,
+     "events": [
+      {
+       "id": "WPN_INSPECT_INTRO",
+       "start": 0.0,
+       "duration": 0.2383,
+       "sound": false
+      },
+      {
+       "id": "Weapon.WeaponMove1",
+       "start": 0.0104,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_LOOP",
+       "start": 0.2383,
+       "duration": 0.2332,
+       "sound": false
+      },
+      {
+       "id": "inspect_loop_window",
+       "start": 0.4663,
+       "duration": 0.0104,
+       "sound": false
+      },
+      {
+       "id": "WPN_INSPECT_OUTRO",
+       "start": 0.4715,
+       "duration": 0.5285,
+       "sound": false
+      },
+      {
+       "id": "Weapon.WeaponMove3",
+       "start": 0.9067,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "magazine",
+      "slide",
+      "trigger"
+     ]
+    },
+    "shoot": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_glock18/shoot1_glock.vnmclip",
+     "duration": 0.4,
+     "frames": 13,
+     "events": [
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.6667,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "slide"
+     ]
+    },
+    "shoot_empty": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_glock18/shoot_empty_glock.vnmclip",
+     "duration": 0.4,
+     "frames": 13,
+     "events": [
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.6667,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "slide"
+     ]
+    },
+    "idle_empty": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_glock18/idle_slide_back_glock.vnmclip",
+     "duration": 0.0333,
+     "frames": 2,
+     "events": [],
+     "weapon_parts_moving": []
+    },
+    "reload": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_glock18/reload_glock.vnmclip",
+     "duration": 2.2667,
+     "frames": 69,
+     "events": [
+      {
+       "id": "WPN_RELOAD_SILENT",
+       "start": 0.0,
+       "duration": 0.7647,
+       "sound": false
+      },
+      {
+       "id": "Weapon_Glock.Clipout",
+       "start": 0.2059,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_DROP_MAG",
+       "start": 0.2353,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_Glock.Clipin",
+       "start": 0.3676,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_RELOAD_ADD_AMMO",
+       "start": 0.4118,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_Glock.Slideback",
+       "start": 0.6471,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_Glock.Sliderelease",
+       "start": 0.7353,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "magazine",
+      "slide",
+      "trigger"
+     ]
+    },
+    "reload_empty": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_glock18/reload_empty_glock.vnmclip",
+     "duration": 2.2667,
+     "frames": 69,
+     "events": [
+      {
+       "id": "WPN_RELOAD_SILENT",
+       "start": 0.0,
+       "duration": 0.7206,
+       "sound": false
+      },
+      {
+       "id": "Weapon_Glock.Clipout",
+       "start": 0.2059,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_DROP_MAG",
+       "start": 0.2647,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_Glock.Clipin",
+       "start": 0.5,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_RELOAD_ADD_AMMO",
+       "start": 0.5588,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_Glock.Sliderelease",
+       "start": 0.6765,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "magazine",
+      "slide"
+     ]
+    }
+   },
+   "gun": {
+    "entry": "weapon_glock",
+    "mode": 0,
+    "clip": 20,
+    "reserve": 60,
+    "auto": false,
+    "cycle": 0.15,
+    "deploy": 1.0,
+    "no_attack_after_reload": 2.266667,
+    "spread": 0.002,
+    "inaccuracy_stand": 0.0056,
+    "inaccuracy_fire": 0.056,
+    "inaccuracy_move": 0.01,
+    "recovery_stand": 0.2,
+    "max_speed": 240.0,
+    "recoil": [
+     [
+      3.647,
+      18.0
+     ],
+     [
+      -11.507,
+      18.0
+     ],
+     [
+      -19.146,
+      18.0
+     ],
+     [
+      8.895,
+      18.0
+     ],
+     [
+      -5.177,
+      18.0
+     ],
+     [
+      -14.455,
+      18.0
+     ],
+     [
+      8.879,
+      18.0
+     ],
+     [
+      16.94,
+      18.0
+     ],
+     [
+      -19.716,
+      18.0
+     ],
+     [
+      -13.482,
+      18.0
+     ],
+     [
+      7.84,
+      18.0
+     ],
+     [
+      -16.91,
+      18.0
+     ],
+     [
+      7.291,
+      18.0
+     ],
+     [
+      13.569,
+      18.0
+     ],
+     [
+      13.26,
+      18.0
+     ],
+     [
+      -18.056,
+      18.0
+     ],
+     [
+      -12.778,
+      18.0
+     ],
+     [
+      10.219,
+      18.0
+     ],
+     [
+      2.296,
+      18.0
+     ],
+     [
+      18.603,
+      18.0
+     ],
+     [
+      -17.48,
+      18.0
+     ],
+     [
+      3.063,
+      18.0
+     ],
+     [
+      -13.095,
+      18.0
+     ],
+     [
+      14.75,
+      18.0
+     ],
+     [
+      14.907,
+      18.0
+     ],
+     [
+      -15.871,
+      18.0
+     ],
+     [
+      3.003,
+      18.0
+     ],
+     [
+      -0.264,
+      18.0
+     ],
+     [
+      10.996,
+      18.0
+     ],
+     [
+      3.888,
+      18.0
+     ],
+     [
+      -13.969,
+      18.0
+     ],
+     [
+      -14.341,
+      18.0
+     ],
+     [
+      -5.688,
+      18.0
+     ],
+     [
+      -4.321,
+      18.0
+     ],
+     [
+      19.491,
+      18.0
+     ],
+     [
+      8.824,
+      18.0
+     ],
+     [
+      13.506,
+      18.0
+     ],
+     [
+      -8.774,
+      18.0
+     ],
+     [
+      9.946,
+      18.0
+     ],
+     [
+      -7.993,
+      18.0
+     ],
+     [
+      17.311,
+      18.0
+     ],
+     [
+      5.178,
+      18.0
+     ],
+     [
+      -6.652,
+      18.0
+     ],
+     [
+      4.746,
+      18.0
+     ],
+     [
+      -4.097,
+      18.0
+     ],
+     [
+      -18.097,
+      18.0
+     ],
+     [
+      -9.159,
+      18.0
+     ],
+     [
+      12.969,
+      18.0
+     ],
+     [
+      -14.466,
+      18.0
+     ],
+     [
+      10.402,
+      18.0
+     ],
+     [
+      -17.873,
+      18.0
+     ],
+     [
+      2.416,
+      18.0
+     ],
+     [
+      1.884,
+      18.0
+     ],
+     [
+      13.434,
+      18.0
+     ],
+     [
+      2.45,
+      18.0
+     ],
+     [
+      -9.87,
+      18.0
+     ],
+     [
+      2.765,
+      18.0
+     ],
+     [
+      -18.12,
+      18.0
+     ],
+     [
+      5.716,
+      18.0
+     ],
+     [
+      19.725,
+      18.0
+     ],
+     [
+      -15.115,
+      18.0
+     ],
+     [
+      1.519,
+      18.0
+     ],
+     [
+      -4.747,
+      18.0
+     ],
+     [
+      -8.785,
+      18.0
+     ]
+    ],
+    "muzzle_in": [
+     21.775,
+     -2.805,
+     -1.975
+    ],
+    "tracer_every": 1,
+    "damage": 30,
+    "headshot": 4.0,
+    "range_modifier": 0.85,
+    "zoom_fov": [],
+    "silenced": false,
+    "sounds": {
+     "single": "Weapon_Glock.Single",
+     "nearlyempty": "Default.nearlyempty"
+    },
+    "scope": null
+   }
+  },
+  "weapon_pist_p250": {
+   "file": "anims/weapon_pist_p250.glb",
+   "clips": {
+    "draw": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_p250/draw_p250.vnmclip",
+     "duration": 1.0,
+     "frames": 31,
+     "events": [
+      {
+       "id": "Weapon_P250.Draw",
+       "start": 0.0,
+       "duration": 0.9667,
+       "sound": true
+      },
+      {
+       "id": "Weapon_p250.Slideback_Q",
+       "start": 0.3333,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_p250.Sliderelease_Q",
+       "start": 0.5,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "slide"
+     ]
+    },
+    "idle": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_p250/idle_p250.vnmclip",
+     "duration": 0.0,
+     "frames": 1,
+     "events": [],
+     "weapon_parts_moving": []
+    },
+    "inspect": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_p250/lookat01_p250.vnmclip",
+     "duration": 6.4333,
+     "frames": 194,
+     "events": [
+      {
+       "id": "WPN_INSPECT_INTRO",
+       "start": 0.0,
+       "duration": 0.2383,
+       "sound": false
+      },
+      {
+       "id": "WPN_INSPECT_LOOP",
+       "start": 0.2383,
+       "duration": 0.2332,
+       "sound": false
+      },
+      {
+       "id": "WPN_INSPECT_OUTRO",
+       "start": 0.4715,
+       "duration": 0.5285,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "hammer",
+      "magazine",
+      "slide",
+      "trigger"
+     ]
+    },
+    "shoot": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_p250/shoot1_p250.vnmclip",
+     "duration": 0.4,
+     "frames": 13,
+     "events": [
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.3333,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "hammer",
+      "slide"
+     ]
+    },
+    "shoot_empty": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_p250/shoot_empty_p250.vnmclip",
+     "duration": 0.4,
+     "frames": 13,
+     "events": [
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.3333,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "hammer",
+      "slide"
+     ]
+    },
+    "idle_empty": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_p250/idle_slide_back_p250.vnmclip",
+     "duration": 0.0,
+     "frames": 1,
+     "events": [],
+     "weapon_parts_moving": []
+    },
+    "reload": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_p250/reload_p250.vnmclip",
+     "duration": 2.2667,
+     "frames": 69,
+     "events": [
+      {
+       "id": "WPN_RELOAD_SILENT",
+       "start": 0.0,
+       "duration": 0.7794,
+       "sound": false
+      },
+      {
+       "id": "Weapon_p250.Clipout",
+       "start": 0.1765,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_DROP_MAG",
+       "start": 0.1912,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_p250.Clipin",
+       "start": 0.3676,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_P250.AddAmmo",
+       "start": 0.4118,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_RELOAD_ADD_AMMO",
+       "start": 0.4118,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_p250.Slideback",
+       "start": 0.6618,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_p250.Sliderelease",
+       "start": 0.7353,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "hammer",
+      "magazine",
+      "slide",
+      "trigger"
+     ]
+    },
+    "reload_empty": {
+     "clip": "animation/anims/viewmodel/pistol/pistol_p250/reload_empty_p250.vnmclip",
+     "duration": 2.2667,
+     "frames": 69,
+     "events": [
+      {
+       "id": "WPN_RELOAD_SILENT",
+       "start": 0.0,
+       "duration": 0.7206,
+       "sound": false
+      },
+      {
+       "id": "Weapon_p250.Clipout",
+       "start": 0.2059,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_DROP_MAG",
+       "start": 0.2206,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_p250.Clipin",
+       "start": 0.4853,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_P250.AddAmmo",
+       "start": 0.5294,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_RELOAD_ADD_AMMO",
+       "start": 0.5294,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_p250.Sliderelease",
+       "start": 0.6765,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "hammer",
+      "magazine",
+      "muzzle",
+      "slide"
+     ]
+    }
+   },
+   "gun": {
+    "entry": "weapon_p250",
+    "mode": 0,
+    "clip": 13,
+    "reserve": 39,
+    "auto": false,
+    "cycle": 0.15,
+    "deploy": 1.0,
+    "no_attack_after_reload": 2.266667,
+    "spread": 0.002,
+    "inaccuracy_stand": 0.0091,
+    "inaccuracy_fire": 0.05245,
+    "inaccuracy_move": 0.02,
+    "recovery_stand": 0.345388,
+    "max_speed": 240.0,
+    "recoil": [
+     [
+      4.367,
+      25.099
+     ],
+     [
+      6.034,
+      24.695
+     ],
+     [
+      -5.594,
+      28.339
+     ],
+     [
+      -9.051,
+      24.644
+     ],
+     [
+      -2.112,
+      26.353
+     ],
+     [
+      8.068,
+      25.644
+     ],
+     [
+      1.578,
+      23.788
+     ],
+     [
+      5.132,
+      27.233
+     ],
+     [
+      -5.956,
+      26.496
+     ],
+     [
+      5.763,
+      28.081
+     ],
+     [
+      -0.224,
+      24.689
+     ],
+     [
+      -8.724,
+      27.475
+     ],
+     [
+      -5.797,
+      24.558
+     ],
+     [
+      -4.297,
+      25.794
+     ],
+     [
+      -3.277,
+      24.521
+     ],
+     [
+      -9.551,
+      28.609
+     ],
+     [
+      -9.668,
+      28.9
+     ],
+     [
+      9.064,
+      27.644
+     ],
+     [
+      5.45,
+      24.871
+     ],
+     [
+      -8.128,
+      27.167
+     ],
+     [
+      -9.357,
+      26.08
+     ],
+     [
+      -7.752,
+      24.598
+     ],
+     [
+      8.421,
+      23.46
+     ],
+     [
+      5.242,
+      24.332
+     ],
+     [
+      -1.012,
+      27.299
+     ],
+     [
+      3.515,
+      28.234
+     ],
+     [
+      4.889,
+      24.518
+     ],
+     [
+      -1.941,
+      26.569
+     ],
+     [
+      -2.946,
+      25.4
+     ],
+     [
+      -0.65,
+      25.069
+     ],
+     [
+      4.123,
+      26.069
+     ],
+     [
+      -3.739,
+      28.136
+     ],
+     [
+      4.745,
+      28.538
+     ],
+     [
+      9.419,
+      24.005
+     ],
+     [
+      5.39,
+      24.996
+     ],
+     [
+      -0.569,
+      24.621
+     ],
+     [
+      6.395,
+      25.351
+     ],
+     [
+      -8.451,
+      23.993
+     ],
+     [
+      -6.099,
+      23.263
+     ],
+     [
+      -8.474,
+      28.302
+     ],
+     [
+      -9.23,
+      26.487
+     ],
+     [
+      -3.422,
+      23.427
+     ],
+     [
+      2.441,
+      25.679
+     ],
+     [
+      7.65,
+      26.68
+     ],
+     [
+      4.283,
+      28.851
+     ],
+     [
+      0.603,
+      24.408
+     ],
+     [
+      3.874,
+      23.462
+     ],
+     [
+      -8.697,
+      25.126
+     ],
+     [
+      -7.374,
+      25.914
+     ],
+     [
+      -4.231,
+      27.21
+     ],
+     [
+      -9.665,
+      25.671
+     ],
+     [
+      -7.225,
+      23.318
+     ],
+     [
+      3.376,
+      24.668
+     ],
+     [
+      -4.666,
+      23.792
+     ],
+     [
+      -7.85,
+      26.603
+     ],
+     [
+      2.183,
+      28.585
+     ],
+     [
+      8.945,
+      28.974
+     ],
+     [
+      7.292,
+      26.667
+     ],
+     [
+      -6.015,
+      25.471
+     ],
+     [
+      -6.953,
+      27.88
+     ],
+     [
+      0.769,
+      25.705
+     ],
+     [
+      1.168,
+      24.887
+     ],
+     [
+      -7.951,
+      26.482
+     ],
+     [
+      -2.798,
+      25.791
+     ]
+    ],
+    "muzzle_in": [
+     21.729,
+     -2.82,
+     -1.623
+    ],
+    "tracer_every": 1,
+    "damage": 38,
+    "headshot": 4.0,
+    "range_modifier": 0.9,
+    "zoom_fov": [],
+    "silenced": false,
+    "sounds": {
+     "single": "Weapon_P250.Single",
+     "nearlyempty": "Default.nearlyempty"
+    },
+    "scope": null
+   }
+  },
+  "weapon_pist_usp_silencer": {
+   "file": "anims/weapon_pist_usp_silencer.glb",
+   "clips": {
+    "draw": {
+     "clip": "animation/anims/viewmodel/pistol/_default_pistol/draw_pistol.vnmclip",
+     "duration": 1.0,
+     "frames": 31,
+     "events": [
+      {
+       "id": "Weapon_USP.Draw",
+       "start": 0.1,
+       "duration": 0.7333,
+       "sound": true
+      },
+      {
+       "id": "Weapon_USP.Slideback_Q",
+       "start": 0.3,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_USP.Sliderelease_Q",
+       "start": 0.4667,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "hammer",
+      "slide",
+      "trigger"
+     ]
+    },
+    "idle": {
+     "clip": "animation/anims/viewmodel/pistol/_default_pistol/idle_pistol.vnmclip",
+     "duration": 0.0,
+     "frames": 1,
+     "events": [],
+     "weapon_parts_moving": [
+      "hammer",
+      "slide",
+      "trigger"
+     ]
+    },
+    "inspect": {
+     "clip": "animation/anims/viewmodel/pistol/_default_pistol/lookat01_pistol.vnmclip",
+     "duration": 6.4333,
+     "frames": 194,
+     "events": [
+      {
+       "id": "WPN_INSPECT_INTRO",
+       "start": 0.0,
+       "duration": 0.2383,
+       "sound": false
+      },
+      {
+       "id": "Weapon.WeaponMove1",
+       "start": 0.0104,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_LOOP",
+       "start": 0.2383,
+       "duration": 0.2332,
+       "sound": false
+      },
+      {
+       "id": "WPN_INSPECT_OUTRO",
+       "start": 0.4715,
+       "duration": 0.5285,
+       "sound": false
+      },
+      {
+       "id": "Weapon.WeaponMove3",
+       "start": 0.9067,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "hammer",
+      "silencer",
+      "slide",
+      "trigger"
+     ]
+    },
+    "shoot": {
+     "clip": "animation/anims/viewmodel/pistol/_default_pistol/shoot1_pistol.vnmclip",
+     "duration": 0.4,
+     "frames": 13,
+     "events": [
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.5,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "slide",
+      "trigger"
+     ]
+    },
+    "shoot_empty": {
+     "clip": "animation/anims/viewmodel/pistol/_default_pistol/shoot_empty_pistol.vnmclip",
+     "duration": 0.4,
+     "frames": 13,
+     "events": [
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.5,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "hammer",
+      "slide",
+      "trigger"
+     ]
+    },
+    "idle_empty": {
+     "clip": "animation/anims/viewmodel/pistol/_default_pistol/idle_slide_back_pistol.vnmclip",
+     "duration": 0.0,
+     "frames": 1,
+     "events": [],
+     "weapon_parts_moving": []
+    },
+    "reload": {
+     "clip": "animation/anims/viewmodel/pistol/_default_pistol/reload_pistol.vnmclip",
+     "duration": 2.1667,
+     "frames": 66,
+     "events": [
+      {
+       "id": "WPN_RELOAD_SILENT",
+       "start": 0.0,
+       "duration": 0.7538,
+       "sound": false
+      },
+      {
+       "id": "WPN_DROP_MAG",
+       "start": 0.1846,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_USP.Clipout",
+       "start": 0.2,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_USP.Clipin",
+       "start": 0.3231,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_USP.AddAmmo",
+       "start": 0.4154,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_RELOAD_ADD_AMMO",
+       "start": 0.4154,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_USP.Slideback",
+       "start": 0.6308,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_USP.Sliderelease",
+       "start": 0.7077,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "clip",
+      "hammer",
+      "slide",
+      "trigger"
+     ]
+    },
+    "reload_empty": {
+     "clip": "animation/anims/viewmodel/pistol/_default_pistol/reload_empty_pistol.vnmclip",
+     "duration": 2.1667,
+     "frames": 66,
+     "events": [
+      {
+       "id": "WPN_RELOAD_SILENT",
+       "start": 0.0,
+       "duration": 0.7077,
+       "sound": false
+      },
+      {
+       "id": "Weapon_USP.Clipout",
+       "start": 0.1077,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_DROP_MAG",
+       "start": 0.1385,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_USP.Clipin",
+       "start": 0.3692,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_USP.AddAmmo",
+       "start": 0.4615,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_RELOAD_ADD_AMMO",
+       "start": 0.4615,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_USP.Sliderelease",
+       "start": 0.6615,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "clip",
+      "hammer",
+      "slide",
+      "trigger"
+     ]
+    }
+   },
+   "gun": {
+    "entry": "weapon_usp_silencer",
+    "mode": 1,
+    "clip": 12,
+    "reserve": 24,
+    "auto": false,
+    "cycle": 0.17,
+    "deploy": 1.0,
+    "no_attack_after_reload": 2.2,
+    "spread": 0.0015,
+    "inaccuracy_stand": 0.0049,
+    "inaccuracy_fire": 0.052,
+    "inaccuracy_move": 0.01387,
+    "recovery_stand": 0.349532,
+    "max_speed": 240.0,
+    "recoil": [
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ],
+     [
+      0.0,
+      23.0
+     ]
+    ],
+    "muzzle_in": [
+     30.599,
+     -2.8,
+     -2.361
+    ],
+    "tracer_every": 0,
+    "damage": 35,
+    "headshot": 4.0,
+    "range_modifier": 0.91,
+    "zoom_fov": [],
+    "silenced": true,
+    "sounds": {
+     "single": "Weapon_USP.Single",
+     "special1": "Weapon_USP.SilencedShot",
+     "nearlyempty": "Default.nearlyempty"
+    },
+    "scope": null
+   }
+  },
+  "weapon_rif_ak47": {
+   "file": "anims/weapon_rif_ak47.glb",
+   "clips": {
+    "draw": {
+     "clip": "animation/anims/viewmodel/rifle/rifle_ak/draw_ak.vnmclip",
+     "duration": 1.0,
+     "frames": 31,
+     "events": [
+      {
+       "id": "Weapon_AK47.WeaponMove1",
+       "start": 0.0,
+       "duration": 0.8,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_USE_DRAW_VERSION",
+       "start": 0.0,
+       "duration": 0.1667,
+       "sound": false
+      },
+      {
+       "id": "WPN_INSPECT_USE_FIXUP_VERSION",
+       "start": 0.1667,
+       "duration": 0.5,
+       "sound": false
+      },
+      {
+       "id": "Weapon_AK47.Draw",
+       "start": 0.1667,
+       "duration": 0.4667,
+       "sound": true
+      },
+      {
+       "id": "Weapon_AK47.BoltPull_Q",
+       "start": 0.2667,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_AK47.Inspect_F245",
+       "start": 0.3,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "bolt",
+      "clip",
+      "trigger"
+     ]
+    },
+    "idle": {
+     "clip": "animation/anims/viewmodel/rifle/rifle_ak/idle_ak.vnmclip",
+     "duration": 0.0,
+     "frames": 1,
+     "events": [],
+     "weapon_parts_moving": []
+    },
+    "inspect": {
+     "clip": "animation/anims/viewmodel/rifle/rifle_ak/lookat01_ak.vnmclip",
+     "duration": 4.5667,
+     "frames": 138,
+     "events": [
+      {
+       "id": "WPN_INSPECT_INTRO",
+       "start": 0.0,
+       "duration": 0.2044,
+       "sound": false
+      },
+      {
+       "id": "Weapon_AK47.WeaponMove3",
+       "start": 0.0146,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_LOOP",
+       "start": 0.2044,
+       "duration": 0.2701,
+       "sound": false
+      },
+      {
+       "id": "WPN_INSPECT_OUTRO",
+       "start": 0.4745,
+       "duration": 0.5255,
+       "sound": false
+      },
+      {
+       "id": "Weapon_AK47.WeaponMove1",
+       "start": 0.4818,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_AK47.WeaponMove2",
+       "start": 0.7664,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "bolt",
+      "clip",
+      "trigger"
+     ]
+    },
+    "inspect2": {
+     "clip": "animation/anims/viewmodel/rifle/rifle_ak/lookat03_ak.vnmclip",
+     "duration": 7.6,
+     "frames": 229,
+     "events": [
+      {
+       "id": "WPN_INSPECT_INTRO",
+       "start": 0.0,
+       "duration": 0.1491,
+       "sound": false
+      },
+      {
+       "id": "Weapon_AK47.WeaponMove3",
+       "start": 0.0263,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_AK47.WeaponMove1",
+       "start": 0.1106,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_LOOP",
+       "start": 0.1491,
+       "duration": 0.5,
+       "sound": false
+      },
+      {
+       "id": "Weapon_AK47.WeaponMove2",
+       "start": 0.4386,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_OUTRO",
+       "start": 0.6491,
+       "duration": 0.3509,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "bolt",
+      "clip",
+      "trigger"
+     ]
+    },
+    "shoot": {
+     "clip": "animation/anims/viewmodel/rifle/rifle_ak/shoot1_ak.vnmclip",
+     "duration": 0.7667,
+     "frames": 24,
+     "events": [
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.5217,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "bolt",
+      "trigger"
+     ]
+    },
+    "reload": {
+     "clip": "animation/anims/viewmodel/rifle/rifle_ak/reload_ak.vnmclip",
+     "duration": 2.4333,
+     "frames": 74,
+     "events": [
+      {
+       "id": "Weapon_AK47.Clipout",
+       "start": 0.1507,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_DROP_MAG",
+       "start": 0.2466,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_AK47.Inspect_F100",
+       "start": 0.2877,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_AK47.Clipin",
+       "start": 0.4384,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_AK47.AddAmmo",
+       "start": 0.4521,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_RELOAD_ADD_AMMO",
+       "start": 0.4521,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_AK47.BoltPull",
+       "start": 0.6575,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_AK47.Inspect_F245",
+       "start": 0.6849,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "bolt",
+      "clip",
+      "trigger"
+     ]
+    }
+   },
+   "gun": {
+    "entry": "weapon_ak47",
+    "mode": 0,
+    "clip": 30,
+    "reserve": 90,
+    "auto": true,
+    "cycle": 0.1,
+    "deploy": 1.0,
+    "no_attack_after_reload": 2.466667,
+    "spread": 0.0006,
+    "inaccuracy_stand": 0.00641,
+    "inaccuracy_fire": 0.0078,
+    "inaccuracy_move": 0.17506,
+    "recovery_stand": 0.368,
+    "max_speed": 215.0,
+    "recoil": [
+     [
+      27.33,
+      30.0
+     ],
+     [
+      -17.83,
+      30.0
+     ],
+     [
+      5.801,
+      30.0
+     ],
+     [
+      1.635,
+      30.0
+     ],
+     [
+      -15.539,
+      30.0
+     ],
+     [
+      -9.262,
+      30.0
+     ],
+     [
+      -18.048,
+      30.0
+     ],
+     [
+      12.503,
+      30.0
+     ],
+     [
+      44.0,
+      30.0
+     ],
+     [
+      22.432,
+      30.0
+     ],
+     [
+      -4.98,
+      30.0
+     ],
+     [
+      30.741,
+      30.0
+     ],
+     [
+      41.133,
+      30.0
+     ],
+     [
+      19.173,
+      30.0
+     ],
+     [
+      -19.623,
+      30.0
+     ],
+     [
+      -2.317,
+      30.0
+     ],
+     [
+      -5.197,
+      30.0
+     ],
+     [
+      -22.864,
+      30.0
+     ],
+     [
+      -38.496,
+      30.0
+     ],
+     [
+      15.166,
+      30.0
+     ],
+     [
+      -18.683,
+      30.0
+     ],
+     [
+      -0.457,
+      30.0
+     ],
+     [
+      -0.715,
+      30.0
+     ],
+     [
+      -28.727,
+      30.0
+     ],
+     [
+      -12.477,
+      30.0
+     ],
+     [
+      10.523,
+      30.0
+     ],
+     [
+      25.285,
+      30.0
+     ],
+     [
+      46.527,
+      30.0
+     ],
+     [
+      21.566,
+      30.0
+     ],
+     [
+      -7.512,
+      30.0
+     ],
+     [
+      -28.224,
+      30.0
+     ],
+     [
+      -51.012,
+      30.0
+     ],
+     [
+      -52.516,
+      30.0
+     ],
+     [
+      -21.666,
+      30.0
+     ],
+     [
+      -32.161,
+      30.0
+     ],
+     [
+      -38.934,
+      30.0
+     ],
+     [
+      -34.495,
+      30.0
+     ],
+     [
+      15.725,
+      30.0
+     ],
+     [
+      -27.7,
+      30.0
+     ],
+     [
+      8.1,
+      30.0
+     ],
+     [
+      25.304,
+      30.0
+     ],
+     [
+      21.255,
+      30.0
+     ],
+     [
+      27.863,
+      30.0
+     ],
+     [
+      -22.462,
+      30.0
+     ],
+     [
+      -26.213,
+      30.0
+     ],
+     [
+      1.463,
+      30.0
+     ],
+     [
+      -33.395,
+      30.0
+     ],
+     [
+      -24.962,
+      30.0
+     ],
+     [
+      -31.78,
+      30.0
+     ],
+     [
+      -1.696,
+      30.0
+     ],
+     [
+      29.576,
+      30.0
+     ],
+     [
+      -18.624,
+      30.0
+     ],
+     [
+      4.625,
+      30.0
+     ],
+     [
+      36.163,
+      30.0
+     ],
+     [
+      7.603,
+      30.0
+     ],
+     [
+      -13.747,
+      30.0
+     ],
+     [
+      -27.424,
+      30.0
+     ],
+     [
+      -46.516,
+      30.0
+     ],
+     [
+      15.443,
+      30.0
+     ],
+     [
+      5.318,
+      30.0
+     ],
+     [
+      36.176,
+      30.0
+     ],
+     [
+      2.744,
+      30.0
+     ],
+     [
+      -19.587,
+      30.0
+     ],
+     [
+      20.377,
+      30.0
+     ]
+    ],
+    "muzzle_in": [
+     37.422,
+     -4.938,
+     -3.394
+    ],
+    "tracer_every": 3,
+    "damage": 36,
+    "headshot": 4.0,
+    "range_modifier": 0.98,
+    "zoom_fov": [],
+    "silenced": false,
+    "sounds": {
+     "single": "Weapon_AK47.Single",
+     "nearlyempty": "Default.nearlyempty"
+    },
+    "scope": null
+   }
+  },
+  "weapon_rif_m4a1_silencer": {
+   "file": "anims/weapon_rif_m4a1_silencer.glb",
+   "clips": {
+    "draw": {
+     "clip": "animation/anims/viewmodel/rifle/_default_rifle/draw_rifle.vnmclip",
+     "duration": 1.1333,
+     "frames": 35,
+     "events": [
+      {
+       "id": "Weapon_M4A1.Draw",
+       "start": 0.0,
+       "duration": 0.9118,
+       "sound": true
+      },
+      {
+       "id": "Weapon_M4A1S.BoltForward_Q",
+       "start": 0.3824,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_M4A1S.BoltBack_Q",
+       "start": 0.5588,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "bolt"
+     ]
+    },
+    "idle": {
+     "clip": "animation/anims/viewmodel/rifle/_default_rifle/idle_rifle.vnmclip",
+     "duration": 0.0,
+     "frames": 1,
+     "events": [],
+     "weapon_parts_moving": []
+    },
+    "inspect": {
+     "clip": "animation/anims/viewmodel/rifle/_default_rifle/lookat01_rifle.vnmclip",
+     "duration": 5.3,
+     "frames": 160,
+     "events": [
+      {
+       "id": "WPN_INSPECT_INTRO",
+       "start": 0.0,
+       "duration": 0.2893,
+       "sound": false
+      },
+      {
+       "id": "Weapon_M4A1.WeaponMove1",
+       "start": 0.0126,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_LOOP",
+       "start": 0.2893,
+       "duration": 0.283,
+       "sound": false
+      },
+      {
+       "id": "WPN_INSPECT_OUTRO",
+       "start": 0.5723,
+       "duration": 0.4277,
+       "sound": false
+      },
+      {
+       "id": "Weapon_M4A1.WeaponMove2",
+       "start": 0.5786,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_M4A1.WeaponMove3",
+       "start": 0.7296,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": []
+    },
+    "shoot": {
+     "clip": "animation/anims/viewmodel/rifle/_default_rifle/shoot1_rifle.vnmclip",
+     "duration": 0.4,
+     "frames": 13,
+     "events": [
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.5833,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": []
+    },
+    "reload": {
+     "clip": "animation/anims/viewmodel/rifle/_default_rifle/reload_rifle.vnmclip",
+     "duration": 3.0667,
+     "frames": 93,
+     "events": [
+      {
+       "id": "WPN_RELOAD_SILENT",
+       "start": 0.0,
+       "duration": 0.6739,
+       "sound": false
+      },
+      {
+       "id": "Weapon_M4A1.Clipout",
+       "start": 0.1413,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_DROP_MAG",
+       "start": 0.2065,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_M4A1.Clipin",
+       "start": 0.3804,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_M4A1.AddAmmo",
+       "start": 0.4457,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_RELOAD_ADD_AMMO",
+       "start": 0.4457,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_M4A1.ClipHit",
+       "start": 0.6522,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "clip"
+     ]
+    }
+   },
+   "gun": {
+    "entry": "weapon_m4a1_silencer",
+    "mode": 1,
+    "clip": 20,
+    "reserve": 60,
+    "auto": true,
+    "cycle": 0.1,
+    "deploy": 1.133333,
+    "no_attack_after_reload": 3.066667,
+    "spread": 0.0005,
+    "inaccuracy_stand": 0.0049,
+    "inaccuracy_fire": 0.007,
+    "inaccuracy_move": 0.122,
+    "recovery_stand": 0.338941,
+    "max_speed": 225.0,
+    "recoil": [
+     [
+      -11.444,
+      21.0
+     ],
+     [
+      -0.523,
+      21.0
+     ],
+     [
+      18.483,
+      21.0
+     ],
+     [
+      -12.744,
+      21.0
+     ],
+     [
+      14.272,
+      21.0
+     ],
+     [
+      6.979,
+      21.0
+     ],
+     [
+      -22.324,
+      21.0
+     ],
+     [
+      -12.261,
+      21.0
+     ],
+     [
+      -37.053,
+      21.0
+     ],
+     [
+      2.661,
+      21.0
+     ],
+     [
+      12.005,
+      21.0
+     ],
+     [
+      33.218,
+      21.0
+     ],
+     [
+      32.468,
+      21.0
+     ],
+     [
+      42.604,
+      21.0
+     ],
+     [
+      13.542,
+      21.0
+     ],
+     [
+      8.567,
+      21.0
+     ],
+     [
+      36.249,
+      21.0
+     ],
+     [
+      38.316,
+      21.0
+     ],
+     [
+      17.95,
+      21.0
+     ],
+     [
+      -20.359,
+      21.0
+     ],
+     [
+      7.612,
+      21.0
+     ],
+     [
+      -22.917,
+      21.0
+     ],
+     [
+      -2.648,
+      21.0
+     ],
+     [
+      -14.01,
+      21.0
+     ],
+     [
+      14.034,
+      21.0
+     ],
+     [
+      -11.596,
+      21.0
+     ],
+     [
+      -5.765,
+      21.0
+     ],
+     [
+      -6.996,
+      21.0
+     ],
+     [
+      -9.78,
+      21.0
+     ],
+     [
+      24.278,
+      21.0
+     ],
+     [
+      36.798,
+      21.0
+     ],
+     [
+      28.821,
+      21.0
+     ],
+     [
+      -7.315,
+      21.0
+     ],
+     [
+      -27.653,
+      21.0
+     ],
+     [
+      -15.156,
+      21.0
+     ],
+     [
+      16.785,
+      21.0
+     ],
+     [
+      39.898,
+      21.0
+     ],
+     [
+      43.064,
+      21.0
+     ],
+     [
+      9.344,
+      21.0
+     ],
+     [
+      28.376,
+      21.0
+     ],
+     [
+      22.208,
+      21.0
+     ],
+     [
+      16.14,
+      21.0
+     ],
+     [
+      8.866,
+      21.0
+     ],
+     [
+      -0.41,
+      21.0
+     ],
+     [
+      -32.601,
+      21.0
+     ],
+     [
+      16.756,
+      21.0
+     ],
+     [
+      -10.146,
+      21.0
+     ],
+     [
+      12.534,
+      21.0
+     ],
+     [
+      36.245,
+      21.0
+     ],
+     [
+      22.828,
+      21.0
+     ],
+     [
+      19.101,
+      21.0
+     ],
+     [
+      19.694,
+      21.0
+     ],
+     [
+      21.626,
+      21.0
+     ],
+     [
+      -18.954,
+      21.0
+     ],
+     [
+      -14.156,
+      21.0
+     ],
+     [
+      0.366,
+      21.0
+     ],
+     [
+      -26.974,
+      21.0
+     ],
+     [
+      -31.137,
+      21.0
+     ],
+     [
+      2.203,
+      21.0
+     ],
+     [
+      33.869,
+      21.0
+     ],
+     [
+      -11.607,
+      21.0
+     ],
+     [
+      -40.444,
+      21.0
+     ],
+     [
+      -42.138,
+      21.0
+     ],
+     [
+      -20.17,
+      21.0
+     ]
+    ],
+    "muzzle_in": [
+     46.463,
+     -4.83,
+     -3.374
+    ],
+    "tracer_every": 0,
+    "damage": 38,
+    "headshot": 3.475,
+    "range_modifier": 0.94,
+    "zoom_fov": [],
+    "silenced": true,
+    "sounds": {
+     "single": "Weapon_M4A1.Single",
+     "special1": "Weapon_M4A1.Silenced",
+     "nearlyempty": "Default.nearlyempty"
+    },
+    "scope": null
+   }
+  },
+  "weapon_rif_m4a4": {
+   "file": "anims/weapon_rif_m4a4.glb",
+   "clips": {
+    "draw": {
+     "clip": "animation/anims/viewmodel/rifle/rifle_m4a4/draw_m4a4.vnmclip",
+     "duration": 1.1333,
+     "frames": 35,
+     "events": [
+      {
+       "id": "Weapon_M4A1.Draw",
+       "start": 0.0,
+       "duration": 0.8824,
+       "sound": true
+      },
+      {
+       "id": "Weapon_M4A1.BoltForward_Q",
+       "start": 0.2353,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_M4A1.BoltBack_Q",
+       "start": 0.4706,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "bolt"
+     ]
+    },
+    "idle": {
+     "clip": "animation/anims/viewmodel/rifle/rifle_m4a4/idle_m4a4.vnmclip",
+     "duration": 0.0,
+     "frames": 1,
+     "events": [],
+     "weapon_parts_moving": []
+    },
+    "inspect": {
+     "clip": "animation/anims/viewmodel/rifle/rifle_m4a4/lookat01_m4a4.vnmclip",
+     "duration": 5.3,
+     "frames": 160,
+     "events": [
+      {
+       "id": "WPN_INSPECT_INTRO",
+       "start": 0.0,
+       "duration": 0.2893,
+       "sound": false
+      },
+      {
+       "id": "Weapon_M4A1.WeaponMove1",
+       "start": 0.0126,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_LOOP",
+       "start": 0.2893,
+       "duration": 0.283,
+       "sound": false
+      },
+      {
+       "id": "WPN_INSPECT_OUTRO",
+       "start": 0.5723,
+       "duration": 0.4277,
+       "sound": false
+      },
+      {
+       "id": "Weapon_M4A1.WeaponMove2",
+       "start": 0.5786,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_M4A1.WeaponMove3",
+       "start": 0.7296,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": []
+    },
+    "shoot": {
+     "clip": "animation/anims/viewmodel/rifle/rifle_m4a4/shoot1_m4a4.vnmclip",
+     "duration": 0.4,
+     "frames": 13,
+     "events": [
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.4167,
+       "sound": false
+      }
+     ],
+     "weapon_parts_moving": [
+      "trigger"
+     ]
+    },
+    "reload": {
+     "clip": "animation/anims/viewmodel/rifle/rifle_m4a4/reload_m4a4.vnmclip",
+     "duration": 3.0667,
+     "frames": 93,
+     "events": [
+      {
+       "id": "WPN_RELOAD_SILENT",
+       "start": 0.0,
+       "duration": 0.6739,
+       "sound": false
+      },
+      {
+       "id": "Weapon_M4A1.Clipout",
+       "start": 0.1413,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_DROP_MAG",
+       "start": 0.2065,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_M4A1.Clipin",
+       "start": 0.3804,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_M4A1.AddAmmo",
+       "start": 0.4457,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_RELOAD_ADD_AMMO",
+       "start": 0.4457,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_M4A1.ClipHit",
+       "start": 0.6522,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "clip"
+     ]
+    }
+   },
+   "gun": {
+    "entry": "weapon_m4a1",
+    "mode": 0,
+    "clip": 30,
+    "reserve": 120,
+    "auto": true,
+    "cycle": 0.09,
+    "deploy": 1.133333,
+    "no_attack_after_reload": 3.066667,
+    "spread": 0.0006,
+    "inaccuracy_stand": 0.0049,
+    "inaccuracy_fire": 0.007,
+    "inaccuracy_move": 0.13788,
+    "recovery_stand": 0.338941,
+    "max_speed": 225.0,
+    "recoil": [
+     [
+      -12.324,
+      23.0
+     ],
+     [
+      -0.563,
+      23.0
+     ],
+     [
+      19.905,
+      23.0
+     ],
+     [
+      -13.725,
+      23.0
+     ],
+     [
+      15.37,
+      23.0
+     ],
+     [
+      7.516,
+      23.0
+     ],
+     [
+      -24.041,
+      23.0
+     ],
+     [
+      -13.204,
+      23.0
+     ],
+     [
+      -39.904,
+      23.0
+     ],
+     [
+      2.866,
+      23.0
+     ],
+     [
+      12.929,
+      23.0
+     ],
+     [
+      35.773,
+      23.0
+     ],
+     [
+      34.965,
+      23.0
+     ],
+     [
+      45.881,
+      23.0
+     ],
+     [
+      14.584,
+      23.0
+     ],
+     [
+      9.226,
+      23.0
+     ],
+     [
+      39.038,
+      23.0
+     ],
+     [
+      41.263,
+      23.0
+     ],
+     [
+      19.33,
+      23.0
+     ],
+     [
+      -21.925,
+      23.0
+     ],
+     [
+      8.197,
+      23.0
+     ],
+     [
+      -24.68,
+      23.0
+     ],
+     [
+      -2.852,
+      23.0
+     ],
+     [
+      -15.088,
+      23.0
+     ],
+     [
+      15.113,
+      23.0
+     ],
+     [
+      -12.488,
+      23.0
+     ],
+     [
+      -6.209,
+      23.0
+     ],
+     [
+      -7.534,
+      23.0
+     ],
+     [
+      -10.532,
+      23.0
+     ],
+     [
+      26.146,
+      23.0
+     ],
+     [
+      39.629,
+      23.0
+     ],
+     [
+      31.038,
+      23.0
+     ],
+     [
+      -7.878,
+      23.0
+     ],
+     [
+      -29.78,
+      23.0
+     ],
+     [
+      -16.322,
+      23.0
+     ],
+     [
+      18.076,
+      23.0
+     ],
+     [
+      42.967,
+      23.0
+     ],
+     [
+      46.377,
+      23.0
+     ],
+     [
+      10.062,
+      23.0
+     ],
+     [
+      30.559,
+      23.0
+     ],
+     [
+      23.916,
+      23.0
+     ],
+     [
+      17.381,
+      23.0
+     ],
+     [
+      9.548,
+      23.0
+     ],
+     [
+      -0.441,
+      23.0
+     ],
+     [
+      -35.109,
+      23.0
+     ],
+     [
+      18.045,
+      23.0
+     ],
+     [
+      -10.926,
+      23.0
+     ],
+     [
+      13.498,
+      23.0
+     ],
+     [
+      39.033,
+      23.0
+     ],
+     [
+      24.584,
+      23.0
+     ],
+     [
+      20.57,
+      23.0
+     ],
+     [
+      21.208,
+      23.0
+     ],
+     [
+      23.29,
+      23.0
+     ],
+     [
+      -20.412,
+      23.0
+     ],
+     [
+      -15.245,
+      23.0
+     ],
+     [
+      0.394,
+      23.0
+     ],
+     [
+      -29.049,
+      23.0
+     ],
+     [
+      -33.532,
+      23.0
+     ],
+     [
+      2.372,
+      23.0
+     ],
+     [
+      36.474,
+      23.0
+     ],
+     [
+      -12.5,
+      23.0
+     ],
+     [
+      -43.555,
+      23.0
+     ],
+     [
+      -45.379,
+      23.0
+     ],
+     [
+      -21.721,
+      23.0
+     ]
+    ],
+    "muzzle_in": [
+     35.62,
+     -4.975,
+     -3.707
+    ],
+    "tracer_every": 3,
+    "damage": 33,
+    "headshot": 4.0,
+    "range_modifier": 0.97,
+    "zoom_fov": [],
+    "silenced": false,
+    "sounds": {
+     "single": "Weapon_M4A4.Single",
+     "special1": "Weapon_M4A1.Silenced",
+     "nearlyempty": "Default.nearlyempty"
+    },
+    "scope": null
+   }
+  },
+  "weapon_snip_awp": {
+   "file": "anims/weapon_snip_awp.glb",
+   "clips": {
+    "draw": {
+     "clip": "animation/anims/viewmodel/rifle/rifle_awp/draw_awp.vnmclip",
+     "duration": 1.2667,
+     "frames": 39,
+     "events": [
+      {
+       "id": "Weapon_AWP.Draw",
+       "start": 0.0,
+       "duration": 0.3684,
+       "sound": true
+      },
+      {
+       "id": "Weapon_AWP.BoltBack_Q",
+       "start": 0.2632,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_AWP.BoltForward_Q",
+       "start": 0.5263,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "bolt_action",
+      "clip",
+      "rail",
+      "trigger"
+     ]
+    },
+    "idle": {
+     "clip": "animation/anims/viewmodel/rifle/rifle_awp/idle_awp.vnmclip",
+     "duration": 0.0,
+     "frames": 1,
+     "events": [],
+     "weapon_parts_moving": []
+    },
+    "inspect": {
+     "clip": "animation/anims/viewmodel/rifle/rifle_awp/lookat01_awp.vnmclip",
+     "duration": 5.0,
+     "frames": 151,
+     "events": [
+      {
+       "id": "WPN_INSPECT_INTRO",
+       "start": 0.0,
+       "duration": 0.2067,
+       "sound": false
+      },
+      {
+       "id": "Weapon_AWP.WeaponMove1",
+       "start": 0.0333,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_INSPECT_LOOP",
+       "start": 0.2067,
+       "duration": 0.3733,
+       "sound": false
+      },
+      {
+       "id": "WPN_INSPECT_OUTRO",
+       "start": 0.58,
+       "duration": 0.42,
+       "sound": false
+      },
+      {
+       "id": "Weapon_AWP.WeaponMove2",
+       "start": 0.6067,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_AWP.WeaponMove3",
+       "start": 0.7733,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "clip",
+      "trigger"
+     ]
+    },
+    "shoot": {
+     "clip": "animation/anims/viewmodel/rifle/rifle_awp/shoot1_awp.vnmclip",
+     "duration": 1.6,
+     "frames": 49,
+     "events": [
+      {
+       "id": "WPN_BLOCK_INSPECT",
+       "start": 0.0,
+       "duration": 0.875,
+       "sound": false
+      },
+      {
+       "id": "Weapon_AWP.BoltBack_Q",
+       "start": 0.375,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_AWP.BoltForward_Q",
+       "start": 0.5417,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "bolt_action",
+      "clip",
+      "rail",
+      "trigger"
+     ]
+    },
+    "reload": {
+     "clip": "animation/anims/viewmodel/rifle/rifle_awp/reload_awp.vnmclip",
+     "duration": 3.6667,
+     "frames": 111,
+     "events": [
+      {
+       "id": "Weapon_AWP.Clipout",
+       "start": 0.1,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_DROP_MAG",
+       "start": 0.1818,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_AWP.Clipin",
+       "start": 0.4182,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_AWP.Cliphit",
+       "start": 0.5455,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "WPN_RELOAD_ADD_AMMO",
+       "start": 0.5455,
+       "duration": 0.0,
+       "sound": false
+      },
+      {
+       "id": "Weapon_AWP.BoltBack",
+       "start": 0.7182,
+       "duration": 0.0,
+       "sound": true
+      },
+      {
+       "id": "Weapon_AWP.BoltForward",
+       "start": 0.8091,
+       "duration": 0.0,
+       "sound": true
+      }
+     ],
+     "weapon_parts_moving": [
+      "bolt_action",
+      "clip",
+      "rail",
+      "trigger"
+     ]
+    }
+   },
+   "gun": {
+    "entry": "weapon_awp",
+    "mode": 0,
+    "clip": 5,
+    "reserve": 10,
+    "auto": false,
+    "cycle": 1.455,
+    "deploy": 1.266667,
+    "no_attack_after_reload": 3.666667,
+    "spread": 0.0002,
+    "inaccuracy_stand": 0.0808,
+    "inaccuracy_fire": 0.05385,
+    "inaccuracy_move": 0.17648,
+    "recovery_stand": 0.34539,
+    "max_speed": 200.0,
+    "recoil": [
+     [
+      4.285,
+      83.775
+     ],
+     [
+      2.503,
+      86.044
+     ],
+     [
+      10.832,
+      69.785
+     ],
+     [
+      -17.709,
+      70.598
+     ],
+     [
+      -19.521,
+      89.656
+     ],
+     [
+      14.377,
+      91.738
+     ],
+     [
+      -10.365,
+      84.07
+     ],
+     [
+      16.306,
+      73.756
+     ],
+     [
+      3.895,
+      76.685
+     ],
+     [
+      -3.68,
+      64.682
+     ],
+     [
+      -8.031,
+      72.462
+     ],
+     [
+      15.257,
+      81.858
+     ],
+     [
+      -17.873,
+      65.33
+     ],
+     [
+      -8.68,
+      79.316
+     ],
+     [
+      12.169,
+      68.781
+     ],
+     [
+      4.18,
+      74.723
+     ],
+     [
+      -17.29,
+      68.774
+     ],
+     [
+      15.964,
+      64.052
+     ],
+     [
+      -7.824,
+      63.146
+     ],
+     [
+      -8.529,
+      73.33
+     ],
+     [
+      8.851,
+      84.374
+     ],
+     [
+      19.457,
+      66.458
+     ],
+     [
+      12.725,
+      85.37
+     ],
+     [
+      19.922,
+      83.002
+     ],
+     [
+      -19.833,
+      69.254
+     ],
+     [
+      18.573,
+      89.255
+     ],
+     [
+      -10.885,
+      66.541
+     ],
+     [
+      12.53,
+      66.84
+     ],
+     [
+      10.413,
+      63.364
+     ],
+     [
+      -14.157,
+      78.935
+     ],
+     [
+      11.585,
+      74.136
+     ],
+     [
+      -17.963,
+      63.534
+     ],
+     [
+      -11.967,
+      65.97
+     ],
+     [
+      2.628,
+      85.768
+     ],
+     [
+      -12.255,
+      86.542
+     ],
+     [
+      -1.552,
+      85.597
+     ],
+     [
+      -10.226,
+      75.665
+     ],
+     [
+      -7.45,
+      86.912
+     ],
+     [
+      19.165,
+      68.676
+     ],
+     [
+      10.74,
+      86.813
+     ],
+     [
+      -18.126,
+      67.308
+     ],
+     [
+      -15.283,
+      88.904
+     ],
+     [
+      8.009,
+      64.727
+     ],
+     [
+      12.456,
+      64.811
+     ],
+     [
+      -4.843,
+      64.061
+     ],
+     [
+      6.929,
+      86.319
+     ],
+     [
+      10.071,
+      74.212
+     ],
+     [
+      2.829,
+      78.612
+     ],
+     [
+      17.852,
+      90.585
+     ],
+     [
+      7.181,
+      76.218
+     ],
+     [
+      19.995,
+      71.436
+     ],
+     [
+      -15.565,
+      81.071
+     ],
+     [
+      19.312,
+      68.286
+     ],
+     [
+      17.429,
+      76.955
+     ],
+     [
+      -2.188,
+      84.548
+     ],
+     [
+      -9.587,
+      68.975
+     ],
+     [
+      -7.565,
+      88.159
+     ],
+     [
+      0.976,
+      91.147
+     ],
+     [
+      15.413,
+      67.876
+     ],
+     [
+      -1.557,
+      90.29
+     ],
+     [
+      -16.616,
+      82.545
+     ],
+     [
+      -10.694,
+      63.71
+     ],
+     [
+      -9.924,
+      77.702
+     ],
+     [
+      -8.63,
+      63.136
+     ]
+    ],
+    "muzzle_in": [
+     54.128,
+     -5.022,
+     -3.124
+    ],
+    "tracer_every": 1,
+    "damage": 115,
+    "headshot": 4.0,
+    "range_modifier": 0.99,
+    "zoom_fov": [
+     40,
+     10
+    ],
+    "silenced": false,
+    "sounds": {
+     "single": "Weapon_AWP.Single",
+     "nearlyempty": "Default.nearlyempty",
+     "zoom_in": "Weapon_AWP.Zoom",
+     "zoom_out": "Weapon_AWP.ZoomOut"
+    },
+    "scope": {
+     "fov": [
+      40,
+      10
+     ],
+     "time": [
+      0.05,
+      0.05,
+      0.05
+     ],
+     "unzoom_after_shot": true,
+     "hide_weapon": true,
+     "spread": 0.0002,
+     "inaccuracy_stand": 0.002,
+     "inaccuracy_fire": 0.05385,
+     "inaccuracy_move": 0.17648,
+     "max_speed": 100.0,
+     "recoil": [
+      [
+       4.285,
+       25.77
+      ],
+      [
+       2.503,
+       26.072
+      ],
+      [
+       10.832,
+       23.905
+      ],
+      [
+       -17.709,
+       24.013
+      ],
+      [
+       -19.521,
+       26.554
+      ],
+      [
+       14.377,
+       26.832
+      ],
+      [
+       -10.365,
+       25.809
+      ],
+      [
+       16.306,
+       24.434
+      ],
+      [
+       3.895,
+       24.825
+      ],
+      [
+       -3.68,
+       23.224
+      ],
+      [
+       -8.031,
+       24.262
+      ],
+      [
+       15.257,
+       25.514
+      ],
+      [
+       -17.873,
+       23.311
+      ],
+      [
+       -8.68,
+       25.175
+      ],
+      [
+       12.169,
+       23.771
+      ],
+      [
+       4.18,
+       24.563
+      ],
+      [
+       -17.29,
+       23.77
+      ],
+      [
+       15.964,
+       23.14
+      ],
+      [
+       -7.824,
+       23.019
+      ],
+      [
+       -8.529,
+       24.377
+      ],
+      [
+       8.851,
+       25.85
+      ],
+      [
+       19.457,
+       23.461
+      ],
+      [
+       12.725,
+       25.983
+      ],
+      [
+       19.922,
+       25.667
+      ],
+      [
+       -19.833,
+       23.834
+      ],
+      [
+       18.573,
+       26.501
+      ],
+      [
+       -10.885,
+       23.472
+      ],
+      [
+       12.53,
+       23.512
+      ],
+      [
+       10.413,
+       23.048
+      ],
+      [
+       -14.157,
+       25.125
+      ],
+      [
+       11.585,
+       24.485
+      ],
+      [
+       -17.963,
+       23.071
+      ],
+      [
+       -11.967,
+       23.396
+      ],
+      [
+       2.628,
+       26.036
+      ],
+      [
+       -12.255,
+       26.139
+      ],
+      [
+       -1.552,
+       26.013
+      ],
+      [
+       -10.226,
+       24.689
+      ],
+      [
+       -7.45,
+       26.188
+      ],
+      [
+       19.165,
+       23.757
+      ],
+      [
+       10.74,
+       26.175
+      ],
+      [
+       -18.126,
+       23.574
+      ],
+      [
+       -15.283,
+       26.454
+      ],
+      [
+       8.009,
+       23.23
+      ],
+      [
+       12.456,
+       23.242
+      ],
+      [
+       -4.843,
+       23.142
+      ],
+      [
+       6.929,
+       26.109
+      ],
+      [
+       10.071,
+       24.495
+      ],
+      [
+       2.829,
+       25.082
+      ],
+      [
+       17.852,
+       26.678
+      ],
+      [
+       7.181,
+       24.762
+      ],
+      [
+       19.995,
+       24.125
+      ],
+      [
+       -15.565,
+       25.41
+      ],
+      [
+       19.312,
+       23.705
+      ],
+      [
+       17.429,
+       24.861
+      ],
+      [
+       -2.188,
+       25.873
+      ],
+      [
+       -9.587,
+       23.797
+      ],
+      [
+       -7.565,
+       26.355
+      ],
+      [
+       0.976,
+       26.753
+      ],
+      [
+       15.413,
+       23.65
+      ],
+      [
+       -1.557,
+       26.639
+      ],
+      [
+       -16.616,
+       25.606
+      ],
+      [
+       -10.694,
+       23.095
+      ],
+      [
+       -9.924,
+       24.96
+      ],
+      [
+       -8.63,
+       23.018
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "items": {
+  "47367519750": "weapon_knife_karambit",
+  "47544527361": "weapon_rif_ak47",
+  "48532534134": "weapon_rif_ak47",
+  "48689107877": "weapon_knife_gut",
+  "52244166084": "weapon_pist_glock18",
+  "52497143946": "weapon_rif_ak47",
+  "52697697818": "weapon_rif_m4a4",
+  "54032362374": "weapon_pist_p250",
+  "54100263214": "weapon_knife_butterfly",
+  "54205409666": "weapon_knife_flip",
+  "54409941376": "weapon_pist_usp_silencer",
+  "54410428513": "weapon_snip_awp",
+  "54410429037": "weapon_knife_butterfly",
+  "54410501608": "weapon_rif_m4a1_silencer",
+  "54410543988": "weapon_pist_deagle",
+  "54418498842": "weapon_rif_m4a1_silencer",
+  "54435511885": "weapon_snip_awp",
+  "54462560137": "weapon_knife_butterfly"
+ },
+ "arms": [
+  {
+   "id": "default",
+   "name": "Stock gloves",
+   "file": "arms_default.glb"
+  },
+  {
+   "id": "53601763605",
+   "name": "★ Sport Gloves | Hedge Maze",
+   "file": "arms_53601763605.glb"
+  },
+  {
+   "id": "54410429036",
+   "name": "★ Sport Gloves | Pandora's Box",
+   "file": "arms_54410429036.glb"
+  }
+ ],
+ "view": {
+  "viewmodel_fov": 60,
+  "offset_in": [
+   1.0,
+   1.0,
+   -1.0
+  ],
+  "note": "fov is horizontal at 4:3; offset is right, forward, up in inches"
+ },
+ "parts": {
+  "47544527361": "parts/47544527361.json",
+  "48532534134": "parts/48532534134.json",
+  "52244166084": "parts/52244166084.json",
+  "52497143946": "parts/52497143946.json",
+  "52697697818": "parts/52697697818.json",
+  "54032362374": "parts/54032362374.json",
+  "54100263214": "parts/54100263214.json",
+  "54205409666": "parts/54205409666.json",
+  "54409941376": "parts/54409941376.json",
+  "54410428513": "parts/54410428513.json",
+  "54410429037": "parts/54410429037.json",
+  "54410501608": "parts/54410501608.json",
+  "54410543988": "parts/54410543988.json",
+  "54418498842": "parts/54418498842.json",
+  "54435511885": "parts/54435511885.json",
+  "54462560137": "parts/54462560137.json"
+ }
+}

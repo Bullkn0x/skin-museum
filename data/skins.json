@@ -223,7 +223,7 @@
       "display": "wall",
       "note": null,
       "ingame": null,
-      "model": null,
+      "model": "assets/models/52244166084.glb",
       "modelRotation": null
     },
     {
@@ -274,7 +274,7 @@
       "display": "wall",
       "note": null,
       "ingame": null,
-      "model": null,
+      "model": "assets/models/52497143946.glb",
       "modelRotation": null
     },
     {
@@ -351,7 +351,7 @@
       "display": "wall",
       "note": null,
       "ingame": null,
-      "model": null,
+      "model": "assets/models/54435511885.glb",
       "modelRotation": null
     },
     {
@@ -381,7 +381,7 @@
       "display": "wall",
       "note": null,
       "ingame": null,
-      "model": null,
+      "model": "assets/models/54418498842.glb",
       "modelRotation": null
     },
     {
@@ -442,7 +442,7 @@
       "display": "wall",
       "note": null,
       "ingame": null,
-      "model": null,
+      "model": "assets/models/54410501608.glb",
       "modelRotation": null
     },
     {
@@ -493,7 +493,7 @@
       "display": "wall",
       "note": null,
       "ingame": null,
-      "model": null,
+      "model": "assets/models/54409941376.glb",
       "modelRotation": null
     },
     {
@@ -544,7 +544,7 @@
       "display": "wall",
       "note": null,
       "ingame": null,
-      "model": null,
+      "model": "assets/models/54410543988.glb",
       "modelRotation": null
     },
     {
@@ -580,7 +580,7 @@
       "display": "wall",
       "note": null,
       "ingame": null,
-      "model": null,
+      "model": "assets/models/54032362374.glb",
       "modelRotation": null
     },
     {
@@ -610,7 +610,7 @@
       "display": "pedestal",
       "note": null,
       "ingame": null,
-      "model": null,
+      "model": "assets/models/54410429036.glb",
       "modelRotation": null
     },
     {
@@ -640,7 +640,7 @@
       "display": "pedestal",
       "note": null,
       "ingame": null,
-      "model": null,
+      "model": "assets/models/53601763605.glb",
       "modelRotation": null
     },
     {
@@ -670,8 +670,12 @@
       "display": "pedestal",
       "note": null,
       "ingame": null,
-      "model": null,
-      "modelRotation": null
+      "model": "assets/models/47367519750.glb",
+      "modelRotation": [
+        0,
+        0,
+        30
+      ]
     },
     {
       "id": "54205409666",
@@ -700,8 +704,12 @@
       "display": "pedestal",
       "note": null,
       "ingame": null,
-      "model": null,
-      "modelRotation": null
+      "model": "assets/models/54205409666.glb",
+      "modelRotation": [
+        0,
+        0,
+        45
+      ]
     },
     {
       "id": "48689107877",
@@ -730,8 +738,12 @@
       "display": "pedestal",
       "note": null,
       "ingame": null,
-      "model": null,
-      "modelRotation": null
+      "model": "assets/models/48689107877.glb",
+      "modelRotation": [
+        0,
+        0,
+        45
+      ]
     },
     {
       "id": "54410429037",
@@ -760,8 +772,12 @@
       "display": "pedestal",
       "note": null,
       "ingame": null,
-      "model": null,
-      "modelRotation": null
+      "model": "assets/models/54410429037.glb",
+      "modelRotation": [
+        0,
+        0,
+        45
+      ]
     },
     {
       "id": "54100263214",
@@ -790,8 +806,12 @@
       "display": "pedestal",
       "note": null,
       "ingame": null,
-      "model": null,
-      "modelRotation": null
+      "model": "assets/models/54100263214.glb",
+      "modelRotation": [
+        0,
+        0,
+        45
+      ]
     },
     {
       "id": "54462560137",
@@ -820,8 +840,12 @@
       "display": "pedestal",
       "note": null,
       "ingame": null,
-      "model": null,
-      "modelRotation": null
+      "model": "assets/models/54462560137.glb",
+      "modelRotation": [
+        0,
+        0,
+        45
+      ]
     },
     {
       "id": "53146633330",
@@ -850,7 +874,7 @@
       "display": "pedestal",
       "note": null,
       "ingame": null,
-      "model": null,
+      "model": "assets/models/53146633330.glb",
       "modelRotation": null
     },
     {
@@ -880,7 +904,7 @@
       "display": "pedestal",
       "note": null,
       "ingame": null,
-      "model": null,
+      "model": "assets/models/52983920210.glb",
       "modelRotation": null
     }
   ]

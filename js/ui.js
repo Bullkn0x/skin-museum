@@ -14,7 +14,22 @@ const WEAR_BANDS = [
   { label: 'WW', to: 0.45 }, { label: 'BS', to: 1 },
 ];
 
+// Each venue words its entrance card in its own voice. The museum keeps the original wording.
+const VENUES = {
+  museum: { ornament: '❦', enter: 'Enter the museum  →' },
+  velvet: {
+    kicker: (c) => (c ? `${c} presents` : 'Tonight only'), lede: 'Legendary CS2 skins, behind the velvet rope',
+    ornament: '◆', enter: 'Step inside  →', count: (n) => `${n} pieces on show tonight`,
+  },
+  neon: {
+    kicker: (c) => (c ? `${c} // live` : 'Live tonight'), lede: 'Legendary CS2 skins, live on the grid',
+    ornament: '/ / /', enter: 'Enter the grid  →', count: (n) => `${n} exhibits online`,
+  },
+};
+const info = { museum: null, count: 0 };
+
 export function setMuseumInfo(museum, count) {
+  info.museum = museum; info.count = count;
   const title = museum?.title || 'The Collection';
   document.title = title;
   $('intro-title').textContent = title;
@@ -29,10 +44,25 @@ export function setProgress(fraction) {
   $('progress-bar').style.transform = `scaleX(${Math.max(0, Math.min(1, fraction))})`;
 }
 
-export function setReady() {
+/** Mark the chosen venue on the entrance card; picking another one reloads into it. */
+export function setTheme(theme, onPick) {
+  document.body.dataset.theme = theme;
+  const v = VENUES[theme] || VENUES.museum;
+  if (v.kicker) $('intro-kicker').textContent = v.kicker(info.museum?.curator);
+  if (v.lede) $('intro-subtitle').textContent = v.lede;
+  if (v.count) $('intro-count').textContent = v.count(info.count);
+  document.querySelector('#intro .rule i').textContent = v.ornament;
+  for (const b of document.querySelectorAll('#themes .theme')) {
+    const chosen = b.dataset.theme === theme;
+    b.setAttribute('aria-pressed', String(chosen));
+    if (!chosen) b.addEventListener('click', () => onPick(b.dataset.theme));
+  }
+}
+
+export function setReady(theme = 'museum') {
   const b = $('enter');
   b.disabled = false;
-  b.textContent = 'Enter the museum  →';
+  b.textContent = (VENUES[theme] || VENUES.museum).enter;
   $('progress').classList.add('is-done');
 }
 
@@ -44,11 +74,12 @@ export function showFatal(message) {
 
 export const toggle = (id, open) => $(id).classList.toggle('is-open', open);
 
-export function setPrompt(display) {
+/** The "E" prompt: for an exhibit, or for something else in reach (`thing`: { label, color }). */
+export function setPrompt(display, thing) {
   const p = $('prompt');
-  if (!display) { p.classList.remove('is-open'); return; }
-  $('prompt-text').textContent = `Inspect  ·  ${display.skin.name}`;
-  p.style.setProperty('--accent', display.skin.rarityColor);
+  if (!display && !thing) { p.classList.remove('is-open'); return; }
+  $('prompt-text').textContent = display ? `Inspect  ·  ${display.skin.name}` : thing.label;
+  p.style.setProperty('--accent', display ? display.skin.rarityColor : thing.color);
   p.classList.add('is-open');
 }
 
